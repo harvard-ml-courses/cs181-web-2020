@@ -5,4 +5,4 @@ git commit -m "."
 git push
 
 # This pushes to http://cs181.fas.harvard.edu/
-ssh cs181@login.fas.harvard.edu "cd public_html; git pull; chmod 755 *.html *.css"
+ssh cs181@login.fas.harvard.edu "cd public_html; git fetch --all; git reset --hard origin/master; chmod 755 *.html *.css"
