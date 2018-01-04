@@ -29,19 +29,22 @@ ohs:
 
 
 lectures:
-  - topic: Machine Learning
+  - topic: Overview
     subtopic: Intro
     hw:
-    papers:
-    section:
+    demos:
+  - topic: Regression
+    subtopic: Linear Regression 1
+    hw:
     demos:
   - topic:
-    subtopic: <a href="">Math Review Section</a> (LOC,TIME)
+    subtopic: Linear Regression 2
     hw:
-    papers:
-    section:
     demos:
-    
+  - topic:
+    subtopic: <a href="">Section: Math Review</a> (LOC,TIME)
+    hw:
+    demos:   
 
 #active: 'active'
 #  - topic: Fundamentals
