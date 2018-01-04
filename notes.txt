@@ -1,0 +1,8 @@
+This used to be at the top of the index.html file, not sure what it does:
+
+---
+layout: page
+title: Home
+weight: 0
+---
+
