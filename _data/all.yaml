@@ -60,20 +60,14 @@ lectures:
   - topic: Regression
     subtopic: Linear Regression 1
     hw:
-    papers:
-    section:
     demos:
   - topic:
     subtopic: Linear Regression 2
     hw:
-    papers:
-    section:
     demos:
   - topic:
     subtopic: <a href="">Section Math Review</a> (LOC,TIME)
     hw:
-    papers:
-    section:
     demos:
 
 
