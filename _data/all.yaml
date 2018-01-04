@@ -54,23 +54,23 @@ ohs:
 
 
 lectures:
-  - topic: Overview
+  - topic: Overview #Jan22
     subtopic: Intro
     hw:
     demos:
-  - topic: Regression
+  - topic: Regression #Jan24
     subtopic: Linear Regression 1
     hw:
     demos:
-  - topic:
+  - topic: #Jan29
     subtopic: Linear Regression 2
     hw:
     demos:
-  - topic:
+  - topic: #Jan31
     subtopic: Model Selection
     hw:
     demos:
-  - topic:
+  - topic: #Feb2
     subtopic:
     hw: <a href="">T1 Regression</a> (<a href="">submit</a>|<a href="">self-grading</a>)
     demos:
