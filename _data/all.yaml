@@ -20,6 +20,7 @@ dates: ["",
 	"Jan. 24", 
 	"Jan. 29", 
 	"Jan. 31", 
+	"Feb. 2",
 	"Feb. 5", 
 	"Feb. 7", 
 	"Feb. 12", 
@@ -64,6 +65,14 @@ lectures:
   - topic:
     subtopic: Linear Regression 2
     hw:
+    demos:
+  - topic:
+    subtopic: Model Selection
+    hw:
+    demos:
+  - topic:
+    subtopic:
+    hw: <a href="">T1 Regression</a> (<a href="">submit</a>|<a href="">self-grading</a>)
     demos:
   - topic:
     subtopic: <a href="">Section Math Review</a> (LOC,TIME)
