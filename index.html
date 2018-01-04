@@ -36,7 +36,7 @@ weight: 0
     </div>
     <div class="container">
       <div class="panel panel-primary" style="margin-top:10px;background-color:purple;border-color:#000000;">
-        <div class="panel-heading" style="background-color:purple;border-color:#2D6ED3;">
+        <div class="panel-heading" style="background-color:aquamarine;border-color:#2D6ED3;">
           <h1>CS181: Machine Learning</h1>
           <p class="lead">Finale Doshi-Velez, Harvard University</p>
 
@@ -163,7 +163,7 @@ weight: 0
                   <div class="row container">
                       <div class="tab-content">
                           <table class="table">
-                              <tr><th>Date</th> <th>Area</th> <th>Topic</th><th>Demos </th><th>Readings</th><th>Assignment (DUE: Fri 5pm of this week)</th></tr>
+                              <tr><th>Date</th> <th>Area</th> <th>Topic</th><th>Demos </th><th>Readings</th><th>Assignment DUE (5pm) </th></tr>
                               {% for lecture in site.data.all.lectures %}
                               <tr class = {{lecture.active|default("",true)}}>
                                   <td> {{site.data.all.dates[forloop.index]}} </td> <td> {{lecture.topic | default("",true)}} </td>
