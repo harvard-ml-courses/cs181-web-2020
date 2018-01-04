@@ -1,0 +1,394 @@
+---
+layout: page
+title: Home
+weight: 0
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+
+    <script src="bib-list.js"></script>
+
+    <link rel="stylesheet" href="bib-publication-list.css" type="text/css" />
+
+    <title>Harvard CS 281</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="page.css">
+  </head>
+
+  <body>
+    <div class="row">
+    </div>
+    <div class="container">
+      <div class="panel panel-primary" style="margin-top:10px;background-color:purple;border-color:#000000;">
+        <div class="panel-heading" style="background-color:purple;border-color:#2D6ED3;">
+          <h1>CS281: Advanced Machine Learning</h1>
+          <p class="lead">Alexander M. Rush, Harvard University</p>
+
+        </div>
+        <div class="panel-footer">
+          <ul class="nav nav-tabs invert-colors">
+            <li class="active"><a data-toggle="tab" href="#home_tab">Home</a></li>
+            <li><a data-toggle="tab" href="#schedule_tab">Schedule</a></li>
+            <li><a data-toggle="tab" href="#people_tab">People</a></li>
+            <li><a data-toggle="tab" href="#project_tab">Project</a></li>
+            <!--li><a data-toggle="tab" href="#grading_tab">Grading</a></li>
+            <li><a data-toggle="tab" href="#references_tab">References</a></li-->
+            <!-- <li><a href="#faq">FAQ</a></li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="tab-content">
+              <div id="home_tab" class="row tab-pane fade in active">
+                  <div class="row container">
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Time:</span> Mon/Wed 1:00-2:30pm</p>
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Location:</span> Science Center C</p>
+                  </div>
+                  <div class="row container">
+                      <h3 id="announcements_description">Announcements</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                         <ul>
+                           <li>See piazza for how to print a poster.</li>
+                           <li>Final project poster session would be on Dec 6, <font color="red">12:30am-2:30pm</font> in <font color="red">MD Ground floor Lobby</font>. Notice that both time and location have been changed.</li>
+                           <li> You can find information about the guest lecture on Nov. 20th about machine vision in medical imaging <a href='nov20_lecture.pdf'> here </a>.</li>
+                           <li>Posted HW4. It's due on the monday after the weekend (Nov 13) since there is a bit of coding.</li>
+                           <li>Project abstract and status report would be due on Nov 17 at 5pm.</li>
+                           <li>Midterm today (Oct 23) at 1-2:30pm in Science Center C.</li>
+                           <li>On Saturday the 21st, 10-11:30am Maxwell Dworkin 221, Rachit and Yuntian will do a review of the midterm topics, as well as answer your questions.</li>
+                           <li>Sasha, Haozhe and Mark will hold midterm office hours 2-4pm in Maxwell-Dworkin.</li>
+                           <!--li>Final project poster session would be on Dec 6, 12:30am-2:30pm in Pierce 301.</li-->
+                           <li>T2 self grading is released. Due on Sunday (Oct 22) at 5pm.</li>
+                           <li>T3 is released. Due on Oct 20 at 5pm.</li>
+                           <!--li>T2 due is extended to Oct 9 at 5pm.</li-->
+                           <li>Project proposal <a href="https://harvard-ml-courses.github.io/cs281-web/project.pdf">guidelines</a> posted  </li>
+                           <!--li>Friday sections moved to Lyman Lab 425 starting 9/28</li-->
+                           <!--li>T2 is out. Due on <font color="red">Oct 9 at 5pm</font>.</li-->
+                           <!--li>T1 Self-Grading released. Due on Oct 3 at 5pm.</li-->
+                             <!--li>T1 is due on Sep 22 at 5pm.</li-->
+                           <!--li>T0 Self-Grading released. Due on Sep 17 at 5pm.</li-->
+                           <!--li>T1 is out. Due on Sep 22 at 5pm.</li-->
+                             <!--li>Rachit will deliver sections on Thursday (Sep 7) at 5pm in Pierce Hall 320, and on Friday (Sep 8) at 11am in MD 223, the topic is scientific computing with python (numpy, torch, matplotlib).</li-->
+                             <!--li>Office hours and section arrangements have been posted, see People and Sections tabs.</li-->
+                             <!--li>T0 is out. Due on Sep 8 at 5pm.</li-->
+                         </ul>
+                      </div>
+                  </div>
+                  <div class="row container">
+                      <h3 id="description">Course Info</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                          <dl>
+                              <dt>Forum and Announcements</dt>
+                              <dd><ul>
+                                  <li><a href="https://piazza.com/harvard/fall2017/cs281">Piazza </a></li>
+                              </ul></dd>
+                                
+                              <dt>Section Times </dt>
+                              <dd>
+                                  <ul>
+                                    <li>Thursday 5-6pm: Northwest B104</li>
+                                    <li>Friday 11-11:59am: Lyman Lab 425</li>
+                                  </ul>
+                              </dd>
+                              <dt>Syllabus and Collaboration Policy</dt>
+                              <dd>
+                                  <ul>
+                                      <li>See the course <a href="syllabus.pdf">syllabus</a>
+                                  </ul>
+                              </dd>
+
+                              <dt>Grading</dt>
+                              <dd>
+                                <ul>
+                                    <li> Assignments (35%) </li>
+                                    <li> Scribing (10%) </li>
+                                    <li> Midterm Exam  (15%) </li>
+                                    <li> Final Project (40%) </li>
+                                </ul>
+                              </dd>
+
+                              <dt>Links</dt>
+                              <dd>
+                                  <ul>
+                                     <li><a href="https://classroom.github.com/a/VQo8aFH2">GitHub Classrooms</a></li>
+                                     <li><a href="https://canvas.harvard.edu/courses/29707">Canvas Site</a></li>
+                                     <li><a href="https://docs.google.com/spreadsheets/d/15MsWI7qFPDfjhW8OQmDgGfdmBM2ZxTW9XmU7XlkhNb4/edit?usp=sharing">Scribe Sign-up</a></li>
+                                     <li><a href="https://github.com/harvard-ml-courses/cs281-scribe">Scribe Notes GitHub</a></li>
+                                  </ul>
+                              </dd>
+
+                              <dt>References</dt>
+                              <dd><ul>
+                                  <li> Murphy, <a href="http://harvardcoopbooks.bncollege.com/webapp/wcs/stores/servlet/BNCB_TextbookDetailView?catalogId=10001&item=N&langId=-1&productId=600005699137&storeId=52084">Machine Learning: A Probabilistic Perspective</a>
+                                  <li> Gelman et al, <a href="http://www.stat.columbia.edu/~gelman/book/"> Bayesian Data Analysis </a> </li>
+                                  <li> Petersen and Pedersen, <a href="http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf">The Matrix Cookbook</a>
+                                  <li> Wainwright and Jordan <a href = "https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf"> Graphical Models, Exp. Families, and Variational Inference (Section 3.3) </a>
+                                  <li> Blei et al, <a href="https://arxiv.org/pdf/1601.00670.pdf">Variational Inference: A Review for Statisticians</a>
+                              </ul></dd>
+                          </dl>
+                      </div>
+                  </div>
+              </div>
+              <!--div id="references_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <dl>
+                          <dd><ul>
+                              <li> Murphy, <a href="http://harvardcoopbooks.bncollege.com/webapp/wcs/stores/servlet/BNCB_TextbookDetailView?catalogId=10001&item=N&langId=-1&productId=600005699137&storeId=52084">Machine Learning: A Probabilistic Perspective</a>
+                              <li> Gelman et al, <a href="http://www.stat.columbia.edu/~gelman/book/"> Bayesian Data Analysis </a> </li>
+                              <li> Petersen and Pedersen, <a href="http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf">The Matrix Cookbook</a>
+                              <li> Blei et al, <a href="https://arxiv.org/pdf/1601.00670.pdf">Variational Inference: A Review for Statisticians</a>
+                          </ul></dd>
+                      </dl>
+                  </div>
+              </div-->
+              <div id="people_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <dl>
+                          <dt>Instructor</dt>
+                          <dd> <ul>
+                              <li>Alexander "Sasha" Rush  <br>
+                                  OH: Wed 2:30-4, MD 217
+                              </li>
+                              <li>Email: Piazza preferred or srush at seas.harvard.edu
+                              </li></ul>
+                          </dd>
+
+                          <dt>Teaching Assistants</dt>
+                          <dd>
+                              <ul>
+                                  <li>
+                                  {% for ta in site.data.all.tas %}
+                                  {{ta.name}}
+                                  {% endfor %}
+                                  </li>
+                               </ul>
+                          </dd>
+                          <dt>Office Hours</dt>
+                          <dd>
+                            <ul>
+                              {% for oh in site.data.all.ohs %}
+                              <li>{{oh.time}}: {{oh.location}}</li>
+                              {% endfor %}
+                            </ul>
+                          </dd>
+                      </dl>
+                  </div>
+              </div>
+              <div id="sections_tab" class="row tab-pane fade">
+                  <h3>Time and Location</h3>
+                  <div class="row container">
+                      <ul>
+                          <li>Thursday 5-6pm: Pierce Hall 320</li>
+                          <li>Friday 11-11:59am: MD 223</li>
+                      </ul>
+                  </div>
+                  <hr>
+                  <div class="row container">
+                       <table class="table">
+                           <thead>
+                               <tr _base_target="_blank">
+                                   <th>Date</th>
+                                   <th>Location</th>
+                                   <th>Topic</th>
+                                   <th>Materials</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr class="lecture" _base_target="_blank">
+                                   <td>Sep. 1, 10-11am (Mark)</td>
+                                   <td>Pierce 301</td>
+                                   <td>
+                                       <a href="https://github.com/harvard-ml-courses/cs281-sections/tree/master/00">Math Review (Linear Algebra, Calculus, Probabilistic Theory)</a>
+                                   </td>
+                                   <td>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Sep. 4, 5-6pm (Zhirui)</td>
+                                   <td>Pierce 301</td>
+                                   <td>
+                                       <a href="https://github.com/harvard-ml-courses/cs281-sections/tree/master/00">Math Review (Linear Algebra, Calculus, Probabilistic Theory)</a>
+                                   </td>
+                                   <td>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Sep. 7, 5-6pm (Rachit)</td>
+                                   <td>Pierce 320</td>
+                                   <td>
+                                       Code Review (Python, Numpy, Matplotlib, PyTorch)
+                                   </td>
+                                   <td>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Sep. 8, 11-11:59am (Rachit)</td>
+                                   <td>MD 223</td>
+                                   <td>
+                                       Code Review (Python, Numpy, Matplotlib, PyTorch)
+                                   </td>
+                                   <td>
+                                   </td>
+                               </tr>
+                           </tbody>
+                       </table>
+                  </div>
+              </div>
+              <div id="project_tab" class="row tab-pane fade">
+                  <p>
+                  The ideal outcome of this project
+                  would be a paper that could be submitted to a top-tier machine learning conference such as NIPS,
+                  ICML, UAI, AISTATS, or KDD. There are different ways to approach this project, which are dis-
+                  cussed in a more comprehensive document that is available on the course website. There are four
+                  separate components of the project.
+                  </p>
+                  <p>
+                  You will upload these materials via Canvas. Please see the syllabus (linked
+                  in the course website) for a more thorough description of the final project and policies related to
+                  collaboration, etc.
+                  </p>
+                  <hr>
+                  <h3>Important Dates</h3>
+                  <div class="row container">
+                       <table class="table">
+                           <thead>
+                               <tr _base_target="_blank">
+                                   <th class="col-md-1">Date</th>
+                                   <th class="col-md-2">Due</th>
+                                   <th class="col-md-9">Descriptions</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr class="lecture" _base_target="_blank">
+                                   <td>Oct. 13</td>
+                                   <td>Proposal</td>
+                                   <td>
+                                       This is a two-page document that describes the problem you intend to
+                                       solve, your approach to solving it and the experiments that you intend to run to evaluate
+                                       your solution.
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Nov. 17</td>
+                                   <td>Abstract and Status Report</td>
+                                   <td>
+                                       This is a three to four page document that contains a
+                                       draft of your final abstract, as well as a brief status report on the progress of your project.
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Dec. 6</td>
+                                   <td>Poster Session</td>
+                                   <td>
+                                       You will make a conference-style poster about your project, with a class
+                                       poster session during reading week. SEAS will pay for the cost of producing the poster. You
+                                       will also submit a PDF file of your poster.
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>Dec. 11</td>
+                                   <td>Final Report</td>
+                                   <td>
+                                       You will write a report of up to ten pages, in the style of a mainstream CS
+                                       conference paper. See the papers linked on the course website for examples
+                                   </td>
+                               </tr>
+                           </tbody>
+                       </table>
+                  </div>
+              </div>
+              <div id="schedule_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <div class="tab-content">
+                          <table class="table">
+                              <tr><th>Date</th> <th>Area</th> <th>Topic</th><th>Demos </th><th>Readings</th><th>Assignment (DUE: Fri 5pm of this week)</th></tr>
+                              {% for lecture in site.data.all.lectures %}
+                              <tr class = {{lecture.active|default("",true)}}>
+                                  <td> {{site.data.all.dates[forloop.index]}} </td> <td> {{lecture.topic | default("",true)}} </td>
+                                  <td> {{lecture.subtopic|default("", true)}}</td>
+                                  <td>
+                                      {{lecture.demos|default("", true)}}
+                                  </td>
+                                  <td>
+                                      {{lecture.papers|default("", true)}}
+                                  </td>
+
+                                  <td> {{lecture.hw | default("",true)}}</td>
+                              </tr>
+                              {% endfor %}
+                          </table>
+                      </div>
+                  </div>
+              </div>
+
+              <!--div id="grading_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <p class="container">
+                          Grades are determined by four aspects of the class:
+                          <ul>
+                              <li> Assignments (35%) </li>
+                              <li> Scribing (10%) </li>
+                              <li> Midterm Exam  (15%) </li>
+                              <li> Final Project (40%) </li>
+                          </ul>
+                      </p>
+                  </div>
+              </div-->
+              <!--div id="homework_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <p class="container">
+                          <ul>
+                              <li>T0 <a href="https://github.com/harvard-ml-courses/cs281-f17-homework/tree/master/T0">Preliminary</a> (<a href="https://canvas.harvard.edu/courses/29707/assignments/161722">submit</a>). Due on <font color="red">Sep 8 at 5pm</font>.</li>
+                              <li>T1 <a href="https://github.com/harvard-ml-courses/cs281-f17-homework/tree/master/T1">Fundamentals</a> (<a href="https://canvas.harvard.edu/courses/29707/assignments/167410">submit</a> | <a href="">self-grading</a>)</li>
+                          </ul>
+                      </p>
+                  </div>
+              </div-->
+          </div>
+
+
+      <!-- <div class="row container"> -->
+      <!-- <h3 id="faq">FAQ</h3> -->
+      <!-- <p class="container"> -->
+      <!--     <ul> -->
+      <!--       <li> <p> </p> -->
+      <!--     </ul> -->
+      <!-- </p> -->
+      <!-- </div> -->
+
+
+
+
+    </div> <!-- /container -->
+
+
+  </body>
+</html>
+
+
+
+<head>
+
+
+</head>
+<html>
+
+</html>
