@@ -18,7 +18,8 @@ tas:
 dates: ["",
         "",
 	"Jan. 22 (M)", 
-	"Jan. 24 (W)", 
+	"Jan. 24 (W)",
+	"", 
 	"Jan. 29 (M)", 
 	"Jan. 31 (W)", 
 	"Feb. 2 (F)",
@@ -56,7 +57,7 @@ ohs:
 lectures:
   - topic:
     subtopic:
-    section: <a href="">Section Math Review</a> (LOC,TIME)
+    section: Section 0 <a href=""> Math Review</a> (LOC,TIME)
     readings:
     demos:
     hw:
@@ -69,6 +70,12 @@ lectures:
   - topic: Regression #Jan24
     subtopic: Linear Regression 1
     section:
+    readings:
+    demos:
+    hw:
+  - topic:
+    subtopic:
+    section: Section 1 <a href=""> Linear Reg</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
