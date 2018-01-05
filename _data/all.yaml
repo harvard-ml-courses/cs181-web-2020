@@ -16,6 +16,7 @@ tas:
   - name: <a href="mailto:amandazhang@college.harvard.edu">Amanda Zhang</a> 
 
 dates: ["",
+        "",
 	"Jan. 22 (M)", 
 	"Jan. 24 (W)", 
 	"Jan. 29 (M)", 
@@ -52,32 +53,43 @@ ohs:
   - time: TBD
     location: TBD (people)
 
-
 lectures:
+  - topic:
+    subtopic:
+    section: <a href="">Section Math Review</a> (LOC,TIME)
+    readings:
+    demos:
+    hw:
   - topic: Overview #Jan22
     subtopic: Intro
-    hw:
+    section:
+    readings:
     demos:
+    hw:
   - topic: Regression #Jan24
     subtopic: Linear Regression 1
-    hw:
+    section:
+    readings:
     demos:
+    hw:
   - topic: #Jan29
     subtopic: Linear Regression 2
-    hw:
+    section:
+    readings:
     demos:
+    hw:
   - topic: #Jan31
     subtopic: Model Selection
-    hw:
+    section:
+    readings:
     demos:
+    hw:
   - topic: #Feb2
     subtopic:
+    section:
+    readings:
+    demos:
     hw: <a href="">T1 Regression</a> (<a href="">submit</a>|<a href="">self-grading</a>)
-    demos:
-  - topic:
-    subtopic: <a href="">Section Math Review</a> (LOC,TIME)
-    hw:
-    demos:
 
 
 #active: 'active'
