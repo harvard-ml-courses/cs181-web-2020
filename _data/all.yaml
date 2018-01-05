@@ -61,6 +61,7 @@ lectures:
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: Overview #Jan22
     subtopic: Intro
     section:
@@ -79,6 +80,7 @@ lectures:
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: #Jan29
     subtopic: Linear Regression 2
     section:
