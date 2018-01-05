@@ -1,4 +1,5 @@
-This used to be at the top of the index.html file, not sure what it does:
+# Why is the following necessary at the top of the index.html file
+# to make the YAML stuff work?
 
 ---
 layout: page
