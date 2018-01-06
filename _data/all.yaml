@@ -46,13 +46,22 @@ dates: ["",
 	"Apr. 23 (M)", 
 	"Apr. 25 (W)"]
 
+
+
+
 ohs:
-  - time: TBD
-    location: TBD (people)
-  - time: TBD
-    location: TBD (people)
-  - time: TBD
-    location: TBD (people)
+  - time: Tue 8-10pm
+    location: location TBD
+  - time: Wed 6-8pm
+    location: MD room TBD
+  - time: Wed 8-10pm
+    location: location TBD
+  - time: Thu 8-10pm
+    location: location TBD
+  - time: Thu 8-10pm
+    location: location TBD (Quad)
+  - time: Fri 10-Noon
+    location: MD room TBD
 
 lectures:
   - topic:
