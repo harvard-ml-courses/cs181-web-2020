@@ -34,6 +34,7 @@ dates: ["",
         "", # section 0
 	"Jan. 22 (M)", # intro
 	"Jan. 24 (W)", # lin. reg. 1
+	"Jan. 26 (F)", # meet TFs
 	"", # section 1
 	"Jan. 29 (M)", # lin. reg. 2
 	"Jan. 31 (W)", # model selection
@@ -102,6 +103,13 @@ lectures:
     readings:
     demos:
     hw:
+  - topic:
+    subtopic: Meet the TFs
+    section: Loc TBD
+    readings:
+    demos:
+    hw: (Good time to meet HW partners)
+    type: 'event'
   - topic: # section 1
     subtopic:
     section: 1. <a href=""> Linear Reg</a> (<a href="">sol</a>)
