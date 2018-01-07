@@ -134,7 +134,7 @@ lectures:
     readings:
     demos:
     hw:
-    type: 'active'
+    type: 'sec'
   - topic: # Feb 5
     subtopic: Bayesian Linear Regression
     section:
@@ -153,14 +153,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 3
     subtopic:
     section: 3. <a href="">Bayes LR, Lin. Class.</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: # Feb 12
     subtopic: Prob. Classification
     section:
@@ -179,7 +179,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: # Feb 19
     subtopic: No class (Pres Day)
     section:
@@ -198,14 +198,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 5
     subtopic: 
     section: 5. <a href="">Midterm 1 Review Probs</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: # Feb 26
     subtopic: Max-Margin
     section:
@@ -224,13 +224,14 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: # Mar 5
     subtopic: Midterm 1
     section:
     readings:
     demos:
     hw:
+    type: 'exam'
   - topic: # Mar 7
     subtopic: Ethics in ML
     section:
@@ -243,7 +244,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: Spring Break # Mar 12
     subtopic: No class
     section:
@@ -262,7 +263,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: Unsupervised Learning # Mar 19
     subtopic: K-means/hierarchical
     section:
@@ -281,14 +282,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 8
     subtopic:
     section: 8. <a href=""> Mixture / EM / Topic </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: PGMs # Mar 26
     subtopic: Topic Models
     section:
@@ -307,14 +308,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 9
     subtopic: 
     section: 9. <a href=""> Dim Reduction / HMM</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: PGMs (cont) # Apr 2
     subtopic: HMMs
     section:
@@ -333,14 +334,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 10
     subtopic:
     section: 10. <a href=""> Bayes Nets / Inference </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: Inference # Apr 9
     subtopic: Inference for Bayes Nets
     section:
@@ -359,14 +360,14 @@ lectures:
     readings:
     demos:
     hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 11
     subtopic:
     section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: Reinforcement Learning # Apr 16
     subtopic: RL
     section:
@@ -385,7 +386,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: # Apr 23
     subtopic: Interpretability or Learning Theory
     section:
@@ -398,10 +399,11 @@ lectures:
     readings:
     demos:
     hw:
+    type: 'exam'
   - topic: # Apr 27
     subtopic:
     section:
     readings:
     demos:
     hw: <a href="">P4 RL</a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
