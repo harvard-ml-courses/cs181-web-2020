@@ -16,12 +16,12 @@ a {
     display:none;
 }
 
-.sec {
-    background: #F5F5F5;
+#sec {
+    background-color: #F5F5F5;
 }
 
-.hw {
-    background: #EFEFEF;
+#hw {
+    background-color: #EFEFEF;
 }
 
 
