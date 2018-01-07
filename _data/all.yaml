@@ -75,7 +75,7 @@ lectures:
     section:
     readings:
     demos:
-    hw:
+    hw: <a href="">T1 Regression</a> released
   - topic: Regression #Jan24
     subtopic: Linear Regression 1
     section:
@@ -106,7 +106,8 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T1 Regression</a> (<a href="">submit</a>|<a href="">self-grading</a>)
+    hw: <a href="">T1 submit</a> (<a href="">self-grading</a>)
+    active: 'active'
   - topic: # section 2
     subtopic:
     section: Section 2 <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
