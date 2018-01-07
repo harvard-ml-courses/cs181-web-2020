@@ -89,7 +89,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: Overview #Jan22
     subtopic: Intro
     section:
@@ -108,7 +108,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'sec'
   - topic: #Jan29
     subtopic: Linear Regression 2
     section:
@@ -127,7 +127,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
-    active: 'active'
+    type: 'hw'
   - topic: # section 2
     subtopic:
     section: 2. <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
