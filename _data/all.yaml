@@ -176,7 +176,7 @@ lectures:
     readings:
     demos:
     hw:
- -  topic: # Feb 19
+  - topic: # Feb 19
     subtopic: No class (Pres Day)
     section:
     readings:
@@ -224,7 +224,7 @@ lectures:
     readings:
     demos:
     hw:
- -  topic: # Mar 7
+  - topic: # Mar 7
     subtopic: Ethics in ML
     section:
     readings:
@@ -248,7 +248,7 @@ lectures:
     readings:
     demos:
     hw:
- -  topic: # section 7
+  - topic: # section 7
     subtopic:
     section:
     readings:
@@ -296,7 +296,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
- -  topic: # section 9
+  - topic: # section 9
     subtopic: 
     section:
     readings:
@@ -332,7 +332,7 @@ lectures:
     readings:
     demos:
     hw:
- -  topic: # Apr 11
+  - topic: # Apr 11
     subtopic: MDP, value/policy iter
     section:
     readings:
