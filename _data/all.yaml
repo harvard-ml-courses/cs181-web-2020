@@ -15,14 +15,30 @@ tas:
   - name: <a href="mailto:helenwu@college.harvard.edu">Helen Wu</a>
   - name: <a href="mailto:amandazhang@college.harvard.edu">Amanda Zhang</a> 
 
+
+ohs:
+  - time: Tue 8-10pm
+    location: location TBD
+  - time: Wed 6-8pm
+    location: MD room TBD
+  - time: Wed 8-10pm
+    location: location TBD
+  - time: Thu 8-10pm
+    location: location TBD
+  - time: Thu 8-10pm
+    location: location TBD (Quad)
+  - time: Fri 10-Noon
+    location: MD room TBD
+
 dates: ["",
-        "",
+        "", # section 0
 	"Jan. 22 (M)", 
 	"Jan. 24 (W)",
-	"", 
+	"", # section 1
 	"Jan. 29 (M)", 
 	"Jan. 31 (W)", 
 	"Feb. 2 (F)",
+	"", # section 2
 	"Feb. 5 (M)", 
 	"Feb. 7 (W)", 
 	"Feb. 12 (M)", 
@@ -46,23 +62,6 @@ dates: ["",
 	"Apr. 23 (M)", 
 	"Apr. 25 (W)"]
 
-
-
-
-ohs:
-  - time: Tue 8-10pm
-    location: location TBD
-  - time: Wed 6-8pm
-    location: MD room TBD
-  - time: Wed 8-10pm
-    location: location TBD
-  - time: Thu 8-10pm
-    location: location TBD
-  - time: Thu 8-10pm
-    location: location TBD (Quad)
-  - time: Fri 10-Noon
-    location: MD room TBD
-
 lectures:
   - topic:
     subtopic:
@@ -83,7 +82,7 @@ lectures:
     readings:
     demos:
     hw:
-  - topic:
+  - topic: # section 1
     subtopic:
     section: Section 1 <a href=""> Linear Reg</a> (<a href="">sol</a>)
     readings:
@@ -108,6 +107,67 @@ lectures:
     readings:
     demos:
     hw: <a href="">T1 Regression</a> (<a href="">submit</a>|<a href="">self-grading</a>)
+  - topic: # section 2
+    subtopic:
+    section: Section 2 <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
+    readings:
+    demos:
+    hw:
+    active: 'active'
+  - topic: # Feb 5
+    subtopic: Bayesian Linear Regression
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: Classification # Feb 7
+    subtopic: Linear Classification
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 2
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 2
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 2
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 2
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 2
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #active: 'active'
