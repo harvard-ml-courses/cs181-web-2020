@@ -105,10 +105,10 @@ lectures:
     hw:
   - topic:
     subtopic: Meet the TFs
-    section: Loc TBD
+    section: location TBD
     readings:
     demos:
-    hw: (Good time to meet HW partners)
+    hw: Good time to meet HW partners!
     type: 'event'
   - topic: # section 1
     subtopic:
