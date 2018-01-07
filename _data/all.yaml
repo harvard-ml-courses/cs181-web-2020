@@ -65,7 +65,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: Section 0 <a href=""> Math Review</a>
+    section: 0. <a href=""> Math Review</a>
     readings:
     demos:
     hw:
@@ -84,7 +84,7 @@ lectures:
     hw:
   - topic: # section 1
     subtopic:
-    section: Section 1 <a href=""> Linear Reg</a> (<a href="">sol</a>)
+    section: 1. <a href=""> Linear Reg</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
@@ -110,7 +110,7 @@ lectures:
     active: 'active'
   - topic: # section 2
     subtopic:
-    section: Section 2 <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
+    section: 2. <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
