@@ -207,7 +207,7 @@ lectures:
     hw:
     active: 'active'
   - topic: # Feb 26
-    subtopic: Max-margin
+    subtopic: Max-Margin
     section:
     readings:
     demos:
@@ -348,7 +348,7 @@ lectures:
     demos:
     hw:
   - topic: # Apr 11
-    subtopic: MDP, value/policy iter
+    subtopic: MDP, value/policy Iteration
     section:
     readings:
     demos:
@@ -386,7 +386,7 @@ lectures:
     demos:
     hw:
   - topic: # Apr 23
-    subtopic: Interpretability / Learning Theory
+    subtopic: Interpretability or Learning Theory
     section:
     readings:
     demos:
