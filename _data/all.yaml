@@ -385,6 +385,7 @@ lectures:
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Apr 23
     subtopic: Interpretability or Learning Theory
     section:
