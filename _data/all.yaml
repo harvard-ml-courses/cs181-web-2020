@@ -134,7 +134,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">T1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 2
     subtopic:
@@ -160,7 +160,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 3
     subtopic:
@@ -205,7 +205,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 5
     subtopic: 
@@ -251,7 +251,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: Spring Break # Mar 12
     subtopic: No class
@@ -289,7 +289,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 8
     subtopic:
@@ -315,7 +315,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 9
     subtopic: 
@@ -341,7 +341,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 10
     subtopic:
@@ -367,7 +367,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 11
     subtopic:
@@ -413,5 +413,5 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P4 RL</a> (<a href="">submit</a>|<a href="">grading</a>)
+    hw: <a href="">P4 RL</a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
