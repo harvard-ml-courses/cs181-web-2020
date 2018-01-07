@@ -79,7 +79,8 @@ dates: ["",
 	"Apr. 18 (W)", # Deep RL,
 	"", # section 12 (exam review)
 	"Apr. 23 (M)", # Interpretability / Learning Theory
-	"Apr. 25 (W)"] # midterm 2
+	"Apr. 25 (W)", # midterm 2
+	"Apr. 27 (F)"] # P4 RL due
 
 lectures:
   - topic:
@@ -152,6 +153,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 3
     subtopic:
     section: 3. <a href="">Bayes LR, Lin. Class.</a> (<a href="">sol</a>)
@@ -196,6 +198,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 5
     subtopic: 
     section: 5. <a href="">Midterm 1 Review Probs</a> (<a href="">sol</a>)
@@ -228,7 +231,6 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
   - topic: # Mar 7
     subtopic: Ethics in ML
     section:
@@ -241,6 +243,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: Spring Break # Mar 12
     subtopic: No class
     section:
@@ -278,6 +281,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 8
     subtopic:
     section: 8. <a href=""> Mixture / EM / Topic </a> (<a href="">sol</a>)
@@ -303,6 +307,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 9
     subtopic: 
     section: 9. <a href=""> Dim Reduction / HMM</a> (<a href="">sol</a>)
@@ -328,6 +333,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 10
     subtopic:
     section: 10. <a href=""> Bayes Nets / Inference </a> (<a href="">sol</a>)
@@ -353,6 +359,7 @@ lectures:
     readings:
     demos:
     hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
   - topic: # section 11
     subtopic:
     section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
@@ -391,4 +398,10 @@ lectures:
     demos:
     hw:
     active: 'active'
-
+  - topic: # Apr 27
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">P4 RL</a> (<a href="">submit</a>|<a href="">grading</a>)
+    active: 'active'
