@@ -134,7 +134,7 @@ lectures:
     readings:
     demos:
     hw:
-    active: 'active'
+    type: 'active'
   - topic: # Feb 5
     subtopic: Bayesian Linear Regression
     section:
