@@ -191,7 +191,7 @@ weight: 0
                   <div class="row container">
                       <div class="tab-content">
                           <table class="table">
-                              <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Demos </th><th>Readings</th><th>Assignment (5pm) </th></tr>
+                              <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Demos </th><th>Readings</th><th>Assignment </th></tr>
                               {% for lecture in site.data.all.lectures %}
                               <tr class = {{lecture.active|default("",true)}}>
                                   <td> {{site.data.all.dates[forloop.index]}} </td> 

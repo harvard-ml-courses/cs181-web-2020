@@ -32,35 +32,54 @@ ohs:
 
 dates: ["",
         "", # section 0
-	"Jan. 22 (M)", 
-	"Jan. 24 (W)",
+	"Jan. 22 (M)", # intro
+	"Jan. 24 (W)", # lin. reg. 1
 	"", # section 1
-	"Jan. 29 (M)", 
-	"Jan. 31 (W)", 
-	"Feb. 2 (F)",
+	"Jan. 29 (M)", # lin. reg. 2
+	"Jan. 31 (W)", # model selection
+	"Feb. 2 (F)", # T1 regression due
 	"", # section 2
-	"Feb. 5 (M)", 
-	"Feb. 7 (W)", 
-	"Feb. 12 (M)", 
-	"Feb. 14 (W <3)", 
-	"Feb. 19 (M)", 
-	"Feb. 21 (W)", 
-	"Feb. 26 (M)", 
-	"Feb. 28 (W)", 
-	"Mar. 5 (M)", 
-	"Mar. 7 (W)",
-	"Mar. 19 (M)", 
-	"Mar. 21 (W)", 
-	"Mar. 26 (M)", 
-	"Mar. 28 (W)", 
-	"Apr. 2 (M)", 
-	"Apr. 4 (W)", 
-	"Apr. 9 (M)", 
-	"Apr. 11 (W)", 
-	"Apr. 16 (M)", 
-	"Apr. 18 (W)", 
-	"Apr. 23 (M)", 
-	"Apr. 25 (W)"]
+	"Feb. 5 (M)", # bayesian lin. reg
+	"Feb. 7 (W)", # linear classification
+	"Feb. 9 (F)", # P1 regression due
+        "", # section 3
+	"Feb. 12 (M)", # prob. classification
+	"Feb. 14 (W <3)", #neural net 1
+        "", # section 4
+	"Feb. 19 (M)", # presidents day
+	"Feb. 21 (W)", # neural net 2
+	"Feb. 23 (F)", # T2 classification due
+        "", # section 5 (exam review) 
+	"Feb. 26 (M)", # max-margin
+	"Feb. 28 (W)", # SVMs
+	"", # section 6
+	"Mar. 5 (M)", # midterm 1
+	"Mar. 7 (W)", # ethics in ML
+	"Mar. 9 (F)", # P2 classification due
+	"Mar. 12 (M)", # Spring Break
+	"Mar. 14 (W)", # Spring Break
+	"", # section 7
+	"Mar. 19 (M)", # kmeans/hierarchical
+	"Mar. 21 (W)", # mixture/EM
+	"Mar. 23 (F)", # T3 SVMs due
+	"", # section 8
+	"Mar. 26 (M)", # topic models
+	"Mar. 28 (W)", # dim reduction
+	"Mar. 30 (F)", # T4 clustering due
+	"", # section 9
+	"Apr. 2 (M)", # HMMs
+	"Apr. 4 (W)", # graphical models
+	"Apr. 6 (F)", # P3 unsupervised due
+	"", # section 10
+	"Apr. 9 (M)", # inference for BNs
+	"Apr. 11 (W)", # MDP, value/policy iter
+	"April 13 (F)", # T5 prob modeling / EM due
+	"", # section 11
+	"Apr. 16 (M)", # RL
+	"Apr. 18 (W)", # Deep RL,
+	"", # section 12 (exam review)
+	"Apr. 23 (M)", # Interpretability / Learning Theory
+	"Apr. 25 (W)"] # midterm 2
 
 lectures:
   - topic:
@@ -127,62 +146,238 @@ lectures:
     readings:
     demos:
     hw:
-  - topic: # section 2
+  - topic: # Feb 9
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: # section 3
     subtopic:
     section:
     readings:
     demos:
     hw:
-  - topic: # section 2
+  - topic: # Feb 12
+    subtopic: Prob. Classification
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Feb 14
+    subtopic: Neural Net 1
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 4
     subtopic:
     section:
     readings:
     demos:
     hw:
-  - topic: # section 2
+ -  topic: # Feb 19
+    subtopic: No class (Pres Day)
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Feb 21
+    subtopic: Neural Net 2
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Feb 23
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: # section 5
+    subtopic: 
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Feb 26
+    subtopic: Max-margin
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Feb 28
+    subtopic: SVMs
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 6
     subtopic:
     section:
     readings:
     demos:
     hw:
-  - topic: # section 2
+  - topic: # Mar 5
+    subtopic: Midterm 1
+    section:
+    readings:
+    demos:
+    hw:
+ - topic: # Mar 7
+    subtopic: Ethics in ML
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Mar 9
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: Spring Break # Mar 12
+    subtopic: No class
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Mar 14
+    subtopic: No class
+    section:
+    readings:
+    demos:
+    hw:
+ -  topic: # section 7
     subtopic:
     section:
     readings:
     demos:
     hw:
-  - topic: # section 2
+  - topic: Unsupervised Learning # Mar 19
+    subtopic: K-means/hierarchical
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Mar 21
+    subtopic: Mixture/EM
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Mar 23
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: # section 8
     subtopic:
     section:
     readings:
     demos:
     hw:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#active: 'active'
-#  - topic: Fundamentals
-#    subtopic: Discrete Models (<a href="https://github.com/harvard-ml-courses/cs281-scribe/blob/master/2/2.pdf">scribe</a>)
-#    hw: T0 <a href="https://github.com/harvard-ml-courses/cs281-f17-homework/tree/master/T0">Preliminary</a> (<a href="https://canvas.harvard.edu/courses/29707/assignments/161722">submit</a> | <a href="https://canvas.harvard.edu/courses/29707/quizzes/73161">self-grading</a>)
-#    papers: 2.3, 3.3-4
-#    section:
-#    demos: <a href="https://github.com/harvard-ml-courses/cs281-demos/blob/master/Beta.ipynb">Beta</a>
-#  - topic:
-#    subtopic: <a href="https://github.com/harvard-ml-courses/cs281-sections/blob/master/01/main.ipynb">Code Review</a>
-#    hw:
-#    papers:
-#    section:
-#    demos:
-#    active: 'active'
+  - topic: PGMs # Mar 26
+    subtopic: Topic Models
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: Other # Mar 28
+    subtopic: Dim Reduction
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Mar 30
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
+ -  topic: # section 9
+    subtopic: 
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: PGMs (cont) # Apr 2
+    subtopic: HMMs
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Apr 4
+    subtopic: Graphical Models
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Apr 6
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: # section 10
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: Inference # Apr 9
+    subtopic: Inference for Bayes Nets
+    section:
+    readings:
+    demos:
+    hw:
+ -  topic: # Apr 11
+    subtopic: MDP, value/policy iter
+    section:
+    readings:
+    demos:
+    hw: 
+  - topic: # Apr 13
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>)
+  - topic: # section 11
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: Reinforcement Learning # Apr 16
+    subtopic: RL
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # April 18
+    subtopic: Deep RL
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # section 12
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Apr 23
+    subtopic: Interpretability / Learning Theory
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # Apr 25
+    subtopic: Midterm 2
+    section:
+    readings:
+    demos:
+    hw:
 
