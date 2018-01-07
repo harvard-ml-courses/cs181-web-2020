@@ -113,7 +113,7 @@ lectures:
     section:
     readings:
     demos:
-    hw:
+    hw: P1 Regression released
   - topic: #Jan31
     subtopic: Model Selection
     section:
@@ -154,16 +154,17 @@ lectures:
     hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 3
     subtopic:
-    section:
+    section: 3. <a href="">Bayes LR, Lin. Class.</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Feb 12
     subtopic: Prob. Classification
     section:
     readings:
     demos:
-    hw:
+    hw: T2 Classification released
   - topic: # Feb 14
     subtopic: Neural Net 1
     section:
@@ -172,10 +173,11 @@ lectures:
     hw:
   - topic: # section 4
     subtopic:
-    section:
+    section: 4. <a href=""> Prob. Class / NN</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Feb 19
     subtopic: No class (Pres Day)
     section:
@@ -196,16 +198,17 @@ lectures:
     hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 5
     subtopic: 
-    section:
+    section: 5. <a href="">Midterm 1 Review Probs</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Feb 26
     subtopic: Max-margin
     section:
     readings:
     demos:
-    hw:
+    hw: P2 Classification released
   - topic: # Feb 28
     subtopic: SVMs
     section:
@@ -214,16 +217,18 @@ lectures:
     hw:
   - topic: # section 6
     subtopic:
-    section:
+    section: 6. <a href="">Margin-based / SVMs </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Mar 5
     subtopic: Midterm 1
     section:
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: # Mar 7
     subtopic: Ethics in ML
     section:
@@ -241,7 +246,7 @@ lectures:
     section:
     readings:
     demos:
-    hw:
+    hw: T3 SVMs released (but only needs 1 wk)
   - topic: # Mar 14
     subtopic: No class
     section:
@@ -250,10 +255,11 @@ lectures:
     hw:
   - topic: # section 7
     subtopic:
-    section:
+    section: 7. <a href=""> K-means / HAC </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: Unsupervised Learning # Mar 19
     subtopic: K-means/hierarchical
     section:
@@ -274,16 +280,17 @@ lectures:
     hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 8
     subtopic:
-    section:
+    section: 8. <a href=""> Mixture / EM / Topic </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: PGMs # Mar 26
     subtopic: Topic Models
     section:
     readings:
     demos:
-    hw:
+    hw: T4 Clustering, P3 Unsupervised released
   - topic: Other # Mar 28
     subtopic: Dim Reduction
     section:
@@ -298,16 +305,17 @@ lectures:
     hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 9
     subtopic: 
-    section:
+    section: 9. <a href=""> Dim Reduction / HMM</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: PGMs (cont) # Apr 2
     subtopic: HMMs
     section:
     readings:
     demos:
-    hw:
+    hw: T5 Prob Modeling / EM released
   - topic: # Apr 4
     subtopic: Graphical Models
     section:
@@ -322,10 +330,11 @@ lectures:
     hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 10
     subtopic:
-    section:
+    section: 10. <a href=""> Bayes Nets / Inference </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: Inference # Apr 9
     subtopic: Inference for Bayes Nets
     section:
@@ -346,16 +355,17 @@ lectures:
     hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>)
   - topic: # section 11
     subtopic:
-    section:
+    section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
+    active: 'active'
   - topic: Reinforcement Learning # Apr 16
     subtopic: RL
     section:
     readings:
     demos:
-    hw:
+    hw: P4 RL released
   - topic: # April 18
     subtopic: Deep RL
     section:
@@ -364,7 +374,7 @@ lectures:
     hw:
   - topic: # section 12
     subtopic:
-    section:
+    section: 12. <a href="">Midterm 2 Review Probs</a> (<a href="">sol</a>)
     readings:
     demos:
     hw:
@@ -380,4 +390,5 @@ lectures:
     readings:
     demos:
     hw:
+    active: 'active'
 
