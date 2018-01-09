@@ -205,7 +205,7 @@ weight: 0
                           <table class="table">
                               <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Demos </th><th>Readings</th><th>Assignment </th></tr>
                               {% for lecture in site.data.all.lectures %}
-                              <tr id = {{lecture.type|default("",true)}}>
+                              <tr id = {{lecture.type|default("",true)}} {% if '(F)' in site.data.all.dates[forloop.index] %} class="border_bottom"{% endif %}>
                                   <td> {{site.data.all.dates[forloop.index]}} </td> 
 				  <td> {{lecture.topic | default("",true)}} </td>
                                   <td> {{lecture.subtopic|default("", true)}}</td>
