@@ -46,6 +46,7 @@ dates: ["",
         "", # section 3
 	"Feb. 12 (M)", # prob. classification
 	"Feb. 14 (W) <3", #neural net 1
+	"Feb. 16 (F)",
         "", # section 4
 	"Feb. 19 (M)", # presidents day
 	"Feb. 21 (W)", # neural net 2
@@ -53,6 +54,7 @@ dates: ["",
         "", # section 5 (exam review) 
 	"Feb. 26 (M)", # max-margin
 	"Feb. 28 (W)", # SVMs
+	"Mar. 2 (F)",
 	"", # section 6
 	"Mar. 5 (M)", # midterm 1
 	"Mar. 7 (W)", # ethics in ML
@@ -181,6 +183,12 @@ lectures:
     readings:
     demos:
     hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw:
   - topic: # section 4
     subtopic:
     section: 4. <a href=""> Prob. Class / NN</a> (<a href="">sol</a>)
@@ -222,6 +230,12 @@ lectures:
     hw: P2 Classification released
   - topic: # Feb 28
     subtopic: SVMs
+    section:
+    readings:
+    demos:
+    hw:
+  - topic:
+    subtopic:
     section:
     readings:
     demos:
