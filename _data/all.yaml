@@ -61,6 +61,7 @@ dates: ["",
 	"Mar. 9 (F)", # P2 classification due
 	"Mar. 12 (M)", # Spring Break
 	"Mar. 14 (W)", # Spring Break
+	"Mar. 16 (F)", # Spring Break
 	"", # section 7
 	"Mar. 19 (M)", # kmeans/hierarchical
 	"Mar. 21 (W)", # mixture/EM
@@ -79,7 +80,8 @@ dates: ["",
 	"April 13 (F)", # T5 prob modeling / EM due
 	"", # section 11
 	"Apr. 16 (M)", # RL
-	"Apr. 18 (W)", # Deep RL,
+	"Apr. 18 (W)", # Deep RL
+	"Apr. 20 (F)", 
 	"", # section 12 (exam review)
 	"Apr. 23 (M)", # Interpretability / Learning Theory
 	"Apr. 25 (W)", # midterm 2
@@ -183,7 +185,7 @@ lectures:
     readings:
     demos:
     hw:
-  - topic:
+  - topic: # Feb 16
     subtopic:
     section:
     readings:
@@ -234,7 +236,7 @@ lectures:
     readings:
     demos:
     hw:
-  - topic:
+  - topic: # Mar 2
     subtopic:
     section:
     readings:
@@ -277,6 +279,12 @@ lectures:
     subtopic: No class
     section:
     readings:
+    demos:
+    hw:
+  - topic: # Mar 16
+    subtopic:
+    section:
+    reading:
     demos:
     hw:
   - topic: # section 7
@@ -398,6 +406,12 @@ lectures:
     hw: P4 RL released
   - topic: # April 18
     subtopic: Deep RL
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: # April 20
+    subtopic:
     section:
     readings:
     demos:
