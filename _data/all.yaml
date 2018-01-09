@@ -175,7 +175,7 @@ lectures:
     readings:
     demos:
     hw: T2 Classification released
-  - topic: # Feb 14
+  - topic: NN # Feb 14
     subtopic: Neural Net 1
     section:
     readings:
@@ -214,7 +214,7 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Feb 26
+  - topic: Margin # Feb 26
     subtopic: Max-Margin
     section:
     readings:
