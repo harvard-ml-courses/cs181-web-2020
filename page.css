@@ -6,6 +6,10 @@ dd {
     margin-bottom: 10px;
 }
 
+.border-bottom {
+  border-bottom: solid 1px black;
+}
+
 a {
     color: #2D6ED3;
 }
