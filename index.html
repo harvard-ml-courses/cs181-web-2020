@@ -86,6 +86,16 @@ weight: 0
 				    <li>Wednesday 4-5pm, 5-6pm: location TBD </li>
                                   </ul>
                               </dd>
+
+		 	      <dt>Office Hours</dt>
+                              <dd>
+                             	 <ul>
+                              	   {% for oh in site.data.all.ohs %}
+                                   <li>{{oh.time}}: {{oh.location}}</li>
+                              	   {% endfor %}
+                            	 </ul>
+                              </dd>
+	
                               <dt>Syllabus and Collaboration Policy</dt>
                               <dd>
                                   <ul>
@@ -110,17 +120,7 @@ weight: 0
                                 </ul>
                               </dd>
 
-                            <dt>Other Courses</dt>
-                            <dd>
-                                <ul>
-
-                     <li><a href="https://harvard-ml-courses.github.io/cs181-web-2017/">CS181 Spring 2017</a> (has lecture slides, section notes, etc...) </li>
-				     <li><a href="https://harvard-ml-courses.github.io/cs281-web/">CS281 Fall 2017</a> (Advanced Machine Learning) </li>
-				     <li><a href="https://people.seas.harvard.edu/~yaron/teaching.html">CS282 Spring 2018</a> (Robust Machine Learning) </li>
-				     <li><a href="https://harvard-ml-courses.github.io/cs287-web/">CS287 Spring 2018</a> (Machine Learning for Natural Language) </li>
-                                </ul>
-                            </dd>
-
+                           
                               <dt>References</dt>
                               <dd><ul>
 				  <li> Bishop 2006, <a href="http://www.springer.com/us/book/9780387310732">Pattern Recognition and Machine Learning</a> (required text)</li>
@@ -135,7 +135,19 @@ weight: 0
 				                    <li> 4 Practicals (30%) </li>
                                     <li> 2 Midterms  (40%) </li>
                                 </ul>
-                              </dd>	
+                              </dd>
+			      
+			      <dt>Other Courses</dt>
+                            <dd>
+                                <ul>
+
+                     <li><a href="https://harvard-ml-courses.github.io/cs181-web-2017/">CS181 Spring 2017</a> (has lecture slides, section notes, etc...) </li>
+				     <li><a href="https://harvard-ml-courses.github.io/cs281-web/">CS281 Fall 2017</a> (Advanced Machine Learning) </li>
+				     <li><a href="https://people.seas.harvard.edu/~yaron/teaching.html">CS282 Spring 2018</a> (Robust Machine Learning) </li>
+				     <li><a href="https://harvard-ml-courses.github.io/cs287-web/">CS287 Spring 2018</a> (Machine Learning for Natural Language) </li>
+                                </ul>
+                            </dd>
+	
 
                           </dl>
                       </div>
@@ -184,15 +196,6 @@ weight: 0
 				  <li> <a href="mailto:help@seas.harvard.edu">Canvas Support</a> </li>
 				</ul>
 			  </dd>
-
-                          <dt>Office Hours</dt>
-                          <dd>
-                            <ul>
-                              {% for oh in site.data.all.ohs %}
-                              <li>{{oh.time}}: {{oh.location}}</li>
-                              {% endfor %}
-                            </ul>
-                          </dd>
                       </dl>
                   </div>
               </div>
