@@ -21,6 +21,7 @@ a {
 }
 
 #sec {
+    outline: thick solid;
     background-color: #F1F1FF;
 }
 
