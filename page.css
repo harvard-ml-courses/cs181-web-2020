@@ -21,7 +21,7 @@ a {
 }
 
 #sec {
-    outline: thick solid;
+    border-bottom: 10px;
     background-color: #F1F1FF;
 }
 
