@@ -21,6 +21,7 @@ a {
 }
 
 #sec {
+    border-top: 10px;
     background-color: #F1F1FF;
 }
 
