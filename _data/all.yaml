@@ -90,7 +90,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: 0. <a href=""> Math Review</a>
+    section: 0. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/00.pdf"> Math Review</a>
     readings:
     demos:
     hw:
