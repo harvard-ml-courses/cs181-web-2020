@@ -16,17 +16,21 @@ tas:
   - name: <a href="mailto:amandazhang@college.harvard.edu">Amanda Zhang</a> 
 
 
+
+    Tuesday 8-10pm Quincy DH    Wed 6-8pm MD 119?   Wed 8-10pm Eliot DH Thu 8-10pm Leverett Thu 8-10pm Currier (Quad)   Friday 10-Noon MD loc TBD
+
+
 ohs:
   - time: Tue 8-10pm
-    location: location TBD
+    location: Quincy Dining Hall
   - time: Wed 6-8pm
     location: MD room TBD
   - time: Wed 8-10pm
-    location: location TBD
+    location: Eliot Dining Hall
   - time: Thu 8-10pm
-    location: location TBD
+    location: Leverett Dining Hall
   - time: Thu 8-10pm
-    location: location TBD (Quad)
+    location: Currier Dining Hall (Quad)
   - time: Fri 10-Noon
     location: MD room TBD
 
