@@ -89,7 +89,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: 0. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/00.pdf"> Math Review</a>
+    section: 0. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/00.pdf">Math Review</a>
     readings:
     demos:
     hw:
@@ -108,7 +108,7 @@ lectures:
     hw:
   - topic:
     subtopic: Meet the TFs (124 + 181)
-    section: MD 1st floor lobby
+    section: MD ground floor lobby
     readings:
     demos:
     hw: Good time to meet HW partners!
