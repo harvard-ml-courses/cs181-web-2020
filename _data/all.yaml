@@ -19,7 +19,7 @@ ohs:
   - time: Tue 8-10pm
     location: Quincy Dining Hall
   - time: Wed 6-8pm
-    location: MD room TBD
+    location: MD 1st floor lobby (one floor up from ground)
   - time: Wed 8-10pm
     location: Eliot Dining Hall
   - time: Thu 8-10pm
@@ -27,7 +27,7 @@ ohs:
   - time: Thu 8-10pm
     location: Currier Dining Hall (Quad)
   - time: Fri 10-Noon
-    location: MD room TBD
+    location: MD 1st floor lobby (one floor up from ground)
 
 dates: ["",
         "", # section 0
