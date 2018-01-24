@@ -95,7 +95,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: Overview #Jan22
-    subtopic: Intro
+    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/01-intro.pdf">Intro</a>
     section:
     readings:
     demos:
