@@ -101,7 +101,7 @@ lectures:
     demos:
     hw: T1 Regression released
   - topic: Regression #Jan24
-    subtopic: Linear Regression 1
+    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/02-lectures-lr.pdf">Linear Regression 1</a>
     section:
     readings:
     demos:
