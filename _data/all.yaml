@@ -121,7 +121,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Jan29
-    subtopic: Linear Regression 2
+    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/03-lectures-lr.pdf">Linear Regression 2</a>
     section:
     readings:
     demos:
