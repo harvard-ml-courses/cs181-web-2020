@@ -137,7 +137,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression</a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression</a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/196200">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 2
     subtopic:
