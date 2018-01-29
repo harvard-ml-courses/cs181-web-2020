@@ -121,7 +121,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Jan29
-    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/03-lectures-lr.pdf">Linear Regression 2</a>
+    subtopic: Prob. Reg. (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/03-ProbReg.pdf">Finale</a> |<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/03-lectures-lr.pdf">slides</a>)
     section:
     readings:
     demos:
