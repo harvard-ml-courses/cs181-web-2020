@@ -115,7 +115,7 @@ lectures:
     type: 'event'
   - topic: # section 1
     subtopic:
-    section: 1. <a href=""> Linear Reg</a> (<a href="">sol</a>)
+        section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/01.pdf"> Linear Reg</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/01-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
