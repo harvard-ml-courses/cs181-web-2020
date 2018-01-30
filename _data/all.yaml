@@ -163,7 +163,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P1 Regression </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P1-regression">P1 Regression </a> (<a href="">submit writeup</a>) due
     type: 'hw'
   - topic: # section 3
     subtopic:
