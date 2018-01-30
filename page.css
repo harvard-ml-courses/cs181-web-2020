@@ -36,3 +36,19 @@ a {
 #event {
     background-color: #FFFFCC;
 }
+
+#camelot-container {
+	width: 70%;
+	margin-left: 15%;
+	background-color: #f0f1f6;
+	padding: 0;
+	transition: margin-top .2s;
+}
+
+#camelot-container:hover {
+	margin-top: -10px;
+}
+
+#camelot-text {
+	padding: 32px;
+}
