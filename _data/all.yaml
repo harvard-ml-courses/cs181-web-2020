@@ -103,7 +103,7 @@ lectures:
   - topic: Regression #Jan24
     subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/02-lectures-lr.pdf">Linear Regression 1</a>
     section:
-    readings:
+    readings: Bishop &sect; 3.1, Sklearn &sect; 3.1, 18.10
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Regression.ipynb"> Regression </a>
     hw:
   - topic:
