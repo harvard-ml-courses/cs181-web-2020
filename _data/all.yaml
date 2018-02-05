@@ -141,7 +141,7 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. <a href="">Model Selection/Bayes</a> (<a href="">sol</a>)
+    section: 2. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/02.pdf">Model Selection/Bayes</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/02-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
