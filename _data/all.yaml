@@ -147,7 +147,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: # Feb 5
-    subtopic: Bayesian Linear Regression
+    subtopic: Bayesian LR / Model Selection (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/05-BayesModelSelection.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/05.handout.pdf">slides</a>)
     section:
     readings: Bishop &sect; 3.3
     demos:
