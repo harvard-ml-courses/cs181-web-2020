@@ -153,7 +153,7 @@ lectures:
     demos:
     hw:
   - topic: Classification # Feb 7
-    subtopic: Linear Classification
+    subtopic: Linear Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/06-Classification.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/06-lectures-class.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 4.1, Sklearn &sect;  15.9
     demos: <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Perceptron.ipynb"> Perceptron </a>
