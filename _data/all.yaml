@@ -215,7 +215,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 5
     subtopic: 
