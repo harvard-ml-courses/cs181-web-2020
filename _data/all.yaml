@@ -167,7 +167,7 @@ lectures:
     type: 'hw'
   - topic: # section 3
     subtopic:
-    section: 3. <a href="">Bayes LR, Lin. Class.</a> (<a href="">sol</a>)
+    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03.pdf">Bayes LR, Lin. Class.</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
