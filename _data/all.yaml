@@ -173,7 +173,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: # Feb 12
-    subtopic: Prob. Classification
+    subtopic: Prob. Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/07-ProbClass.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/07-lectures-class.pdf">Slides</a>
     section:
     readings: Bishop &sect; 4.2, 4.3, Sklearn &sect;  18.1, 29.24
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
