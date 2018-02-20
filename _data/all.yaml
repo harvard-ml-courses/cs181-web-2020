@@ -192,7 +192,7 @@ lectures:
     hw:
   - topic: # section 4
     subtopic:
-   section: 4. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/04.pdf"> Prob. Class / NN</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/04-soln.pdf">sol</a>)
+    section: 4. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/04.pdf"> Prob. Class / NN</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/04-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
