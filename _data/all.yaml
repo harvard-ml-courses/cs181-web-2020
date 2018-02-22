@@ -179,7 +179,7 @@ lectures:
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
     hw: T2 Classification released
   - topic: NN # Feb 14
-    subtopic: Neural Net 1
+    subtopic: Neural Net 1 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/08-NN1.pdf">Finale</a> | <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/08-lectures-nn1.pdf"><Slides</a>)
     section:
     readings: Bishop &sect; 5.1-5.2
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
