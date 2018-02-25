@@ -219,7 +219,7 @@ lectures:
     type: 'hw'
   - topic: # section 5
     subtopic: 
-    section: 5. <a href="">Midterm 1 Review Probs</a> (<a href="">sol</a>)
+    section: 5. Midterm 1 Review (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-topics.pdf">topics</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-review.pdf">problems</a>|<a href="">sol</a>)
     readings:
     demos:
     hw:
