@@ -267,7 +267,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P2">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: Spring Break # Mar 12
     subtopic: No class
