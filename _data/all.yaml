@@ -311,7 +311,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/tree/master/T3">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 8
     subtopic:
