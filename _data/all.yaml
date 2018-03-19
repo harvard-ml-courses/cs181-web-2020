@@ -257,7 +257,7 @@ lectures:
     hw:
     type: 'exam'
   - topic: # Mar 7
-    subtopic: Ethics in ML
+    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>
     section:
     readings:
     demos:
