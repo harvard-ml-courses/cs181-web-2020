@@ -315,7 +315,7 @@ lectures:
     type: 'hw'
   - topic: # section 8
     subtopic:
-    section: 8. <a href=""> Mixture / EM / Topic </a> (<a href="">sol</a>)
+    section: 8. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/08.pdf"> Mixture / EM </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/08-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
@@ -341,7 +341,7 @@ lectures:
     type: 'hw'
   - topic: # section 9
     subtopic: 
-    section: 9. <a href=""> Dim Reduction / HMM</a> (<a href="">sol</a>)
+    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
