@@ -204,11 +204,10 @@ lectures:
     demos:
     hw:
   - topic: # Feb 21
-    subtopic: Neural Net 2
+    subtopic: Neural Net 2 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/09-NN2.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/09-lectures-nn2.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 5.3
     demos: <a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNet JS</a>
-
     hw:
   - topic: # Feb 23
     subtopic:
@@ -225,13 +224,13 @@ lectures:
     hw:
     type: 'sec'
   - topic: Margin # Feb 26
-    subtopic: Max-Margin
+    subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 7.1
     demos:
     hw: P2 Classification released
   - topic: # Feb 28
-    subtopic: SVMs
+    subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 7.1
     demos:
