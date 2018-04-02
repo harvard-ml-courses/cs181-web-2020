@@ -217,9 +217,9 @@ lectures:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
     type: 'hw'
-  - topic: # section 5
+  - topic: # midterm 1 review
     subtopic: 
-    section: 5. Midterm 1 Review (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-topics.pdf">topics</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-review.pdf">problems</a>|<a href="">sol</a>)
+    section: Midterm 1 Review (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-topics.pdf">topics</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-review.pdf">problems</a>|<a href="">sol</a>)
     readings:
     demos:
     hw:
@@ -242,9 +242,9 @@ lectures:
     readings:
     demos:
     hw:
-  - topic: # section 6
+  - topic: # section 5
     subtopic:
-    section: 6. <a href="">Margin-based / SVMs </a> (<a href="">sol</a>)
+    section: 5. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05.pdf">Margin-based / SVMs </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
@@ -295,13 +295,13 @@ lectures:
     hw:
     type: 'sec'
   - topic: Unsupervised Learning # Mar 19
-    subtopic: K-means/hierarchical
+    subtopic: Clustering (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/13-clustering.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/12.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.1
     demos:
     hw:
   - topic: # Mar 21
-    subtopic: Mixture/EM
+    subtopic: Mixture/EM (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/14-mixture-models.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/14.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.2,9.3
     demos:
