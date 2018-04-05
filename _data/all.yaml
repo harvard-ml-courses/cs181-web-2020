@@ -389,7 +389,6 @@ lectures:
     readings:
     demos:
     hw:
-    type: 'hw'
   - topic: # section 11
     subtopic:
     section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
@@ -409,6 +408,7 @@ lectures:
     readings:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/tree/master/T5">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    type: 'hw'
   - topic: # April 20
     subtopic:
     section:
