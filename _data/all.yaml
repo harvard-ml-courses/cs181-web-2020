@@ -362,7 +362,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="">P3 Sound Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 10
     subtopic:
@@ -388,7 +388,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw:
     type: 'hw'
   - topic: # section 11
     subtopic:
@@ -408,7 +408,7 @@ lectures:
     section:
     readings:
     demos:
-    hw:
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/tree/master/T5">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
   - topic: # April 20
     subtopic:
     section:
