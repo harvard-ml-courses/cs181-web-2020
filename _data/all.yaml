@@ -348,7 +348,7 @@ lectures:
   - topic: PGMs (cont) # Apr 2
     subtopic: HMMs
     section:
-    readings:
+    readings: <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">HMM Tutorial</a>
     demos:
     hw: T5 Prob Modeling / EM released
   - topic: # Apr 4
@@ -362,7 +362,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">P3 Unsupervised </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: <a href="">P3 Sound Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # section 10
     subtopic:
@@ -388,8 +388,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
-    type: 'hw'
+    hw:
   - topic: # section 11
     subtopic:
     section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
@@ -408,7 +407,8 @@ lectures:
     section:
     readings:
     demos:
-    hw:
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/tree/master/T5">T5 prob modeling / EM  </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    type: 'hw'
   - topic: # April 20
     subtopic:
     section:
