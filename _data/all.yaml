@@ -380,7 +380,7 @@ lectures:
   - topic: # Apr 11
     subtopic: MDP, value/policy Iteration
     section:
-    readings:
+    readings: <a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton and Barto</a> (Use Ch 1-4 as a reference)
     demos:
     hw: 
   - topic: # Apr 13
@@ -399,7 +399,7 @@ lectures:
   - topic: Reinforcement Learning # Apr 16
     subtopic: RL
     section:
-    readings:
+    readings: <a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton and Barto</a> (Use Ch 1-6 as a reference)
     demos:
     hw: P4 RL released
   - topic: # April 18
