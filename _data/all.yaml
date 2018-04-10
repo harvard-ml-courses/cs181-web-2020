@@ -354,7 +354,7 @@ lectures:
   - topic: # Apr 4
     subtopic: Graphical Models
     section:
-    readings:
+    readings: Bishop &sect; 8.1, 8.2
     demos:
     hw:
   - topic: # Apr 6
@@ -374,7 +374,7 @@ lectures:
   - topic: Inference # Apr 9
     subtopic: Inference for Bayes Nets
     section:
-    readings:
+    readings: Bishop &sect; 8.4 (stop at end of 8.4.1, don't read about undirected and factor graphs)
     demos:
     hw:
   - topic: # Apr 11
