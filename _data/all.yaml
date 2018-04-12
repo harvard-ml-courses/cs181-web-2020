@@ -84,7 +84,9 @@ dates: ["",
 	"", # section 12 (exam review)
 	"Apr. 23 (M)", # Interpretability / Learning Theory
 	"Apr. 25 (W)", # midterm 2
-	"Apr. 27 (F)"] # P4 RL due
+	"Apr. 27 (F)",
+  "",
+  "May 1 (T)"] # P4 RL due
 
 lectures:
   - topic:
@@ -436,6 +438,13 @@ lectures:
     hw:
     type: 'exam'
   - topic: # Apr 27
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: 
+    type: 'hw'
+    - topic: # May 1
     subtopic:
     section:
     readings:
