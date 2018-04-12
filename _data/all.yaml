@@ -443,7 +443,7 @@ lectures:
     readings:
     demos:
     hw: 
-    type: 'hw'
+    type: 
     - topic: # May 1
     subtopic:
     section:
