@@ -394,7 +394,7 @@ lectures:
     hw:
   - topic: # section 11
     subtopic:
-    section: 11. <a href=""> MDPs / RL </a> (<a href="">sol</a>)
+    section: 11. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/11.pdf"> MDPs / RL </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/11-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
