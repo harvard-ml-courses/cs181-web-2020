@@ -1,0 +1,284 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{palatino}
+\usepackage[linkcolor=blue]{hyperref}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[textsize=tiny]{todonotes}
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
+
+
+\setlist{nolistsep}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.15in} 
+
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\begin{document}
+\begin{center}
+  {\large CS 181 -- Machine Learning}
+\end{center}
+
+\begin{tabular}{r l}
+  Instructor: & Finale Doshi-Velez \\ 
+  Lectures: & Monday and Wednesday, 9-10:30am\\
+  Location: & Northwest Building B103 \\
+  Section: & 1:30-2:30pm Monday, 4:30-5:30pm Monday, 10:30-11:30am Tuesday, \\
+  & 3-4pm Tuesday, 4:30-5:30pm Wednesday \\ 
+  URL: & \url{https://harvard-ml-courses.github.io/cs181-web/}\\ 
+\end{tabular}
+
+\section{Course Description}
+
+This course provides a broad and rigorous introduction to machine
+learning, probabilistic reasoning and decision making in uncertain
+environments.  We will cover provide an overview of three major areas
+in machine learning: supervised learning, unsupervised learning, and
+reinforcement learning.
+
+Our learning approach will be conceptual, theoretical, and
+practical. We will discuss the motivations behind common machine
+learning algorithms, and the properties that determine whether or not
+they will work well for a particular task.  You will derive the
+mathematical underpinnings for many common methods, as well as
+apply machine learning to challenges with real data.  
+
+\textbf{Prerequisites}
+The material is aimed at an advanced undergraduate level.  Students
+should be comfortable with writing non-trivial programs (e.g., CS 51
+or equivalent).  All staff-provided code will be in Python, and the
+staff will not support questions in any other language.  Students
+should also have a background in basic probability theory (e.g.\ STAT
+110 or equivalent), and some level of mathematical sophistication,
+including calculus and linear algebra (e.g., Math 21a and 21b or
+equivalent).  We note that CS181 only requires portions of all of
+these courses; Part I of \emph{Math for Machine Learning}, available
+at \url{https://mml-book.com} reviews nearly all the prerequisite
+mathematics.
+
+Every year, many motivated students are successful in CS181 without
+all of these prerequisites.  I want to continue to welcome those
+hard-working students who are willing and able to independently fill
+in any gaps that they might have in their knowledge.  \emph{That said,
+  it will by YOUR responsibility to learn any prerequisite material on
+  your own.  The course staff will not be responsible for teaching
+  basic coding, matrix manipulation, etc.}
+
+\section{Course Logistics} 
+
+\subsection{Lecture, Section, Office Hours}
+
+\textbf{Team} 
+The CS181 team consists of a course instructor (responsible for the
+content and grade assignments), a course manager (responsible for the
+logistics of the course---posting things, managing exceptions, etc.),
+and a large staff of TFs lead by a head-TF (responsible for section,
+most of the office hours, and grading).
+
+\textbf{Lectures}
+Lectures will be used to introduce new content.  They will occur on
+the board and will not be recorded.  During lecture, I may remind the
+class about upcoming deadlines, clarify points in the homework, and
+respond to questions about upcoming assignments and midterms.  Not all
+of these interactions may make it to the class announcements.  Thus,
+if you miss a lecture, we strongly recommend asking friends about
+anything that was mentioned.
+
+\textbf{Sections} Sections are optional problem-solving sessions, and
+another great place to find study partners!  Sections will employ a
+flipped classroom format, in which students will work on questions
+that will be good preparation for both homeworks and midterms.  The
+teaching staff will introduce the questions, assist students in
+solving them, and wrap up with the solutions.  These solutions will be
+posted.  Extended sections will cover the same material but with more
+time for students to work on solutions.  \emph{The staff may post
+  additional practice questions or pointers to other practice
+  resources.  We do not guarantee solutions for these additional
+  resources.}
+
+\textbf{Office Hours} The office hour times will be posted on the
+website.  Please make use of office hours!  In addition to getting
+questions answered by the staff, office hours are also a great place
+to find study partners and teammates.
+
+
+
+\subsection{Materials and Resources}
+
+\textbf{Textbook}
+The textbook for the course is \emph{Pattern Recognition and Machine
+  Learning} by Bishop.  It largely overlaps with the material in the
+course, but not completely.  
+
+This year, we also have a version 0.0 of course notes available at
+\url{https://github.com/harvard-ml-courses/cs181-textbook}.  We
+emphasize that these notes are due to the awesome effort of a past
+CS181 student who decided to create a course textbook as a senior
+thesis.  \emph{Expect errors.}  When you spot errors, be a good
+citizen and put in a pull request.  We hope that this resource can
+become the course textbook in future years.
+
+\textbf{Course Website}
+The course web site will be used for posting lecture/section notes and
+links to assignments, and includes pointers to other resources we'll use,
+including Piazza and Canvas.
+
+\textbf{Canvas} 
+The Canvas site will be used for submiting assignments, posting
+grades, and sending announcements.
+
+\textbf{Piazza} 
+The piazza site for the course will be used for three purposes:
+\begin{itemize}
+\item \textbf{Content} questions are technical questions posted to
+  other students.  (Please keep in mind collaboration policies when
+  asking about code or solutions.)  The course staff will \emph{not}
+  be responsible for immediate responses but will answer when
+  possible; technical questions to TFs should be brought to office
+  hours (or to section when appropriate).  
+
+\item \textbf{Clarification} questions are posts about logistical
+  details (Is there really class on XYZ holiday or is that a mistake?)
+  or questions about homework phrasing or typos (Should question 1a of
+  the homework be asking for the integral of $x$, not $y$?).  We will
+  make every effort to respond to these questions as quickly as
+  possible.  Tag clarification questions as ``clarification.''
+  % Diego: Confirm that we have this tag 
+
+\item \textbf{Private Message} There may be times when you wish to
+  send a private messages.  These may include procedural things such
+  as requests for additional time on midterms, additional late days,
+  regrades; you may also have other concerns that you wish to share.
+  We ask you to send those as \emph{private} messages on Piazza with
+  the \emph{appropriate tag}: Regrade, Extension, Special Midterm, and
+  Other.  We will be using these tags to make sure that the right
+  people get your request.  We will \emph{only} consider procedural
+  requests via this form (this is as much for you as it is for us: we
+  want to have a record of all requests to hold us accountable).  
+  
+\end{itemize}  
+ 
+Please note that Piazza is not a formally secure, private, or
+confidential form of communication, and what you send may be seen by
+the entire course staff.  If you have a sensitive concern for which
+such a medium is not appropriate, then please catch Finale in person
+before or after class or catch Finale/TFs at their OHs.  (Note, after
+a conversation, we may still ask you to create a generic request via
+Piazza so we have record of a promised extension, etc.)  Email should
+be used sparingly if at all.
+
+\section{Requirements and Grading}
+
+There are four practicals, making up 30\% of the final grade.  There
+are five individual homeworks, making up 30\% of the final grade.
+There are two midterms, each counting for 20\% of the final grade. The
+first midterm is on March 11 during class time, the second midterm will
+occur on the last day of class (May 1) and will focus on the
+material in the second half of the course.
+
+Practicals and homeworks will be returned with grades and solutions.
+Due to the volume of the grading, it may not always be possible for
+the staff to provide detailed feedback.  It is your responsibility to
+look at the solutions, identify gaps, and come to office hours to fill
+those gaps.  If you believe there has been a grading error, please use
+the google form above.  However, please note that a) we will regrade
+the entire assignment, which may result in your total grade going up
+or down and b) we will only allow one regrade request per problem.  
+
+More broadly, we understand that sometimes life throws a set of
+circumstances that impact your perfomance in the course.  Should this
+happen to you, please let me or the course manager know so we can help
+determine a plan to navigate a tough situation.  
+
+\subsection{Practicals}
+
+\textbf{Practicals will be done in teams of three.}
+If needed, you can seek partners via Piazza. The goal of the
+practicals in the course is twofold: to help you master the technical
+material, and to show you how the techniques we are learning can be
+used to build powerful and cool applications.  We call them
+``practicals'' rather than ``homeworks'' to make the point that they
+are meant to be open-ended and encourage creativity.  Practicals are
+usually due two weeks after being handed out. Each practical will
+generally be centered around a particular methodology and task and
+involve programming. You will need to consider some conceptual issues,
+write a program to solve the task, and evaluate your program through
+experiments to compare the performance of different algorithms and
+methods.
+
+\emph{Your main deliverable will be a short report.}  You'll be
+assessed on effort, the sophistication of your technical approach, the
+clarity of your explanations, the evidence that you present to support
+your evaluative claims, and the performance of your implementation.  A
+high-performing approach with little explanation will receive little
+credit, while a careful set of experiments that illuminate why a
+particular direction turned out to be a dead end may receive close to
+full credit.
+
+\textbf{Collaboration Policy} Outside your group, you may not share
+write-ups or code.  You may discuss your high-level approach (we
+focused on feature engineering) and high-level results (we got 90\%
+test accuracy). You must cite any sources used (online or otherwise.)
+
+\subsection{Homeworks}
+
+The homeworks help you practice the core concepts.  These involve
+components that are theoretical and conceptual, and also require some
+programming.  There will be five of these homeworks.  Homework
+solutions must be submitted in LaTeX.  \emph{It is a honor code
+  violation to look at the answer key if you haven't yet turned in
+  your assignment (e.g. using late days)}.  \emph{It is also an honor
+  code violation to look at solutions from the internet.}
+
+\textbf{Collaboration Policy} You may not share write-ups or code.  If
+you brainstorm with others, you must note their names in your
+write-up. We encourage you to spend time thinking about and
+understanding the homeworks on your own before collaborating with
+others to practice for the midterms. \emph{Other than the preclusion
+  of using answer keys, you can make use of textbooks and online
+  sources to help in answering questions but you must cite your
+  sources (and you should be ready to explain your answer to a member
+  of the teaching staff.)}
+
+\subsection{Late Days Policy}
+Homeworks and practical writeups should be submitted electronically by
+midnight on the due date, via the Canvas course website.  This is a
+strict deadline, enforced by the Canvas site, so submit early enough
+that you don't accidentally discover that your clock is slow.  Only
+one submission is required for each team of students for the
+practicals.
+
+You have {\bf five late days} that can be used for homework
+assignments and the write-ups on the practicals (note that the Kaggle
+competitions will close a day before the practicals are due, and that
+will not be extended).  Up to {\bf two late days} can be used on any
+assignment.  Start early and plan ahead!
+
+
+
+\section{Philosophy}
+
+The goal of this course is to instill a strong technical background
+for you to responsibly apply machine learning in the world.  Thus, in
+addition to the derivations and the practicals, each class will
+include a story about realworld applications of machine learning and
+one full lecture and part of an assignment will be devoted to the
+ethical implications.
+
+To be blunt: Given the the increasing use of machine learning systems,
+the users and developers of these systems must hold themselves to high
+professional and ethical standards.  One can cause real harm by
+pursuing a good cause via poor engineering choices.  Quoting one of
+our favorite superheroes: with great power (to run any kind of
+analysis) comes great responsibility (to do it properly)!
+
+Relatedly, we expect all participants in this course---instructors,
+staff, students---to be committed to a open, professional, and
+inclusive environment.  Just like the maths, these qualities take
+cultivation and effort.  I will start with the premise that we're all
+decent people trying our best and encourage constructive feedback to
+improving the course environment.
+
+\end{document}
