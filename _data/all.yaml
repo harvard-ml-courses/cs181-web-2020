@@ -103,7 +103,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T1 Regression released
+    hw: T1 Regression released, <a href="https://github.com/harvard-ml-courses/cs181/blob/master/s19/homeworks/T1/homework1-regression.pdf">T1 Regression<
   - topic: Regression #Jan30
     subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/02-lectures-lr.pdf">Linear Regression 1</a>
     section:
