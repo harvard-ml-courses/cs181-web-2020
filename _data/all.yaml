@@ -98,13 +98,13 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Overview #Jan22
+  - topic: Overview #Jan28
     subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/01-intro.pdf">Intro</a>
     section:
     readings:
     demos:
     hw: T1 Regression released
-  - topic: Regression #Jan24
+  - topic: Regression #Jan30
     subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/02-lectures-lr.pdf">Linear Regression 1</a>
     section:
     readings: Bishop &sect; 3.1, Sklearn &sect; 3.1, 18.10
