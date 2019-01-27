@@ -31,63 +31,62 @@ ohs:
 
 dates: ["",
         "", # section 0
-	"Jan. 22 (M)", # intro
-	"Jan. 24 (W)", # lin. reg. 1
-	"Jan. 26 (F)", # meet TFs
+	"Jan. 28 (M)", # intro, Release T1
+	"Jan. 30 (W)", # lin. reg. 1
+	"Feb. 1 (F)", # meet TFs
 	"", # section 1
-	"Jan. 29 (M)", # lin. reg. 2
-	"Jan. 31 (W)", # model selection
-	"Feb. 2 (F)", # T1 regression due
+	"Feb. 4 (M)", # lin. reg. 2, relaease P1
+	"Feb. 6 (W)", # model selection
+	"Feb. 8 (F)", # T1 regression due
 	"", # section 2
-	"Feb. 5 (M)", # bayesian lin. reg
-	"Feb. 7 (W)", # linear classification
-	"Feb. 9 (F)", # P1 regression due
+	"Feb. 11 (M)", # bayesian lin. reg
+	"Feb. 13 (W)", # linear classification
+	"Feb. 15 (F)", # P1 regression due
         "", # section 3
-	"Feb. 12 (M)", # prob. classification
-	"Feb. 14 (W) <3", #neural net 1
-	"Feb. 16 (F)",
+	"Feb. 18 (M)", # President's day, Release T2
+	"Feb. 20 (W)", # prob. classification
         "", # section 4
-	"Feb. 19 (M)", # presidents day
-	"Feb. 21 (W)", # neural net 2
-	"Feb. 23 (F)", # T2 classification due
+	"Feb. 25 (M)", # neural net 1
+	"Feb. 27 (W)", # neural net 2
+	"Mar. 1 (F)", # T2 classification due
         "", # section 5 (exam review) 
-	"Feb. 26 (M)", # max-margin
-	"Feb. 28 (W)", # SVMs
-	"Mar. 2 (F)",
+	"Mar. 4 (M)", # max-margin, release P2
+	"Mar. 6 (W)", # SVMs
+	"Mar. 8 (F)",
 	"", # section 6
-	"Mar. 5 (M)", # midterm 1
-	"Mar. 7 (W)", # ethics in ML
-	"Mar. 9 (F)", # P2 classification due
-	"Mar. 12 (M)", # Spring Break
-	"Mar. 14 (W)", # Spring Break
-	"Mar. 16 (F)", # Spring Break
+	"Mar. 11 (M)", # ethics in ML
+	"Mar. 13 (W)", # midterm 1 
+	"Mar. 15 (F)", # P2 classification due
+	"Mar. 18 (M)", # Spring Break, release 3
+	"Mar. 20 (W)", # Spring Break
+	"Mar. 22 (F)", # Spring Break
 	"", # section 7
-	"Mar. 19 (M)", # kmeans/hierarchical
-	"Mar. 21 (W)", # mixture/EM
-	"Mar. 23 (F)", # T3 SVMs due
+	"Mar. 25 (M)", # clustering
+	"Mar. 27 (W)", # mixture/EM
+	"Mar. 29 (F)", # T3 SVMs due
 	"", # section 8
-	"Mar. 26 (M)", # topic models
-	"Mar. 28 (W)", # dim reduction
-	"Mar. 30 (F)", # T4 clustering due
+	"Apr. 1 (M)", # PCA release T4, P3
+	"Apr. 3 (W)", # topic models
+	"Apr. 5 (F)", # T4 clustering due
 	"", # section 9
-	"Apr. 2 (M)", # HMMs
-	"Apr. 4 (W)", # graphical models
-	"Apr. 6 (F)", # P3 unsupervised due
+	"Apr. 8 (M)", # Graphical models
+	"Apr. 10 (W)", # linear graphical modles: HMMs, release T5
+	"Apr. 12 (F)", # P3 due
 	"", # section 10
-	"Apr. 9 (M)", # inference for BNs
-	"Apr. 11 (W)", # MDP, value/policy iter
-	"April 13 (F)", # T5 prob modeling / EM due
+	"Apr. 15 (M)", # inference for BNs
+	"Apr. 17 (W)", # MDP, value/policy iteration
+	"Apr. 18 (Th)", # EM due
+	"April 19 (F)", # T5 prob modeling 
 	"", # section 11
-	"Apr. 16 (M)", # RL
-	"Apr. 18 (W)", # Deep RL
-	"Apr. 20 (F)", 
+	"Apr. 22 (M)", # RL, release P4
+	"Apr. 24 (W)", # Deep RL
+	"Apr. 26 (F)", 
 	"", # section 12 (exam review)
-	"Apr. 23 (M)", # Interpretability / Learning Theory
-	"Apr. 25 (W)", # midterm 2
-	"Apr. 27 (F)",
+	"Apr. 29 (M)", # Interpretability / Learning Theory
+	"May. 1 (W)", # midterm 2
+	"May. 3 (F)", P4 due
   "",
-  "Apr. 30 (M)",
-  "May 1 (T)"] # P4 RL due
+  "May 10 (T)"] # P4 RL extended deadline
 
 lectures:
   - topic:
