@@ -22,10 +22,12 @@ ohs:
     location: MD119
   - time: Wed 8-10pm
     location: Eliot Dining Hall
-  - time: Thu 8-10pm
-    location: Leverett Dining Hall
+  - time: Thu 7-9pm
+    location: Mather
   - time: Thu 8-10pm
     location: Currier Dining Hall (Quad)
+  - time: Thu 9-11pm
+    location: Leverett
   - time: Fri 10-Noon
     location: MD 1st floor lobby (one floor up from ground)
 
