@@ -124,19 +124,19 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: #Jan29
+  - topic: #Feb4
     subtopic: Prob. Reg. (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/03-ProbReg.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/03-lectures-lr.pdf">slides</a>)
     section:
     readings: Bishop &sect; 2.3, 3.1
     demos: <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Gaussian.ipynb"> Gaussian </a> <br> <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/BasisRegression.ipynb"> BasisRegression </a>
     hw: P1 Regression released
-  - topic: #Jan31
+  - topic: #Feb6
     subtopic: Model Selection (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/04-ModelSelection.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/04-lectures-modelselection.pdf">slides</a>)
     section:
     readings:
     demos:
     hw:
-  - topic: #Feb2
+  - topic: #Feb8
     subtopic:
     section:
     readings:
@@ -150,25 +150,25 @@ lectures:
     demos: <a href=https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/sklearn-demo.ipynb>Sklearn</a> 
     hw:
     type: 'sec'
-  - topic: # Feb 5
+  - topic: #Feb11
     subtopic: Bayesian LR / Model Selection (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/05-BayesModelSelection.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/05.handout.pdf">slides</a>)
     section:
     readings: Bishop &sect; 3.3
     demos:
     hw:
-  - topic: Classification # Feb 7
+  - topic: Classification #Feb13
     subtopic: Linear Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/06-Classification.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/06-lectures-class.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 4.1, Sklearn &sect;  15.9
     demos: <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Perceptron.ipynb"> Perceptron </a>
     hw:
-  - topic: # Feb 9
+  - topic: #Feb15
     subtopic:
     section:
     readings:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P1-regression">P1 Regression </a> (<a href="">submit writeup</a>) due
-    type: 'hw'
+    type: 'hw T1 due'
   - topic: # section 3
     subtopic:
     section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03.pdf">Bayes LR, Lin. Class.</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03-soln.pdf">sol</a>)
@@ -176,22 +176,20 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Feb 12
+  - topic: #Feb18
+    subtopic: President's day
+    readings: 
+    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
+    hw: T2 Classification released
+  - topic: #Feb20
     subtopic: Prob. Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/07-ProbClass.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/07-lectures-class.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 4.2, 4.3, Sklearn &sect;  18.1, 29.24
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
-    hw: T2 Classification released
-  - topic: NN # Feb 14
-    subtopic: Neural Net 1 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/08-NN1.pdf">Finale</a> | <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/08-lectures-nn1.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 5.1-5.2
-    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
-    hw:
-  - topic: # Feb 16
-    subtopic:
-    section:
-    readings:
+    hw: 
+  - topic: NN #Feb22
+    subtopic: 
+    readings: 
     demos:
     hw:
   - topic: # section 4
@@ -201,24 +199,24 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Feb 19
-    subtopic: No class (Pres Day)
+  - topic: #Feb25
+    subtopic: Neural Net 1 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/08-NN1.pdf">Finale</a> | <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/08-lectures-nn1.pdf">Slides</a>)
     section:
-    readings:
-    demos:
+    readings: Bishop &sect; 5.1-5.2
+    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
     hw:
-  - topic: # Feb 21
+  - topic: #Feb27
     subtopic: Neural Net 2 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/09-NN2.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/09-lectures-nn2.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 5.3
     demos: <a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNet JS</a>
     hw:
-  - topic: # Feb 23
+  - topic: #Mar1
     subtopic:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
+    hw: T2 due <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # midterm 1 review
     subtopic: 
@@ -227,19 +225,7 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Margin # Feb 26
-    subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 7.1
-    demos:
-    hw: P2 Classification released
-  - topic: # Feb 28
-    subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 7.1
-    demos:
-    hw:
-  - topic: # Mar 2
+  - topic: #Mar2
     subtopic:
     section:
     readings:
@@ -252,39 +238,64 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Mar 5
-    subtopic: Midterm 1
+  - topic: Margin #Mar4
+    subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
+    section:
+    readings: Bishop &sect; 7.1
+    demos:
+    hw: P2 Classification released
+  - topic: #Mar6
+    subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
+    section:
+    readings: Bishop &sect; 7.1
+    demos:
+    hw: 
+  - topic:# Mar8
+    section:
+    readings:
+    demos:
+    hw:
+    type:
+  - topic: # section 6
+    subtopic:
+    section: 
+    readings:
+    demos:
+    hw:
+    type: 'sec' 
+  - topic: #Mar11
+    subtopic: Rthics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>)
+    section:
+    readings:
+    demos:
+    hw:
+  - topic: #Mar13
+    subtopic:Midterm 1
     section:
     readings:
     demos:
     hw:
     type: 'exam'
-  - topic: # Mar 7
-    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>
-    section:
-    readings:
-    demos:
-    hw:
-  - topic: # Mar 9
+  - topic: #Mar15
     subtopic:
     section:
     readings:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P2">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
-  - topic: Spring Break # Mar 12
+  - topic: Spring Break # Mar18
     subtopic: No class
     section:
     readings:
     demos:
     hw: T3 SVMs released (but only needs 1 wk)
-  - topic: # Mar 14
+  - topic: #Mar20
     subtopic: No class
     section:
     readings:
     demos:
     hw:
-  - topic: # Mar 16
+  - topic: #Mar22
     subtopic:
     section:
     reading:
@@ -297,19 +308,19 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Unsupervised Learning # Mar 19
+  - topic: Unsupervised Learning # Mar25
     subtopic: Clustering (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/13-clustering.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/12.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.1
     demos:
     hw:
-  - topic: # Mar 21
+  - topic: #Mar27
     subtopic: Mixture/EM (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/14-mixture-models.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/14.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.2,9.3
     demos:
     hw:
-  - topic: # Mar 23
+  - topic: #Mar29
     subtopic:
     section:
     readings:
@@ -323,26 +334,39 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: PGMs # Mar 26
+  - topic: PCA release # Apr1
+    subtopic: 
+    section:
+    readings:
+    demos: 
+    hw: T4 Clustering, P3 Unsupervised released
+  - topic: PGMs #Apr3
     subtopic: Topic Models
     section:
     readings: Bishop &sect; 9.3.3,<br> <a href = http://menome.com/wp/wp-content/uploads/2014/12/Blei2011.pdf> Introduction to Probabilistic Topic Models  (optional) </a> 
     demos: <a href = 'https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/TopicModeling.ipynb'> Topic Modeling </a>
-    hw: T4 Clustering, P3 Unsupervised released
-  - topic: Other # Mar 28
-    subtopic: Dim Reduction
-    section:
-    readings: Bishop &sect; 12.1
-    demos: <a href = 'https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/PCA.ipynb'> PCA </a>
+    hw: T4 due
+  - topic: # section 9
+    subtopic: 
+    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
+    readings:
+    demos:
     hw:
-  - topic: # Mar 30
-    subtopic:
+    type: 'sec'
+  - topic: Other #Apr8
+    subtopic: Graphical Models
+    section:
+    readings: Bishop &sect; 8.1, 8.2
+    demos:
+    hw:
+  - topic: #Apr10
+    subtopic: Linbear graphical models
     section:
     readings:
     demos:
-    hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: P3 due
     type: 'hw'
-  - topic: # section 9
+  - topic: # section 10
     subtopic: 
     section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
     readings:
@@ -356,11 +380,7 @@ lectures:
     demos:
     hw: T5 Prob Modeling / EM released
   - topic: # Apr 4
-    subtopic: Graphical Models
-    section:
-    readings: Bishop &sect; 8.1, 8.2
-    demos:
-    hw:
+   
   - topic: # Apr 6
     subtopic:
     section:
