@@ -256,33 +256,47 @@ lectures:
     readings:
     demos:
     hw:
-    type: 'exam'
-  - topic: # Mar 7
-    subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>
+    type:
+  - topic: # section 6
+    subtopic:
+    section: 
+    readings:
+    demos:
+    hw:
+    type: 'sec' 
+  - topic: # Mar11
+    subtopic: Rthics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>)
     section:
     readings:
     demos:
     hw:
-  - topic: # Mar 9
+  - topic: # Mar13
+    subtopic:Midterm 1
+    section:
+    readings:
+    demos:
+    hw:
+    type: 'exam'
+  - topic: # Mar15
     subtopic:
     section:
     readings:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P2">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
     type: 'hw'
-  - topic: Spring Break # Mar 12
+  - topic: Spring Break # Mar18
     subtopic: No class
     section:
     readings:
     demos:
     hw: T3 SVMs released (but only needs 1 wk)
-  - topic: # Mar 14
+  - topic: # Mar20
     subtopic: No class
     section:
     readings:
     demos:
     hw:
-  - topic: # Mar 16
+  - topic: # Mar22
     subtopic:
     section:
     reading:
@@ -295,19 +309,19 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Unsupervised Learning # Mar 19
+  - topic: Unsupervised Learning # Mar25
     subtopic: Clustering (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/13-clustering.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/12.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.1
     demos:
     hw:
-  - topic: # Mar 21
+  - topic: # Mar27
     subtopic: Mixture/EM (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/14-mixture-models.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/14.handout.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 9.2,9.3
     demos:
     hw:
-  - topic: # Mar 23
+  - topic: # Mar29
     subtopic:
     section:
     readings:
@@ -321,26 +335,39 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: PGMs # Mar 26
+  - topic: PCA release # Apr1
+    subtopic: 
+    section:
+    readings:
+    demos: 
+    hw: T4 Clustering, P3 Unsupervised released
+  - topic: PGMs # Apr3
     subtopic: Topic Models
     section:
     readings: Bishop &sect; 9.3.3,<br> <a href = http://menome.com/wp/wp-content/uploads/2014/12/Blei2011.pdf> Introduction to Probabilistic Topic Models  (optional) </a> 
     demos: <a href = 'https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/TopicModeling.ipynb'> Topic Modeling </a>
-    hw: T4 Clustering, P3 Unsupervised released
-  - topic: Other # Mar 28
-    subtopic: Dim Reduction
-    section:
-    readings: Bishop &sect; 12.1
-    demos: <a href = 'https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/PCA.ipynb'> PCA </a>
+    hw: T4 due
+  - topic: # section 9
+    subtopic: 
+    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
+    readings:
+    demos:
     hw:
-  - topic: # Mar 30
-    subtopic:
+    type: 'sec'
+  - topic: Other # Apr8
+    subtopic: Graphical Models
+    section:
+    readings: Bishop &sect; 8.1, 8.2
+    demos:
+    hw:
+  - topic: # Apr10
+    subtopic: Linbear graphical models
     section:
     readings:
     demos:
-    hw: <a href="">T4 Clustering  </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: P3 due
     type: 'hw'
-  - topic: # section 9
+  - topic: # section 10
     subtopic: 
     section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
     readings:
@@ -354,11 +381,7 @@ lectures:
     demos:
     hw: T5 Prob Modeling / EM released
   - topic: # Apr 4
-    subtopic: Graphical Models
-    section:
-    readings: Bishop &sect; 8.1, 8.2
-    demos:
-    hw:
+   
   - topic: # Apr 6
     subtopic:
     section:
