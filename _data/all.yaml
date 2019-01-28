@@ -216,7 +216,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
+    hw: T2 due <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
     type: 'hw'
   - topic: # midterm 1 review
     subtopic: 
@@ -225,18 +225,6 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Margin # Feb 26
-    subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 7.1
-    demos:
-    hw: P2 Classification released
-  - topic: # Feb 28
-    subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 7.1
-    demos:
-    hw:
   - topic: # Mar 2
     subtopic:
     section:
@@ -250,8 +238,20 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Mar 5
-    subtopic: Midterm 1
+  - topic: Margin # Mar4
+    subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
+    section:
+    readings: Bishop &sect; 7.1
+    demos:
+    hw: P2 Classification released
+  - topic: # Mar6
+    subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
+    section:
+    readings: Bishop &sect; 7.1
+    demos:
+    hw: 
+  - topic:# Mar8
+    subtopic:
     section:
     readings:
     demos:
