@@ -168,7 +168,7 @@ lectures:
     readings:
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P1-regression">P1 Regression </a> (<a href="">submit writeup</a>) due
-    type: 'hw'
+    type: 'hw T1 due'
   - topic: # section 3
     subtopic:
     section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03.pdf">Bayes LR, Lin. Class.</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03-soln.pdf">sol</a>)
@@ -176,22 +176,20 @@ lectures:
     demos:
     hw:
     type: 'sec'
+  - topic: # Feb18
+    subtopic: President's day
+    readings: 
+    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
+    hw: T2 Classification released
   - topic: # Feb20
     subtopic: Prob. Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/07-ProbClass.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/07-lectures-class.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 4.2, 4.3, Sklearn &sect;  18.1, 29.24
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
-    hw: T2 Classification released
-  - topic: NN # Feb 14
-    subtopic: Neural Net 1 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/08-NN1.pdf">Finale</a> | <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/08-lectures-nn1.pdf">Slides</a>)
-    section:
-    readings: Bishop &sect; 5.1-5.2
-    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
-    hw:
-  - topic: # Feb 16
-    subtopic:
-    section:
-    readings:
+    hw: 
+  - topic: NN # Feb22
+    subtopic: 
+    readings: 
     demos:
     hw:
   - topic: # section 4
@@ -201,19 +199,19 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: # Feb 19
-    subtopic: No class (Pres Day)
+  - topic: # Feb25
+    subtopic: Neural Net 1 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/08-NN1.pdf">Finale</a> | <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/08-lectures-nn1.pdf">Slides</a>)
     section:
-    readings:
-    demos:
+    readings: Bishop &sect; 5.1-5.2
+    demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
     hw:
-  - topic: # Feb 21
+  - topic: # Feb27
     subtopic: Neural Net 2 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/09-NN2.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/09-lectures-nn2.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 5.3
     demos: <a href="http://cs.stanford.edu/people/karpathy/convnetjs/">ConvNet JS</a>
     hw:
-  - topic: # Feb 23
+  - topic: # Mar1
     subtopic:
     section:
     readings:
