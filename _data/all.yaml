@@ -250,8 +250,8 @@ lectures:
     readings: Bishop &sect; 7.1
     demos:
     hw: 
-  - topic:# Mar8
-    subtopic: 
+  - topic: #Mar8
+    subtopic: Temp 
     section:
     readings:
     demos:
@@ -265,7 +265,7 @@ lectures:
     hw:
     type: 'sec' 
   - topic: #Mar11
-    subtopic: Rthics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>)
+    subtopic: Ethics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>)
     section:
     readings:
     demos:
