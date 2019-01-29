@@ -226,19 +226,6 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: #Mar2
-    subtopic:
-    section:
-    readings:
-    demos:
-    hw:
-  - topic: # section 5
-    subtopic:
-    section: 5. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05.pdf">Margin-based / SVMs </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05-soln.pdf">sol</a>)
-    readings:
-    demos:
-    hw:
-    type: 'sec'
   - topic: Margin #Mar4
     subtopic: Max-Margin (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/10-MaxMargin.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/10.handout.pdf">Slides</a>)
     section:
@@ -258,13 +245,13 @@ lectures:
     demos:
     hw:
     type:
-  - topic: # section 6
+  - topic: # section 5
     subtopic:
-    section: 
+    section: 5. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05.pdf">Margin-based / SVMs </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
-    type: 'sec' 
+    type: 'sec'
   - topic: #Mar11
     subtopic: Ethics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Ethics in ML </a>)
     section:
