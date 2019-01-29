@@ -119,7 +119,7 @@ lectures:
     type: 'event'
   - topic: # section 1
     subtopic:
-    section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/01.pdf"> Linear Reg</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/01-soln.pdf">sol</a>)
+    section: 1. Linear Reg (sol)
     readings:
     demos:
     hw:
@@ -145,7 +145,7 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/02.pdf">Model Selection/Bayes</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/02-soln.pdf">sol</a>)
+    section: 2. Model Selection/Bayes (sol)
     readings:
     demos: <a href=https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/sklearn-demo.ipynb>Sklearn</a> 
     hw:
@@ -171,7 +171,7 @@ lectures:
     type: 'hw T1 due'
   - topic: # section 3
     subtopic:
-    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03.pdf">Bayes LR, Lin. Class.</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/03-soln.pdf">sol</a>)
+    section: 3. Bayes LR, Lin. Class. (sol)
     readings:
     demos:
     hw:
@@ -216,11 +216,11 @@ lectures:
     section:
     readings:
     demos:
-    hw: T2 due <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification </a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/201135">submit</a>|<a href="">grading</a>) due
+    hw: T2 Classification due 
     type: 'hw'
   - topic: # midterm 1 review
     subtopic: 
-    section: Midterm 1 Review (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-topics.pdf">topics</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/midterm1-review.pdf">problems</a>|<a href="">sol</a>)
+    section: Midterm 1 Review (topics|problems|sol)
     readings:
     demos:
     hw:
@@ -246,13 +246,13 @@ lectures:
     type:
   - topic: # section 5
     subtopic:
-    section: 5. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05.pdf">Margin-based / SVMs </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/05-soln.pdf">sol</a>)
+    section: 5. Margin-based / SVMs (sol)
     readings:
     demos:
     hw:
     type: 'sec'
   - topic: #Mar 11
-    subtopic: Ethics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/12-ethics.pdf">Slides</a>)
+    subtopic: Ethics in ML (Slides)
     section:
     readings:
     demos:
@@ -269,7 +269,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-practicals/tree/master/P2">P2 Classification </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: P2 Classification due
     type: 'hw'
   - topic: Spring Break # Mar 18
     subtopic: No class
@@ -291,7 +291,7 @@ lectures:
     hw:
   - topic: # section 7
     subtopic:
-    section: 7. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/cs181-section7-student.pdf"> K-means / HAC </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/cs181-section7-soln.pdf">sol</a>)
+    section: 7. K-means / HAC (sol)
     readings:
     demos:
     hw:
@@ -313,11 +313,11 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/tree/master/T3">T3 SVMs </a> (<a href="">submit</a>|<a href="">grading</a>) due
+    hw: T3 SVMs due
     type: 'hw'
   - topic: # section 8
     subtopic:
-    section: 8. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/08.pdf"> Mixture / EM </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/08-soln.pdf">sol</a>)
+    section: 8. Mixture / EM (sol)
     readings:
     demos:
     hw:
@@ -343,7 +343,7 @@ lectures:
     type: T4 due
   - topic: # section 9
     subtopic: 
-    section: 9.   Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
+    section: 9.   Dim Reduction / Bayes Nets (sol)
     readings:
     demos:
     hw:
@@ -370,7 +370,7 @@ lectures:
     type: 'hw'
   - topic: # section 10
     subtopic: 
-    section: 10. Inference, HMMs, Kalman filters
+    section: 10. Inference, HMMs, Kalman filters (sol)
     readings:
     demos:
     hw:
@@ -402,7 +402,7 @@ lectures:
     hw: 
   - topic: # section 11
     subtopic:
-    section: 11. MDPs, RL
+    section: 11. MDPs, RL (sol)
     readings:
     demos:
     hw:
