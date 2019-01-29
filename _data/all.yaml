@@ -103,7 +103,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T1 Regression released, <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression<
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression</a>
   - topic: Regression #Jan 30
     subtopic: <a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/02-lectures-lr.pdf">Linear Regression 1</a>
     section:
@@ -343,7 +343,7 @@ lectures:
     type: T4 due
   - topic: # section 9
     subtopic: 
-    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
+    section: 9.   Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
