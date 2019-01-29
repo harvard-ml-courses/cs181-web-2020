@@ -87,8 +87,7 @@ dates: ["",
 	"", # section 12 (exam review)
 	"Apr. 29 (M)", # Interpretability / Learning Theory
 	"May. 1 (W)", # midterm 2
-	"May. 3 (F)", P4 due
-  "",
+	"May. 3 (F)", 
   "May 10 (T)"] # P4 RL extended deadline
 
 lectures:
@@ -371,7 +370,7 @@ lectures:
     type: 'hw'
   - topic: # section 10
     subtopic: 
-    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09.pdf"> Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/09-soln.pdf">sol</a>)
+    section: 10. Inference, HMMs, Kalman filters
     readings:
     demos:
     hw:
@@ -401,9 +400,9 @@ lectures:
     readings: 
     demos:
     hw: 
-  - topic: # section 10
+  - topic: # section 11
     subtopic:
-    section: 10. <a href=""> Bayes Nets / Inference </a> (<a href="">sol</a>)
+    section: 11. MDPs, RL
     readings:
     demos:
     hw:
