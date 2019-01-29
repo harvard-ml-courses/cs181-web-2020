@@ -322,8 +322,8 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: PCA release # Apr 1
-    subtopic: 
+  - topic:  # Apr 1
+    subtopic: PCA
     section:
     readings:
     demos: 
@@ -348,7 +348,7 @@ lectures:
     demos:
     hw:
     type: 'sec'
-  - topic: Other #Apr 8
+  - topic:  #Apr 8
     subtopic: Graphical Models
     section:
     readings: Bishop &sect; 8.1, 8.2
