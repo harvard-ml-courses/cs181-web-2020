@@ -187,7 +187,7 @@ lectures:
     readings: Bishop &sect; 4.2, 4.3, Sklearn &sect;  18.1, 29.24
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
     hw: 
-  - topic: NN #Feb22
+  - topic: #Feb22
     subtopic: 
     readings: 
     demos:
@@ -361,7 +361,7 @@ lectures:
     demos:
     hw:
   - topic: #Apr10
-    subtopic: Linbear graphical models
+    subtopic: Linear graphical models
     section:
     readings:
     demos:
