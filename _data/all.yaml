@@ -428,6 +428,13 @@ lectures:
     demos:
     hw: 
     type: 
+  - topic: # section 12
+    subtopic:
+    section: Midterm 2 Review
+    readings:
+    demos:
+    hw:
+    type: 'sec'
   - topic: # Apr 29
     subtopic: Interpretability or Learning Theory
     section:
