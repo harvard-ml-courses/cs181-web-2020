@@ -111,12 +111,12 @@ lectures:
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Regression.ipynb"> Regression </a>
     hw:
   - topic:
-    subtopic: Meet the TFs (124 + 181)
-    section: 1-2:15pm MD ground floor lobby
+    subtopic: 
+    section: 
     readings:
     demos:
-    hw: Good time to meet HW partners!
-    type: 'event'
+    hw: 
+    type: 'sec'
   - topic: # section 1
     subtopic:
     section: 1. Linear Reg (sol)
