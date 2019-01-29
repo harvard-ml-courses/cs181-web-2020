@@ -116,7 +116,7 @@ lectures:
     readings:
     demos:
     hw: 
-    type: 'sec'
+    type: 
   - topic: # section 1
     subtopic:
     section: 1. Linear Reg (sol)
