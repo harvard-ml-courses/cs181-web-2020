@@ -65,9 +65,9 @@ weight: 0
 
 			<li> Math Section on Tuesday January 29th 3-4pm, room: MD G125.</li>
 			<li> All the links on (this) front page are now up to date.  You can use them to navigate to the Piazza site and the Canvas site, as well as see the repo with the first homework (below).  If you need access to Canvas, please put in a private Piazza post (Piazza shouldn't require special access).  The schedule page is still being updated.  </li>
-			      
-                             
-              
+
+
+
                       </div>
                   </div>
                   <div class="row container">
@@ -75,10 +75,10 @@ weight: 0
                       <div class="container ">
                       <!-- <div class="panel-body"> -->
                           <dl>
-                              
-                              
-                              
-                                
+
+
+
+
                               <dt>Section Times </dt>
                               <dd>
                               Regular section times:
@@ -98,7 +98,7 @@ weight: 0
                               	   {% endfor %}
                             	 </ul>
                               </dd>
-	
+
                               <dt>Syllabus and Collaboration Policy</dt>
                               <dd>
                                   <ul>
@@ -106,16 +106,17 @@ weight: 0
                                   </ul>
                               </dd>
 
-                        
+
                               <dt>Links</dt>
                               <dd>
                                   <ul>
 
 				    <li><a href="https://piazza.com/harvard/spring2019/cs181">Piazza </a> </li>
 				    <li><a href="https://canvas.harvard.edu/courses/47944">Canvas Site</a></li>
-				    <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf </a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/">Course Notes Github </a></li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf</a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/"> Course Notes Github </a></li>
 				    <li><a href="https://github.com/harvard-ml-courses/cs181-lectures">Lecture Notes Repo</a> (Finale's lecture notes in s18/ and last year's slides in s17/) </li>
 				    <li><a href="https://github.com/harvard-ml-courses/cs181-section">Section Repo</a></li>
+            <li><a href="https://goo.gl/forms/vb9VI7ZNccxhuLuj2">Section Topics & Feedback Form</a></li>
 				    <li><a href="https://github.com/harvard-ml-courses/cs181-demos">Demo Repo</a></li>
 				    <li><a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks">Homework Repo</a> (seed repo to pull from using GitHub Classroom repo) </li>
 				    <li><a href="https://github.com/harvard-ml-courses/cs181-s19-practicals">Practical Repo</a> (seed repo to pull from using GitHub Classroom repo) </li>
@@ -123,7 +124,7 @@ weight: 0
                                 </ul>
                               </dd>
 
-                           
+
                               <dt>References</dt>
                               <dd><ul>
 				  <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf </a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/">Course Notes Github </a></li>
@@ -140,7 +141,7 @@ weight: 0
                                     <li> 2 Midterms  (40%) </li>
                                 </ul>
                               </dd>
-			      
+
 			      <dt>Other Courses</dt>
                             <dd>
                                 <ul>
@@ -151,7 +152,7 @@ weight: 0
 				     <li><a href="https://harvard-ml-courses.github.io/cs287-web/">CS287 Spring 2018</a> (Machine Learning for Natural Language) </li>
                                 </ul>
                             </dd>
-	
+
 
                           </dl>
                       </div>
@@ -166,7 +167,7 @@ weight: 0
                           <dt>Instructor</dt>
                           <dd> <ul>
                               <li>Finale Doshi-Velez </li>
-                              
+
 			       </ul>
                           </dd>
 
@@ -175,7 +176,7 @@ weight: 0
                               <li><a href="diegosaravia@g.harvard.edu">Diego Saravia</a></li>
                                </ul>
                           </dd>
-			      
+
                           <dt>Teaching Fellows</dt>
                           <dd>
                               <ul>
@@ -193,9 +194,9 @@ weight: 0
                       </dl>
                   </div>
               </div>
-              
 
-	     
+
+
 
 	      <div id="schedule_tab" class="row tab-pane fade">
                   <div class="row container">
@@ -204,7 +205,7 @@ weight: 0
                               <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Demos </th><th>Readings</th><th>Assignment </th></tr>
                               {% for lecture in site.data.all.lectures %}
                               <tr id = {{lecture.type|default("",true)}}>
-                                  <td> {{site.data.all.dates[forloop.index]}} </td> 
+                                  <td> {{site.data.all.dates[forloop.index]}} </td>
 				  <td> {{lecture.topic | default("",true)}} </td>
                                   <td> {{lecture.subtopic|default("", true)}}</td>
 				  <td> {{lecture.section|default("", true)}}</td>
@@ -228,7 +229,7 @@ weight: 0
         <br />
         <div id="camelot-text">
           <p>
-          <a href="https://camelot.ai" target="_blank">Camelot.ai</a> is an online platform for machine learning problem-solving and skills development built by three former CS181 students. We focus on helping you learn real, practical skills and using our data to match your talent with top quantitative/technical companies. CS181 uses Camelot.ai for the practicals. 
+          <a href="https://camelot.ai" target="_blank">Camelot.ai</a> is an online platform for machine learning problem-solving and skills development built by three former CS181 students. We focus on helping you learn real, practical skills and using our data to match your talent with top quantitative/technical companies. CS181 uses Camelot.ai for the practicals.
           </p>
 
           <p>
