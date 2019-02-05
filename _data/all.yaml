@@ -339,8 +339,8 @@ lectures:
     section: 
     readings:
     demos:
-    hw:
-    type: T4 due
+    hw: T4 due
+    type: 'hw'
   - topic: # section 9
     subtopic: 
     section: 9.   Dim Reduction / Bayes Nets (sol)
