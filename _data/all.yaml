@@ -129,7 +129,7 @@ lectures:
     section:
     readings: Bishop &sect; 2.3, 3.1
     demos: <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Gaussian.ipynb"> Gaussian </a> <br> <a href = "https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/BasisRegression.ipynb"> BasisRegression </a>
-    hw: P1 Regression released
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-practicals/blob/master/P1/Practical_1_CS_181.pdf">P1 Regression</a>
   - topic: #Feb 6
     subtopic: Model Selection (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/04-ModelSelection.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/04-lectures-modelselection.pdf">slides</a>)
     section:
