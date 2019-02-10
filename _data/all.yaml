@@ -93,7 +93,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: 0. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s18/00.pdf">Math Review</a>
+    section: 0. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/00.pdf">Math Review</a>
     readings:
     demos:
     hw:
@@ -119,7 +119,7 @@ lectures:
     type: 
   - topic: # section 1
     subtopic:
-    section: 1. Linear Reg (sol)
+    section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/01.pdf">Linear Reg (sol)
     readings:
     demos:
     hw:
