@@ -269,8 +269,8 @@ lectures:
     section:
     readings:
     demos:
-    hw: P2 Classification due
-    type: 'hw'
+    hw: 
+    type: 
   - topic: Spring Break # Mar 18
     subtopic: No class
     section:
