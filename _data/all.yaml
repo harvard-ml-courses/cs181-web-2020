@@ -145,7 +145,7 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. Model Selection/Bayes (sol)
+    section: 2. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/02-soln.pdf">Model Selection/Bayes (sol)</a> | <a href="https://colab.research.google.com/drive/1hZcd_oV8o81y3jXCHp4xpfeDOJO76MPh">Cross Validation Demo</a>
     readings:
     demos: <a href=https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/sklearn-demo.ipynb>Sklearn</a> 
     hw:
