@@ -168,7 +168,7 @@ lectures:
     readings:
     demos:
     hw: P1 Regression due
-    type: 'hw T1 due'
+    type: 'hw'
   - topic: # section 3
     subtopic:
     section: 3. Bayes LR, Lin. Class. (sol)
@@ -204,7 +204,7 @@ lectures:
     section:
     readings: Bishop &sect; 5.1-5.2
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/NeuralNetwork1.ipynb">Neural Networks 1</a> <br> <a href="http://playground.tensorflow.org/">TF Playground</a>
-    hw:
+    hw: P2 Classification released
   - topic: #Feb 27
     subtopic: Neural Net 2 (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/09-NN2.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/09-lectures-nn2.pdf">Slides</a>)
     section:
@@ -230,7 +230,7 @@ lectures:
     section:
     readings: Bishop &sect; 7.1
     demos:
-    hw: P2 Classification released
+    hw: 
   - topic: #Mar 6
     subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
     section:
@@ -242,8 +242,8 @@ lectures:
     section:
     readings:
     demos:
-    hw:
-    type:
+    hw: P2 Classification due
+    type: 'hw'
   - topic: # section 5
     subtopic:
     section: 5. Margin-based / SVMs (sol)
