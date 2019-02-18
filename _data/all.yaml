@@ -171,7 +171,7 @@ lectures:
     type: 'hw'
   - topic: # section 3
     subtopic:
-    section: 3. Bayes LR, Lin. Class. (sol)
+    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/03.pdf"> Bayes LR, Gradient Descent, Lin. Class. </a>
     readings:
     demos:
     hw:
