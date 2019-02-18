@@ -1,11 +1,11 @@
 tas:
   - name: <a href="mailto:angelinerao@college.harvard.edu">Angeline Rao</a> (head TF)
   - name: <a href="mailto:fabianbarrett@college.harvard.edu">Ben Barrett</a>
-  - name: <a href="mailto:nenya_edjah@college.harvard.edu">Nenya Edjah</a> 
+  - name: <a href="mailto:nenya_edjah@college.harvard.edu">Nenya Edjah</a>
   - name: <a href="mailto:elbertgong@college.harvard.edu">Elbert Gong</a>
   - name: <a href="mailto:lgrossman@college.harvard.edu">Lev Grossman</a>
   - name: <a href="mailto:ryan_jiang@college.harvard.eduu">Ryan Jiang</a>
-  - name: <a href="mailto:j_kinley@college.harvard.edu">Jambay Kinley</a> 
+  - name: <a href="mailto:j_kinley@college.harvard.edu">Jambay Kinley</a>
   - name: <a href="mailto:kevinliu01@college.harvard.edu">Kevin Liu</a>
   - name: <a href="mailto:theodore_liu@college.harvard.edu">Teddy Liu</a>
   - name: <a href="mailto:jason_ren@college.harvard.edu">Jason Ren</a>
@@ -52,13 +52,13 @@ dates: ["",
 	"Feb. 25 (M)", # neural net 1
 	"Feb. 27 (W)", # neural net 2
 	"Mar. 1 (F)", # T2 classification due
-        "", # section 5 (exam review) 
+        "", # section 5 (exam review)
 	"Mar. 4 (M)", # max-margin, release P2
 	"Mar. 6 (W)", # SVMs
 	"Mar. 8 (F)",
 	"", # section 6
 	"Mar. 11 (M)", # ethics in ML
-	"Mar. 13 (W)", # midterm 1 
+	"Mar. 13 (W)", # midterm 1
 	"Mar. 15 (F)", # P2 classification due
 	"Mar. 18 (M)", # Spring Break, release 3
 	"Mar. 20 (W)", # Spring Break
@@ -79,15 +79,15 @@ dates: ["",
 	"Apr. 15 (M)", # inference for BNs
 	"Apr. 17 (W)", # MDP, value/policy iteration
 	"Apr. 18 (Th)", # EM due
-	"April 19 (F)", # T5 prob modeling 
+	"April 19 (F)", # T5 prob modeling
 	"", # section 11
 	"Apr. 22 (M)", # RL, release P4
 	"Apr. 24 (W)", # Deep RL
-	"Apr. 26 (F)", 
+	"Apr. 26 (F)",
 	"", # section 12 (exam review)
 	"Apr. 29 (M)", # Interpretability / Learning Theory
 	"May. 1 (W)", # midterm 2
-	"May. 3 (F)", 
+	"May. 3 (F)",
   "May 10 (T)"] # P4 RL extended deadline
 
 lectures:
@@ -111,12 +111,12 @@ lectures:
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/Regression.ipynb"> Regression </a>
     hw:
   - topic:
-    subtopic: 
-    section: 
+    subtopic:
+    section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: # section 1
     subtopic:
     section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/01-soln.pdf">Linear Reg (sol)
@@ -141,13 +141,13 @@ lectures:
     section:
     readings:
     demos:
-    hw: <a href="https://github.com/harvard-ml-courses/cs181-s18-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression</a> (<a href="https://canvas.harvard.edu/courses/37343/assignments/196200">submit</a>|<a href="">grading</a>) due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T1/homework1-regression.pdf">T1 Regression</a> (<a href="https://canvas.harvard.edu/courses/47944/assignments/265326">submit</a>) due
     type: 'hw'
   - topic: # section 2
     subtopic:
     section: 2. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/02-soln.pdf">Model Selection/Bayes (sol)</a> | <a href="https://colab.research.google.com/drive/1hZcd_oV8o81y3jXCHp4xpfeDOJO76MPh">Cross Validation Demo</a>
     readings:
-    demos: <a href=https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/sklearn-demo.ipynb>Sklearn</a> 
+    demos: <a href=https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/sklearn-demo.ipynb>Sklearn</a>
     hw:
     type: 'sec'
   - topic: #Feb 11
@@ -178,18 +178,18 @@ lectures:
     type: 'sec'
   - topic: #Feb 18
     subtopic: President's Day
-    readings: 
+    readings:
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
-    hw: T2 Classification released
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification</a>
   - topic: #Feb 20
     subtopic: Prob. Classification (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/07-ProbClass.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/07-lectures-class.pdf">Slides</a>)
     section:
     readings: Bishop &sect; 4.2, 4.3, Sklearn &sect;  18.1, 29.24
     demos: <a href="https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/ProbabilisticClassification.ipynb">Probabilistic Classification</a>
-    hw: 
+    hw:
   - topic: #Feb 22
-    subtopic: 
-    readings: 
+    subtopic:
+    readings:
     demos:
     hw:
   - topic: # section 4
@@ -216,10 +216,10 @@ lectures:
     section:
     readings:
     demos:
-    hw: T2 Classification due 
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T2/homework2-classification.pdf">T2 Classification</a> (<a href="https://canvas.harvard.edu/courses/47944/assignments/271561">submit</a>) due
     type: 'hw'
   - topic: # midterm 1 review
-    subtopic: 
+    subtopic:
     section: Midterm 1 Review (topics|problems|sol)
     readings:
     demos:
@@ -236,9 +236,9 @@ lectures:
     section:
     readings: Bishop &sect; 7.1
     demos:
-    hw: 
+    hw:
   - topic: #Mar 8
-    subtopic:  
+    subtopic:
     section:
     readings:
     demos:
@@ -269,8 +269,8 @@ lectures:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: Spring Break # Mar 18
     subtopic: No class
     section:
@@ -326,23 +326,23 @@ lectures:
     subtopic: PCA
     section:
     readings:
-    demos: 
+    demos:
     hw: T4 Clustering, P3 Unsupervised released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
-    readings: Bishop &sect; 9.3.3,<br> <a href = http://menome.com/wp/wp-content/uploads/2014/12/Blei2011.pdf> Introduction to Probabilistic Topic Models  (optional) </a> 
+    readings: Bishop &sect; 9.3.3,<br> <a href = http://menome.com/wp/wp-content/uploads/2014/12/Blei2011.pdf> Introduction to Probabilistic Topic Models  (optional) </a>
     demos: <a href = 'https://github.com/harvard-ml-courses/cs181-demos/blob/master/s17/TopicModeling.ipynb'> Topic Modeling </a>
-    hw: 
+    hw:
   - topic: # Apr 5
-    subtopic: 
-    section: 
+    subtopic:
+    section:
     readings:
     demos:
     hw: T4 due
     type: 'hw'
   - topic: # section 9
-    subtopic: 
+    subtopic:
     section: 9.   Dim Reduction / Bayes Nets (sol)
     readings:
     demos:
@@ -359,17 +359,17 @@ lectures:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: #Apr 12
-    subtopic: 
+    subtopic:
     section:
     readings:
     demos:
     hw: P3 due
     type: 'hw'
   - topic: # section 10
-    subtopic: 
+    subtopic:
     section: 10. Inference, HMMs, Kalman filters (sol)
     readings:
     demos:
@@ -380,26 +380,26 @@ lectures:
     section:
     readings: Bishop &sect; 8.4 (stop at end of 8.4.1, don't read about undirected and factor graphs)
     demos:
-    hw: 
+    hw:
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
     section:
     readings: <a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton and Barto</a> (Use Ch 1-4 as a reference)
     demos:
-    hw: 
+    hw:
   - topic: # Apr 18
-    subtopic: 
+    subtopic:
     section:
-    readings: 
+    readings:
     demos:
     hw: T5 Due
     type: 'hw'
   - topic: # Apr 19
-    subtopic: 
+    subtopic:
     section:
-    readings: 
+    readings:
     demos:
-    hw: 
+    hw:
   - topic: # section 11
     subtopic:
     section: 11. MDPs, RL (sol)
@@ -418,15 +418,15 @@ lectures:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: # Apr 26
-    subtopic: 
+    subtopic:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: # section 12
     subtopic:
     section: Midterm 2 Review
@@ -448,14 +448,14 @@ lectures:
     hw:
     type: 'exam'
   - topic: # May 3
-    subtopic: 
+    subtopic:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: # May 10
-    subtopic: 
+    subtopic:
     section:
     readings:
     demos:
