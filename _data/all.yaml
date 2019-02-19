@@ -119,7 +119,7 @@ lectures:
     type:
   - topic: # section 1
     subtopic:
-    section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/01-soln.pdf">Linear Reg (sol)<\a>
+    section: 1. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/01-soln.pdf">Linear Reg (sol)
     readings:
     demos:
     hw:
@@ -171,7 +171,7 @@ lectures:
     type: 'hw'
   - topic: # section 3
     subtopic:
-    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/03.pdf"> Bayes LR, Grad.Descent, Lin. Class. </a> | <a href="https://colab.research.google.com/drive/1AJRaGeqgTosVNWjinYPahB1RHGAOwIh-">G. Descent, One-hot Demo</a>
+    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/03.pdf"> Bayes LR, G. Descent, Lin. Class. </a> | <a href="https://colab.research.google.com/drive/1AJRaGeqgTosVNWjinYPahB1RHGAOwIh-">G. Descent, One-hot Demo</a>
     readings:
     demos:
     hw:
