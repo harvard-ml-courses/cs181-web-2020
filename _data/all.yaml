@@ -171,7 +171,7 @@ lectures:
     type: 'hw'
   - topic: # section 3
     subtopic:
-    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/03.pdf"> Bayes LR, G. Descent, Lin. Class. </a> | <a href="https://colab.research.google.com/drive/1AJRaGeqgTosVNWjinYPahB1RHGAOwIh-">G. Descent, One-hot Demo</a>
+    section: 3. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/03-soln.pdf"> Bayes LR, G. Descent, Lin. Class. (Sol) </a> | <a href="https://colab.research.google.com/drive/1AJRaGeqgTosVNWjinYPahB1RHGAOwIh-">G. Descent, One-hot Demo</a>
     readings:
     demos:
     hw:
