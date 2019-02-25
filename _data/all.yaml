@@ -194,7 +194,7 @@ lectures:
     hw:
   - topic: # section 4
     subtopic:
-    section: 4. Prob. Class / NN (sol)
+    section: 4. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/04-soln.pdf"> Prob. Class / NN (sol) </a>
     readings:
     demos:
     hw:
