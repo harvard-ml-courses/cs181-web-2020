@@ -220,7 +220,7 @@ lectures:
     type: 'hw'
   - topic: # midterm 1 review
     subtopic:
-    section: Midterm 1 Review (topics|problems|sol)
+    section: Midterm 1 Review (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm1-topics.pdf">topics</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm1-review.pdf">problems</a>|<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm1-review-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
@@ -230,7 +230,7 @@ lectures:
     section:
     readings: Bishop &sect; 7.1
     demos:
-    hw: 
+    hw:
   - topic: #Mar 6
     subtopic: SVMs (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s18/11-SVM.pdf">Finale</a>|<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s17/11.handout.pdf">Slides</a>)
     section:
