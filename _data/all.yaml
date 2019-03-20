@@ -276,7 +276,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T3 SVMs released (but only needs 1 wk)
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T3/homework3-svm.pdf">T3 SVMs</a> released (but only needs 1 wk)
   - topic: #Mar 20
     subtopic: No class
     section:
@@ -313,7 +313,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T3 SVMs due
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T3/homework3-svm.pdf">T3 SVMs</a> due
     type: 'hw'
   - topic: # section 8
     subtopic:
