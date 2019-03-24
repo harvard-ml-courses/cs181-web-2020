@@ -252,7 +252,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Mar 11
-    subtopic: Ethics in ML (Slides)
+    subtopic: Ethics in ML (<a href="https://github.com/harvard-ml-courses/cs181-lectures/blob/master/s19/0311_ethiCS.pdf">Slides</a>)
     section:
     readings:
     demos:
