@@ -291,7 +291,7 @@ lectures:
     hw:
   - topic: # section 7
     subtopic:
-    section: 7. K-means / HAC (sol)
+    section: 7. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/07-soln.pdf"> K-means / HAC (sol) </a>
     readings:
     demos:
     hw:
