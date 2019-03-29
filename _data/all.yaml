@@ -78,8 +78,7 @@ dates: ["",
 	"", # section 10
 	"Apr. 15 (M)", # inference for BNs
 	"Apr. 17 (W)", # MDP, value/policy iteration
-	"Apr. 18 (Th)", # EM due
-	"April 19 (F)", # T5 prob modeling
+	"Apr. 19 (F)", # T5 prob modeling
 	"", # section 11
 	"Apr. 22 (M)", # RL, release P4
 	"Apr. 24 (W)", # Deep RL
@@ -387,19 +386,13 @@ lectures:
     readings: <a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton and Barto</a> (Use Ch 1-4 as a reference)
     demos:
     hw:
-  - topic: # Apr 18
+  - topic: # Apr 19
     subtopic:
     section:
     readings:
     demos:
     hw: T5 Due
     type: 'hw'
-  - topic: # Apr 19
-    subtopic:
-    section:
-    readings:
-    demos:
-    hw:
   - topic: # section 11
     subtopic:
     section: 11. MDPs, RL (sol)
