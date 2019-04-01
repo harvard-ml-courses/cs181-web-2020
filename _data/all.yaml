@@ -326,7 +326,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 Clustering, P3 Unsupervised released
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks/blob/master/T4/homework4-clustering.pdf">T4 Clustering</a>, P3 Unsupervised released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
