@@ -341,13 +341,6 @@ lectures:
     demos:
     hw:
     type: 
-  - topic: # section 9
-    subtopic:
-    section: 9.   Dim Reduction / Bayes Nets (sol)
-    readings:
-    demos:
-    hw:
-    type: 'sec'
   - topic: # Apr 7
     subtopic:
     section:
@@ -355,6 +348,13 @@ lectures:
     demos:
     hw: T4 due
     type: 'hw'
+  - topic: # section 9
+    subtopic:
+    section: 9.   Dim Reduction / Bayes Nets (sol)
+    readings:
+    demos:
+    hw:
+    type: 'sec'
   - topic:  #Apr 8
     subtopic: Graphical Models
     section:
