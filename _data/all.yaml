@@ -70,7 +70,8 @@ dates: ["",
 	"", # section 8
 	"Apr. 1 (M)", # PCA release T4, P3
 	"Apr. 3 (W)", # topic models
-	"Apr. 5 (F)", # T4 clustering due
+	"Apr. 5 (F)", # 
+	"Apr. 7 (Su)", # T4 clustering new deadline
 	"", # section 9
 	"Apr. 8 (M)", # Graphical models
 	"Apr. 10 (W)", # linear graphical modles: HMMs, release T5
@@ -338,8 +339,8 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 due
-    type: 'hw'
+    hw:
+    type: 
   - topic: # section 9
     subtopic:
     section: 9.   Dim Reduction / Bayes Nets (sol)
@@ -347,6 +348,13 @@ lectures:
     demos:
     hw:
     type: 'sec'
+  - topic: # Apr 7
+    subtopic:
+    section:
+    readings:
+    demos:
+    hw: T4 due
+    type: 'hw'
   - topic:  #Apr 8
     subtopic: Graphical Models
     section:
