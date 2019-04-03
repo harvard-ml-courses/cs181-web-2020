@@ -245,7 +245,7 @@ lectures:
     type: 'hw'
   - topic: # section 5
     subtopic:
-    section: 5. Margin-based / SVMs (sol)
+    section: 5. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/05.pdf"> Margin-based / SVMs </a>( <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/05-soln.pdf"> sol </a> )
     readings:
     demos:
     hw:
@@ -316,7 +316,7 @@ lectures:
     type: 'hw'
   - topic: # section 8
     subtopic:
-    section: 8. Mixture / EM (sol)
+    section: 8. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/08.pdf"> Mixture/EM </a> ( <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/08-soln.pdf"> sol </a> )
     readings:
     demos:
     hw:
