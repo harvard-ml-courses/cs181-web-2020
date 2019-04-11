@@ -339,7 +339,7 @@ lectures:
     readings:
     demos:
     hw:
-    type: 
+    type:
   - topic: # section 9
     subtopic:
     section: 9.   Dim Reduction / Bayes Nets (sol)
@@ -359,8 +359,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T5 Prob Modeling / EM released
-    type:
+    hw: <a href='https://github.com/harvard-ml-courses/cs181-s19-homeworks/tree/master/T5'>T5 Prob Modeling / Bayes Nets released</a>
   - topic: #Apr 12
     subtopic:
     section:
