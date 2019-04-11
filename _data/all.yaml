@@ -87,7 +87,7 @@ dates: ["",
 	"Apr. 29 (M)", # Interpretability / Learning Theory
 	"May. 1 (W)", # midterm 2
 	"May. 3 (F)",
-  "May 10 (T)"] # P4 RL extended deadline
+  "May 6 (M)"] # P4 RL extended deadline
 
 lectures:
   - topic:
@@ -447,7 +447,7 @@ lectures:
     demos:
     hw:
     type:
-  - topic: # May 10
+  - topic: # May 6
     subtopic:
     section:
     readings:
