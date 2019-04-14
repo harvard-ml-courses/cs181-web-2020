@@ -342,7 +342,7 @@ lectures:
     type:
   - topic: # section 9
     subtopic:
-    section: 9.   Dim Reduction / Bayes Nets (sol)
+    section: 9. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/09.pdf">Dim Reduction / Bayes Nets</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/09-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
