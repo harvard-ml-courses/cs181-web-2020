@@ -369,7 +369,7 @@ lectures:
     type: 'hw'
   - topic: # section 10
     subtopic:
-    section: 10. Inference, HMMs, Kalman filters (sol)
+    section: 10. <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/10.pdf">Inference, HMMs, Kalman filters</a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/10-soln.pdf">sol</a>)
     readings:
     demos:
     hw:
