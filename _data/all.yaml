@@ -406,7 +406,6 @@ lectures:
     readings: <a href="http://incompleteideas.net/book/the-book-2nd.html">Sutton and Barto</a> (Use Ch 1-6 as a reference)
     demos:
     hw: <a href="https://github.com/harvard-ml-courses/cs181-s19-practicals/tree/master/P4">P4 RL released </a>
-    
   - topic: # Apr 24
     subtopic: Deep RL
     section:
