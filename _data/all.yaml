@@ -425,7 +425,7 @@ lectures:
     section: Midterm 2 Review
     readings:
     demos:
-    hw:
+    hw: <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm2-topics.pdf">Topics </a> | <a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm2-review-problems.pdf">Practice Problems </a> (<a href="https://github.com/harvard-ml-courses/cs181-section/blob/master/s19/midterm2-review-problems-soln.pdf">sol </a>)
     type: 'sec'
   - topic: # Apr 29
     subtopic: Interpretability or Learning Theory
