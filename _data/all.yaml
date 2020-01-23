@@ -93,7 +93,7 @@ lectures:
     subtopic: Intro
     section:
     readings:
-    hw: T1 
+    hw: T1 Regression released
   - topic: Regression #Jan 30
     subtopic: Linear Regression 1
     section:
@@ -126,7 +126,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: T1 due
+    hw: T1 Regression due
     type: 'hw'
   - topic: # section 2
     subtopic:
@@ -139,7 +139,7 @@ lectures:
     section:
     readings: 
     demos:
-    hw: T2
+    hw: T2 Classification released
   - topic: Model Selection
     subtopic: Model Selection - Frequentist
     section:
@@ -151,7 +151,7 @@ lectures:
     readings:
     demos:
     hw: 
-    type: 'hw'
+    type: 
   - topic: # section 3
     subtopic:
     section: 3. Bayes LR, Lin. Class. (
@@ -171,7 +171,8 @@ lectures:
     subtopic:
     readings:
     demos:
-    hw: T2 due
+    hw: T2 Classification due
+    type: 'hw'
   - topic: # section 4
     subtopic:
     section: 4. Prob. Class / NN
@@ -183,8 +184,7 @@ lectures:
     subtopic: Neural Net 1 
     section:
     readings: 
-    hw: T3 
-    type: 'hw'
+    hw: T3 Practical Supervised Learning released
   - topic: #Feb 27
     subtopic: Neural Net 2 
     section:
@@ -247,7 +247,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 (but only needs 1 wk)
+    hw: T4 SVMs and Ethics released (but only needs 1 wk)
   - topic: #Mar 20
     subtopic: No class
     section:
@@ -282,7 +282,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 due
+    hw: T4 SVMss and Ethics due
     type: 'hw'
   - topic: # section 8
     subtopic:
@@ -295,7 +295,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T5 
+    hw: T5 Clustering, EM, PCA released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
@@ -318,7 +318,7 @@ lectures:
     section:
     readings: 
     hw: 
-    type: 'hw'
+    type: 
   - topic: #Apr 10
     subtopic: Inference for BNs
     section:
@@ -330,7 +330,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T5 due
+    hw: T5 Clustering, EM, PCA due
     type: 'hw'
   - topic: # section 10
     subtopic:
@@ -342,7 +342,7 @@ lectures:
     subtopic: Linear BNs (HMMs)
     section:
     readings: 
-    hw: T6 
+    hw: T6 Graphical Models and RL released
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
     section:
@@ -377,8 +377,8 @@ lectures:
     section:
     readings:
     demos:
-    hw: T6 due
-    type:
+    hw: T6 Graphical Models and RL due
+    type: 'hw'
   - topic: # section 12
     subtopic:
     section: Midterm 2 Review
@@ -398,10 +398,3 @@ lectures:
     demos:
     hw:
     type: 'exam'
-  - topic: # May 3
-    subtopic:
-    section:
-    readings:
-    demos:
-    hw:
-    type:
