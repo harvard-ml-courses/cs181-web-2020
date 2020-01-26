@@ -1,0 +1,209 @@
+---
+layout: page
+title: Home
+weight: 0
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+
+    <script src="bib-list.js"></script>
+
+    <link rel="stylesheet" href="bib-publication-list.css" type="text/css" />
+
+    <title>Harvard CS 181</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="page.css">
+  </head>
+
+  <body>
+    <div class="row">
+    </div>
+    <div class="container">
+      <div class="panel panel-primary" style="margin-top:10px;background-color:purple;border-color:#000000;">
+        <div class="panel-heading" style="background-color:plum;border-color:#2D6ED3;">
+          <h1>CS181: Machine Learning</h1>
+          <p class="lead">Finale Doshi-Velez, Harvard University</p>
+
+        </div>
+        <div class="panel-footer">
+          <ul class="nav nav-tabs invert-colors">
+            <li class="active"><a data-toggle="tab" href="#home_tab">Home</a></li>
+            <li><a data-toggle="tab" href="#schedule_tab">Schedule</a></li>
+            <li><a data-toggle="tab" href="#people_tab">People</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="tab-content">
+              <div id="home_tab" class="row tab-pane fade in active">
+                  <div class="row container">
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Time:</span> Mon/Wed 9:00-10:30am</p>
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Location:</span> Northwest Building B103 </p>
+                  </div>
+                  <div class="row container">
+                      <h3 id="announcements_description">Announcements (check piazza too)</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                      <ul>
+                  			<li> Please use the Piazza link below to join our Piazza site. We will use it for course related communications.</li>
+                        <li> The first homework will be released on Monday Jan 27 and will be available through the Schedule page.</li>
+                        <li> Regular sections with begin on Monday Feb 3 and locations will be updated when confirmed.
+                      </ul>
+                      </div>
+                  </div>
+                  <div class="row container">
+                      <h3 id="description">Course Info</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                          <dl>
+
+
+
+
+                              <dt>Section Times </dt>
+                              <dd>
+                              Regular section times:
+                                  <ul>
+                                    <li>Monday 1:30-2:30pm, 4:30-5:30pm</li>
+				                            <li>Tuesday 10:30am-11:30am ,     3:00pm-4:00pm</li>
+				                            <li>Wednesday 4:30pm-5:30pm</li>
+                                  </ul>
+                              </dd>
+
+		 	      <dt>Office Hours </dt>
+                              <dd>
+                             	 <ul>
+				   <li> Finale's OH: Wednesday 3-4:30pm in Science Center 316.04 </li>
+                              	   {% for oh in site.data.all.ohs %}
+                                   <li>{{oh.time}}: {{oh.location}}</li>
+                              	   {% endfor %}
+                            	 </ul>
+                              </dd>
+
+                              <dt>Syllabus and Collaboration Policy</dt>
+                              <dd>
+                                  <ul>
+                                      <li>See the course <a href="syllabus_2020.pdf">syllabus</a>
+                                  </ul>
+                              </dd>
+
+
+                              <dt>Links</dt>
+                              <dd>
+                                  <ul>
+
+				    <li><a href="https://piazza.com/harvard/spring2020/cs181">Piazza </a> </li>
+				   <!--  <li><a href="https://canvas.harvard.edu/courses/47944">Canvas Site</a></li> -->
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf</a>
+                                </ul>
+                              </dd>
+
+
+                              <dt>References</dt>
+                              <dd><ul>
+				  <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf </a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/">Course Notes Github </a></li>
+				  <li> Bishop 2006, <a href="http://www.springer.com/us/book/9780387310732">Pattern Recognition and Machine Learning</a> (required text)</li>
+                                  <li> Murphy 2012, <a href="http://harvardcoopbooks.bncollege.com/webapp/wcs/stores/servlet/BNCB_TextbookDetailView?catalogId=10001&item=N&langId=-1&productId=600005699137&storeId=52084">Machine Learning: A Probabilistic Perspective</a> (optional readings)
+				  <li> Petersen and Pedersen 2012, <a href="http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf">The Matrix Cookbook</a>
+				  <li> Murphy 1998, <a href="https://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html">Bayesian Network Tutorial</a>
+				  <li> Rabiner 1989, <a href="https://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf">Tutorial on HMMs</a>
+                                  <li> Sutton and Barto 2018, <a href="http://incompleteideas.net/book/the-book-2nd.html">Reinforcement Learning: An Introduction</a>
+                              </ul></dd>
+
+   			      <!-- <dt>Grading</dt>
+                              <dd>
+                                <ul>
+                                    <li> 5 Theory Homeworks (30%) </li>
+				                    <li> 4 Practicals (30%) </li>
+                                    <li> 2 Midterms  (40%) </li>
+                                </ul>
+                              </dd> -->
+
+
+
+                          </dl>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div id="people_tab" class="row tab-pane fade">
+                  <div class="row container">
+                    <dl>
+		      <li> When contacting staff, Piazza and in-person is preferred.  Please use email sparingly. </li>
+                          <dt>Instructor</dt>
+                          <dd> <ul>
+                              <li>Finale Doshi-Velez </li>
+
+			       </ul>
+                          </dd>
+
+                          <dt>Teaching Fellows</dt>
+                          <dd>
+                              <ul>
+                                  {% for ta in site.data.all.tas %}
+                                  <li> {{ta.name}} </li>
+                                  {% endfor %}
+                               </ul>
+                          </dd>
+<!-- 			  <dt> ethiCS: </dt>
+			  <dd>
+				<ul>
+				  <li> <a href="mailto:cmcdonaldwade@g.harvard.edu">Cat Wade</a> </li>
+ 				</ul>
+			  </dd> -->
+                      </dl>
+                  </div>
+              </div>
+
+
+
+
+	      <div id="schedule_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <div class="tab-content">
+                          <table class="table">
+                              <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Readings</th><th>Assignment </th></tr>
+                              {% for lecture in site.data.all.lectures %}
+                              <tr id = {{lecture.type|default("",true)}}>
+                                  <td> {{site.data.all.dates[forloop.index]}} </td>
+				  <td> {{lecture.topic | default("",true)}} </td>
+                                  <td> {{lecture.subtopic|default("", true)}}</td>
+				  <td> {{lecture.section|default("", true)}}</td>
+                              <td> {{lecture.readings|default("", true)}}</td>
+                              <td> {{lecture.hw | default("",true)}}</td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+          </div>
+          </div>
+    </div> <!-- /container -->
+  </body>
+</html>
+
+<head>
+
+
+</head>
+<html>
+
+</html>

@@ -1,0 +1,68 @@
+---
+layout: page
+title: Staff
+weight: 0
+---
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS 181 Staff</title>
+
+    <!-- CSS files -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="header" class="main-container">
+</header>
+<section class="main-container page-head">
+    <div class="main">
+        <h1 class="head-title">Course Staff</h1>
+    </div>
+</section>
+<section class="main-container text">
+    <div class="main">
+        <h2 class="title">People</h2>
+        <h3>Instructor</h3>
+        <ul class="lists">
+            <li>
+                <a href="mailto:finale@seas.harvard.edu">Finale Doshi-Velez</a>
+            </li>
+        </ul>
+
+        <h3>Course Manager</h3>
+        <ul class="lists">
+            <li>
+                <a href="mailto:kasey_leblanc@g.harvard.edu">Kasey LeBlanc</a>
+            </li>
+        </ul>
+
+        <h3>Teaching Fellows</h3>
+        <ul class="lists">
+            {% for ta in site.data.all.tas %}
+            <li>
+                {{ta.name}}
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="title">Contacting us</h2>
+        <p>When contacting staff, <a href="https://piazza.com/harvard/spring2020/cs181" target="_blank">
+            Piazza</a> and in-person is preferred. Please use email sparingly.</p>
+    </div>
+</section>
+
+<footer id="footer" class="main-container footer text">
+</footer>
+<!-- JS Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

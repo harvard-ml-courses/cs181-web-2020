@@ -1,0 +1,131 @@
+/*!
+ * Based on design by Alvin Wan (alvinwan.com) for CS294-112 at UC Berkeley
+ */
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+    text-align: center; }
+
+.main {
+    max-width: 60em;
+    width: 80%;
+    text-align: left;
+    display: inline-block; }
+
+header {
+    padding: 2em 0; }
+header .header-title {
+    margin: 0px;
+    padding: 0px; }
+header .header-title a {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    font-weight: 400; }
+header nav {
+    float: right; }
+header nav ul {
+    float: right;
+    padding: 0.5em 0; }
+header nav ul li {
+    float: left;
+    list-style: none; }
+header nav ul li a {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    cursor: pointer; }
+header nav ul li a:hover {
+    text-decoration: none;
+    border-bottom: 1px dotted #000;
+    color: #000; }
+header nav ul li + li {
+    margin-left: 1em; }
+
+footer.footer {
+    padding: 3em 0 5em 0;
+}
+
+.page-head {
+    margin: 2em 0 2em 0; }
+.page-head p {
+    margin-bottom: 5px; }
+.page-head .head-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400}
+.page-head .head-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    padding: 0;
+    margin: 0.25em 0; }
+
+.text {
+    margin: 0;
+    font-weight: 300}
+.text .title {
+    padding-top: 0.5em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    margin: 0 0 0.25em 0;
+    width: 100%; }
+.text h3 {
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; }
+.text p, .text li {
+    font-size: 1.1em;
+    line-height: 150%; }
+.text .announcement + ul li {
+    margin-bottom: 0.5em}
+
+.announcement {
+    color: #E53935;
+}
+
+ul.lists {
+    padding: 0;
+    overflow: hidden; }
+ul.lists li {
+    color: #000;
+    padding: 0.2em 0;
+    font-size: 1.1em;
+    list-style: none;
+    margin: 0; }
+p.link a, ul.lists li a {
+    color: inherit;
+    border-bottom: 1px dotted #000; }
+p.link a:hover, ul.lists li a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #000; }
+p.link a:inactive, ul.lists li.inactive {
+    color: #ccc; }
+
+.table .sec {
+    background-color: #F1F1FF;
+}
+
+.table .hw {
+    background-color: #FFF1F1;
+}
+
+.table .exam {
+    background-color: #DDCCFF;
+}
+
+.table th {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.table td {
+    font-size: 0.75em;
+    font-weight: 300;
+}

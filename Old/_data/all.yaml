@@ -1,5 +1,5 @@
 tas:
-  - name: <a href="mailto:j_kinley@college.harvard.edu">Jambay Kinley</a> (Head TF)
+  - name: <a href="mailto:j_kinley@college.harvard.edu">Jambay Kinley</a> (head TF)
   - name: <a href="mailto:alexanderchin@college.harvard.edu">Alexander Chin</a>
   - name: <a href="mailto:grossman@college.harvard.edu">Lev Grossman</a>
   - name: <a href="mailto:jdhe@college.harvard.edu">Jeffrey He</a>
@@ -96,7 +96,7 @@ lectures:
     readings:
     hw: T1 (Regression) released
   - topic: Regression #Jan 30
-    subtopic: Linear Regression
+    subtopic: Linear Regression 1
     section:
     readings: 
     hw:
@@ -109,12 +109,12 @@ lectures:
     type:
   - topic: # section 1
     subtopic:
-    section: 1. Linear Regregression
+    section: 1. Linear Reg
     readings:
     hw:
     type: 'sec'
   - topic: #Feb 4
-    subtopic: Prob. Regression 
+    subtopic: Prob. Reg. 
     section:
     readings: 
     hw: 
@@ -155,12 +155,12 @@ lectures:
     type: 
   - topic: # section 3
     subtopic:
-    section: 3. Bayes LR, Lin. Classification
+    section: 3. Bayes LR, Lin. Class. (
     readings:
     hw:
     type: 'sec'
-  - topic: President's Day #Feb 18
-    subtopic: No class
+  - topic: #Feb 18
+    subtopic: President's Day
     readings:
     hw: 
   - topic: 
@@ -176,7 +176,7 @@ lectures:
     type: 'hw'
   - topic: # section 4
     subtopic:
-    section: 4. Prob. Classsification / NN
+    section: 4. Prob. Class / NN
     readings:
     demos:
     hw: 

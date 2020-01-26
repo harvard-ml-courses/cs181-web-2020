@@ -1,0 +1,270 @@
+---
+layout: page
+title: Home
+weight: 0
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+
+    <script src="bib-list.js"></script>
+
+    <link rel="stylesheet" href="bib-publication-list.css" type="text/css" />
+
+    <title>Harvard CS 181</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="page.css">
+  </head>
+
+  <body>
+    <div class="row">
+    </div>
+    <div class="container">
+      <div class="panel panel-primary" style="margin-top:10px;background-color:purple;border-color:#000000;">
+        <div class="panel-heading" style="background-color:plum;border-color:#2D6ED3;">
+          <h1>CS181: Machine Learning</h1>
+          <p class="lead">Finale Doshi-Velez, Harvard University</p>
+
+        </div>
+        <div class="panel-footer">
+          <ul class="nav nav-tabs invert-colors">
+            <li class="active"><a data-toggle="tab" href="#home_tab">Home</a></li>
+            <li><a data-toggle="tab" href="#schedule_tab">Schedule</a></li>
+            <li><a data-toggle="tab" href="#people_tab">People</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+          <div class="tab-content">
+              <div id="home_tab" class="row tab-pane fade in active">
+                  <div class="row container">
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Time:</span> Mon/Wed 9:00-10:30am</p>
+                      <p><span style="font-size: 1.17em;font-weight: bold;">Location:</span> Northwest Building B103 </p>
+                  </div>
+                  <div class="row container">
+                      <h3 id="announcements_description">Announcements (check piazza too)</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                      <ul>
+
+			<li> Midterm 2 is May 1st at 9am in Geological Museum 100. The extra time exam starts at 9 as well in Maxwell Dworkin 323.</li>
+			<li> All the links on (this) front page are now up to date.  You can use them to navigate to the Piazza site and the Canvas site, as well as see the repo with the first homework (below).  If you need access to Canvas, please put in a private Piazza post (Piazza shouldn't require special access).  The schedule page is still being updated.  </li>
+
+
+
+                      </div>
+                  </div>
+                  <div class="row container">
+                      <h3 id="description">Course Info</h3>
+                      <div class="container ">
+                      <!-- <div class="panel-body"> -->
+                          <dl>
+
+
+
+
+                              <dt>Section Times </dt>
+                              <dd>
+                              Regular section times:
+                                  <ul>
+                                    <li>Monday 1:30-2:30pm in MD 123, 4:30-5:30pm in Science Center 109</li>
+				                    <li>Tuesday 10:30am-11:30am in Science Center B10, 3:00pm-4:00pm in Science Center 222</li>
+				                    <li>Wednesday 4:30pm-5:30pm in Science Center 222</li>
+                                  </ul>
+                              </dd>
+
+		 	      <dt>Office Hours </dt>
+                              <dd>
+                             	 <ul>
+				   <li> Finale's OH: Wednesday 3-4:30pm in Science Center 316.04 </li>
+                              	   {% for oh in site.data.all.ohs %}
+                                   <li>{{oh.time}}: {{oh.location}}</li>
+                              	   {% endfor %}
+                            	 </ul>
+                              </dd>
+
+                              <dt>Syllabus and Collaboration Policy</dt>
+                              <dd>
+                                  <ul>
+                                      <li> (UPDATED 1/29/2019!) See the course <a href="syllabus.pdf">syllabus</a>
+                                  </ul>
+                              </dd>
+
+
+                              <dt>Links</dt>
+                              <dd>
+                                  <ul>
+
+				    <li><a href="https://piazza.com/harvard/spring2019/cs181">Piazza </a> </li>
+				    <li><a href="https://canvas.harvard.edu/courses/47944">Canvas Site</a></li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf</a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/"> Course Notes Github </a></li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-lectures">Lecture Notes Repo</a> (Finale's lecture notes in s18/ and last year's slides in s17/) </li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-section">Section Repo</a></li>
+            <li><a href="https://goo.gl/forms/vb9VI7ZNccxhuLuj2">Section Topics & Feedback Form</a></li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-demos">Demo Repo</a></li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-s19-homeworks">Homework Repo</a> (seed repo to pull from using GitHub Classroom repo) </li>
+				    <li><a href="https://github.com/harvard-ml-courses/cs181-s19-practicals">Practical Repo</a> (seed repo to pull from using GitHub Classroom repo) </li>
+				    <li><a href="https://classroom.github.com/a/-pHfvlEC">Create GitHub Classroom for homeworks</a> (make a homework repo just once)</li>
+                                </ul>
+                              </dd>
+
+
+                              <dt>References</dt>
+                              <dd><ul>
+				  <li><a href="https://github.com/harvard-ml-courses/cs181-textbook/blob/master/Textbook.pdf">Course Notes Pdf </a>,<a href="https://github.com/harvard-ml-courses/cs181-textbook/">Course Notes Github </a></li>
+				  <li> Bishop 2006, <a href="http://www.springer.com/us/book/9780387310732">Pattern Recognition and Machine Learning</a> (required text)</li>
+                                  <li> Murphy 2012, <a href="http://harvardcoopbooks.bncollege.com/webapp/wcs/stores/servlet/BNCB_TextbookDetailView?catalogId=10001&item=N&langId=-1&productId=600005699137&storeId=52084">Machine Learning: A Probabilistic Perspective</a> (optional readings)
+				  <li> Petersen and Pedersen 2012, <a href="http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3274/pdf/imm3274.pdf">The Matrix Cookbook</a>
+				  <li> Murphy 1998, <a href="https://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html">Bayesian Network Tutorial</a>
+				  <li> Rabiner 1989, <a href="https://www.cs.ubc.ca/~murphyk/Bayes/rabiner.pdf">Tutorial on HMMs</a>
+                                  <li> Sutton and Barto 2018, <a href="http://incompleteideas.net/book/the-book-2nd.html">Reinforcement Learning: An Introduction</a>
+                              </ul></dd>
+
+   			      <dt>Grading</dt>
+                              <dd>
+                                <ul>
+                                    <li> 5 Theory Homeworks (30%) </li>
+				                    <li> 4 Practicals (30%) </li>
+                                    <li> 2 Midterms  (40%) </li>
+                                </ul>
+                              </dd>
+
+			      <dt>Other Courses</dt>
+                            <dd>
+                                <ul>
+                     <li><a href="https://harvard-ml-courses.github.io/cs181-web-2017/">CS181 Spring 2017</a> (has lecture slides, section notes, etc...) </li>
+				     <li><a href="https://harvard-ml-courses.github.io/cs281-web/">CS281 Fall 2017</a> (Advanced Machine Learning) </li>
+				     <li><a href="https://people.seas.harvard.edu/~yaron/teaching.html">CS282 Spring 2018</a> (Robust Machine Learning) </li>
+				     <li><a href="https://harvard-ml-courses.github.io/cs287-web/">CS287 Spring 2018</a> (Machine Learning for Natural Language) </li>
+                                </ul>
+                            </dd>
+
+
+                          </dl>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div id="people_tab" class="row tab-pane fade">
+                  <div class="row container">
+                    <dl>
+		      <li> When contacting staff, Piazza and in-person is preferred.  Please use email sparingly. </li>
+                          <dt>Instructor</dt>
+                          <dd> <ul>
+                              <li>Finale Doshi-Velez </li>
+
+			       </ul>
+                          </dd>
+
+                          <dt>Teaching Fellows</dt>
+                          <dd>
+                              <ul>
+                                  {% for ta in site.data.all.tas %}
+                                  <li> {{ta.name}} </li>
+                                  {% endfor %}
+                               </ul>
+                          </dd>
+			  <dt> ethiCS: </dt>
+			  <dd>
+				<ul>
+				  <li> <a href="mailto:cmcdonaldwade@g.harvard.edu">Cat Wade</a> </li>
+ 				</ul>
+			  </dd>
+                      </dl>
+                  </div>
+              </div>
+
+
+
+
+	      <div id="schedule_tab" class="row tab-pane fade">
+                  <div class="row container">
+                      <div class="tab-content">
+                          <table class="table">
+                              <tr><th>Date</th> <th>Topic</th> <th>Subtopic</th> <th>Section</th> <th>Demos </th><th>Readings</th><th>Assignment </th></tr>
+                              {% for lecture in site.data.all.lectures %}
+                              <tr id = {{lecture.type|default("",true)}}>
+                                  <td> {{site.data.all.dates[forloop.index]}} </td>
+				  <td> {{lecture.topic | default("",true)}} </td>
+                                  <td> {{lecture.subtopic|default("", true)}}</td>
+				  <td> {{lecture.section|default("", true)}}</td>
+                              <td> {{lecture.demos|default("", true)}}</td>
+                              <td> {{lecture.readings|default("", true)}}</td>
+                              <td> {{lecture.hw | default("",true)}}</td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+          </div>
+
+
+	      	<div id="camelot_tab" class="row tab-pane fade">
+			<div class="row container" id="camelot-container">
+				<a href="https://camelot.ai/" target="_blank">
+					<img src="https://d2mxuefqeaa7sj.cloudfront.net/s_F38EEFEE5E13188081B7FE195E76A90CD0A2D4F689B3D6E36861D18C4CF27896_1517280633605_camelot_banner.png" width="100%"/>
+				</a>
+        <br />
+        <br />
+        <div id="camelot-text">
+          <p>
+          <a href="https://camelot.ai" target="_blank">Camelot.ai</a> is an online platform for machine learning problem-solving and skills development built by three former CS181 students. We focus on helping you learn real, practical skills and using our data to match your talent with top quantitative/technical companies. CS181 uses Camelot.ai for the practicals.
+          </p>
+
+          <p>
+          Machine learning & data science are only getting bigger, and it’s not enough to just be able to code up a simple BFS algorithm in your next tech interview. Our problems have varying difficulties and are designed to mimic real, fun projects, with multiple steps building on one other.
+          </p>
+
+          <p>
+          Enter the <a href="https://portal.camelot.ai/arena" target="_blank">Arena</a> to register for one of our weekly tournaments — done right in the browser — with prizes for everyone who finishes (like American Apparel Tshirts!), and additional rewards for top winners. Students who consistently do well will be referred to our sponsoring firms. Itching to get started? Check out the <a href="https://portal.camelot.ai/vault" target="_blank">Vault</a> to try your hand at some past tournament problems!
+          </p>
+
+          <p>
+          <b>How are you different from Kaggle?</b><br />
+          First, our problems are designed to be more engaging and interactive, in contrast to simply generating predictions on a giant data set. We tie problems to specific techniques or technologies. Second, Kaggle is not very accessible. Very few people outside of the top 1000 data scientists in the world (+ lots of time and resources) have a shot at winning a Kaggle competition. Our is aim is for users to solve fun, challenging problems and learn at the same time.
+          </p>
+
+          <p>
+
+          <b>Can we give feedback on the product?</b><br />
+          Yes definitely! Shoot a message to <a href="mailto:hello.camelot@gmail.com">hello.camelot@gmail.com</a> or talk to us directly through the chat box in the portal.
+          </p>
+        </div>
+
+
+
+
+
+			</div>
+		</div>
+
+
+          </div>
+    </div> <!-- /container -->
+  </body>
+</html>
+
+<head>
+
+
+</head>
+<html>
+
+</html>
