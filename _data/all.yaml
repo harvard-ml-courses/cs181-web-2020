@@ -94,7 +94,7 @@ lectures:
     subtopic: Intro
     section:
     readings:
-    hw: T1 (Regression) released
+    hw: <a href="homework.html#hw1>HW1 (Regression)</a> released
   - topic: Regression #Jan 30
     subtopic: Linear Regression
     section:
@@ -127,7 +127,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: T1 (Regression) due
+    hw: <a href="homework.html#hw1>HW1 (Regression)</a> due
     type: 'hw'
   - topic: # section 2
     subtopic:
@@ -140,7 +140,7 @@ lectures:
     section:
     readings: 
     demos:
-    hw: T2 (Classification) released
+    hw: HW2 (Classification) released
   - topic: Model Selection
     subtopic: Model Selection - Frequentist
     section:
@@ -172,7 +172,7 @@ lectures:
     subtopic:
     readings:
     demos:
-    hw: T2 (Classification) due
+    hw: HW2 (Classification) due
     type: 'hw'
   - topic: # section 4
     subtopic:
@@ -185,7 +185,7 @@ lectures:
     subtopic: Neural Net 1 
     section:
     readings: 
-    hw: T3 (Practical Supervised Learning) released
+    hw: HW3 (Practical Supervised Learning) released
   - topic: #Feb 27
     subtopic: Neural Net 2 
     section:
@@ -216,7 +216,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: T3 (Practical Supervised Learning) due
+    hw: HW3 (Practical Supervised Learning) due
     type: 'hw'
   - topic: # section 5
     subtopic:
@@ -248,7 +248,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 (SVMs and Ethics released, only needs 1 wk)
+    hw: HW4 (SVMs and Ethics released, only needs 1 wk)
   - topic: #Mar 20
     subtopic: No class
     section:
@@ -283,7 +283,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T4 (SVMs and Ethics) due
+    hw: HW4 (SVMs and Ethics) due
     type: 'hw'
   - topic: # section 8
     subtopic:
@@ -296,7 +296,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T5 (Clustering, EM, PCA) released
+    hw: HW5 (Clustering, EM, PCA) released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
@@ -331,7 +331,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T5 (Clustering, EM, PCA) due
+    hw: HW5 (Clustering, EM, PCA) due
     type: 'hw'
   - topic: # section 10
     subtopic:
@@ -343,7 +343,7 @@ lectures:
     subtopic: Linear BNs (HMMs)
     section:
     readings: 
-    hw: T6 (Graphical Models and RL) released
+    hw: HW6 (Graphical Models and RL) released
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
     section:
@@ -378,7 +378,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: T6 (Graphical Models and RL) due
+    hw: HW6 (Graphical Models and RL) due
     type: 'hw'
   - topic: # section 12
     subtopic:

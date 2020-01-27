@@ -7,86 +7,86 @@ weight: 0
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CS 181</title>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CS 181</title>
 
-  <!-- CSS files -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+	<!-- CSS files -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+		  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header id="header" class="main-container">
-  </header>
-  <section class="main-container page-head">
-    <div class="main">
-      <h1 class="head-title">CS 181: Machine Learning (2020)</h1>
-      <p class="head-subtitle">Finale Doshi-Velez, Harvard University</p>
-      <p class="head-subtitle"><b>Lectures:</b> Mon/Wed 9-10:15 am, Northwest Building B103 </p>
-    </div>
-  </section>
-  <section class="main-container text">
-    <div class="main">
-      <h2 class="title announcement">Announcements</h2>
-      <ul>
-        <li> <a href="https://piazza.com/harvard/spring2020/cs181" target="_blank">Sign up for Piazza.</a>
-          We will use Piazza for all course related communications.</li>
-        <li>HW1 will be released on Monday Jan 27.</li>
-        <li>Regular sections with begin on <strong>Monday Feb 3</strong> and locations will be updated when
-          confirmed.</li>
-      </ul>
-      </p>
-    </div>
-  </section>
-  <section class="main-container text">
-    <div class="main">
-      <h2 class="title">About</h2>
-      <p>
-        Introduction to machine learning, providing a probabilistic view on artificial intelligence and reasoning
-        under uncertainty. Topics include: supervised learning, ensemble methods and boosting, neural networks,
-        support vector machines, kernel methods, clustering and unsupervised learning, maximum likelihood,
-        graphical models, hidden Markov models, inference methods, and computational learning theory.
-      </p>
-      <p>
-        Students should feel comfortable with multivariate calculus, linear algebra, probability theory,
-        and complexity theory. Students will be required to produce non-trivial programs in Python.
-      </p>
-      <p class="link">
-        <a href="syllabus.html">Full course description with policies.</a>
-      </p>
-    </div>
-  </section>
-  <section class="main-container text">
-    <div class="main">
-      <h2 class="title">Course Sessions</h2>
-      <h3>Lecture</h3>
-      <p>Monday and Wednesday 9:00-10:15 am, Location: Northwest Building B103</p>
-      <h3>Sections</h3>
-      <ul>
-        <li>Monday 1:30-2:30 pm</li>
-        <li>Monday 4:30-5:30 pm</li>
-        <li>Tuesday 10:30am-11:30 am</li>
-        <li>Tuesday 3:00pm-4:00 pm</li>
-        <li>Wednesday 4:30pm-5:30 pm</li>
-      </ul>
-      <h3>Office Hours</h3>
-      <ul>
-        <li> Finale's OH: Wednesday 3-4:30pm, Location : Science Center 316.04 </li>
-        {% for oh in site.data.all.ohs %}
-        <li>{{oh.time}}: {{oh.location}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  </section>
-  <footer id="footer" class="main-container footer text">
-  </footer>
-  <!-- JS Scripts -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<header id="header" class="main-container">
+	</header>
+	<section class="main-container page-head">
+		<div class="main">
+			<h1 class="head-title">CS 181: Machine Learning (2020)</h1>
+			<p class="head-subtitle">Finale Doshi-Velez, Harvard University</p>
+			<p class="head-subtitle"><b>Lectures:</b> Mon/Wed 9-10:15 am, Northwest Building B103 </p>
+		</div>
+	</section>
+	<section class="main-container text">
+		<div class="main">
+			<h2 class="title announcement">Announcements</h2>
+			<ul>
+				<li> <a href="https://piazza.com/harvard/spring2020/cs181" target="_blank">Sign up for Piazza.</a>
+					We will use Piazza for all course related communications.</li>
+				<li>HW1 will be released on Monday Jan 27.</li>
+				<li>Regular sections with begin on <strong>Monday Feb 3</strong> and locations will be updated when
+					confirmed.</li>
+			</ul>
+			</p>
+		</div>
+	</section>
+	<section class="main-container text">
+		<div class="main">
+			<h2 class="title">About</h2>
+			<p>
+				Introduction to machine learning, providing a probabilistic view on artificial intelligence and reasoning
+				under uncertainty. Topics include: supervised learning, ensemble methods and boosting, neural networks,
+				support vector machines, kernel methods, clustering and unsupervised learning, maximum likelihood,
+				graphical models, hidden Markov models, inference methods, and computational learning theory.
+			</p>
+			<p>
+				Students should feel comfortable with multivariate calculus, linear algebra, probability theory,
+				and complexity theory. Students will be required to produce non-trivial programs in Python.
+			</p>
+			<p class="link">
+				<a href="syllabus.html">Full course description with policies.</a>
+			</p>
+		</div>
+	</section>
+	<section class="main-container text">
+		<div class="main">
+			<h2 class="title">Course Sessions</h2>
+			<h3>Lecture</h3>
+			<p>Monday and Wednesday 9:00-10:15 am, Location: Northwest Building B103</p>
+			<h3>Sections</h3>
+			<ul>
+				<li>Monday 1:30-2:30 pm</li>
+				<li>Monday 4:30-5:30 pm</li>
+				<li>Tuesday 10:30am-11:30 am</li>
+				<li>Tuesday 3:00pm-4:00 pm</li>
+				<li>Wednesday 4:30pm-5:30 pm</li>
+			</ul>
+			<h3>Office Hours</h3>
+			<ul>
+				<li> Finale's OH: Wednesday 3-4:30pm, Location : Science Center 316.04 </li>
+				{% for oh in site.data.all.ohs %}
+				<li>{{oh.time}}: {{oh.location}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+	<footer id="footer" class="main-container footer text">
+	</footer>
+	<!-- JS Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
