@@ -109,7 +109,7 @@ lectures:
     type:
   - topic: # section 1
     subtopic:
-    section: 1. Linear Regregression
+    section: 1. Linear Regression
     readings:
     hw:
     type: 'sec'
