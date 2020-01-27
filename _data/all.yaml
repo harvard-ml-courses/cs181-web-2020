@@ -94,7 +94,7 @@ lectures:
     subtopic: Intro
     section:
     readings:
-    hw: <a href="homework.html#hw1>HW1 (Regression)</a> released
+    hw: <a href="homework.html#hw1">HW1 (Regression)</a> released
   - topic: Regression #Jan 30
     subtopic: Linear Regression
     section:
@@ -127,7 +127,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: <a href="homework.html#hw1>HW1 (Regression)</a> due
+    hw: <a href="homework.html#hw1">HW1 (Regression)</a> due
     type: 'hw'
   - topic: # section 2
     subtopic:
