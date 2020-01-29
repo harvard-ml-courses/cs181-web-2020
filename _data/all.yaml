@@ -86,7 +86,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: 0. Math Review
+    section: <a href="sections.html#sec0">0. Math Review</a>
     readings:
     hw:
     type: 'sec'
