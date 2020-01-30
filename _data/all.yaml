@@ -10,7 +10,7 @@ tas:
   - name: <a href="mailto:mwornow@college.harvard.edu">Michael Wornow</a>
   - name: <a href="mailto:catherinezeng@college.harvard.edu">Catherine Zeng</a>
   - name: <a href="mailto:billzhang@college.harvard.edu">Bill Zhang</a>
-  
+
 
 ohs:
   - time: Tue 8-10pm
@@ -22,7 +22,7 @@ ohs:
   - time: Thu 7-9pm
     location: Mather Dining Hall
   - time: Thu 9-11pm
-    location: Leverett Dining Hall
+    location: Oaktell
   - time: Thu 8-10pm
     location: Currier Dining Hall
 
@@ -81,7 +81,7 @@ dates: ["",
 	"", # section 12 (exam review)
 	"Apr. 27 (M)", # Interpretability / Learning Theory
 	"Apr. 29 (W)", # midterm 2
-	"May. 1 (F)"] 
+	"May. 1 (F)"]
 
 lectures:
   - topic:
@@ -98,7 +98,7 @@ lectures:
   - topic: Regression #Jan 30
     subtopic: Linear Regression
     section:
-    readings: 
+    readings:
     hw:
   - topic:
     subtopic:
@@ -114,10 +114,10 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Feb 4
-    subtopic: Prob. Regression 
+    subtopic: Prob. Regression
     section:
-    readings: 
-    hw: 
+    readings:
+    hw:
   - topic: Classification
     subtopic: Linear Classification
     section:
@@ -131,28 +131,28 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. Model Selection/Bayes 
+    section: 2. Model Selection/Bayes
     readings:
     hw:
     type: 'sec'
   - topic: #Feb 11
     subtopic: Prob. Classification
     section:
-    readings: 
+    readings:
     demos:
     hw: HW2 (Classification) released
   - topic: Model Selection
     subtopic: Model Selection - Frequentist
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Feb 15
     subtopic:
     section:
     readings:
     demos:
-    hw: 
-    type: 
+    hw:
+    type:
   - topic: # section 3
     subtopic:
     section: 3. Bayes LR, Lin. Classification
@@ -162,11 +162,11 @@ lectures:
   - topic: President's Day #Feb 18
     subtopic: No class
     readings:
-    hw: 
-  - topic: 
+    hw:
+  - topic:
     subtopic: Model Selection - Bayesian
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Feb 22
     subtopic:
@@ -179,17 +179,17 @@ lectures:
     section: 4. Prob. Classsification / NN
     readings:
     demos:
-    hw: 
+    hw:
     type: 'sec'
   - topic: Function Class
-    subtopic: Neural Net 1 
+    subtopic: Neural Net 1
     section:
-    readings: 
+    readings:
     hw: HW3 (Practical Supervised Learning) released
   - topic: #Feb 27
-    subtopic: Neural Net 2 
+    subtopic: Neural Net 2
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Mar 1
     subtopic:
@@ -198,19 +198,19 @@ lectures:
     hw:
   - topic: # midterm 1 review
     subtopic:
-    section: Midterm 1 Review 
+    section: Midterm 1 Review
     readings:
     hw:
     type: 'sec'
   - topic: Objective #Mar 4
-    subtopic: Max-Margin 
+    subtopic: Max-Margin
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Mar 6
-    subtopic: SVMs 
+    subtopic: SVMs
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Mar 8
     subtopic:
@@ -225,7 +225,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Mar 11
-    subtopic: Ethics in ML 
+    subtopic: Ethics in ML
     section:
     readings:
     hw:
@@ -268,14 +268,14 @@ lectures:
     hw:
     type: 'sec'
   - topic: Unsupervised Learning # Mar 25
-    subtopic: Clustering 
+    subtopic: Clustering
     section:
-    readings: 
+    readings:
     hw:
   - topic: #Mar 27
-    subtopic: Mixture/EM 
+    subtopic: Mixture/EM
     section:
-    readings: 
+    readings:
     demos:
     hw:
   - topic: #Mar 29
@@ -300,7 +300,7 @@ lectures:
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
-    readings: 
+    readings:
     hw:
   - topic: # Apr 5
     subtopic:
@@ -310,22 +310,22 @@ lectures:
     type:
   - topic: # section 9
     subtopic:
-    section: 9. Dim Reduction / Bayes Nets 
+    section: 9. Dim Reduction / Bayes Nets
     readings:
     hw:
     type: 'sec'
   - topic:  #Apr 8
     subtopic: Graphical Models
     section:
-    readings: 
-    hw: 
-    type: 
+    readings:
+    hw:
+    type:
   - topic: #Apr 10
     subtopic: Inference for BNs
     section:
     readings:
     demos:
-    hw: 
+    hw:
   - topic: #Apr 12
     subtopic:
     section:
@@ -339,33 +339,33 @@ lectures:
     readings:
     hw:
     type: 'sec'
-  - topic: 
+  - topic:
     subtopic: Linear BNs (HMMs)
     section:
-    readings: 
+    readings:
     hw: HW6 (Graphical Models and RL) released
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
     section:
-    readings: 
+    readings:
     hw:
   - topic: # Apr 19
     subtopic:
     section:
     readings:
     demos:
-    hw: 
+    hw:
   - topic: # section 11
     subtopic:
-    section: 11. MDPs, RL 
+    section: 11. MDPs, RL
     readings:
     hw:
     type: 'sec'
   - topic: Reinforcement Learning # Apr 22
     subtopic: RL
     section:
-    readings: 
-    hw: 
+    readings:
+    hw:
   - topic: # Apr 24
     subtopic: Deep RL
     section:
@@ -384,7 +384,7 @@ lectures:
     subtopic:
     section: Midterm 2 Review
     readings:
-    hw: 
+    hw:
     type: 'sec'
   - topic: # Apr 29
     subtopic: Interpretability or Learning Theory
