@@ -1,30 +1,9 @@
 ---
 layout: page
-title: Home
+title: Schedule
 weight: 0
 ---
 
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS 181 Schedule</title>
-
-    <!-- CSS files -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header id="header" class="main-container">
-</header>
-<section class="main-container page-head">
-    <div class="main">
-        <h1 class="head-title">Schedule</h1>
-    </div>
-</section>
 <section class="main-container text">
     <div class="main">
         <table class="table">
@@ -37,25 +16,15 @@ weight: 0
                 <th>Assignment </th>
             </tr>
             {% for lecture in site.data.all.lectures %}
-            <tr class = {{lecture.type|default("",true)}}>
+            <tr class='{{lecture.type|default: ""}}'>
                 <td> {{site.data.all.dates[forloop.index]}} </td>
-                <td> {{lecture.topic | default("",true)}} </td>
-                <td> {{lecture.subtopic|default("", true)}}</td>
-                <td> {{lecture.section|default("", true)}}</td>
-                <td> {{lecture.readings|default("", true)}}</td>
-                <td> {{lecture.hw | default("",true)}}</td>
+                <td> {{lecture.topic | default: ""}} </td>
+                <td> {{lecture.subtopic | default: ""}}</td>
+                <td> {{lecture.section | default: ""}}</td>
+                <td> {{lecture.readings | default: ""}}</td>
+                <td> {{lecture.hw | default: ""}}</td>
             </tr>
             {% endfor %}
         </table>
     </div>
 </section>
-
-<footer id="footer" class="main-container footer text">
-</footer>
-<!-- JS Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-</body>
-</html>
