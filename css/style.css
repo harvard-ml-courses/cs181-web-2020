@@ -134,3 +134,7 @@ p.link a:inactive, ul.lists li.inactive {
     font-size: 0.75em;
     font-weight: 300;
 }
+
+body {
+    font-size: 1.5em;
+}
