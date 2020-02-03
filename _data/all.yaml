@@ -13,17 +13,17 @@ tas:
 
 
 ohs:
-  - time: Tue 8-10pm
+  - time: Tue 8-10 pm
     location: Quincy Dining Hall
-  - time: Wed 6-8pm
+  - time: Wed 6-8 pm
     location: Maxwell Dworkin 221
-  - time: Wed 8-10pm
+  - time: Wed 8-10 pm
     location: Eliot Dining Hall
-  - time: Thu 7-9pm
+  - time: Thu 7-9 pm
     location: Mather Dining Hall
-  - time: Thu 9-11pm
+  - time: Thu 9-11 pm
     location: Oaktell
-  - time: Thu 8-10pm
+  - time: Thu 8-10 pm
     location: Currier Dining Hall
 
 dates: ["",
