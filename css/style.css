@@ -146,7 +146,7 @@ body {
 
 .dropdown-toggle::after {
     display: inline-block;
-    margin-left: .255em;
+    margin-left: 0em;
     vertical-align: .255em;
     content: "";
     border-top: .3em solid;

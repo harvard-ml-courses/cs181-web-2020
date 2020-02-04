@@ -86,7 +86,7 @@ dates: ["",
 lectures:
   - topic:
     subtopic:
-    section: <a href="{{ site.baseurl }}/sections#sec0">0. Math and Code Review</a>
+    section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
     readings:
     hw:
     type: 'sec'
@@ -94,9 +94,9 @@ lectures:
     subtopic: Intro
     section:
     readings:
-    hw: <a href="{{ site.baseurl }}/homework#hw1">HW1 (Regression)</a> released
+    hw: <a href="/cs181-web/homework#hw1">HW1 (Regression)</a> released
   - topic: Regression #Jan 30
-    subtopic: <a href="{{ site.baseurl }}/recap2">Linear Regression</a>
+    subtopic: <a href="/cs181-web/recap2">Linear Regression</a>
     section:
     readings:
     hw:
@@ -109,7 +109,7 @@ lectures:
     type:
   - topic: # section 1
     subtopic:
-    section: <a href="{{ site.baseurl }}/sections#sec1">1. Linear Regression</a>
+    section: <a href="/cs181-web/sections#sec1">1. Linear Regression</a>
     readings:
     hw:
     type: 'sec'
@@ -127,7 +127,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: <a href="{{ site.baseurl }}/homework#hw1">HW1 (Regression)</a> due
+    hw: <a href="/cs181-web/homework#hw1">HW1 (Regression)</a> due
     type: 'hw'
   - topic: # section 2
     subtopic:
