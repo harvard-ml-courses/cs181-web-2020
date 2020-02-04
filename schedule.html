@@ -12,7 +12,7 @@ weight: 0
                 <th>Topic</th>
                 <th>Subtopic</th>
                 <th>Section</th>
-                <th>Readings</th>
+<!--                <th>Readings</th>-->
                 <th>Assignment </th>
             </tr>
             {% for lecture in site.data.all.lectures %}
@@ -21,7 +21,7 @@ weight: 0
                 <td> {{lecture.topic | default: ""}} </td>
                 <td> {{lecture.subtopic | default: ""}}</td>
                 <td> {{lecture.section | default: ""}}</td>
-                <td> {{lecture.readings | default: ""}}</td>
+<!--                <td> {{lecture.readings | default: ""}}</td>-->
                 <td> {{lecture.hw | default: ""}}</td>
             </tr>
             {% endfor %}
