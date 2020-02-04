@@ -26,7 +26,7 @@ header .header-title a {
     font-size: 0.9em;
     font-weight: 400; }
 header nav {
-    float: right; }
+    float: right;}
 header nav ul {
     float: right;
     padding: 0.5em 0; }
@@ -44,7 +44,7 @@ header nav ul li a:hover {
     text-decoration: none;
     border-bottom: 1px dotted #000;
     color: #000; }
-header nav ul li + li {
+header nav ul li {
     margin-left: 1em; }
 
 footer.footer {
@@ -137,4 +137,18 @@ p.link a:inactive, ul.lists li.inactive {
 
 body {
     font-size: 1.5em;
+}
+
+/* .dropdown-item {
+  margin-left: 1.3em;
+  margin-right: 1.3em;
+} */
+
+@media (min-width: 979px) {
+  li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+  }
+}
+.dropdown-menu {
+  margin: 0
 }

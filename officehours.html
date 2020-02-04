@@ -1,0 +1,16 @@
+---
+layout: page
+title: Office Hours
+weight: 0
+---
+
+<section class="main-container text">
+	<div class="main">
+		<ul>
+			<li> Finale's OH: Wednesday 3-4:30 pm, Location : Science Center 316.04 </li>
+			{% for oh in site.data.all.ohs %}
+			<li>{{oh.time}}: {{oh.location}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
