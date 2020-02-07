@@ -68,6 +68,7 @@ footer.footer .half-row.l {
 
 footer.footer .half-row.r {
     float: right;
+    text-align : right;
 }
 
 .page-head {
