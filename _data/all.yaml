@@ -87,18 +87,18 @@ lectures:
   - topic:
     subtopic:
     section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
-    readings:
+    readings: 
     hw:
     type: 'sec'
   - topic: Overview #Jan 28
     subtopic: Intro
     section:
-    readings:
+    readings: 2.1, 2.2.1
     hw: <a href="/cs181-web/homework#hw1">HW1 (Regression)</a> released
   - topic: Regression #Jan 30
     subtopic: <a href="/cs181-web/recap2">Linear Regression</a>
     section:
-    readings:
+    readings: 2.3-2.5, 2.6.1, 2.7.1
     hw:
   - topic:
     subtopic:
@@ -116,12 +116,12 @@ lectures:
   - topic: #Feb 4
     subtopic: Prob. Regression
     section:
-    readings:
+    readings: 2.6.2, 2.6.3 
     hw:
   - topic: Classification
     subtopic: Linear Classification
     section:
-    readings:
+    readings: 3.1-3.5
     hw:
   - topic: #Feb 8
     subtopic:
@@ -131,20 +131,20 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. Model Selection/Bayes
+    section: 2. Prob. Regression, Classification
     readings:
     hw:
     type: 'sec'
   - topic: #Feb 11
     subtopic: Prob. Classification
     section:
-    readings:
+    readings: 3.6
     demos:
     hw: HW2 (Classification) released
   - topic: Model Selection
     subtopic: Model Selection - Frequentist
     section:
-    readings:
+    readings: 2.7, 2.8
     hw:
   - topic: #Feb 15
     subtopic:
@@ -155,7 +155,7 @@ lectures:
     type:
   - topic: # section 3
     subtopic:
-    section: 3. Bayes LR, Lin. Classification
+    section: 3. Model Selection
     readings:
     hw:
     type: 'sec'
@@ -166,7 +166,7 @@ lectures:
   - topic:
     subtopic: Model Selection - Bayesian
     section:
-    readings:
+    readings: 2.8, 2.9
     hw:
   - topic: #Feb 22
     subtopic:
@@ -176,7 +176,7 @@ lectures:
     type: 'hw'
   - topic: # section 4
     subtopic:
-    section: 4. Prob. Classsification / NN
+    section: 4. NN
     readings:
     demos:
     hw:
@@ -184,12 +184,12 @@ lectures:
   - topic: Function Class
     subtopic: Neural Net 1
     section:
-    readings:
+    readings: 4.1-4.4, 4.6
     hw: HW3 (Practical Supervised Learning) released
   - topic: #Feb 27
     subtopic: Neural Net 2
     section:
-    readings:
+    readings: 4.4
     hw:
   - topic: #Mar 1
     subtopic:
@@ -205,12 +205,12 @@ lectures:
   - topic: Objective #Mar 4
     subtopic: Max-Margin
     section:
-    readings:
+    readings: 5.1-5.3
     hw:
   - topic: #Mar 6
-    subtopic: SVMs
+    subtopic: SVM
     section:
-    readings:
+    readings: 5.4
     hw:
   - topic: #Mar 8
     subtopic:
@@ -220,7 +220,7 @@ lectures:
     type: 'hw'
   - topic: # section 5
     subtopic:
-    section: 5. Margin-based / SVMs
+    section: 5. Margin-based / SVM
     readings:
     hw:
     type: 'sec'
@@ -270,12 +270,12 @@ lectures:
   - topic: Unsupervised Learning # Mar 25
     subtopic: Clustering
     section:
-    readings:
+    readings: 6
     hw:
   - topic: #Mar 27
-    subtopic: Mixture/EM
+    subtopic: Mixture Models
     section:
-    readings:
+    readings: 9.1-9.5
     demos:
     hw:
   - topic: #Mar 29
@@ -294,13 +294,13 @@ lectures:
   - topic:  # Apr 1
     subtopic: PCA
     section:
-    readings:
+    readings: 7
     demos:
     hw: HW5 (Clustering, EM, PCA) released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
-    readings:
+    readings: 9.6
     hw:
   - topic: # Apr 5
     subtopic:
@@ -317,7 +317,7 @@ lectures:
   - topic:  #Apr 8
     subtopic: Graphical Models
     section:
-    readings:
+    readings: 8
     hw:
     type:
   - topic: #Apr 10
@@ -342,7 +342,7 @@ lectures:
   - topic:
     subtopic: Linear BNs (HMMs)
     section:
-    readings:
+    readings: 10
     hw: HW6 (Graphical Models and RL) released
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
