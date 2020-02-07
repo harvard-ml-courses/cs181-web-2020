@@ -150,8 +150,10 @@ body {
     border-left: .3em solid transparent;
 }
 
-li.dropdown:hover > ul.dropdown-menu {
+@media (min-width: 979px) {
+  li.dropdown:hover > ul.dropdown-menu {
     display: block;
+  }
 }
 
 .dropdown-menu {
