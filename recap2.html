@@ -7,10 +7,25 @@ weight: 0
 
 <section class="main-container text">
     <div class="main">
-      <h3>Date: January 29, 2020</h3>
-      <h3>Relevant Textbook Sections: 2.3-2.5, 2.6.1, 2.6.3, 2.7.1</h3>
+      <h4>Date: January 29, 2020 (<a href="http://bit.ly/cs181cc2" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc2responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 2.3-2.5, 2.6.1, 2.6.3, 2.7.1</h4>
 
-      <h2>Introduction</h2>
+      <br>
+
+      <h3>Lecture 2 Summary</h3>
+
+      <ul>
+        <li><a href="#recap2_1">Introduction: Nonparametric vs Parametric Models</a></li>
+        <li><a href="#recap2_2">General Form of Regression (function class, loss function, find optimal w*)</a></li>
+        <li><a href="#recap2_3">Example: Linear Model with L2 Loss</a></li>
+        <li><a href="#recap2_4">Different Methods of Solving for $\textbf{w}^*$</a></li>
+        <li><a href="#recap2_5">Different Interpretations of Linear Regression</a></li>
+        <li><a href="#recap2_6">Basis Regression</a></li>
+      </ul>
+
+      <br>
+
+      <h2 id="recap2_1">Introduction</h2>
 
       The previous lecture, we covered nonparametric regression. As a recap, a nonparametric model doesn't have a fixed number of parameters used to make predictions, which means it doesn't need to make strong assumptions about the data. Instead, as the amount of training data increases, nonparametric models tend to become more and more complex as they incorporate the new data.
 
@@ -19,7 +34,7 @@ weight: 0
 
       This lecture, we covered parametric regression. These models have a fixed set of parameters used to make predictions, which often means stronger assumptions are made about the data. Specifically, no matter how much more training data we have, these models have the same levels of complexity, as the number of parameters stays fixed. Here, more training data simply helps us improve our choice of parameters. The simplest example of parametric regression is linear regression, which will be the focus of today's lecture. Having a solid understanding of linear regression will make learning other parametric models much easier.
 
-      <h2>General Form of All Regressions</h2>
+      <h2 id="recap2_2">General Form of All Regressions</h2>
 
       <ol>
         <li>Choose a function class (examples: linear, KNN)</li>
@@ -27,7 +42,7 @@ weight: 0
         <li>Define $\textbf{w}^*$ that minimizes the loss: $\textbf{w}^* = \text{argmin}_{\textbf{w}} L(\textbf{w})$</li>
       </ol>
 
-      <h2>Linear Regression with L2 Loss</h2>
+      <h2 id="recap2_3">Linear Regression with L2 Loss</h2>
 
       At lecture, we picked our function class to be linear, and our loss function to be L2, the sum of the squared residuals.
 
@@ -72,7 +87,7 @@ weight: 0
 
       Note: the following assumes the 1's to do the bias trick have already been added into the data.
 
-      <h5>How to Solve for $\textbf{w}^*$: Method 1</h5>
+      <h5 id="recap2_4">How to Solve for $\textbf{w}^*$: Method 1</h5>
 
       One method is to use gradient descent. This will be covered in more detail in future lectures.
 
@@ -113,7 +128,7 @@ weight: 0
           $$\hat{y} = (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-T}\textbf{x}$$
           $$\hat{y} = (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-1}\textbf{x}$$
 
-      <u>Statistics View:</u>
+      <u id="recap2_5">Statistics View:</u>
 
       $(\textbf{X}^T\textbf{y})^T$ is the correlation between $\textbf{x}$ and $y$, so if the correlation is high, the weights should be higher since you should weigh $\textbf{x}$ by more in order to better predict $y$. $(\textbf{X}^T\textbf{X})$ is the variation in $\textbf{x}$.
 
@@ -142,7 +157,7 @@ weight: 0
 
       Conventions for notations vary between different sources so it is a useful skill to be able to understand and derive expressions in different notational formats.
 
-      <h2>Basis Regression</h2>
+      <h2 id="recap2_6">Basis Regression</h2>
 
       Sometimes, linear regression is not enough to model the input data, as all it does is simply scales our input variables. In order to create more complex models, we can use a basis to transform our data into more complicated forms, using polynomial functions, sine or cosine functions, and more. Essentially, what we can do is "move our data into a new basis", or in other words, transform training data before we perform the actual linear regression. Then, when we get our test data and need to make predictions, we transform the test data as well, then use our model to make our predictions.
 
@@ -152,16 +167,6 @@ weight: 0
       We use $\phi(\cdot)$ to denote a basis function, which is the transformation we'll apply to each $\textbf{x}$ data input.
 
       Perhaps we have an original point $\textbf{x} = (x_1, x_2)^T$, and we may pick a basis function $\phi(\textbf{x})$ that transforms the data point into $\phi(\textbf{x}) = (x_1, x_2, \cos(x_1), {x_1}^4, \sin(x_2))^T$.
-
-      <h3>Summary of Lecture 2 Concepts</h3>
-
-      <ol>
-        <li>The Differences between Nonparametric vs Parametric Models</li>
-        <li>General Form of Regression (function class, loss function, find optimal w*)</li>
-        <li>Different Methods of Solving for $\textbf{w}^*$ (gradient descent, solving for the exact solution)</li>
-        <li>Different Interpretations of Linear Regression (statistics view, linear algebra view)</li>
-        <li>Basis Regression</li>
-      <ol>
 
     </div>
 </section>
