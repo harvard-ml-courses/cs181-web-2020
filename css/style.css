@@ -139,11 +139,6 @@ body {
     font-size: 1.5em;
 }
 
-/* .dropdown-item {
-  margin-left: 1.3em;
-  margin-right: 1.3em;
-} */
-
 .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0em;
@@ -156,9 +151,9 @@ body {
 }
 
 li.dropdown:hover > ul.dropdown-menu {
-display: block;
+    display: block;
 }
 
 .dropdown-menu {
-  margin: 0
+    margin: 0
 }
