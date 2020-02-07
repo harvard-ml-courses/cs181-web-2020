@@ -47,8 +47,27 @@ header nav ul li a:hover {
 header nav ul li {
     margin-left: 1em; }
 
+header img.header-icon {
+    height: 1.5em;
+}
+
 footer.footer {
     padding: 3em 0 5em 0;
+}
+
+footer.footer .half-row {
+    width: 40%;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+}
+
+footer.footer .half-row.l {
+    float: left;
+}
+
+footer.footer .half-row.r {
+    float: right;
 }
 
 .page-head {
