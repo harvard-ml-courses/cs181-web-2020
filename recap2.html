@@ -117,16 +117,20 @@ weight: 0
       Note: The derivative can also be taken by first expanding the loss function and computing the derivatives term by term.
 
       Now we set it to 0 and find $\textbf{w}^*$:
-
-          $$0 = -2\textbf{X}^T\textbf{y} + 2\textbf{X}^T\textbf{X}\textbf{w}^*$$
-          $$\textbf{X}^T\textbf{X}\textbf{w}^* = \textbf{X}^T\textbf{y}$$
-          $$\textbf{w}^* = (\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}$$
+          $$\begin{align*}
+              0 &= -2\textbf{X}^T\textbf{y} + 2\textbf{X}^T\textbf{X}\textbf{w}^* \\
+              \textbf{X}^T\textbf{X}\textbf{w}^* &= \textbf{X}^T\textbf{y} \\
+              \textbf{w}^* &= (\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}
+            \end{align*}
+          $$
 
       For a given datapoint $\textbf{x}$, the corresponding prediction is
-
-          $$\hat{y} = \left((\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}\right)^T\textbf{x}$$
-          $$\hat{y} = (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-T}\textbf{x}$$
-          $$\hat{y} = (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-1}\textbf{x}$$
+          $$\begin{align*}
+            \hat{y} &= \left((\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}\right)^T\textbf{x} \\
+            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-T}\textbf{x} \\
+            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-1}\textbf{x}
+            \end{align*}
+          $$
 
       <u id="recap2_5">Statistics View:</u>
 

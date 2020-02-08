@@ -89,6 +89,7 @@ footer.footer .half-row.r {
 .text {
     margin: 0;
     font-weight: 300}
+
 .text .title {
     padding-top: 0.5em;
     font-weight: 400;
@@ -98,7 +99,7 @@ footer.footer .half-row.r {
     width: 100%; }
 .text .head-subtitle {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
     font-weight: 400;
     margin: 0 0 0.1em 0;}
 .text h3 {
@@ -106,10 +107,11 @@ footer.footer .half-row.r {
     font-family: 'Roboto', sans-serif;
     font-weight: 300; }
 .text p, .text li {
-    font-size: 1.1em;
     line-height: 150%; }
+
 .text .announcement + ul li {
     margin-bottom: 0.5em}
+
 
 .announcement {
     color: #E53935;
