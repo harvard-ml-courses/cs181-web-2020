@@ -40,33 +40,36 @@ weight: 0
 
       Specifically, we started our probabilistic view on linear regression by making a "story" for how the data were created (this is called a "generative" model). <br><br>
 
-      Given x's, with x~P(x)...
+      Given  $\mathbf{x}$'s, with $\mathbf{x} \sim P(\mathbf{x})$...
       <ul>
         <li>$\epsilon$ ~ $N(0, \sigma^2)$</li>
-        <li>$y  | x, \epsilon = w^Tx + \epsilon$</li>
+        <li>$y  | \mathbf{x}, \epsilon = \mathbf{w}^T\mathbf{x} + \epsilon$</li>
       </ul>
 
-      To put this in words, we essentially assumed that given x's, our $y$ comes from multiplying the x with w, but comes out a bit scattered due to some Gaussian noise term, $\epsilon$.
+      To put this in words, we essentially assumed that given $\mathbf{x}$'s, our $y$ comes from multiplying the $\mathbf{x}$
+      with $\mathbf{w}$, but comes out a bit scattered due to some Gaussian noise term, $\epsilon$.
 
-      <h2 id="recap3_3">Maximizing Log Likelihood (with respect to w)</h2>
+      <h2 id="recap3_3">Maximizing Log Likelihood (with respect to $\mathbf{w}$)</h2>
 
-      Now that we've set up the model, we want to come up with a formula for the "likelihood of the model", also known as the likelihood. This is defined as the probability of the data given the model, or in notation, $P(\textrm{data|model})$. The purpose of setting this up is so that we can find the optimal w* that maximizes this term, or put another way, the  w* that maximizes the chances that we are seeing the data we currently see (given the story we chose for the data).
+      Now that we've set up the model, we want to come up with a formula for the "likelihood of the model", also known as the likelihood.
+      This is defined as the probability of the data given the model, or in notation, $P(\textrm{data|model})$.
+      The purpose of setting this up is so that we can find the optimal $\mathbf{w}^*$ that maximizes this term, or put another way,
+      the  $\mathbf{w}^*$ that maximizes the chances that we are seeing the data we currently see (given the story we chose for the data).
 
       <br>
       <br>
 
-      We can rewrite the the $P(\textrm{data|model})$ expression into the following, because all the $y_n$'s are independent given $x_n$'s and parameters (which we decided in our story):
+      We can rewrite the the $P(\textrm{data|model})$ expression into the following, because all the $y_n$'s are
+      independent given $\mathbf{x}_n$'s and parameters (which we decided in our story):
 
-      $$P(\textrm{data|model}) = \prod_n p(y_n | x_n, w, \sigma^2)$$
+      $$P(\textrm{data|model}) = \prod_n p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$$
 
       Since we are trying to find the w* that maximizes this function, we can apply a monotonic function to the entire expression and will still arrive at the same final w*.
 
       <br>
-      <br>
 
-      $$log(P(\textrm{data|model})) = \sum_n \log p(y_n | x_n, w, \sigma^2)$$
+      $$\log(P(\textrm{data|model})) = \sum_n \log p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$$
 
-      <br>
       <br>
 
       <u id="recap3_4">Student Question: What exactly is the relationship between maximum likelihood and loss?</u> As mentioned above, we are trying to maximize the likelihood here. To make this maximization problem easier in the math, we took the log (standard practice), which is safe because it is monotonic. Finally, if we want to rewrite this maximium likelihood problem as a loss, we can add in a negative sign and now say we are minimizing $-\log(P(\textrm{data|model)})$ with respect to w. This is now the format of a loss function. So to convert a likelihood to a loss, take the negative log of the likelihood (what we did in the concept check).
@@ -77,111 +80,143 @@ weight: 0
 
       Next, we substitute in the PDF of a Gaussian. Here, we assume $\sigma^2$ is known, and w is not. As a reminder, our general PDF is:
 
-      $$N(z; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp^{-\frac{(z-\mu)^2}{2\sigma^2}}$$.
+      $$\mathcal{N}(z; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp^{-\frac{(z-\mu)^2}{2\sigma^2}}$$.
 
       <br>
-      <br>
 
-      $$log(P(\textrm{data|model})) = \sum_n \log p(y_n | x_n, w, \sigma^2)$$
+      $$\log(P(\textrm{data|model})) = \sum_n \log p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$$
 
-      <br>
-      <br>
+      We can substitute in the following way. This is because we are looking at the probability of $y_n$ being the values
+      they are, given that we have a Gaussian with mean $\mathbf{w}^T\mathbf{x}$ and variance $\sigma^2$ (note: it is
+      important to remember here we are assuming we are given $\sigma^2$).
 
-      We can substitute in the following way. This is because we are looking at the probability of $y_n$ being the values they are, given that we have a Gaussian with mean $w^Tx$ and variance $\sigma^2$ (note: it is important to remember here we are assuming we are given $\sigma^2$).
+      $$\log(P(\textrm{data|model})) = \sum_n \log \mathcal{N}(y_n | \mathbf{w}^T\mathbf{x}, \sigma^2)$$
 
-      $$log(P(\textrm{data|model})) = \sum_n \log N(y_n | w^Tx, \sigma^2)$$
-
-      <u>Student Question: How do we know how to do that substitution? As in, to go from the probability to this particular PDF that was subbed in above?</u> The intuitive answer is that we know $\epsilon$ causes all the variation in the final y, and $\epsilon$ is Gaussian, so the final term must be Gaussian with the same variance of $\sigma^2$, and we also know that the mean of the final y is $w^Tx$. However, we can also do this formally. We can rewrite $p(y_n | x_n, w, \sigma^2)$ as an integral $\int p(y_n | x, w, \epsilon)p(\epsilon | \sigma^2)  d\epsilon$. We know $p(\epsilon | \sigma^2)$ is a Gaussian centered around 0 with variance $\sigma^2$. And we know that $p(y|x, w, \epsilon)$ is really just a spike, because given x, w, and $\epsilon$, we know exactly what y will be with full certainty. When we multiply these two together, we get a Gaussian back again, specifically $N(y_n | w^Tx, \sigma^2)$.
+      <u>Student Question: How do we know how to do that substitution? As in, to go from the probability to this
+        particular PDF that was subbed in above?</u> The intuitive answer is that we know $\epsilon$ causes all the
+      variation in the final $y$, and $\epsilon$ is Gaussian, so the final term must be Gaussian with the same variance
+      of $\sigma^2$, and we also know that the mean of the final y is $\mathbf{w}^T\mathbf{x}$. However, we can also do
+      this formally. We can rewrite $p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$ as an integral
+      $\int p(y_n | \mathbf{x}_n, \mathbf{w}, \epsilon)p(\epsilon | \sigma^2)  d\epsilon$. We know $p(\epsilon | \sigma^2)$
+      is a Gaussian centered around 0 with variance $\sigma^2$. And we know that $p(y|\mathbf{x}, \mathbf{w}, \epsilon)$
+      is really just a spike, because given $\mathbf{x}$, $\mathbf{w}$, and $\epsilon$, we know exactly what $y$ will be with
+      full certainty. When we multiply these two together, we get a Gaussian back again, specifically
+      $\mathcal{N}(y_n | \mathbf{w}^T\mathbf{x}_n, \sigma^2)$.
 
       <br>
       <br>
 
       Let us continue the math:
 
-      $$log(P(\textrm{data|model})) = \sum_n \log N(y_n | w^Tx, \sigma^2)$$
+      $$\begin{align*}
+      \log(P(\textrm{data|model})) &= \sum_n \log \mathcal{N}(y_n | \mathbf{w}^T\mathbf{x}_n, \sigma^2) \\
+      \log(P(\textrm{data|model})) &= \sum_n \log (\frac{1}{\sqrt{2\pi\sigma^2}}\exp^{-\frac{(y_n-\mathbf{w}^T\mathbf{x}_n)^2}{2\sigma^2}})\\
+      \log(P(\textrm{data|model})) &= \sum_n (\log (\frac{1}{\sqrt{2\pi\sigma^2}}) - \frac{(y_n-\mathbf{w}^T\mathbf{x}_n)^2}{2\sigma^2})\\
+      \log(P(\textrm{data|model})) &= N \log (\frac{1}{\sqrt{2\pi\sigma^2}}) - \sum_n \frac{(y_n-\mathbf{w}^T\mathbf{x}_n)^2}{2\sigma^2}
+      \end{align*}
+      $$
 
-      $$log(P(\textrm{data|model})) = \sum_n \log (\frac{1}{\sqrt{2\pi\sigma^2}}\exp^{-\frac{(y_n-w^Tx_n)^2}{2\sigma^2}})$$
+      When you take out the irrelevant constants that don't matter for the purposes of maximizing $\mathbf{w}^*$, you end up with the following, which looks just like least square loss:
 
-      $$log(P(\textrm{data|model})) = \sum_n (\log (\frac{1}{\sqrt{2\pi\sigma^2}}) - \frac{(y_n-w^Tx_n)^2}{2\sigma^2})$$
-
-      $$log(P(\textrm{data|model})) = N \log (\frac{1}{\sqrt{2\pi\sigma^2}}) - \sum_n \frac{(y_n-w^Tx_n)^2}{2\sigma^2}$$
-
-      When you take out the irrelevant constants that don't matter for the purposes of maximizing w*, you end up with the following, which looks just like least square loss:
-
-      $$log(P(\textrm{data|model})) = - \sum_n (y_n-w^Tx_n)^2$$
+      $$\log(P(\textrm{data|model})) = - \sum_n (y_n-\mathbf{w}^T\mathbf{x}_n)^2$$
 
       We omit taking the derivative here, see notes from previous lecture for how to get the derivative from here!
 
-      <h2 id="recap3_5">Repeating Maximizing Likelihood (with respect to w) with Matrices</h2>
+      <h2 id="recap3_5">Repeating Maximizing Likelihood (with respect to $\mathbf{w}$) with Matrices</h2>
 
-      Both for practice, and as a check for our understanding, let us repeat the process with matrices, where we have $p(Y | X, w, \sigma^2)$ as a multivariate Gaussian. Note: in code, it's also faster to do matrix computation than using for loops, so this is useful to know for that reason as well. We have $X$ in dimensions $(N x D)$. We also have $\mu = Xw$ and $\Sigma = \mathbb{1}\sigma^2$. Below is the general formula for a multivariate Gaussian $N(z; \mu, \Sigma)$:
+      Both for practice, and as a check for our understanding, let us repeat the process with matrices, where we have
+      $p(\mathbf{y} | \mathbf{X}, \mathbf{w}, \sigma^2)$ as a multivariate Gaussian. Note: in code, it's also faster to do matrix computation than
+      using for loops, so this is useful to know for that reason as well. We have $\mathbf{X}$ in dimensions $(N \times D)$.
+      We also have $\mathbf{\mu} = \mathbf{X}\mathbf{w}$ and $\mathbf{\Sigma} = \mathbb{1}\sigma^2$. Below is the general formula for a multivariate Gaussian
+      $\mathcal{N}(\mathbf{z}; \mathbf{\mu}, \mathbf{\Sigma})$:
 
-      $$\frac{1}{\sqrt{2\pi|\Sigma|}}\exp^{-(z-\mu)^T\Sigma^{-1}(z-\mu)}$$
+      $$\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}\exp^{-\frac{1}{2}(\mathbf{z}-\mathbf{\mu})^T\mathbf{\Sigma}^{-1}(\mathbf{z}-\mathbf{\mu})}$$
 
       After substituting in and taking the log, we have:
 
-      $$\log(\frac{1}{\sqrt{2\pi|\Sigma|}}\exp^{-(Y-Xw)^T\Sigma^{-1}(Y-Xw)})$$
+      $$\log(\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}\exp^{-\frac{1}{2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})})$$
 
-      $$\log(\frac{1}{\sqrt{2\pi|\Sigma|}}) + -1/2(Y-Xw)^T\Sigma^{-1}(Y-Xw)$$
+      $$\log(\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}) - \frac{1}{2} (\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
-      $$-N/2 \log (2\pi\sigma^2) + -1/2(Y-Xw)^T\Sigma^{-1}(Y-Xw)$$
+      $$-\frac{N}{2} \log (2\pi\sigma^2) - \frac{1}{2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
-      Note: we can do the above step because $\Sigma$ is diagonal.
+      Note: we can do the above step because $\mathbf{\Sigma}$ is diagonal.
 
-      $$-N/2 \log 2\pi\sigma^2 + -1/(2\sigma^2)(Y-Xw)^T(Y-Xw)$$
+      $$-\frac{N}{2} \log 2\pi\sigma^2 - \frac{1}{2\sigma^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
       And the final result is what we had before (again, we omit taking the derivative here, see notes from previous lecture for that)!
 
       <br>
       <br>
 
-      <u>Student Question: Why did we assume uniform variance sigma above?</u> Let's look at the story we set up. For each x in 1 through N, we had $y | x, \epsilon = w^Tx + \epsilon$, with $\epsilon$ distributed $N(0, \sigma^2)$. If we think about it, we only designated one Gaussian distribution for $\epsilon$, and it doesn't change across data points, so hence we have the same $\sigma^2$ across the story as well, leading to the variance being uniform and leading to $\Sigma = \mathbb{1} \sigma^2$.
+      <u>Student Question: Why did we assume uniform variance sigma above?</u> Let's look at the story we set up.
+      For each $\mathbf{x}$ in 1 through N, we had $y | \mathbf{x}, \epsilon = \mathbf{w}^T\mathbf{x} + \epsilon$,
+      with $\epsilon$ distributed $\mathcal{N}(0, \sigma^2)$. If we think about it, we only designated one Gaussian
+      distribution for $\epsilon$, and it doesn't change across data points, so hence we have the same $\sigma^2$ across
+      the story as well, leading to the variance being uniform and leading to $\mathbf{\Sigma} = \mathbb{1} \sigma^2$.
 
       <br>
       <br>
 
-      <h2 id="recap3_6">Estimating $\sigma^2$ instead of w</h2>
+      <h2 id="recap3_6">Estimating $\sigma^2$ instead of $\mathbf{w}$</h2>
 
-      Instead of taking the derivative with respect to w, we can also take the derivative with respect to $\sigma^2$ to find the $\sigma^2$ that maximizes the chances we the see that we currently see. Now, we assume that w is given. Important note: we are looking at $\sigma^2$ specifically, the variance, not $\sigma$. First, we start with the equation we used from before.
+      Instead of taking the derivative with respect to $\mathbf{w}$, we can also take the derivative with respect to
+      $\sigma^2$ to find the $\sigma^2$ that maximizes the chances we the see that we currently see. Now, we assume
+      that $\mathbf{w}$ is given. Important note: we are looking at $\sigma^2$ specifically, the variance, not $\sigma$.
+      First, we start with the equation we used from before.
 
-      $$-N/2 \log 2\pi\sigma^2 + -1/(2\sigma^2)(Y-Xw)^T(Y-Xw)$$
+      $$-\frac{N}{2} \log 2\pi\sigma^2 - \frac{1}{2\sigma^2} (\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
-      $$-N/2 \log 2\pi + -N/2\log\sigma^2 + -1/(2\sigma^2)(Y-Xw)^T(Y-Xw)$$
+      $$-\frac{N}{2} \log 2\pi - \frac{N}{2}\log\sigma^2 -\frac{1}{2\sigma^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
       Take the derivative:
 
-      $$0 = -N/(2\sigma^2) + (1/(2\sigma^2))^2(Y-Xw)^T(Y-Xw)$$
-
-      $$0 = -N\sigma^2 + (Y-Xw)^T(Y-Xw)$$
-
-      $$\sigma^2_{ML} = 1/N(Y-Xw)^T(Y-Xw)$$
+      $$\begin{align*}
+      0 &= -\frac{N}{2\sigma^2} + \frac{1}{2(\sigma^2)^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w}) \\
+      0 &= -N\sigma^2 + (\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w}) \\
+      \sigma^2_{ML} &= \frac{1}{N}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})
+      \end{align*}
+      $$
 
       This is the empirical variance, which makes intuitive sense!
 
-      <h2 id="recap3_7">Extending the Story: Making w Random Too</h2>
+      <h2 id="recap3_7">Extending the Story: Making $\mathbf{w}$ Random Too</h2>
 
-      What if w was distributed p(w)? We have the same story, but w is also a random variable now. This leads us into the Bayesian view (which will be covered much more in depth in future lectures).
+      What if $\mathbf{w}$ was distributed $p(\mathbf{w})$? We have the same story, but $\mathbf{w}$ is also a random variable now. This leads us into the Bayesian view
+      (which will be covered much more in depth in future lectures).
 
-      Now we have $p(y, w | x, \sigma^2)$ which we can rewrite as $P(y | w, x, \sigma^2)p(w|x, \sigma^2)$. Because we w doesn't depend on x or $\sigma^2$, we can rewrite this as:
+      Now we have $p(y, \mathbf{w} | \mathbf{x}, \sigma^2)$ which we can rewrite as $P(y | \mathbf{w}, \mathbf{x}, \sigma^2)p(\mathbf{w}|\mathbf{x}, \sigma^2)$.
+      Because $\mathbf{w}$ doesn't depend on $\mathbf{x}$ or $\sigma^2$, we can rewrite this as:
 
-      $$P(y | w, x, \sigma^2) p(w)$$
+      $$P(y | \mathbf{w}, \mathbf{x}, \sigma^2) p(\mathbf{w})$$
 
       Now if we want to maximize this entire joint probability expression, we do:
 
-      $$log(p(y, w|x, \sigma^2)) = log(P(y | w, x, \sigma^2)) + log(p(w))$$
+      $$\log(p(y, \mathbf{w}|\mathbf{x}, \sigma^2)) = \log(P(y | \mathbf{w}, \mathbf{x}, \sigma^2)) + \log(p(\mathbf{w}))$$
 
-      Which breaks down to a sum of our likelihood (same term from before) and this new term log(p(w)), which we call the prior (think of it as our prior knowledge on what w should look like). Maximizing w* over this collective term is called the MAP, the max a posterior. We are now not only maximizing the likelihood, but also the incorporating our prior ideas of what w should look like. More to come in later lectures!
+      Which breaks down to a sum of our likelihood (same term from before) and this new term $\log(p(\mathbf{w}))$,
+      which we call the prior (think of it as our prior knowledge on what w should look like). Maximizing $\mathbf{w}^*$
+      over this collective term is called the MAP, the max a posterior. We are now not only maximizing the likelihood,
+      but also the incorporating our prior ideas of what $\mathbf{w}$ should look like. More to come in later lectures!
 
-
-      <br>
-      <br>
-
-      <u>Student Question: is this kind of like Lasso regression?</u> Yes, so it turns out when there we have w distributed as Gaussian, the log(p(w)) term turns into a $w^2$ term which is exactly Lasso regression. This will be covered in the future, so no worries if you don't understand!
 
       <br>
       <br>
 
-      <u>Student Question: what are the real world implications of probabilistic modeling?</u> Today, we saw how with probablistic models, we can incorporate random variables into our model, and choose different distributions for the random variables that will affect out results (like how we could model $\epsilon$ as Gaussian). In particular real world situations, there will sometimes be some random variables that are known to follow certain distributions. For example, looking at w right here, if we know w is supposed sparse (because we know for a fact that only a few variables actually matter), by modeling w as a random variable, we can incorporate our beliefs (of how w should be sparse) into the model leading to a more useful solution for w.
+      <u>Student Question: is this kind of like Ridge regression?</u> Yes, so it turns out when there we have $\mathbf{w}$
+      distributed as Gaussian, the $\log(p(\mathbf{w}))$ term turns into a $\mathbf{w}^2$ term which is exactly Ridge
+      regression. This will be covered in the future, so no worries if you don't understand!
+
+      <br>
+      <br>
+
+      <u>Student Question: what are the real world implications of probabilistic modeling?</u> Today, we saw how with
+      probabilistic models, we can incorporate random variables into our model, and choose different distributions for
+      the random variables that will affect out results (like how we could model $\epsilon$ as Gaussian). In particular
+      real world situations, there will sometimes be some random variables that are known to follow certain distributions.
+      For example, looking at $\mathbf{w}$ right here, if we know $\mathbf{w}$ is supposed sparse (because we know for a fact that only a few
+      variables actually matter), by modeling w as a random variable, we can incorporate our beliefs (of how w should be
+      sparse) into the model leading to a more useful solution for $\mathbf{w}$.
 
     </div>
 </section>
