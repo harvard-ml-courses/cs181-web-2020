@@ -11,14 +11,17 @@ tas:
   - name: <a href="mailto:catherinezeng@college.harvard.edu">Catherine Zeng</a>
   - name: <a href="mailto:billzhang@college.harvard.edu">Bill Zhang</a>
 
-
 ohs:
   - time: Tue 8-10 pm
     location: Quincy Dining Hall
+  - time: Wed 3-5 pm
+    location: MD Second Floor Lobby
   - time: Wed 6-8 pm
-    location: Maxwell Dworkin 221
+    location: MD 221
   - time: Wed 8-10 pm
     location: Eliot Dining Hall
+  - time: Thu 1-3 pm
+    location: MD Second Floor Lobby
   - time: Thu 7-9 pm
     location: Mather Dining Hall
   - time: Thu 9-11 pm
