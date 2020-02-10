@@ -117,7 +117,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Feb 4
-    subtopic: Prob. Regression
+    subtopic: <a href="/cs181-web/recap3">Prob. Regression</a> 
     section:
     readings: 2.6.2, 2.6.3 
     hw:
@@ -134,7 +134,7 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: 2. Prob. Regression, Classification
+    section: <a href="/cs181-web/sections#sec2">2. Prob. Regression, Classification</a> 
     readings:
     hw:
     type: 'sec'
@@ -143,7 +143,7 @@ lectures:
     section:
     readings: 3.6
     demos:
-    hw: HW2 (Classification) released
+    hw: <a href="/cs181-web/homework#hw2">HW2 (Classification)</a> released
   - topic: Model Selection
     subtopic: Model Selection - Frequentist
     section:
