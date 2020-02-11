@@ -14,18 +14,16 @@ weight: 0
 
       <h3>Lecture 4 Summary</h3>
 
-<!--      <ul>-->
-<!--        <li><a href="#recap4_1"></a></li>-->
-<!--        <li><a href="#recap4_2"></a></li>-->
-<!--        <li><a href="#recap4_3"></a></li>-->
-<!--        <li><a href="#recap4_4"></a></li>-->
-<!--        <li><a href="#recap4_5"></a></li>-->
-<!--        <li><a href="#recap4_6"></a></li>-->
-<!--      </ul>-->
+     <ul>
+        <li><a href="#recap4_1">Introduction</a></li>
+        <li><a href="#recap4_2">Classification vs Regression</a></li>
+        <li><a href="#recap4_3">Linear Classification</a></li>
+        <li><a href="#recap4_4">Metrics</a></li>
+      </ul>
 
       <br>
 
-      <h2>Introduction</h2>
+      <h2 id="recap4_1">Introduction</h2>
 
       The previous lecture, we covered probabilistic regression. As a recap, in probabilistic regression, a generative model
       allows us to perform different types of inference such as posterior inference for weight parameters as well as
@@ -37,7 +35,7 @@ weight: 0
       This lecture, we covered linear classification. The goal of classification is to identify a category $y$ given $\mathbf{x}$,
       rather than continuous $y$.
 
-      <h2>Classification vs Regression</h2>
+      <h2 id="recap4_2">Classification vs Regression</h2>
       Conceptually classification is not too different from regression. We follow the same general forms:
 
       <ol>
@@ -53,7 +51,7 @@ weight: 0
       We can still use KNN for classification by returning the majority vote of the neighbors of $\mathbf{x}$
 
 
-      <h2>Linear Classification</h2>
+      <h2 id="recap4_3">Linear Classification</h2>
 
       <h3>Choose a Model : Linear Boundary </h3>
       We introduce a new parametric model. It is simple but we can use a basis $\phi$ to obtain complex boundaries of separation.
@@ -140,7 +138,7 @@ weight: 0
       This is the 1958 <strong>Perceptron</strong> algorithm : if $\hat{y} = y_n$, do nothing; else do above, until no error.
       This converges if the data are linearly separable in the feature space.
 
-      <h3>A Different Loss : Fisher's Discriminant</h3>
+      <!-- <h3>A Different Loss : Fisher's Discriminant</h3>
       If $\mathbf{w}$ projects $\mathbf{x}$ into 1-D, why not explicitly seek clustering in that space?
       <br><br>
       We define emperical means and variances
@@ -186,10 +184,9 @@ weight: 0
       <br>
       Therefore,
       $$\mathbf{w} \propto \mathbf{S}_w^{-1}(\mathbf{m}_1 - \mathbf{m}_2)$$
-      We start with the difference of means ($\mathbf{m}_1 - \mathbf{m}_2$) and rotate based on variance ($\mathbf{S}_w^{-1}$).
+      We start with the difference of means ($\mathbf{m}_1 - \mathbf{m}_2$) and rotate based on variance ($\mathbf{S}_w^{-1}$). -->
 
-
-      <h3>Metrics</h3>
+      <h2 id="recap4_4">Metrics</h2>
       There are four error metrics
       <table class="note-table">
         <tr><th>Metric</th><th>y</th><th>y-hat</th></tr>
