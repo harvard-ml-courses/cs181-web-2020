@@ -112,6 +112,15 @@ footer.footer .half-row.r {
 .text .announcement + ul li {
     margin-bottom: 0.5em}
 
+table.note-table {
+    margin: auto;
+}
+
+table.note-table th, .note-table td {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
 
 .announcement {
     color: #E53935;
