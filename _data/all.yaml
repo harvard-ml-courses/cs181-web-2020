@@ -90,7 +90,7 @@ lectures:
   - topic:
     subtopic:
     section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
-    readings: 
+    readings:
     hw:
     type: 'sec'
   - topic: Overview #Jan 28
@@ -117,9 +117,9 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Feb 4
-    subtopic: <a href="/cs181-web/recap3">Prob. Regression</a> 
+    subtopic: <a href="/cs181-web/recap3">Prob. Regression</a>
     section:
-    readings: 2.6.2, 2.6.3 
+    readings: 2.6.2, 2.6.3
     hw:
   - topic: Classification
     subtopic: <a href="/cs181-web/recap4">Linear Classification</a>
@@ -134,7 +134,7 @@ lectures:
     type: 'hw'
   - topic: # section 2
     subtopic:
-    section: <a href="/cs181-web/sections#sec2">2. Prob. Regression, Classification</a> 
+    section: <a href="/cs181-web/sections#sec2">2. Prob. Regression, Classification</a>
     readings:
     hw:
     type: 'sec'
@@ -145,7 +145,7 @@ lectures:
     demos:
     hw: <a href="/cs181-web/homework#hw2">HW2 (Classification)</a> released
   - topic: Model Selection
-    subtopic: Model Selection - Frequentist
+    subtopic: <a href="/cs181-web/recap6">Model Selection - Frequentist</a>
     section:
     readings: 2.7, 2.8
     hw:
