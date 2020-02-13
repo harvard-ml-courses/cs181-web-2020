@@ -87,7 +87,7 @@ weight: 0
 
       We pick a logistic loss, also known as a binary cross entropy loss.
 
-      $$L(w) = \sum_{n}y_n \log\hat{p}(y_n = 1 | x_n) + (1 - y_n)\log\hat{p}(y_n = 0 | x_n)$$
+      $$L(w) = -\sum_{n}y_n \log\hat{p}(y_n = 1 | x_n) + (1 - y_n)\log\hat{p}(y_n = 0 | x_n)$$
 
       What is the intuition behind this loss? Essentially, we're trying to think about how much probability are we putting on the right answer. The more, the better, and the lower the loss. Note that here, $\hat{p}$ is our choice of our function from the above section, our prediction. Let's suppose the true label $y_n=1$, then we want the first term to be small since we want low loss. If we predict $\hat{p}=1$, then we're in great shape, beacuse 1*log(1) is 0. Then in the second term, we have (1 - 1) * log(0), which we evaluate to zero (while this is techincally undefined, in our logistic function's meaning, we want this to be 0 because we have predicted the right class). When coding for the homework, be careful as you may run into this issue! You would want to handle this case somehow (many ways to do it). <br><br>
 
