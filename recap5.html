@@ -105,7 +105,7 @@ weight: 0
 
       Now we consider the generative approach. This means we now are interested in joint P(x, y) rather than p(y | x) which was the discrimanitive case above, logistic regression. What does this mean? Essentially, now we telling a generative story, specifically that y generates x. This is more complex in a way, but one big advantage is it can deal with missing data, or missing labels in a more elegant way. <br><br>
 
-      In notation, this mean's we are now looking at these two terms. We sample y with some prior: p(y). Then, we sample x with some P(x | y). <br><br>
+      In notation, this mean's we are now looking at these two terms. We sample y with some prior: p(y). Then, we sample x with some P(x|y). <br><br>
 
       So we know that we have a discrete output in y. Let's let y be binary and let p(y) be distributed Bernoulli with $\theta$, as in $p(y) = \theta^y(1-\theta)^{1-y}$. <br><br>
 
@@ -184,13 +184,28 @@ weight: 0
 
       <u>Apply Naive Bayes Assumption To Make Life Easier:</u> If the different dimensions are correlated, then we have up to 2^D paramaeters, as perhaps all the different cases ( as an example: 000, 001, 010, etc, if D=3) might have unique probabilities. One simplifying assumption that we can make (which might not be true) is the Naive Bayes assumption. Specifically, this assumes that y separately produces every element of the x vector (this is now part of our generative story). Essentially, given a class y, each x dimension is independently generated. Now, this means we just need D parameters.<br><br>
 
-      Let us continue. Essentially, we can now reuse everything from above, except substitute in a new expression for $p(x | y)$.
+      Let us continue. Essentially, we can now reuse everything from above, except substitute in a new expression for $p(x|y)$. First, we know we've asssumed that the y generates the x in our story, so each datapoint is independent, and we start with:
 
-      $$p(x | y) = \prod_d(p(x_d|y)) = \prod_d(p(x_d|y))$$
+      $$p(x|y) = \prod_n p(x_n|y)$$
 
-      $$p(x | y) = \prod_d (\theta_{d,y=1}^{x_{nd}} (1 - \theta_{d,y=1}^{1 - x_{nd}}))^{\mathbb{1}(y_n = 1)} (\theta_{d,y=0}^{x_{nd}} (1 - \theta_{d,y=0}^{1 - x_{nd}}))^{\mathbb{1}(y_n = 0)}$$
+      We also now have the following, an even stronger assumption, due to the Naive Bayes assumption that each y generates each dimension of x independently as well:
 
-      What we notice is when we take the log of this, it leads to a clean looking result that can be used easily.
+      $$p(x_n|y) = \prod_d(p(x_{nd}|y))$$
+
+      We also know that the following holds:
+
+      $$(p(x_{nd}|y)) = (\theta_{d,y=1}^{x_{nd}} (1 - \theta_{d,y=1}^{1 - x_{nd}}))^{\mathbb{1}(y_n = 1)} (\theta_{d,y=0}^{x_{nd}} (1 - \theta_{d,y=0}^{1 - x_{nd}}))^{\mathbb{1}(y_n = 0)}$$
+
+      To break down the equation above, first we recognize that at a high level, we have first the PMF of a Bernoulli ($\theta^x * (1-\theta)^{1-x}$) raised to the indicator variable of $y_n=1$, and then we have a PMF of a Bernoulli again raised to the indicator variable of $y_n=0$. This represents our story because this corresponds to the fact that we decided for both classes (y=1 and y=0), we have a binary variable for each dimension of x (binary corresponds to the Bernoulli).<br><br>
+
+
+      Now, we can plug this into the final equation.
+
+      $$p(x|y) = \prod_n p(x_n|y) = \prod_n \prod_d ((\theta_{d,y=1})^{x_{nd}} (1 - \theta_{d,y=1})^{1 - x_{nd}})^{\mathbb{1}(y_n = 1)} ((\theta_{d,y=0})^{x_{nd}} (1 - \theta_{d,y=0})^{1 - x_{nd}})^{\mathbb{1}(y_n = 0)}$$
+
+      Important note on indicator variables: this is a concept that shows up again and again, so definitely ask us if you don't completely understand. The reason we have this indicator variable raised to the exponent is because in the product across each of the n datapoints, we want to make sure we calculate the correct probability the current one of the n datapoints based of it's class. As in, for each n in the product, we only really want the first term, $((\theta_{d,y=1})^{x_{nd}} (1 - \theta_{d,y=1})^{1 - x_{nd}})^{\mathbb{1}(y_n = 1)} $, or the second term, $((\theta_{d,y=0})^{x_{nd}} (1 - \theta_{d,y=0})^{1 - x_{nd}})^{\mathbb{1}(y_n = 0)}$, we definitely don't want both since that doesn't make intuitive sense for one single datapoint. To make sure we only get one, we use indicator variables in the exponent, because if the indicator is 1, we keep the term (since some x to the power of 1 is still x), and if it's zero, we safely ignore the term (since some x to the power of 0 is 1, and when you multiply the existing product by 1 it stays the same).<br><br>
+
+      Finally, what we notice is when we take the log of this equation, it leads to a clean looking result that can be used easily. And once you take the log, the product turns into a sum, and the indicator comes down from the exponent into a multiplicative term, which still works as expected! This is because, if the indicator is 1, we keep the term in the sum, and if the indicator is 0, we want to multiply out the term so that nothing (as in 0) is added to the sum, and the existing sum doesn't change.<br><br>
 
     </div>
 </section>
