@@ -158,7 +158,7 @@ lectures:
     type:
   - topic: # section 3
     subtopic:
-    section: 3. Model Selection
+    section: <a href="/cs181-web/sections#sec3">3. Model Selection</a>
     readings:
     hw:
     type: 'sec'
