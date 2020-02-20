@@ -1,0 +1,163 @@
+---
+layout: page
+title: Lecture 7 Recap - Model Selection (Bayesian)
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: February 19, 2020 (<a href="http://bit.ly/cs181cc7" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc7responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 2.8, 2.9</h4>
+
+      <br>
+
+      <h3>Lecture 7 Summary</h3>
+
+      <ul>
+        <li><a href="#recap7_1">Diversion: More Real World Context on Model Selection</a></li>
+        <li><a href="#recap7_2">Intro to Bayesian Model Selection</a></li>
+        <li><a href="#recap7_3">Concept 1 - What we now have: The Posterior Distribution</a></li>
+        <li><a href="#recap7_4">Concept 2 - What we want to find: The Posterior Predictive Distribution</a></li>
+        <li><a href="#recap7_5">Concept 3 - How to choose the best model: The Marginal Likelihood</a></li>
+        <li><a href="#recap7_6">Example using the Beta-Bernoulli Model</a></li>
+        <li><a href="#recap7_7">Bayesian Occam's Razor</a></li>
+      </ul>
+
+      <h2 id="recap7_1">Diversion: More Real World Context on Model Selection</h2>
+
+      We start the lecture with a few more real world examples to discuss. First, we consider a competition that was run on Kaggle, in which contestants were asked to predict whether patients had prostate cancer. For some odd reason, people were doing ridiculously well on this competition, way better than anything previously seen before on predicting prostate cancer. The organizers of the data had taken all the health data of patients, and essentially kept it all the same but removed the diagonsis on whether a given patient actually have prostate cancer or not. It turns out the issue was that they left, in the data, all the tests that had to do with diagonsing prostate cancer, as well as treatments that you might use to treat prostate cancer. Essentially, there was a lot of information in the x that was going to tell you pretty much exactly what y is. This is known as causality leakage. The general framework was that, first, the clinician thinks something is wrong, and hence orders a bunch of tests on the patient. But really, the clinician's thinking isn't recorded anywhere officially, it just resides in their heads. The AI on the other hand, simply notices that these tests are being ordered, and creates an alert. The AI agent learns that when there are a lot of tests happening, the patient is in trouble, and likely has the disease. So we've ended up with this model that has insanely high accuracy. But does it have any value in the real world? Is it useful? No, because someone already knows that something is wrong, and our AI is simply repeating that observations. As we select models, we need to be careful that they were trained given the appropriate data (you cannot have a dataset that has explicit info in the x about y in a way we saw in the prostate cancer example).<br><br>
+
+      Another example of an issue you might run into is if the training data is skewed. Perhaps you want to train a classifier to tell the difference between cats and dogs. However, all the photos of the cats are indoors, in white apartments, and all the photos of the dogs are of them laying in the grass. Now, if there's a cat in the grass, the classifier will likely describe it as a dog. It seems unlikely that this would actually happen in the real world, right? How could someone make such an obvious mistake? The thing is, in the real world, the skewed data could be a lot more subtle. As a quick example, we recently saw this happen with the Apple Card credit limits. Essentially, we know that in the data of credit limits, there is a bias built in, where women have historically been given lower credit for a lot of reasons, but not necssarily fair reasons (due to discrimination). Because the Apple Card trained it's algorithm on skewed data to begin with, their model learned to replicate the training data in a way that gave women much lower credit as well, which led to widespread complaints of discrimination. As you can see, it's a more subtle mistake than it might seem, and the problems can easily arise when you have real bias in real data, so you have to be very careful.<br><br>
+
+      A quick final example is one where there was a situation where there was a competition to predict breast cancer. At first, their dataset did not have enough people without breast cancer, so the organizers collected a new batch of data some time later with mainly patients without breast cancer. It turned out, because of this, the patient ID# was now a strong predictor of whether someone had breast cancer or not, as the later patients had a different set of ID numbers. It's important to collect data in a way where there is no confounding variables between different batches of the data. While here it was ID #s, in the world there could also be other variables that are drastically different depending on the time you collect a batch of data, so it is important to always keep this in mind and have a proper, clean data collection method.<br><br>
+
+      <h2 id="recap7_2">Intro to Bayesian Model Selection</h2>
+
+      As mentioned at last lecture, the frequentist view of model selection is probably the most practical for students. However, it is also good to cover Bayesian model selection. We can think of this as a way of expanding our thinking, and looking at a more elegant way of thinking about the same topic. In addition, it's not like this isn't used in the real world; it definitely is, but it's just very unlikely that this will be the first thing that we'll go out and code.<br><br>
+
+      Before, in the frequentist view, we assumed that there's a real $w$ in the world, as in there are indeed some fixed true parameters that exist. Now, in the Bayesian view, we're going to have w as random. This is a very simple idea conceptually, but it turns out to be very complex computationally. Now, there's essentially always only one way to solve the problem. And first, we'll always start with the fact that the parameters are random variables.<br><br>
+
+      <h2 id="recap7_3">Concept 1 - What we now have: The Posterior Distribution</h2>
+
+      First, the Bayesian view allows us to look at the posterior distribution. The posterior distribution essentially is a summary of what we know after we've seen the data (as in, given data X, Y):
+
+      $$p(w|X, Y)$$
+
+      The above is the posterior over models. It essentially tells us, given all the data we've seen in X and Y, these are the possibilities of what w will look like (described in a distribution format).<br><br>
+
+      <u>Note: How would we calculate this?</u><br><br>
+
+      First we use Bayes' rule:
+
+      $$p(w|X, Y) = p(Y|X, w) p(w|X) / p(Y | X)$$
+
+      We notice that p(w|X) is equivalent to p(w) as simply seeing X won't change our info on w. So essentially, we can start with just the prior on w.
+
+      $$p(w|X, Y) = p(Y|X, w) p(w) / p(Y | X)$$
+
+      The denominator is a constant with respect to w.
+
+      $$p(w|X, Y) \propto p(Y|X, w) p(w)$$
+
+      Now, depending on the likelihood and prior, this could be an easy calculation (if there's conjugacy) or a hard calculation (if there's not).
+
+      <h2 id="recap7_4">Concept 2 - What we want to find: The Posterior Predictive Distribution</h2>
+
+      While it is nice to have the posterior distribution, what we ultimately are looking for is the ability to make a prediction for the target $y^{*}$ given a new input $x^{*}$. To do this, we write the expression below and integrate over w. Intuitively, this makes sense as we are just looking at each individual w (which represents different models), using that w to make a prediction for y, and then weighting each model by the probability of it happening.<br><br>
+
+      $$p(y^{*} | x^{*}, X, Y) = \int p(y^{*} | x^{*}, w)p(w|X, Y)dw$$
+
+      <u>Student Question: Why is there no x* in the p(w|X,Y) expression?</u> It's because our model hasn't been trained on the new input, so the distribution we have on the weights only depends on the data we've seen, the X and Y.
+
+      <h2 id="recap7_5">Concept 3 - How to choose the best model: The Marginal Likelihood</h2>
+
+      To choose the best model, we ultimately want to look at the marginal likelihood. In other words, we want to find the probability of Y given X.
+
+      $$p(Y | X) = \int p(Y|X, w) p(w) dw$$
+
+      We can break it down into the above, by integrating over all the possible w's. Overall, the model with the highest p(Y | X) is the model you want. It's essentially saying, given the prior on w that we have, let's look at each w and find the likelihood of Y for each w and weight it by the corresponding probablity of w, leading us to get a marginal (also known as integrated) likelihood of Y overall. The model with the highest likelihood, is a way of selecting the best model.
+
+      <h2 id="recap7_6">Example using the Beta-Bernoulli Model</h2>
+
+      <h3>1. Defining the Bernoulli Part</h3>
+
+      Let's consider a coin that comes up "1" with probability $\theta$. This is the Bernoulli PMF:
+
+      $$p(x | \theta) = \theta^x (1 - \theta)^{1 - x}$$
+
+      If we want to write out the probability of multiple coin flips, then we have:
+
+      $$p(x_1 ... x_n | \theta) = \prod_n (\theta)^{x_n}(1-\theta)^{1 - x_n}$$
+
+      $$p(x_1 ... x_n | \theta) = \theta^{n_1}(1-\theta)^{n_0}$$
+
+      Where in the above, $n_1$ is the number of heads, and $n_0$ is the number of tails.<br><br>
+
+      <u>Side Note:</u> at this point, we could've taken the maximum likelihood frequentist approach as follows $\theta_{MLE} = argmax_{\theta}$ $\theta^{n_1}(1-\theta)^{n_0}$, which leads us to an intuitive answer: $n_1/(n_1 + n_0)$<br><br>
+
+      <h3>2. Defining the Beta Part</h3>
+
+      In the Bayesian approach, we have $p(\theta)$ ~ $Beta(\alpha, \beta)$<br><br>
+
+      This is the PDF: $p(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1}(1 - \theta)^{\beta - 1}$. Conveniently this is conjugate to our likelihood (you can tell by eyeballing it too that looks a lot like our likelihood), leading to an easy calculation in the next step (this is the same thing as mentioned above, where when there is conjugacy, then there is an easier calculation).
+
+      <h3>3. Calculating the Posterior</h3>
+
+      As from before, we have:
+
+      $$p(\theta | X) \propto p(X|\theta)p(\theta)$$
+
+      $$\theta^{\alpha - 1 + n_1} (1 - \theta)^{\beta - 1 + n_0}$$
+
+      We've multiplied the likelihood with the prior (here, the PDF of a Beta). Since we are looking at proportionality, we can drop the constants.<br><br>
+
+      We then add in a normalization factor of $\frac{1}{B(\alpha + n_1, \beta + n_0)}$, which we can do by matching on to the same pattern from before. We do this because this is a probability function, so we need to make sure the sum of the probabilities comes out to 1.<br><br>
+
+      <h3>4. A Pause for Intuition</h3>
+
+      Let's pause for our intuition on the prior of Beta. Let's say we had $\alpha = 1$ and $\beta = 1$. That would be equivalent to a prior of seeing 1 head and 1 tail, which (feel free to look up the Beta distribution on Google at this to help visualize the intuition), basically puts more weight on the $\theta$ being 0.5, which intuitively makes sense. If we had $\alpha = 3$ and $\beta = 3$, then it'd be an even more extreme version of the same thing, with even more weight on 0.5, because we're even more sure it's 0.5. But if it were like $\alpha = 3$ and $\beta = 1$, then the $\theta$ distribution would have most of it's weight towards the right, with a higher chance that $\theta = 1$, which again, makes intuitive sense as we've seen 3 heads and only one tail.<br><br>
+
+      <h3>5. Calculating the MAP</h3>
+
+      We can at this point, choose maximize the posterior, something we've talked over in the course previously.
+
+      $$\theta_{MAP} = argmax_{\theta} p(\theta | x) = \alpha - 1 + n_1 / (\alpha + \beta + n_0 + n_1 - 2)$$
+
+      For the math, we omit it because we can basically just pattern match to the max likelihood calculation before, it looks exactly the same in format. The intuition here is that as n gets large, the data will overwhelm whatever prior you have. This almost feels like regularization really, where we're trying to pull back and not look purely at the data, but give a gentle pull closer to 0.5 (if we set our $\alpha$ and $\beta$ that way), almost like a gentle tug. It's important to note that this isn't taking advantage of all the information in the posterior, but rather simply a maximum.<br><br>
+
+      <h3>6. Calculating the Posterior Predictive</h3>
+
+      The most Bayesian person would actually go look for the posterior predictive distribution.
+
+      $$p(x = 1|X) = \int p(x=1|\theta) p(\theta | x_1 ... x_n )$$
+
+      $$p(x = 1|X) = \int \theta \textrm{ } p(\theta | x_1 .. x_n)$$
+
+      Now it so happens to be that we're taking the expected value of theta because we used the trick to start the probabiliyt of heads with $\theta$, so we can use that information to calculate this term. It's very important to realize that we chose this purely out of covenience. In a real life situation, the probabilty of heads very likely won't be set perfectly in that way. Now we can calculate as follows:
+
+      $$E[\theta] = (\alpha + n_1)/(\alpha + \beta + n_1 + n_0)$$
+
+      <h3>7. Summary and Final Example</h3>
+
+      Example: Suppose $\alpha = \beta = 1$ as our prior. Then, we see 2 heads.
+
+      $$p(x = 1 | \theta_{MLE}) = 1$$
+
+      $$p(x = 1 | \theta_{MAP}) = 1$$
+
+      Note: for intuition on the term above, if you look at beta distribution, $\alpha$' is now 3, and $\beta$' is 1, it looks like an increasing curve from left to right, with the peak at 1, so the final value still comes out at 1.
+
+      $$p(x = 1| \textrm{2 heads}, \alpha, \beta) = 3/4$$
+
+      <u>Student Question: Why is the MLE 1?</u> We had 2 head flips, we don't consider any prior, and so we divide 2 head flips over 2 total flips and get 1.
+
+      <h2 id="recap7_7">Bayesian Occam's Razor</h2>
+
+      The idea of Occam's Razor is often times, the simpler model is better (amongst the feasible choices). The intuition behind this in the Bayesian sense is as follows. <br><br>
+
+      First, we remember that in the Bayesian view, a common theme we've kept seeing is that we're essentially averaging over all possible models when we make our predictions. This is important because this influences how we select our model class. If we select a more complicated model class, say quadratic, because the size of the model class is big, the probability of any particular model being the right model is smaller, as the total sum of probabily is 1 no matter what, so each model is spread thin and has a small probabilty of actually being the best model. As we move from quadratric to linear, the probability of any given model of a linear class is naturally higher, since there are less possible models (model class is smaller) in the first place. Finally, if we go to a constant based model, the model class is even smaller, leading to an even higher probability per model.<br><br>
+
+      Essentially, we have the following idea. Obviously, if our data is in any way complicated, we can't pick the constant based model, because that is way too simple to model our data. However, amongst the feasible choices (say between linear and quadratic), we should always pick the simpler model class. In the simpler model class, there are less possibilities in an overall smaller model class size, so each individual model is more likely to occur.
+    </div>
+</section>
