@@ -21,6 +21,7 @@ weight: 0
         <li><a href="#recap7_4">Concept 2 - What we want to find: The Posterior Predictive Distribution</a></li>
         <li><a href="#recap7_5">Concept 3 - How to choose the best model: The Marginal Likelihood</a></li>
         <li><a href="#recap7_6">Example using the Beta-Bernoulli Model</a></li>
+        <li><a href="#recap7_7">Bayesian Occam's Razor</a></li>
       </ul>
 
       <h2 id="recap7_1">Diversion: More Real World Context on Model Selection</h2>
@@ -77,7 +78,7 @@ weight: 0
 
       We can break it down into the above, by integrating over all the possible w's. Overall, the model with the highest p(Y | X) is the model you want. It's essentially saying, given the prior on w that we have, let's look at each w and find the likelihood of Y for each w and weight it by the corresponding probablity of w, leading us to get a marginal (also known as integrated) likelihood of Y overall. The model with the highest likelihood, is a way of selecting the best model.
 
-      <h2 id="recap7_5">Example using the Beta-Bernoulli Model</h2>
+      <h2 id="recap7_6">Example using the Beta-Bernoulli Model</h2>
 
       <h3>1. Defining the Bernoulli Part</h3>
 
@@ -151,7 +152,7 @@ weight: 0
 
       <u>Student Question: Why is the MLE 1?</u> We had 2 head flips, we don't consider any prior, and so we divide 2 head flips over 2 total flips and get 1.
 
-      <h2>Bayesian Occam's Razor</h2>
+      <h2 id="recap7_7">Bayesian Occam's Razor</h2>
 
       The idea of Occam's Razor is often times, the simpler model is better (amongst the feasible choices). The intuition behind this in the Bayesian sense is as follows. <br><br>
 
