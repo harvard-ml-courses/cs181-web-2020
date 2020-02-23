@@ -175,7 +175,7 @@ lectures:
     subtopic:
     readings:
     demos:
-    hw: HW2 (Classification) due
+    hw: <a href="/cs181-web/homework#hw2">HW2 (Classification)</a> due
     type: 'hw'
   - topic: # section 4
     subtopic:
@@ -188,7 +188,7 @@ lectures:
     subtopic: Neural Net 1
     section:
     readings: 4.1-4.4, 4.6
-    hw: HW3 (Practical Supervised Learning) released
+    hw: <a href="/cs181-web/homework#hw3">HW3 </a> released
   - topic: #Feb 27
     subtopic: Neural Net 2
     section:
@@ -219,7 +219,7 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: HW3 (Practical Supervised Learning) due
+    hw: <a href="/cs181-web/homework#hw3">HW3 </a> due
     type: 'hw'
   - topic: # section 5
     subtopic:
