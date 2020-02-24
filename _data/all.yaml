@@ -179,7 +179,7 @@ lectures:
     type: 'hw'
   - topic: # section 4
     subtopic:
-    section: 4. NN
+    section: <a href="/cs181-web/sections#sec4">4. Bayesian Approaches, Neural Networks </a>
     readings:
     demos:
     hw:
