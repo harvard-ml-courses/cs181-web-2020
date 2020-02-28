@@ -92,7 +92,7 @@ weight: 0
 
       <u>Student Question: Why do we select $\sigma$ to be in the function $\phi$?</u> This choice of function that we apply on to the $wx + b$ term is called the activation function. It's very important that we picked $\sigma$, a nonlinear function (there are other nonlinear functions but $\sigma$ is a common one), as the nonlinearity is what makes our neural network model more sophisticated than a simple linear regression. To really visualize this, we can try setting $\phi$ to simply be the linear combination $wx + b$, and we can see what happens when we don't add in a nonlinear activation function. We start with $\phi(x) = W^1x + b^1$ (no sigmoid function this time) and $f = W^2\phi(x) + b^2$. This means now that we have $f = W^2(W^1x + b^1) + b^2$ which simplifies to $f = W^2W^1x + (W^2b^1 + b^1)$. As you might've noticed by now, it turns out that our result when we don't use a nonlinear activation function, is we end up with just another lienar regression in the end, with W set to $W^2W^1$ and b set to $W^2b^1 + b^1$. So this is why we select a nonlinear activation function!<br><br>
 
-      <h2 id="recap8_2">Intuition 1: Universal Function Approximator</h2>
+      <h2 id="recap8_3">Intuition 1: Universal Function Approximator</h2>
 
       So with this set up, what are we able to model anyways? Does it even work? Turns out, we can model a lot! For a big enough J (as in, if that hidden layer has enough nodes), this is actually a universal function approximator! To get some intuition behind this, imagine first the J=2 scenario picking sigmoid as our activation function. Essentially, what we can do is build up a little staircase like figure below, with the sigmoid functions together.
 
@@ -129,33 +129,33 @@ weight: 0
 
       Let's literally through all four points' math for more intuition, before we fully tie this into the M of N rules intuition.<br><br>
 
-      <h4>x = [0, 1]</h4>
+      <h4 class="text-center">x = [0, 1]</h4>
 
       $$\phi_1 = \sigma(-0 - 1 + 0.5) = 0.377$$
       $$\phi_2 = \sigma(0 + 1 - 1.5) = 0.377$$
 
-      f = 0.377 + 0.377 = 0.754 which is less than 0.77 so we label this as 0, which is correct
+      <div class="text-center">f = 0.377 + 0.377 = 0.754 which is less than 0.77 so we label this as 0, which is correct.</div>
 
-      <h4>x = [1, 0]</h4>
+      <h4 class="text-center">x = [1, 0]</h4>
 
       $$\phi_1 = \sigma(-1 - 0 + 0.5) = 0.377$$
       $$\phi_2 = \sigma(1 + 0 - 1.5) = 0.377$$
 
-      f = 0.377 + 0.377 = 0.754 which is less than 0.77 so we label this as 0, which is correct
+      <div class="text-center">f = 0.377 + 0.377 = 0.754 which is less than 0.77 so we label this as 0, which is correct.</div><br>
 
-      <h4>x = [0, 0]</h4>
+      <h4 class="text-center">x = [0, 0]</h4>
 
       $$\phi_1 = \sigma(-0 - 0 + 0.5) = 0.622$$
       $$\phi_2 = \sigma(0 + 0 - 1.5) = 0.18$$
 
-      f = 0.622 + 0.18 = 0.802 which is greater than 0.77 so we label this as 1, which is correct
+      <div class="text-center">f = 0.622 + 0.18 = 0.802 which is greater than 0.77 so we label this as 1, which is correct.</div><br>
 
-      <h4>x = [1, 1]</h4>
+      <h4 class="text-center">x = [1, 1]</h4>
 
       $$\phi_1 = \sigma(-1 - 1 + 0.5) = 0.18$$
       $$\phi_2 = \sigma(1 + 1 - 1.5) = 0.622$$
 
-      f = 0.622 + 0.18 = 0.802 which is greater than 0.77 so we label this as 1, which is correct
+      <div class="text-center">f = 0.622 + 0.18 = 0.802 which is greater than 0.77 so we label this as 1, which is correct.</div><br>
 
       <h4>Full Intuition of M of N Rules</h4>
 
@@ -197,7 +197,7 @@ weight: 0
 
       <h4>Other Architectures</h4>
 
-      There are a lot of other architectures of neural networks. Finale covered the basic intuition in class for each of these, but we encourage you to do your own research to find out more. We've linked the Wikipedia pages for convenience, but you should definitely also explore other resources (websites, videos, etc). If you have any questions, of course feel free to reach out to us on Piazza or email <a href="mailto: jdhe@college.harvard.edu">jdhe@college.harvard.edu</a>, and if there's enough demand, we can add in more notes here.<br>
+      There are a lot of other architectures of neural networks. Finale covered the basic intuition in class for each of these, but we encourage you to do your own research (explore websites, videos) to find out more, rather than just write a simple sentence for each. If you have any questions, of course feel free to reach out to us on Piazza or email <a href="mailto: jdhe@college.harvard.edu">jdhe@college.harvard.edu</a>, and if there's enough demand, we can add in more notes here.<br>
       <ul>
         <li>Residual Network (Variant of a Feed Forward Network)</li>
         <li>Convolutional Network</li>
