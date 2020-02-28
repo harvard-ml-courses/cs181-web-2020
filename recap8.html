@@ -96,11 +96,15 @@ weight: 0
 
       So with this set up, what are we able to model anyways? Does it even work? Turns out, we can model a lot! For a big enough J (as in, if that hidden layer has enough nodes), this is actually a universal function approximator! To get some intuition behind this, imagine first the J=2 scenario picking sigmoid as our activation function. Essentially, what we can do is build up a little staircase like figure below, with the sigmoid functions together.
 
-      INSERT PHOTO HERE
+      <div class="text-center">
+        <img src="{{ site.baseurl }}/images/recap8_2.png" style="width:40%"  alt="Neural Net Diagram 1"></img>
+      </div>
 
       As we have more and more sigmoid functions (which we get when we add more nodes to the hidden layer), we can represent increasingly complicated functions, as if we have a really fine staircase.
 
-      INSERT PHOTO HERE
+      <div class="text-center">
+        <img src="{{ site.baseurl }}/images/recap8_3.png" style="width:40%"  alt="Neural Net Diagram 1"></img>
+      </div>
 
       Note: this also helps us realize the limitations of this approach! Now, even representing a simple line $f = w^Tx + b$ will be hard, as we will need lots of little steps in the staircase to produce a smooth looking line.
 
