@@ -16,7 +16,7 @@ weight: 0
 
       <ul>
         <li><a href="#recap8_1">Intro and Motivation to Neural Networks</a></li>
-        <li><a href="#recap8_2">Example: Feed Forward Neural Network with One Hidden Layer</a></li>
+        <li><a href="#recap8_2">Example: A Feed Forward Neural Network with One Hidden Layer</a></li>
         <li><a href="#recap8_3">Intuition 1: Universal Function Approximator</a></li>
         <li><a href="#recap8_4">Intuition 2: M of N Rules (and the power of neural networks)</a></li>
         <li><a href="#recap8_5">Architecture Choices</a></li>
@@ -38,21 +38,57 @@ weight: 0
 
       With that, let us move into the details.<br><br>
 
-      <h2 id="recap8_2">Example: Feed Forward Neural Network with One Hidden Layer</h2>
+      <h2 id="recap8_2">Example: A Feed Forward Neural Network with One Hidden Layer</h2>
 
-      To start learning about neural networks, let us first start with an example, a feed forward neural network with one hidden layer. We have the following: a D dimensional input (D nodes in the input layer), a $\phi$ that transforms the input with D dimensions into an output with J dimensions (the one hidden layer with J nodes), and a 1 dimensional output (one output node f).<br><br>
+      To start learning about neural networks, let us first start with an example, a feed forward neural network with one hidden layer. We have the following: a D dimensional input (D nodes in the input layer), a $\phi$ that transforms the input with D dimensions into an output with J dimensions (the one hidden layer with J nodes), and a 1 dimensional output (one output node f). In our diagram, we've chosen D to be 3, and J to be 4.<br><br>
 
-      $$insert picture here later$$
+      Let us all breakdown what's in the diagram below. First, in the leftmost layer of nodes, we have a bunch of D input dimensions. Next, between the input layer and the first hidden layer (the layer of $\phi$'s), we write out two parameters: $W^1$ and $b^1$. These parameters are drawn between the two layers because they serve exactly that purpose: to get us from our x input to the the hidden layer. How do we determine the dimensions of $W^1$? By convention, they will be J by D because the convention is to have the row as the dimension of the resulting layer and the column as the dimension of the starting layer (as you can see in the diagram, the dimensions work out in the math this way). In addition, we also have a J by 1 bias term $b^1$, where a given term represent a bias used for the creation of single one of the J nodes in the resulting hidden layer (see the equations in the diagram for the math). Next, let's look between the hidden layer and the output layer. Here, again, since we are between layers, we have parameters $W^2$ and $b^2$ here. The dimesions are 1 by J for $W^2$ since we are going from J dimensions to 1 dimension, and the $b^2$ has dimensions 1 by 1 since the resulting layer dimension is 1 (bias is always the dimesion of the resulting layer, by 1, since you only need one number for each of the nodes of the resulting next layer, and here, since our resulting layer is f that only has one dimension, $b^2$ is literally just a number).<br><br>
+
+      Note: this architecture is called a feed foward neural network because there are no cycles formed betwen the nodes.
+
+      <div class="text-center">
+        <img src="{{ site.baseurl }}/images/recap8_1.png" style="width:60%"  alt="Neural Net Diagram 1"></img>
+      </div>
 
       The equations below correspond with the graph above, where x here represents a single datapoint with d dimensions.
 
-      $$f = w^2\phi(x) + b^2$$
+      $$f = W^2\phi(x) + b^2$$
+      $$\phi(x) = \sigma(W^1x + b^1)$$
 
-      $$\phi(x) = \sigma(w^1x + b^1)$$
+      We also write this in matrix form. Essentially this is how to apply $\phi$ to an input x. The sigmoid is applied row wise after doing the computation inside.
 
-      Let us all breakdown what's in the diagram above. First, in the leftmost layer of nodes, we have a bunch of D input dimensions. Next, between the input layer and the first hidden layer (the layer of $\phi$'s), we write out two parameters: $W^1$ and $b^1$. These parameters are drawn between the two layers because they serve exactly that purpose: to get us from our x input to the the hidden layer. How do we determine the dimensions of $W^1$? By convention, they will be J by D because the convention is to have the row as the dimension of the resulting layer and the column as the dimension of the starting layer (as you can see in the diagram, the dimensions work out in the math this way). In addition, we also have a J by 1 bias term $b^1$, where a given term represent a bias used for the creation of single one of the J nodes in the resulting hidden layer (see the equations in the diagram for the math). Next, let's look between the hidden layer and the output layer. Here, again, since we are between layers, we have parameters $W^2$ and $b^2$ here. The dimesions are 1 by J for $W^2$ since we are going from J dimensions to 1 dimension, and the $b^2$ has dimensions 1 by 1 since the resulting layer dimension is 1 (bias is always the dimesion of the resulting layer, by 1, since you only need one number for each of the nodes of the resulting next layer, and here, since our resulting layer is f that only has one dimension, $b^2$ is literally just a number).<br><br>
+      $$\phi(x) = \sigma\left(\begin{pmatrix}
+      W^1_{11} & W^1_{12} & W^1_{13} \\
+      W^1_{21} & W^1_{22} & W^1_{23} \\
+      W^1_{31} & W^1_{32} & W^1_{33} \\
+      W^1_{41} & W^1_{42} & W^1_{43} \\
+      \end{pmatrix}
 
-      <u>Student Question: Why do we name this f, and not $\hat{y}$?</u> We name this f and not $\hat{y}$ because we are keeping our expression general enough to be used for either of both classification and regression. This means, if we use it for classification, we could feed it into a sigmoid function (note: we are only working with a one node output layer, so we can only do binary classification which is achieved with sigmoid), and end up with $\hat{y} = \sigma(f) = \sigma(w^T\phi + w_0)$, and then we could use the result to convert the number into a class (if we were doing multiclass, we would need multiple output nodes in the output layer, and then apply softmax, for example). If used for regression (note: it has to be a one dimensional y here because again, we only have one output), then yes, f wouldn't need to be passed through $\sigma$, $\hat{y}$ would directly equal f.<br><br>
+      \begin{pmatrix}
+      x_{1} \\
+      x_{2} \\
+      x_{3} \\
+      \end{pmatrix}
+
+      +
+
+      \begin{pmatrix}
+      b^1_{1} \\
+      b^1_{2} \\
+      b^1_{3} \\
+      b^1_{4} \\
+      \end{pmatrix}
+      \right)
+
+      $$
+
+      With matrix form, we can now do the literal math out and see an example of how the first element of $\phi$ is generated, as an example. This is depicted in dark blue, and the math is as follows:
+
+      $$\phi_1 = \sigma(W^1_{11}x_1 + W^1_{12}x_2 + W^1_{13}x_3 + b^1_1)$$
+
+      Note that we don't depict the bias in the diagram. There is basically also one bias term applied to each of the J $\phi$ terms.
+
+      <u>Student Question: Why do we name the output node f, and not $\hat{y}$?</u> We name this f and not $\hat{y}$ because we are keeping our expression general enough to be used for either of both classification and regression. This means, if we use it for classification, we could feed it into a sigmoid function (note: we are only working with a one node output layer, so we can only do binary classification which is achieved with sigmoid), and end up with $\hat{y} = \sigma(f) = \sigma(w^T\phi + w_0)$, and then we could use the result to convert the number into a class (if we were doing multiclass, we would need multiple output nodes in the output layer, and then apply softmax, for example). If used for regression (note: it has to be a one dimensional y here because again, we only have one output), then yes, f wouldn't need to be passed through $\sigma$, $\hat{y}$ would directly equal f.<br><br>
 
       <u>Student Question: Why do we select $\sigma$ to be in the function $\phi$?</u> This choice of function that we apply on to the $wx + b$ term is called the activation function. It's very important that we picked $\sigma$, a nonlinear function (there are other nonlinear functions but $\sigma$ is a common one), as the nonlinearity is what makes our neural network model more sophisticated than a simple linear regression. To really visualize this, we can try setting $\phi$ to simply be the linear combination $wx + b$, and we can see what happens when we don't add in a nonlinear activation function. We start with $\phi(x) = W^1x + b^1$ (no sigmoid function this time) and $f = W^2\phi(x) + b^2$. This means now that we have $f = W^2(W^1x + b^1) + b^2$ which simplifies to $f = W^2W^1x + (W^2b^1 + b^1)$. As you might've noticed by now, it turns out that our result when we don't use a nonlinear activation function, is we end up with just another lienar regression in the end, with W set to $W^2W^1$ and b set to $W^2b^1 + b^1$. So this is why we select a nonlinear activation function!<br><br>
 
@@ -131,16 +167,38 @@ weight: 0
 
       <h4>Deep Neural Network</h4>
 
-      This is an extension of what was drawn above. Whereas we only had one hidden layer, now we have multiple hidden layers. There are still a W and b term between layers.<br><br>
+      This is an extension of what was drawn before. Basically, a deep neural network is a feed forward neural network with multiple hidden layers. Between layers, there are still the [W and b] terms, as we drew on our diagram before as well.<br><br>
 
-      Why would we do this if a single layer is a universal function approximater? We would want to do this if we need to reuse parts of structure. Imagine a function where we wanted it to be:<br><br>
+      Why would we do this if a single layer is a universal function approximater? We would want to do this if we need to reuse parts of structure. Imagine a situation where we wanted it to be:<br><br>
 
-      output=true if either ((x1 and x2 are big) AND x3 is big) OR ((x1 and x2 are big) AND x4 is big). Then we would want to reuse the term of (x1 and x2 are big) for computional efficiency.
+      $$
+      \textrm{output=true if either}
+      \left\{ \begin{array}{cc}
+      \textrm{x1 and x2 and x3 are big} \\
+      \textrm{x1 and x2 and x4 are big} \\
+      \end{array} \right.
+      $$
 
-      <h4>Variant: Residual Network</h4>
-      <h4>Convolutional Network</h4>
-      <h4>Auto-encoder</h4>
-      <h4>Recurrent</h4>
+      If we set it up with just one hidden layer, we would be relearning the x1 and x2 parts, which really we could combine into a resuable term (x1 AND x2). So instead, let's set it up in the following way for computional efficiency:
 
+      $$
+      \textrm{output=true if either}
+      \left\{ \begin{array}{cc}
+      \textrm{(x1 and x2 are big) AND x3 is big} \\
+      \textrm{(x1 and x2 are big) AND x4 is big} \\
+      \end{array} \right.
+      $$
+
+      This way, in one of our $\phi$'s we can first figure out (x1 AND x2) and then reuse this.
+
+      <h4>Other Architectures</h4>
+
+      There are a lot of other architectures of neural networks. Finale covered the basic intuition in class for each of these, but we encourage you to do your own research to find out more. We've linked the Wikipedia pages for convenience, but you should definitely also explore other resources (websites, videos, etc). If you have any questions, of course feel free to reach out to us on Piazza or email <a href="mailto: jdhe@college.harvard.edu">jdhe@college.harvard.edu</a>, and if there's enough demand, we can add in more notes here.<br>
+      <ul>
+        <li>Residual Network (Variant of a Feed Forward Network)</li>
+        <li>Convolutional Network</li>
+        <li>Auto-encoder</li>
+        <li>Recurrent</li>
+      </ul>
     </div>
 </section>
