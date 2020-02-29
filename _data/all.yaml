@@ -167,7 +167,7 @@ lectures:
     readings:
     hw:
   - topic:
-    subtopic: Model Selection - Bayesian
+    subtopic: <a href="/cs181-web/recap7">Model Selection - Bayesian</a>
     section:
     readings: 2.8, 2.9
     hw:
@@ -185,7 +185,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: Function Class
-    subtopic: Neural Net 1
+    subtopic: <a href="/cs181-web/recap8">Neural Net 1</a>
     section:
     readings: 4.1-4.4, 4.6
     hw: <a href="/cs181-web/homework#hw3">HW3 (Bayesian Methods, NN, and Practical Supervised Learning) </a> released
