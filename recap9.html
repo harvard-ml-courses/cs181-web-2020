@@ -1,0 +1,155 @@
+---
+layout: page
+title: Lecture 9 Recap - Neural Networks 2
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: February 26, 2020 (<a href="http://bit.ly/cs181cc9" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc9responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 4.4</h4>
+
+      <br>
+
+      <h3>Lecture 9 Summary</h3>
+
+      <ul>
+        <li><a href="#recap9_1">Intro: More Context and Examples of Neural Networks</a></li>
+        <li><a href="#recap9_2">Optimizing the Neural Network</a></li>
+        <li><a href="#recap9_3">Detour: Vector Chain Rule</a></li>
+        <li><a href="#recap9_4">Let's Now Finish The Optimization</a></li>
+        <li><a href="#recap9_5">Let's Generalize Everything</a></li>
+        <li><a href="#recap9_6">Why does this all work?</a></li>
+      </ul>
+
+      <h2 id="recap9_1">Intro: More Context and Examples of Neural Networks</h2>
+
+      Last lecture, we described different neural network models and architectures. Today, we will be focusing on the optimization of neural networks. These are going to be difficult, but will be important to understand.<br><br>
+
+      Also, before we move on, let's cover a few more examples of the use of neural networks. One thing we can do now is predict the aftershocks of earthquakes extremely efficiently using neural networks. Before, we had to use physics data to run the simluation to understand what is going to be expected, but now we can instead use a neural network on the data, and it's about as accurate. Another example is the creation of blue LED's. It's incredibly expensive to make these lights, as you have to make them, test them, and this can cost thousands of dollars. Now, we can predict which molecules are the most likely to be effective at creating the blue LED lights. Basically, at a cheaper cost, and in a shorter time, we'll be able to find a good molecule for this purpose, and create blue LED lights much more effective. This is a great example of an intersection of engineering and machine learning.<br><br>
+
+      <h2 id="recap9_2">Optimizing the Neural Network</h2>
+
+      As usual, just as what we've done a long time ago, after we've picked our model class, and after we've picked our loss function (which we will do down below), we will need to optimize our loss function with respect to our parameters to solve for our final model.<br><br>
+
+      Ultimately, we want this specifically:<br><br>
+
+      $$\frac{\partial L_n}{\partial W}$$
+
+      To think through this, we know that we can do this because within the loss function, we'll be including the $f_n$ (see diagram from last lecture for context if you don't remeber what this is) term, and within the $f_n$ term, we can ultimately take the gradient with respect to W. We can use the chain rule to depict this:<br><br>
+
+      $$\frac{\partial L_n}{\partial W} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial W}$$
+
+      The reason discuss this intuition first is to give context for what we're about to do below. As you can see, essentially to calculate $\frac{\partial L_n}{\partial W}$, we are going to take many steps, and one of the steps we can take first is to find the $\frac{\partial L_n}{\partial f_n}$, which we will do below for two different example loss functions. It is also important to note that this part of the equation is independent of the other derivatives, so it is totally fair game to calculate this first.<br><br>
+
+      Also in lecture today, we will cover back propagation, which relates very much to the above equation. To paraphrase Wikipedia (which I think has a great explanation): The concept of backpropagation is that we will compute the gradient of the loss (with respect to the weights) in an efficient way, which makes training networks with multiply layers actually possible. Specifically, back propagation is computing the gradient of the loss function a layer at a time, starting from the final layer (and going backwards), and then resuing terms so that we don't have to repeat any calculations (for intermediate terms in the chain rule). If you've taken CS124, this is an example of dynamic programming!<br><br>
+
+      Even though in real life, we probably will use packages to implement this and not implement backpropagation ourselves, it's good to understand the intuition behind this so we can better use the tools availble to us. By underestanding the details, we will know why are certain things slower, and why are certain things faster, etc.<br><br>
+
+      <h4>Loss Function (if regression)</h4>
+
+      First, let's define an example loss function that we might use for regression (note: we can always choose other loss functions for regression as well, it doesn't have to be least squares). Below, we have the least squares loss. Just a note, we will be as general as possible, and hence are splitting up the notes into this format of regression and classification. Also note, where we used to put in $\hat{y}$ in linear regression in the past, now we're putting in $f_n$.
+
+      $$L(w) = 1/2 * \sum(y_n - f_n)^2$$
+
+      Let us take the derivative:<br><br>
+
+      $$dL/df_n = \sum_n (y_n - f_n)(-1)$$
+
+      Note: If we swapped it to another loss function, we also note that the only effect on the whole original expression $\frac{\partial L_n}{\partial W}$ is only in this specific part, $\frac{\partial L_n}{\partial f_n}$.
+
+      <h4>Loss Function (if classification)</h4>
+
+      As mentioned before, we are being as general as possible, so we also write here a loss function for classification, as another example. Let's pick the logistic loss here as our example.<br><br>
+
+      Remember first that for our binary classification, we define the following:<br><br>
+
+      $$p(y=1|x) = \sigma(f_n)$$
+      $$p(y=0|x) = 1 - \sigma(f_n)$$
+
+      Now, we can define the logistic loss function using the terms above:<br><br>
+
+      $$L(w) = \sum_n y_n \log p(y=1|x) + (1 - y_n) \log p(y=0|x)$$
+      $$L(w) = \sum_n y_n \log \sigma(f_n) + (1 - y_n) \log (1 - \sigma(f_n))$$
+
+      Also remember the following helpful tip for the derivative:<br><br>
+      $$\frac{\partial\sigma(z)}{z} = \sigma(z)(1 - \sigma(z))$$
+
+      Let us take the derivative:<br><br>
+
+      $$\frac{\partial L_n}{\partial f_n} = y_n \frac{1}{\sigma(f_n)} \sigma(f_n) (1 - \sigma(f_n)) + (1 - y_n) \frac{1}{1 - \sigma(f_n)} \sigma(f_n)(1 - \sigma(f_n))(-1)$$
+
+      We can simplify:<br><br>
+
+      $$\frac{\partial L_n}{\partial f_n} = y_n (1 - \sigma(f_n)) - (1 - y_n) \sigma(f_n)$$
+
+      <h2 id="recap9_3">Detour: Vector Chain Rule</h2>
+
+      We will take a slight detour now in order to gain the tools we need to do the back propagation.
+
+      $$y = f(u) = f(g(h(x)))$$
+      $$u = g(v) = g(h(x))$$
+      $$v = h(x)$$
+
+      <h4>All Scalars</h4>
+
+      If we had all scalars, and we wanted to look for: ${\partial f}{\partial x}$<br><br>
+
+      $${\partial f}{\partial x} = {\partial f}{\partial u}{\partial u}{\partial v} {\partial v}{\partial x} = {\partial f}{\partial u}{\partial g}{\partial v} {\partial h}{\partial x}$$<br><br>
+
+      <h4>If x was a vector</h4>
+
+      NEED TO FILL.<br><br>
+
+      <h4>If x and v were both vectors</h4>
+
+      NEED TO FILL.<br><br>
+
+      <h4>If x and v and u were all vectors</h4>
+
+      NEED TO FILL.<br><br>
+
+      <h2 id="recap9_4">Let's Now Finish The Optimization</h2>
+
+      As a refresher, we've had from before:
+
+      $$\frac{\partial L_n}{\partial W} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial W}$$
+
+      We already calculated $\frac{\partial L_n}{\partial f_n}$ before, so we need to now calculate  \frac{\partial f_n}{\partial W}.
+
+      Let's say our $f_n = W\phi_n + b$. If so, that means we have:
+
+      $$\frac{\partial f_n}{\partial W} = \phi_n$$
+
+      <h4>Example: Let's Complete the Full Expression for the Regression Case</h4>
+
+      From before for the regression case, we have $\frac{\partial L_n}{\partial f_n} = (y_n - f_n)(-1)$, and now we have $\frac{\partial f_n}{\partial W} = \phi_n$, so combined we have:<br><br>
+
+      $$\frac{\partial L_n}{\partial W} = (y_n - f_n)(-1) \phi_n$$
+
+      <u>Feed Forward Concept</u><br><br>
+
+      How will we get this term?
+
+      NEED TO FILL OUT THE REST OF THIS
+
+      <h2 id="recap9_5">Let's Generalize Everything</h2>
+
+      NEED TO FILL OUT
+
+      <h2 id="recap9_6">Why does this all work?</h2>
+
+      <ol>
+        <li>GPUs allow fast computations of linear algebra</li>
+        <li>We now have lots of data, and lots of data avoids overfitting</li>
+        <li>Practicalities
+          <ul>
+            <li>Theory is lagging, but belief is that the over-parameterization enables easier gradient descent (gradient descent doesn't work in simpler models)</li>
+            <li>Tricks: perturb inputs to avoid overfitting, stop when validation loss increases (potentially), L1 and L2 Regularization</li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+</section>
