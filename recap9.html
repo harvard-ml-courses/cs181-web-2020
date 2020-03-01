@@ -98,23 +98,55 @@ weight: 0
 
       $${\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
 
-      <h4>If x was a vector</h4>
+      <h4>If x (size $D$) was a  vector </h4>
 
-      $$\nabla_x f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_x v$$
+      $$\nabla_\mathbf{x}f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_\mathbf{x}v$$
 
-      Where the $\frac{\partial f}{\partial u} \frac{\partial u}{\partial v}$ parts are scalar, and the $\nabla_x v$ is a vector: as in how does EACH dimension of x affect scalar v.<br><br>
+      Where $\frac{\partial f}{\partial u} and \frac{\partial u}{\partial v}$ parts scalar, and
+      $\nabla_\mathbf{x} v$ is $1 \times D$ a vector: as in how does each dimension of $\mathbf{x}$ affect scalar $v$.<br><br>
+      <br>
+      <strong>Note:</strong> We are using the <em>numerator layout notation</em> (sometimes known as the <em>Jacobian formulation</em>),
+      where $\mathbf{y}$ and $\mathbf{x}$ are size $M$ and $N$ vectors respectively and
+      $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ is an $M\times N$ matrix such that
+      $$\frac{\partial \mathbf{y}}{\partial \mathbf{x}} =
+      \begin{pmatrix}
+      \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} & \cdots & \frac{\partial y_1}{\partial x_N} \\
+      \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} & \cdots & \frac{\partial y_2}{\partial x_N} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial y_M}{\partial x_1} & \frac{\partial y_M}{\partial x_2} & \cdots & \frac{\partial y_M}{\partial x_N}
+      \end{pmatrix}$$
 
-      <h4>If x and v were both vectors</h4>
+      $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ is known as the Jacobian matrix and represented as $\mathbb{J}_\mathbf{x}[\mathbf{y}]$.
+      <br><br>
 
-      $$\nabla_x f = \frac{\partial f}{\partial u} \nabla_v[u] \mathbb{J}_x[v]$$
+      <h4>If x (size $D$) and v (size $J$) were both vectors</h4>
 
-      $\frac{\partial f}{\partial u}$ is a scalar, $\nabla_v[u]$ is a 1 by J vector, and $\mathbb{J}_x[v]$ is a J by D matrix. As in how EACH dimension x affects EACH dimension of v, then EACH dimension v to u.<br><br>
+      $$\nabla_\mathbf{x} f = \frac{\partial f}{\partial u} \nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$$
 
-      <h4>If x and v and u were all vectors</h4>
+      $\frac{\partial f}{\partial u}$ is a scalar, $\nabla_\mathbf{v}u$ is a $1 \times J$ vector, and
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a $J \times D$ matrix.
+      <br>
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ measures how each
+      dimension of $\mathbf{x}$ affects each dimension of $\mathbf{v}$ and $\nabla_\mathbf{v}u$ how each
+      dimension of $\mathbf{y}$ affects each dimension of $u$.
+      <br>
+      Chaining them,
+      $\nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$ ($1 \times D$ vector) measures how each
+      dimension of $\mathbf{x}$ affects each dimension of $u$.
+      <br>
+      Consequentially, $\frac{\partial f}{\partial u} \nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a vector of
+      how each $\mathbf{x}$ dimension changes scalar $f$, through all dimensions of $\mathbf{v}$ and $u$.
+      <br><br>
 
-      $$\nabla_x f = \nabla_u f \mathbb{J}_v[u] \mathbb{J}_x[v]$$
+      <h4>If x (size $D$) and v (size $J$) and u (size $J^\prime$) were all vectors</h4>
 
-      $\nabla_u f$ is a 1 by J' vector, $\mathbb{J}_v[u]$ is a J' by J vector, $\mathbb{J}_x[v]$ is a J by D matrix. We still get a vector of how EACH x dimension changes scalar f, through all dimensions of v and u.<br><br>
+      $$\nabla_\mathbf{x} f = \nabla_\mathbf{u} f \mathbb{J}_\mathbf{v}[\mathbf{u}] \mathbb{J}_\mathbf{x}[\mathbf{v}]$$
+
+      $\nabla_\mathbf{u} f$ is a $1 \times J^\prime$ vector, $\mathbb{J}_\mathbf{v}[\mathbf{u}]$ is a $J^\prime \times J$ vector,
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a $J\times D$ matrix.
+      We still get a vector of how each $\mathbf{x}$ dimension changes scalar $f$, through all dimensions of $\mathbf{v}$
+      and $\mathbf{u}$.
+      <br><br>
 
       <h2 id="recap9_4">Let's Now Finish The Optimization</h2>
 
