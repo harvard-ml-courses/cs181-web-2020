@@ -96,19 +96,25 @@ weight: 0
 
       If we had all scalars, and we wanted to look for: ${\partial f}{\partial x}$<br><br>
 
-      $${\partial f}{\partial x} = {\partial f}{\partial u}{\partial u}{\partial v} {\partial v}{\partial x} = {\partial f}{\partial u}{\partial g}{\partial v} {\partial h}{\partial x}$$<br><br>
+      $${\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
 
       <h4>If x was a vector</h4>
 
-      NEED TO FILL.<br><br>
+      $$\nabla_x f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_x v$$
+
+      Where the $\frac{\partial f}{\partial u} \frac{\partial u}{\partial v}$ parts are scalar, and the $\nabla_x v$ is a vector: as in how does EACH dimension of x affect scalar v.<br><br>
 
       <h4>If x and v were both vectors</h4>
 
-      NEED TO FILL.<br><br>
+      $$\nabla_x f = \frac{\partial f}{\partial u} \nabla_v[u] \mathbb{J}_x[v]$$
+
+      $\frac{\partial f}{\partial u}$ is a scalar, $\nabla_v[u]$ is a 1 by J vector, and $\mathbb{J}_x[v]$ is a J by D matrix. As in how EACH dimension x affects EACH dimension of v, then EACH dimension v to u.<br><br>
 
       <h4>If x and v and u were all vectors</h4>
 
-      NEED TO FILL.<br><br>
+      $$\nabla_x f = \nabla_u f \mathbb{J}_v[u] \mathbb{J}_x[v]$$
+
+      $\nabla_u f$ is a 1 by J' vector, $\mathbb{J}_v[u]$ is a J' by J vector, $\mathbb{J}_x[v]$ is a J by D matrix. We still get a vector of how EACH x dimension changes scalar f, through all dimensions of v and u.<br><br>
 
       <h2 id="recap9_4">Let's Now Finish The Optimization</h2>
 
