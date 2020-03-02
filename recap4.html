@@ -130,7 +130,7 @@ weight: 0
       where the set $S$ consists of all $n$ such that $\text{sign}(y_n) \neq \text{sign}(\mathbf{w}^T\mathbf{x}_n + w_0)$
       <br><br>
       Now, we can take gradients!
-      $$\frac{\partial}{\partial \mathbf{w}}\mathcal{L}(\textbf{w}) = -\sum_{m \in S}y_m\mathbf{w}$$
+      $$\frac{\partial}{\partial \mathbf{w}}\mathcal{L}(\textbf{w}) = -\sum_{m \in S}y_m\mathbf{x}_m$$
       Note: We have absorbed the bias term into $\mathbf{w}$ here
       <br><br>
 
