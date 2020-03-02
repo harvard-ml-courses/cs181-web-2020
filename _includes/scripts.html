@@ -2,3 +2,7 @@
 <script src="{{ site.baseurl }}/js/popper.min.js"></script>
 <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
 {% include mathjax.html %}
+
+{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+{% endif %}
