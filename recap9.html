@@ -94,17 +94,18 @@ weight: 0
 
       <h4>All Scalars</h4>
 
-      If we had all scalars, and we wanted to look for: ${\partial f}{\partial x}$<br><br>
+      If we had all scalars, and we wanted to look for: $\frac{\partial f}{\partial x}$<br><br>
 
-      $${\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
+      $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
 
       <h4>If x (size $D$) was a  vector </h4>
 
       $$\nabla_\mathbf{x}f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_\mathbf{x}v$$
 
       Where $\frac{\partial f}{\partial u} and \frac{\partial u}{\partial v}$ parts scalar, and
-      $\nabla_\mathbf{x} v$ is $1 \times D$ a vector: as in how does each dimension of $\mathbf{x}$ affect scalar $v$.<br><br>
-      <br>
+      $\nabla_\mathbf{x} v$ is $1 \times D$ a vector: as in how does each dimension of $\mathbf{x}$ affect scalar $v$.
+      <br><br>
+
       <strong>Note:</strong> We are using the <em>numerator layout notation</em> (sometimes known as the <em>Jacobian formulation</em>),
       where $\mathbf{y}$ and $\mathbf{x}$ are size $M$ and $N$ vectors respectively and
       $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ is an $M\times N$ matrix such that
@@ -128,7 +129,7 @@ weight: 0
       <br>
       $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ measures how each
       dimension of $\mathbf{x}$ affects each dimension of $\mathbf{v}$ and $\nabla_\mathbf{v}u$ how each
-      dimension of $\mathbf{y}$ affects each dimension of $u$.
+      dimension of $\mathbf{v}$ affects each dimension of $u$.
       <br>
       Chaining them,
       $\nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$ ($1 \times D$ vector) measures how each
@@ -152,29 +153,87 @@ weight: 0
 
       As a refresher, we've had from before:
 
-      $$\frac{\partial L_n}{\partial W} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial W}$$
+      $$\frac{\partial L_n}{\partial \mathbf{w}} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial \mathbf{w}}$$
 
-      We already calculated $\frac{\partial L_n}{\partial f_n}$ before, so we need to now calculate  \frac{\partial f_n}{\partial W}.
+      We already calculated $\frac{\partial L_n}{\partial f_n}$ before, so we need to now calculate  $\frac{\partial f_n}{\partial \mathbf{w}}$.
 
-      Let's say our $f_n = W\phi_n + b$. If so, that means we have:
+      Let's say our $f_n = \mathbf{w}^T\mathbf{\phi_n} + b$. If so, that means we have:
 
-      $$\frac{\partial f_n}{\partial W} = \phi_n$$
+      $$\frac{\partial f_n}{\partial \mathbf{w}} = \mathbf{\phi_n}$$
 
       <h4>Example: Let's Complete the Full Expression for the Regression Case</h4>
 
-      From before for the regression case, we have $\frac{\partial L_n}{\partial f_n} = (y_n - f_n)(-1)$, and now we have $\frac{\partial f_n}{\partial W} = \phi_n$, so combined we have:<br><br>
+      From before for the regression case, we have $\frac{\partial L_n}{\partial f_n} = (y_n - f_n)(-1)$, and
+      now we have $\frac{\partial f_n}{\partial \mathbf{w}} = \mathbf{\phi_n}$, so combined we have:<br><br>
 
-      $$\frac{\partial L_n}{\partial W} = (y_n - f_n)(-1) \phi_n$$
+      $$\frac{\partial L_n}{\partial \mathbf{w}} = (y_n - f_n)(-1) \mathbf{\phi_n}$$
 
-      <u>Feed Forward Concept</u><br><br>
+      <br><br>
+      Notice that we need the value $f_n$ to compute the gradient.
+      <br>
 
-      How will we get this term?
+      <em>How will we get this term?</em> We can first compute $\mathbf{x} \rightarrow \mathbf{\phi_n} \rightarrow \mathbf{f_n}$ and then use
+      that value of $\mathbf{f_n}$ in the gradient.
 
-      NEED TO FILL OUT THE REST OF THIS
+      <br><br>
+      Recall that $\mathbf{\phi_n} = \sigma (\mathbf{W}^1\mathbf{x} + \mathbf{b}^1)$. <em>How can we get $\nabla_\mathbf{W}\mathcal{L}_n$</em>?
+
+      <br><br>
+
+      $$\nabla_\mathbf{W}\mathcal{L}_n = \frac{\partial L_n}{\partial f_n} \nabla_\mathbf{\phi_n}f_n \mathbb{J}_\mathbf{W}[\mathbf{\phi_n}]$$
+<!--      Here we are required to take the gradient of a vector $\mathbf{\phi_n}$ with respect to a matrix $\mathbf{W}$.-->
+<!--      There isn't a notation for vectors-by-matrices derivatives that is widely agreed upon. We will do this by first flattening-->
+<!--      $\mathbf{W}$ from a $J \times D$ matrix into a $J*D$ vector when thinking about the derivative-->
+
 
       <h2 id="recap9_5">Let's Generalize Everything</h2>
+      The process of computing gradients for optimizing neural networks is as follows:
 
-      NEED TO FILL OUT
+      <ol>
+        <li>
+          Compute $\mathcal{L}(\mathbf{\phi}^{L}(\mathbf{\phi}^{L-1}(\cdots \mathbf{\phi}^{1}(\mathbf{x}))))$ by passing $\mathbf{x}$
+          through the network $\mathbf{x} \rightarrow \mathbf{\phi}^{1} \rightarrow \cdots \rightarrow
+          \mathbf{\phi}^{L-1} \rightarrow \mathbf{\phi}^{L} \rightarrow \mathcal{L}$ (this is called a forward pass) and store all
+          $\mathbf{\phi}^\ell$.
+        </li>
+        <li>
+          Perform the chain-rule backwards:
+          <ul>
+            <li>
+              $$\frac{\partial \mathcal{L}}{\partial \mathbf{\phi}^\ell} = \nabla_{\mathbf{\phi}^L}\mathcal{L}
+              \mathbb{J}_{\mathbf{\phi}^{L-1}}[\mathbf{\phi}^{L}] \cdots \mathbb{J}_{\mathbf{\phi}^{\ell}}[\mathbf{\phi}^{\ell + 1}]$$
+            </li>
+            <li>
+              Compute the parameter gradients
+              $$\begin{align*}
+                \frac{\partial \mathcal{L}}{\partial \mathbf{W}^\ell} &= \nabla_{\mathbf{\phi}^L}\mathcal{L}
+              \mathbb{J}_{\mathbf{\phi}^{L-1}}[\mathbf{\phi}^{L}] \cdots \mathbb{J}_{\mathbf{\phi}^{\ell}}[\mathbf{\phi}^{\ell + 1}]
+              \mathbb{J}_{\mathbf{W}^{\ell}}[\mathbf{\phi}^{\ell}] \\
+              &= \frac{\partial \mathcal{L}}{\partial \mathbf{\phi}^\ell} \frac{\partial \mathbf{\phi}^\ell}{\partial \mathbf{W}^\ell}
+              \end{align*}$$
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      The following picture shows the steps
+      <div class="text-center">
+        <img src="{{ site.baseurl }}/images/recap9_1.png" style="width:60%"  alt="Reverse-mode AutoDiff Diagram"></img>
+      </div>
+
+      <br><br>
+      <strong>Note: </strong> This is called "reverse-mode" autodiff. This is good when the output ($y$) is small and there
+      are many parameters (all the $W$s). It allows for efficient reuse of computed values.
+
+      <br><br>
+      We can also do "forward-mode" diff. Suppose we wanted just a derivative/sensitivity test on
+      $\frac{\partial \mathcal{L}_n}{\partial x_{nd}}$. Then we don't need all the $\frac{\partial \mathbb{\phi}}{\partial W_{jd^\prime}}$
+      for all $d^\prime \neq d$.
+      <br>
+      Forward mode goes from the variable $x_{nd}$ to $\mathcal{L}_n$ rather than from $\mathcal{L}_n$ to $x_{nd}$.
+      <br>
+      We compute $\frac{\partial \mathbf{\phi}^1}{\partial x_{nd}}$, then $\frac{\partial \mathbf{\phi}^2}{\partial \mathbf{\phi}^1}$
+      all the way up.
 
       <h2 id="recap9_6">Why does this all work?</h2>
 
