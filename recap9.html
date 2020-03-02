@@ -94,55 +94,146 @@ weight: 0
 
       <h4>All Scalars</h4>
 
-      If we had all scalars, and we wanted to look for: ${\partial f}{\partial x}$<br><br>
+      If we had all scalars, and we wanted to look for: $\frac{\partial f}{\partial x}$<br><br>
 
-      $${\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
+      $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial u}{\partial v} \frac{\partial v}{\partial x} = \frac{\partial f}{\partial u}\frac{\partial g}{\partial v}\frac{\partial h}{\partial x}$$<br><br>
 
-      <h4>If x was a vector</h4>
+      <h4>If x (size $D$) was a  vector </h4>
 
-      $$\nabla_x f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_x v$$
+      $$\nabla_\mathbf{x}f = \frac{\partial f}{\partial u} \frac{\partial u}{\partial v} \nabla_\mathbf{x}v$$
 
-      Where the $\frac{\partial f}{\partial u} \frac{\partial u}{\partial v}$ parts are scalar, and the $\nabla_x v$ is a vector: as in how does EACH dimension of x affect scalar v.<br><br>
+      Where $\frac{\partial f}{\partial u} and \frac{\partial u}{\partial v}$ parts scalar, and
+      $\nabla_\mathbf{x} v$ is $1 \times D$ a vector: as in how does each dimension of $\mathbf{x}$ affect scalar $v$.
+      <br><br>
 
-      <h4>If x and v were both vectors</h4>
+      <strong>Note:</strong> We are using the <em>numerator layout notation</em> (sometimes known as the <em>Jacobian formulation</em>),
+      where $\mathbf{y}$ and $\mathbf{x}$ are size $M$ and $N$ vectors respectively and
+      $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ is an $M\times N$ matrix such that
+      $$\frac{\partial \mathbf{y}}{\partial \mathbf{x}} =
+      \begin{pmatrix}
+      \frac{\partial y_1}{\partial x_1} & \frac{\partial y_1}{\partial x_2} & \cdots & \frac{\partial y_1}{\partial x_N} \\
+      \frac{\partial y_2}{\partial x_1} & \frac{\partial y_2}{\partial x_2} & \cdots & \frac{\partial y_2}{\partial x_N} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial y_M}{\partial x_1} & \frac{\partial y_M}{\partial x_2} & \cdots & \frac{\partial y_M}{\partial x_N}
+      \end{pmatrix}$$
 
-      $$\nabla_x f = \frac{\partial f}{\partial u} \nabla_v[u] \mathbb{J}_x[v]$$
+      $\frac{\partial \mathbf{y}}{\partial \mathbf{x}}$ is known as the Jacobian matrix and represented as $\mathbb{J}_\mathbf{x}[\mathbf{y}]$.
+      <br><br>
 
-      $\frac{\partial f}{\partial u}$ is a scalar, $\nabla_v[u]$ is a 1 by J vector, and $\mathbb{J}_x[v]$ is a J by D matrix. As in how EACH dimension x affects EACH dimension of v, then EACH dimension v to u.<br><br>
+      <h4>If x (size $D$) and v (size $J$) were both vectors</h4>
 
-      <h4>If x and v and u were all vectors</h4>
+      $$\nabla_\mathbf{x} f = \frac{\partial f}{\partial u} \nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$$
 
-      $$\nabla_x f = \nabla_u f \mathbb{J}_v[u] \mathbb{J}_x[v]$$
+      $\frac{\partial f}{\partial u}$ is a scalar, $\nabla_\mathbf{v}u$ is a $1 \times J$ vector, and
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a $J \times D$ matrix.
+      <br>
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ measures how each
+      dimension of $\mathbf{x}$ affects each dimension of $\mathbf{v}$ and $\nabla_\mathbf{v}u$ how each
+      dimension of $\mathbf{v}$ affects each dimension of $u$.
+      <br>
+      Chaining them,
+      $\nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$ ($1 \times D$ vector) measures how each
+      dimension of $\mathbf{x}$ affects each dimension of $u$.
+      <br>
+      Consequentially, $\frac{\partial f}{\partial u} \nabla_\mathbf{v}u \mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a vector of
+      how each $\mathbf{x}$ dimension changes scalar $f$, through all dimensions of $\mathbf{v}$ and $u$.
+      <br><br>
 
-      $\nabla_u f$ is a 1 by J' vector, $\mathbb{J}_v[u]$ is a J' by J vector, $\mathbb{J}_x[v]$ is a J by D matrix. We still get a vector of how EACH x dimension changes scalar f, through all dimensions of v and u.<br><br>
+      <h4>If x (size $D$) and v (size $J$) and u (size $J^\prime$) were all vectors</h4>
+
+      $$\nabla_\mathbf{x} f = \nabla_\mathbf{u} f \mathbb{J}_\mathbf{v}[\mathbf{u}] \mathbb{J}_\mathbf{x}[\mathbf{v}]$$
+
+      $\nabla_\mathbf{u} f$ is a $1 \times J^\prime$ vector, $\mathbb{J}_\mathbf{v}[\mathbf{u}]$ is a $J^\prime \times J$ vector,
+      $\mathbb{J}_\mathbf{x}[\mathbf{v}]$ is a $J\times D$ matrix.
+      We still get a vector of how each $\mathbf{x}$ dimension changes scalar $f$, through all dimensions of $\mathbf{v}$
+      and $\mathbf{u}$.
+      <br><br>
 
       <h2 id="recap9_4">Let's Now Finish The Optimization</h2>
 
       As a refresher, we've had from before:
 
-      $$\frac{\partial L_n}{\partial W} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial W}$$
+      $$\frac{\partial L_n}{\partial \mathbf{w}} = \frac{\partial L_n}{\partial f_n} \frac{\partial f_n}{\partial \mathbf{w}}$$
 
-      We already calculated $\frac{\partial L_n}{\partial f_n}$ before, so we need to now calculate  \frac{\partial f_n}{\partial W}.
+      We already calculated $\frac{\partial L_n}{\partial f_n}$ before, so we need to now calculate  $\frac{\partial f_n}{\partial \mathbf{w}}$.
 
-      Let's say our $f_n = W\phi_n + b$. If so, that means we have:
+      Let's say our $f_n = \mathbf{w}^T\mathbf{\phi_n} + b$. If so, that means we have:
 
-      $$\frac{\partial f_n}{\partial W} = \phi_n$$
+      $$\frac{\partial f_n}{\partial \mathbf{w}} = \mathbf{\phi_n}$$
 
       <h4>Example: Let's Complete the Full Expression for the Regression Case</h4>
 
-      From before for the regression case, we have $\frac{\partial L_n}{\partial f_n} = (y_n - f_n)(-1)$, and now we have $\frac{\partial f_n}{\partial W} = \phi_n$, so combined we have:<br><br>
+      From before for the regression case, we have $\frac{\partial L_n}{\partial f_n} = (y_n - f_n)(-1)$, and
+      now we have $\frac{\partial f_n}{\partial \mathbf{w}} = \mathbf{\phi_n}$, so combined we have:<br><br>
 
-      $$\frac{\partial L_n}{\partial W} = (y_n - f_n)(-1) \phi_n$$
+      $$\frac{\partial L_n}{\partial \mathbf{w}} = (y_n - f_n)(-1) \mathbf{\phi_n}$$
 
-      <u>Feed Forward Concept</u><br><br>
+      <br><br>
+      Notice that we need the value $f_n$ to compute the gradient.
+      <br>
 
-      How will we get this term?
+      <em>How will we get this term?</em> We can first compute $\mathbf{x} \rightarrow \mathbf{\phi_n} \rightarrow \mathbf{f_n}$ and then use
+      that value of $\mathbf{f_n}$ in the gradient.
 
-      NEED TO FILL OUT THE REST OF THIS
+      <br><br>
+      Recall that $\mathbf{\phi_n} = \sigma (\mathbf{W}^1\mathbf{x} + \mathbf{b}^1)$. <em>How can we get $\nabla_\mathbf{W}\mathcal{L}_n$</em>?
+
+      <br><br>
+
+      $$\nabla_\mathbf{W}\mathcal{L}_n = \frac{\partial L_n}{\partial f_n} \nabla_\mathbf{\phi_n}f_n \mathbb{J}_\mathbf{W}[\mathbf{\phi_n}]$$
+<!--      Here we are required to take the gradient of a vector $\mathbf{\phi_n}$ with respect to a matrix $\mathbf{W}$.-->
+<!--      There isn't a notation for vectors-by-matrices derivatives that is widely agreed upon. We will do this by first flattening-->
+<!--      $\mathbf{W}$ from a $J \times D$ matrix into a $J*D$ vector when thinking about the derivative-->
+
 
       <h2 id="recap9_5">Let's Generalize Everything</h2>
+      The process of computing gradients for optimizing neural networks is as follows:
 
-      NEED TO FILL OUT
+      <ol>
+        <li>
+          Compute $\mathcal{L}(\mathbf{\phi}^{L}(\mathbf{\phi}^{L-1}(\cdots \mathbf{\phi}^{1}(\mathbf{x}))))$ by passing $\mathbf{x}$
+          through the network $\mathbf{x} \rightarrow \mathbf{\phi}^{1} \rightarrow \cdots \rightarrow
+          \mathbf{\phi}^{L-1} \rightarrow \mathbf{\phi}^{L} \rightarrow \mathcal{L}$ (this is called a forward pass) and store all
+          $\mathbf{\phi}^\ell$.
+        </li>
+        <li>
+          Perform the chain-rule backwards:
+          <ul>
+            <li>
+              $$\frac{\partial \mathcal{L}}{\partial \mathbf{\phi}^\ell} = \nabla_{\mathbf{\phi}^L}\mathcal{L}
+              \mathbb{J}_{\mathbf{\phi}^{L-1}}[\mathbf{\phi}^{L}] \cdots \mathbb{J}_{\mathbf{\phi}^{\ell}}[\mathbf{\phi}^{\ell + 1}]$$
+            </li>
+            <li>
+              Compute the parameter gradients
+              $$\begin{align*}
+                \frac{\partial \mathcal{L}}{\partial \mathbf{W}^\ell} &= \nabla_{\mathbf{\phi}^L}\mathcal{L}
+              \mathbb{J}_{\mathbf{\phi}^{L-1}}[\mathbf{\phi}^{L}] \cdots \mathbb{J}_{\mathbf{\phi}^{\ell}}[\mathbf{\phi}^{\ell + 1}]
+              \mathbb{J}_{\mathbf{W}^{\ell}}[\mathbf{\phi}^{\ell}] \\
+              &= \frac{\partial \mathcal{L}}{\partial \mathbf{\phi}^\ell} \frac{\partial \mathbf{\phi}^\ell}{\partial \mathbf{W}^\ell}
+              \end{align*}$$
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      The following picture shows the steps
+      <div class="text-center">
+        <img src="{{ site.baseurl }}/images/recap9_1.png" style="width:60%"  alt="Reverse-mode AutoDiff Diagram"></img>
+      </div>
+
+      <br><br>
+      <strong>Note: </strong> This is called "reverse-mode" autodiff. This is good when the output ($y$) is small and there
+      are many parameters (all the $W$s). It allows for efficient reuse of computed values.
+
+      <br><br>
+      We can also do "forward-mode" diff. Suppose we wanted just a derivative/sensitivity test on
+      $\frac{\partial \mathcal{L}_n}{\partial x_{nd}}$. Then we don't need all the $\frac{\partial \mathbb{\phi}}{\partial W_{jd^\prime}}$
+      for all $d^\prime \neq d$.
+      <br>
+      Forward mode goes from the variable $x_{nd}$ to $\mathcal{L}_n$ rather than from $\mathcal{L}_n$ to $x_{nd}$.
+      <br>
+      We compute $\frac{\partial \mathbf{\phi}^1}{\partial x_{nd}}$, then $\frac{\partial \mathbf{\phi}^2}{\partial \mathbf{\phi}^1}$
+      all the way up.
 
       <h2 id="recap9_6">Why does this all work?</h2>
 
