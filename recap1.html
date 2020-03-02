@@ -1,0 +1,55 @@
+---
+layout: page
+title: Lecture 1 Recap - Nonparametric Regression
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: January 27, 2020</h4>
+      <h4>Relevant Textbook Sections: 2.1-2.2.1</h4>
+      <h4>Cube: Supervised, Discrete or Continuous, Nonprobabilistic</h4>
+
+      <br>
+
+      <h3>Lecture 1 Summary</h3>
+
+      <ul>
+        <li><a href="#recap2_1">Introduction: Supervised Learning </a></li>
+        <li><a href="#recap2_2">Nonparametric Regression: Example using K Nearest Neighbors</a></li>
+        <li><a href="#recap2_3">Kernel Regresion: a Natural Extension of KNN</a></li>
+      </ul>
+
+      <h2 id="recap2_1">Introduction</h2>
+
+      What if we had a bunch data: we had inputs x and outputs y. If we got a new input x, how could we predict what the new output y would be? This is our supervised learning setting, where we have training inputs and outputs, and we want to predict new outputs (for new inputs). In future lectures, we'll formalize how this all looks.<br><br>
+
+      <h2 id="recap2_2">Nonparametric Regression: Example using K Nearest Neighbors</h2>
+
+      Let's assume for now that we're in a regression context. We can use a nonparametric model to solve this problem. A nonparametric model doesn't have a fixed number of parameters used to make predictions, which means it doesn't need to make strong assumptions about the data. Instead, as the amount of training data increases, nonparametric models tend to become more and more complex as they incorporate the new data. One model we might pick is the KNN model. The KNN is a simple idea, and is as follows:<br><br>
+
+      <ol>
+        <li>Find the k nearest points ${x_1, x_2 ... x_k}$ to our new point x*</li>
+        <li>Predict $\hat{y} = \frac{1}{K} \sum y_k$
+      </ol>
+
+      Overall, the pros are that this is very flexible! We don't need to assume a line or anything really. The con's however, are that we need to keep all the training data (potentialy), and also we may face issues in distances between points when the dimensions are too high. See the <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality" target="_blank">curse of dimensionality</a> for details.<br><br>
+
+      Note: this also works for classifiation! Instead of taking the average of the closest k neighbors, we can take the plurality vote for the classes of the closest k neighbors.
+
+      <h2 id="recap2_3">Kernel Regresion: a Natural Extension of KNN</h2>
+
+      Now let's introduce a simple extension to KNN: kernel regression. What if we took all the points, not just the k nearest points, and introduced a weighting function that weights by distance (so that we weight the value of closer points more).<br><br>
+
+      Let K be our kernel function that determines the weighting for the distances.
+
+      $$\hat{y}^* = \frac{\sum_n K(x^*, x_n) y_n}{\sum_n K(x^*, x_n)}$$
+
+      The numerator is the weight multiplied by the output value for each point x (across all other points x). The denominator represents a term that normalizes the distances.<br><br>
+
+      Note: as we then saw in the concept check, you want to make sure that when you do the summation over all n points, you don't include the point itself (as in, when we say we consider all points, we exclude the given point itself). This is because if you were to include the point itself, the best K function would end up bing a trivial case where for every point, you should weigh all the other points as 0 except the point itself, leading to a "perfect" predictions. However, this won't work anymore as soon as you get new data.<br><br>
+
+      Note: this lecture recap was typed many weeks after the actual lecture so are a bit short and may be missing context (since I didn't attend it in person, and at the time we hadn't come up with the lecture recap idae yet). Because of this, I also don't have a link for the concept check from this class. If you have suggestions on what else to add here, or if you have any questions, please feel free to ask on Piazza or email me at jdhe@college.harvard.edu.
+    </div>
+</section>

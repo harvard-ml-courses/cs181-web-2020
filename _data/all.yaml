@@ -94,7 +94,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: Overview #Jan 28
-    subtopic: Intro
+    subtopic: <a href="/cs181-web/recap1">Intro</a>
     section:
     readings: 2.1, 2.2.1
     hw: <a href="/cs181-web/homework#hw1">HW1 (Regression)</a> released
