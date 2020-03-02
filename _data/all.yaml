@@ -190,7 +190,7 @@ lectures:
     readings: 4.1-4.4, 4.6
     hw: <a href="/cs181-web/homework#hw3">HW3 (Bayesian Methods, NN, and Practical Supervised Learning) </a> released
   - topic: #Feb 27
-    subtopic: Neural Net 2
+    subtopic: <a href="/cs181-web/recap9">Neural Net 2</a>
     section:
     readings: 4.4
     hw:
