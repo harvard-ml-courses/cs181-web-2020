@@ -206,7 +206,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: Objective #Mar 4
-    subtopic: Max-Margin
+    subtopic: <a href="/cs181-web/recap10">Support Vector Machine 1</a>
     section:
     readings: 5.1-5.3
     hw:
