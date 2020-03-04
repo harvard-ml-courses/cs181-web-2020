@@ -18,7 +18,10 @@ weight: 0
       <ul>
         <li><a href="#recap10_1">Intro: Real World Example of SVMs</a></li>
         <li><a href="#recap10_2">Intro to Max Margin (a new objective function)</a></li>
-        <li><a href="#recap10_3">First Example: Hard Margin SVM</a></li>
+        <li><a href="#recap10_3">Hard Margin SVM</a></li>
+        <li><a href="#recap10_4">Soft Margin SVM</a></li>
+        <li><a href="#recap10_5">Review of All Loss Functions</a></li>
+
       </ul>
 
       <h2 id="recap10_1">Intro: Real World Example of SVMs</h2>
@@ -45,7 +48,7 @@ weight: 0
         <img src="{{ site.baseurl }}/images/recap10_2.png" style="width:40%"  alt="Max Margin Idea"></img>
       </div>
 
-      <h2 id="recap10_3">First Example: Hard Margin SVM</h2>
+      <h2 id="recap10_3">Hard Margin SVM</h2>
 
       First, to keep things simple, let's look at a binary classification setting, where $\hat{y}$ is 1 or 0. In addition, we're going to focus on the linear case today: $f(x, w) = w^Tx + w_0$  (next class we'll look at the nonlinear case). These previous two sentences refer to general properties we're choosing to keep things simple in our SVM example.<br><br>
 
@@ -133,7 +136,7 @@ weight: 0
 
       Minimizing $||w||_2$ with respect to $w$ and $w_0$ is the same is miniziming $w^Tw$ with respect to $w$ and $w_0$, as squaring it doesnt change where the minimum is. So now we're looking minimizing the length squared. This is really cool beacuse now we have a quadratic program with linear constraints; this is a convex problem which has a lot of excellent solvers out there: cvxopt, cvxpy, sklearn (we do not want to code these ourselves, we can leverage the work of others)!
 
-      <h2>Soft Margin SVM</h2>
+      <h2 id="recap10_4">Soft Margin SVM</h2>
 
       What if the data is not separable and we still want a solution? We can have a relaxed soft margin formulation. For any particular point, we can define how badly it is from the margin using slack variables.<br><br>
 
@@ -156,7 +159,7 @@ weight: 0
 
       If we make C really big, we will be enforcing the constraints more. How do we set the C though? We would want to find this using cross validation (although sklearn finds it for you automatically). Also, it turns out also that this is still convex, so we can still use solvers! We have converge guarantees!
 
-      <h2>Review of All Loss Functions</h2>
+      <h2 id="recap10_5">Review of All Loss Functions</h2>
 
       Below is a graph of a bunch of loss functions we've seen. The intuition behind the new max margin loss we just learned today is that it starts penalizing you before you're wrong, as in it even penalizes you when you're correct. This helps you avoid future mistakes.
 
