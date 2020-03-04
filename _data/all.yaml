@@ -201,7 +201,7 @@ lectures:
     hw:
   - topic: # midterm 1 review
     subtopic:
-    section: Midterm 1 Review
+    section: <a href="/cs181-web/sections#review1">Midterm 1 Review</a>
     readings:
     hw:
     type: 'sec'
