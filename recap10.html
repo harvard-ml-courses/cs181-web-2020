@@ -91,6 +91,8 @@ weight: 0
 
       $$\textrm{margin}(x_n | w, w_o) = y_n(\frac{w^Tx_n + w_0}{||w||_2})$$
 
+      Note on terminology in the equation above. If we remove the normalization factor $||w||_2$, and we look at just the $y_n(w^Tx_n + w_0)$ term, this is known as the functional margin.<br><br>
+
       We want the minimium margin across all the data though, and then we want to maximize that whole term. Let's first write out the minimum margin across the data.
 
       $$\textrm{margin}({x_1, x_2, ... x_n} | w, w_o) = min_{x_n} y_n(\frac{w^Tx_n + w_0}{||w||_2})$$
