@@ -1,0 +1,143 @@
+---
+layout: page
+title: Lecture 11 Recap - Support Vector Machine 2
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: March 4, 2020 (<a href="http://bit.ly/cs181cc11" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc11responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 5.4</h4>
+      <h4>Cube: Supervised, Discrete, Nonprobabilistic</h4>
+
+      <br>
+
+      <h3>Lecture 11 Summary</h3>
+
+      <ul>
+        <li><a href="#recap11_1">Intro: Support Vector Machines Continued</a></li>
+        <li><a href="#recap11_2">Reframing the Problem to Ultimately Utilize Dimension Trick</a></li>
+        <li><a href="#recap11_3">Why Reframing Was Good: Let's use a Kernel</a></li>
+        <li><a href="#recap11_4">What is a Valid Kernel?</a></li>
+      </ul>
+
+      <h2 id="recap11_1">Intro: Support Vector Machine Continued</h2>
+
+      Last time, we looked at the hard margin problem and the soft margin problem (see last lecture's notes for context). Also as a refresher, the reason we found those problems to be beautiful was beacuse they are convex problems: specifically, they are quadratic with linear constriants, so they can be solved very efficiently.<br><br>
+
+      However, one thing ends up being a little tricky. What if x is very high dimensional? There are computations that we need to do here that will become difficult as the size of w and the size of x will get large due to the high dimensionality. Today we are going to consider efficient solutions for high dimensional x. By the end of today's lecture we're going get to more flexible distances (then you can apply SVM even in high dimensions).<br><br>
+
+      <h2 id="recap11_2">Reframing the Problem to Ultimately Utilize Dimension Trick</h2>
+
+      Let's begin by reframing the minimization we did in the last class. Right now it may seem unclear why we are doing this, but at a high level, once we reframe the problem, we will see that there is a trick we can implement to make SVMs to still be usable in high dimensional situations.<br><br>
+
+      To reframe the problem, we are going to use a Lagrangian. You may have seen this in your calculus classes (in the form of $\bar{v}_{objective} + \lambda \bar{v}_{constraint} = 0$). The intution behind this is out of scope of the course, but at a high level, the purpose of using a Lagrangian is to rewrite the same minimization problem in a different way.<br><br>
+
+      So first, start with what we had before in the hard margin case:
+
+      $$min_{w, w_0} \frac{1}{2} ||W||^2_2$$
+
+      With constraint: $y_n(w^Tx_n + w_0) \geq 1$.
+
+      We now rewrite this as:
+
+      $$min_{w, w_0} max_{\alpha_n} \frac{1}{2} ||w||^2_2 - \sum_n \alpha_n (y_n (w^Tx_n + w_0) - 1)$$
+
+      With constraint, $alpha_n > 0$.
+
+      <h4>How can we confirm this is the same minimization problem we had in last lecture?</h4>
+
+      <ol>
+        <li>If the constraint is violated, we can make the Lagrangian objective infinite becuase the $(y_n (w^Tx_n + w_0) - 1)$ term would then be negative, which makes the summation postive now, not negative. This then means we can make $\alpha$ infinite, leading to infinite loss, which ruins what we want to do, because really we want to minimize the whole term with respect to w and $w_0$.</li>
+        <li>If the constraint is satisifed with slack (this means that $y_n (w^T x_n + w_0) > 1$), then we want to make $\alpha_n$ = 0, since we're forced to subtract, to keep things maximized, we will want to subtract nothing.</li>
+        <li>$\alpha_n$ can only be non-zero if $y_n(w^Tx_n + w_0) = 1$, which shows that we have the equivalent situation as before.</li>
+      </ol>
+
+      With the above facts, we know that we're solving the same problem as before, which is what we wanted. This gets us closer to our ultimate goal (where we later want to apply a trick to deal with the dimensionality)
+
+      <h4>Now: Let's Utilize Strong Duality</h4>
+
+      By a property know as strong duality, we are allowed to switch the order of minimum and maximum. The intuition behind this is beyond the scope of the course, but you are free to look into it yourself!
+
+      $$max_{\alpha_n} min_{w, w_0} 1/2 ||w||^2_2 - \sum_n \alpha_n (y_n (w^Tx_n + w_0) - 1)$$
+
+      Now this turns out to be great, because now we can actually take some derivatives to solve for w. In other words, if were given $\alpha$, solving for w is analytic. Let's do it.
+
+      $$\nabla_w L = w - \sum_n \alpha_n y_n x_n = 0$$
+
+      $$w = \sum_n \alpha_n y_n x_n$$
+
+      Notes: x is a vector, w is a vector, alpha is a scalar, y is scalar.<br><br>
+
+      To compose the w, we are going to use the weighted x's. In other words, W is a weighted combination of data points, which is interesting to note!<br><br>
+
+      Below is a constraint that also comes along.
+
+      $$\frac{\partial L}{\partial w_0} = -\sum_n \alpha_n y_n = 0$$
+
+      Now let's substitute back in:
+
+      $$max_{\alpha_n} min_{w, w_0} 1/2 (\sum_n \alpha_n y_n x_n)^T (\sum_{n'} \alpha_n' y_n' x_n') - \sum_n \alpha_n y_n (\sum_{n'} \alpha_n' y_n' x_n')^Tx_n - w_0 \sum_n \alpha_n y_n + \sum_n \alpha_n)$$
+
+      We know from constraint that $w_0 \sum_n \alpha_n y_n$ is 0. So w can simplify to:
+
+      $$max_{\alpha_n} min_{w, w_0} 1/2 (\sum_n \alpha_n y_n x_n)^T (\sum_{n'} \alpha_n' y_n' x_n') - \sum_n \alpha_n y_n (\sum_{n'} \alpha_n' y_n' x_n')^Tx_n + \sum_n \alpha_n)$$
+
+      $$max_\alpha -1/2 \sum_n \sum_{n'} \alpha_n \alpha_n' y_n y_n' x^T_n x_n' + \sum \alpha_n$$
+
+      With constraints: $\sum_{n} y_n \alpha_n = 0$ and $\alpha_n \geq 0$.<br><br>
+
+      This is still quadratic with linear constraints! We are looking at something quadratic in alpha (quadratric in the objective), and we have constraints that are linear in terms of $\alpha$.<br><br>
+
+      <u>Student question: What does n' mean?</u> The reason we have this is because we happen to already be using n in the overall summation, so we use n' to denote the fact that there is a different summation going on within. For clarity, we could of also picked i, anything would've worked.<br><br>
+
+      <h4>How do recover the actual $w$ and $w_0$ solutions after getting $\alpha$?</h4>
+
+      Once we solve the above problem we get what \alpha is. But how do we get $w$ and $w_0$? We can do a substitution of $\alpha$ back into the term:
+
+      $$w^* = \sum_n \alpha^*_n y_n x_n$$
+
+      Note, this leads our final prediction form to look like the following after we sub in w^* from our original equation for a new point $x^*$:
+
+      $$\sum_n \alpha^*_n y_n x_n^T x^* + w_0$$
+
+      Note that this is in soe a weighted prediction where we have different weights on our different $y_n$'s, and this is also multiplied some measure of closeness (the $x_n^T x^*$ term). Think of it like taking a vote!
+
+      And then to get $w_0$ back, we can find any n where $\alpha_n$ is greater than 0, which leads to the constraint $y_n (w^T x_n + w_0) = 1$ to be true, which we can use to solve for $w_0$.
+
+      <h2 id="recap11_3">Why Reframing Was Good: Let's use a Kernel</h2>
+
+      This is good because now we are solving with respect to n, not d: we only need the $x^n x_n'$ terms. There are a few things we could do next. With this set up, we can do a couple of things since we are really just looking for an inner product.
+
+      We could reuse what we've done in the past, as in we can transform x to $\phi(x)$, doing explicit feature mapping (which we've seen so far in our expert engineering, neural networks). However this would still involve the dimensions if you did this mapping explicitly.
+
+      Our new method is something very elegant. Essentially we are going to do implicit feature mapping! We can define a kernel function: $K(x, x') = \phi(x)^T \phi(x')$ which will skip the the actual explicit manual process of applying the actual $\phi$ to each of $x$ and $x'$ and multiplying it out. The function directly spits out the result of $\phi(x)^T \phi(x')$!<br><br>
+
+      <h4>Example kernels:</h4>
+
+      First, let's just put the trivial case out there: this is if we're not actaully doing anything special:
+
+      $$K(x, x') = x^Tx$$
+
+      Then we also have these examples:
+
+      $$K(x, x') = (1 + x^tx)^q$$
+
+      $$K(x, x') = exp(-||x-x'||^2/(2\sigma^2))$$
+
+      The last example is the radial basis kernel. It turns out, this is a really nice trick because turns out this kernel function actually corresponds to an infinitely sized basis! And that's the whole point, we are able to do this implicit mapping and get the effect of as if we used an infintitely sized basis even though we can directly compute the inner product by skipping the step and going directly to our $K(x, x')$ function.<br><br>
+
+      Why is this important in a real world context? This now means we can apply SVMs to anything, even if there are a lot of dimensions in the x. Besides letting us use infinitely sized bases, it also helps us in contexts where some features make more sense than others. We can work on music, we can can work on documents, (which all have a lot of input content, high dimensionality), because all we need is a Kernel function that extracts the important features from the music or document data fast enough (we can handcraft these functions)!
+
+      <h2 id="recap11_4">What is a valid kernel?</h2>
+
+      The detils of this are mainly out of the scope of the course, but at a high level we consider Mercer's theorem. Specifically, we define a matrix K of $K(x_n, x_n')$ for any set of data or inputs x. If K is postivie semi-definite, that is $z^TKz \geq 0$ for any z, then K is a valid kernel. Intuitively this means something along the lines of: when you take the inner product, it should be positive, since intuitively this term means distance, and we want distance to be positive.<br><br>
+
+      Alternatively this can be expressed as:
+
+      $$\int_{x, x'} f(x)f(x')K(x, x') dx dx' \geq 0$$
+
+      For all f.
+    </div>
+</section>
