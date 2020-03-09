@@ -228,7 +228,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: #Mar 11
-    subtopic: Ethics in ML
+    subtopic: <a href="/cs181-web/recap12">Ethics in ML</a>
     section:
     readings:
     hw:
