@@ -251,7 +251,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: HW4 (SVMs and Ethics released, only needs 1 wk)
+    hw: <a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics released)</a>
   - topic: #Mar 20
     subtopic: No class
     section:
@@ -286,7 +286,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: HW4 (SVMs and Ethics) due
+    hw: <a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics) due</a>
     type: 'hw'
   - topic: # section 8
     subtopic:
