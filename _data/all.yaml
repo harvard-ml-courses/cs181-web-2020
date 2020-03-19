@@ -223,7 +223,7 @@ lectures:
     type: 'hw'
   - topic: # section 5
     subtopic:
-    section: 5. Margin-based / SVM
+    section: <a href="/cs181-web/sections#sec5">5. Margin-Based Classification, SVMs</a>
     readings:
     hw:
     type: 'sec'
