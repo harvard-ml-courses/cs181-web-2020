@@ -12,22 +12,24 @@ tas:
   - name: <a href="mailto:billzhang@college.harvard.edu">Bill Zhang</a>
 
 ohs:
-  - time: Tue 8-10 pm
-    location: Quincy Dining Hall
-  - time: Wed 3-5 pm
-    location: MD Second Floor Lobby
-  - time: Wed 6-8 pm
-    location: MD 221
-  - time: Wed 8-10 pm
-    location: Eliot Dining Hall
-  - time: Thu 1-3 pm
-    location: MD Second Floor Lobby
-  - time: Thu 7-9 pm
-    location: Mather Dining Hall
-  - time: Thu 9-11 pm
-    location: Oaktell
-  - time: Thu 8-10 pm
-    location: Currier Dining Hall
+  - time: Mon 6-8 pm ET
+    TF: Jason Huang
+  - time: Tue 8-10 pm ET
+    TF: Bill Zhang
+  - time: Wed 3-5 pm ET
+    TF: Michael Wornow
+  - time: Wed 6-8 pm ET
+    TF: Jason Ren
+  - time: Wed 8-10 pm ET
+    TF: Jambay Kinley
+  - time: Thu 1-3 pm ET
+    TF: Jenny Huang
+  - time: Thu 7-9 pm ET
+    TF: Jeffrey He
+  - time: Thu 9-11 pm ET
+    TF: Alex Chin
+  - time: Sat 12-2 pm ET
+    TF: Nari Johnson
 
 dates: ["",
   "",
