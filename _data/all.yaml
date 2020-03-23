@@ -268,7 +268,7 @@ lectures:
     hw:
   - topic: # section 7
     subtopic:
-    section: 7. K-means / HAC
+    section: <a href="/cs181-web/sections#sec6">6. Clustering</a>6
     readings:
     hw:
     type: 'sec'
@@ -292,7 +292,7 @@ lectures:
     type: 'hw'
   - topic: # section 8
     subtopic:
-    section: 8. Mixture/EM
+    section: 7. Mixture/EM
     readings:
     hw:
     type: 'sec'
@@ -315,7 +315,7 @@ lectures:
     type:
   - topic: # section 9
     subtopic:
-    section: 9. Dim Reduction / Bayes Nets
+    section: 8. Dim Reduction / Bayes Nets
     readings:
     hw:
     type: 'sec'
@@ -340,7 +340,7 @@ lectures:
     type: 'hw'
   - topic: # section 10
     subtopic:
-    section: 10. Inference, HMMs, Kalman filters
+    section: 9. Inference, HMMs, Kalman filters
     readings:
     hw:
     type: 'sec'
@@ -362,7 +362,7 @@ lectures:
     hw:
   - topic: # section 11
     subtopic:
-    section: 11. MDPs, RL
+    section: 10. MDPs, RL
     readings:
     hw:
     type: 'sec'
