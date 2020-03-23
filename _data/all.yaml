@@ -268,7 +268,7 @@ lectures:
     hw:
   - topic: # section 7
     subtopic:
-    section: <a href="/cs181-web/sections#sec6">6. Clustering</a>6
+    section: <a href="/cs181-web/sections#sec6">6. Clustering</a>
     readings:
     hw:
     type: 'sec'
