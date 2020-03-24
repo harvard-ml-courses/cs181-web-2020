@@ -83,7 +83,7 @@ weight: 0
 
       $$min_{z, u} \Sigma_n \Sigma_k z_{nk} ||x_n - \mu_k||$$
 
-      Note on explaining how we reworte it: The $\Sigma_k z_{nk}$ part will make sure to pick out the correct cluster for each point (as in, the cluster that point x_n is assigned to). This is similar to the way we've used indicator variables in the past. The $||x_n - \mu_k||$ term represents the decode encode part. Because we are doing clustering, the summary or "encoding" is the prototype $\mu_k$ and the loss we get is described exactly by $||x_n - \mu_k||$ since $\mu_k$ is our best option of how to describe a given point, and represents the decoding part as we have to use $\mu_k$ as our best guess for all the points in this cluster k.<br><br>
+      Note on explaining how we reworte it: The $\Sigma_k z_{nk}$ part will make sure to pick out the correct cluster for each point (as in, the cluster that point $x_n$ is assigned to). This is similar to the way we've used indicator variables in the past. The $||x_n - \mu_k||$ term represents the decode encode part. Because we are doing clustering, the summary or "encoding" is the prototype $\mu_k$ and the loss we get is described exactly by $||x_n - \mu_k||$ since $\mu_k$ is our best option of how to describe a given point, and represents the decoding part as we have to use $\mu_k$ as our best guess for all the points in this cluster k.<br><br>
 
 
       It turns out this optimization is NP hard and very non convex, so it's going to be difficult to solve this objective. Luckily we can solve this using an algorithm to find a pretty good local optima.
@@ -107,21 +107,27 @@ weight: 0
         <li>Loop until converged:
           <ul>
             <li>for k = 1, ... K:</li>
-            <li>$\mu_k = \textrm{mean}(x_n st z_nk = 1) = \frac{1}{n_k} \Sigma z_nk x_n$</li>
-            <li>where n_k is obtained by \Sigma_n z_nk</li>
+            <li>$\mu_k = \textrm{mean}(x_n\textrm{ such that }z_nk = 1) = \frac{1}{n_k} \Sigma z_nk x_n$</li>
+            <li>where $n_k$ is obtained by $\Sigma_n z_{nk}$</li>
 
             <li>for n = 1, ... N:</li>
             <li>Assign $x_n$ to $\textrm{argmin}_k ||x_n - \mu_k ||$</li>
           </ul>
         </li>
-        <li>Usually you will do several restarts and then pick the best because it is non convex)</li>
       </ol>
+      Note: Usually you will do several restarts and then pick the best because it is non convex)
 
        <h4>Why this Algorithm Works</h4>
 
-       For calculating z: At every step in the loop across each data point n, the loss is getting smaller because we are assigning points to the the closest prototype, so by definition we are minimizing the loss, since we are shortening (or at not changing) the distance between points and their prototypes.
+       At a high level, we know this algorithm works because in each step (the calculating z step, and the calculating $\mu$ step), we are reducing the loss. Since we are doing this convergence, then we know we are reach some local minimum.<br><br>
 
-       For calculating $\mu$: we will do a bit of math to show this. Let us go back to the objective function and take the derivative with just respect to $\mu_k$ to show that our step we took was minimizing the loss.
+       <u>For calculating z:</u><br><br>
+
+       At every step in the loop across each data point n, the loss is getting smaller because we are assigning points to the the closest prototype, so by definition we are minimizing the loss, since we are shortening (or at not changing) the distance between points and their prototypes.<br><br>
+
+       <u>For calculating $\mu$:</u><br><br>
+
+       We will do a bit of math to show this. Let us go back to the objective function and take the derivative with just respect to $\mu_k$ to show that our step we took was minimizing the loss.
 
        $$L = \Sigma_n z_nk (x_n - \mu_k)^T(x_n - \mu_k)$$
 
@@ -129,15 +135,19 @@ weight: 0
 
        $$\frac{\partial L}{\partial \mu k} = - 2 \Sigma z_{nk} (x_n - \mu_k) = 0$$
 
-       $$(\Sigma_n z_{nk})(\mu_k) = (Z_n z_{nk} x_n)$$
+       $$(\Sigma_n z_{nk})(\mu_k) = (\Sigma_n z_{nk} x_n)$$
 
        We can rearrange and also pull out the $\mu$ since it doesn't depend on the n.
 
        $$\mu_k = (\Sigma_n z_{nk} x_n)/(\Sigma_n z_{nk})$$
 
-       As you can see, this is exactly what the algorithm was doing, so it indeed was minimizing. Because it's minimizing at both the z and $\mu$ steps and we can keep running this until convergence, we know that this will indeed work and get us to a local optima at least. Before we hand waved saying that taking the means made sense. Now, we're going through the math more formally to show why exactly this algorithm works.<br><br>
+       As you can see, this is exactly what the algorithm was doing, so it indeed was minimizing.<br><br>
 
-       <u>Student Question: Do the starting values affect the result?</u> Yes, they do. Some algorithms address this. One quick example is the kmeans++ algorithm.<br>
+       <u>Conclusion</u><br><br>
+
+       Again, to recap, because it's minimizing at both the z and $\mu$ steps and we can keep running this until convergence, we know that this will indeed work and get us to a local optima at least. Before we hand waved saying that taking the means made sense, using just intuition. Now, we've just gone through the math more formally to show why exactly this algorithm works.<br><br>
+
+       <u>Student Question: Do the starting values affect the result?</u> Yes, they do, great question. Some algorithms address this. One quick example is the kmeans++ algorithm.<br>
 
        <h4>Additional Considerations of k-means</h4>
 
@@ -148,11 +158,11 @@ weight: 0
 
       <h2 id="recap13_4">Nonprobabilistic Clustering: Hierarchical Agglomerative Clustering</h2>
 
-      This is nonparametric, and discovers clusters as you go. It is also deterministic. Essentially, what HAC is, is you start everything in its own group, join the closest groups, and keep joining closest groups until everything has joined together. Note: there really isn't an objective for this yet, it still being researched right now. Overall, this is an algorithm of what to do, but we don't know what we are optimzing at this moment.
+      This is nonparametric, and discovers clusters as you go. It is also deterministic because there is no random intialization like in k-means, there is only one way of doing it. Essentially, what HAC is, is you start each point in its own group, then join the closest groups, and keep joining closest groups until everything has joined together. Note: there really isn't an objective for this yet, it still being researched right now. Overall, this is an algorithm of what to do, but we don't know what we are optimzing at this moment.
 
       <h4>Set Up</h4>
 
-      For the algorithm to work, we need the definition of distance between individual points (for examle, Euclidian), and distance metric between groups (we need this because we're combining groups), also known as the linkage criteria. The algorithm works as follows:
+      For the algorithm to work, we need the definition of distance between individual points (for example, we may pick Euclidian distance), and a distance metric between groups (we need this because we're combining groups, and this is also known as linkage criteria). The algorithm works as follows:
 
       <ol>
         <ul>Everyone starts in own clusters</ul>
