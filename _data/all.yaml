@@ -273,7 +273,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: Unsupervised Learning # Mar 25
-    subtopic: Clustering
+    subtopic: <a href="/cs181-web/recap13">Clustering</a>
     section:
     readings: 6
     hw:

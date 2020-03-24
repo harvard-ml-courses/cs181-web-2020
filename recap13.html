@@ -1,0 +1,179 @@
+---
+layout: page
+title: Lecture 13 Recap - Clustering
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: March 23, 2020 (<a href="https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8f39ef0-fb88-4bd2-9740-ab87016e0a17" target="_blank">Lecture Video</a>, <a href="http://bit.ly/cs181cc13" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc13responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 6</h4>
+      <h4>Cube: Unsupervised, Continuous and Discrete, Nonprobabilistic</h4>
+
+      <br>
+
+      <h3>Lecture 13 Summary</h3>
+
+      <ul>
+        <li><a href="#recap13_1">Intro: Unsupervised Learning and Specifically Clustering</a></li>
+        <li><a href="#recap13_2">General Summarization Task</a></li>
+        <li><a href="#recap13_3">Nonprobabilistic Clustering: k-means</a></li>
+        <li><a href="#recap13_4">Nonprobabilistic Clustering: Hierarchical Agglomerative Clustering</a></li>
+      </ul>
+
+      <h2 id="recap13_1">Intro: Clustering</h2>
+
+      <h4>Intro to Unsupervised Learning</h4>
+
+      So far in the class, we've been doing supervised learning, where we were trying to predict y's given x's. Now, we'll look at unsupervised learning, where there are no more y's, and only x's. The task instead then, is to look at the data and "summarize" the data (the x's).
+
+      <h4>Intro to Clustering</h4>
+
+      One specific type of unsupervised learning that we're covering today is clustering. Some real world examples are the following: perhaps we're looking at a huge network, and we want to identify different types of groupings within the networks, for example in social media. These groups of people might have certain shared interests or activities that we'd like to find out. Another exmaple is: perhaps we have a bunch of genes and we know the interactions between them, but we want to find genes that are similar so that we can understand the science behind what's going on. Overall, putting things into groups is a way we can undersatnd things better. This may seem a little fuzzy and undefined for now, but as we go through the lecture and formalize things in the math, things will make more sense.
+
+      <h2 id="recap13_2">General Look at Unsupervised Learning</h2>
+
+      One way to look at unsupervised learning at the broadest, most general level is to go back to that idea of "summarization". Essentially, our unsupervised learning is a "summarization task" that we're trying to complete. As we think about this, it's important to consider three questions.
+
+      <ol>
+        <li>Why might we to do this?</li>
+          <ol>
+            <li>Hypothesis Generation (we might want to look at summaries or patterns in science so that we can start asking the right questions about why certain things look the way they do)</li>
+            <li>Compression: we may want to compress images, music, or videos in order to save storage space</li>
+            <li>Organization: perhaps we are organizing news articles, and we to only show a few headlines that kind of represent all of the headlines. To phrase this another way: we might be trying to summarize the news into a few headlines</li>
+          </ol>
+        <li>How do we evaluate our summarization?</li>
+
+        We have a goal in mind: maybe we want to group a bunch of movies into different genres. But we need a formal way of writing this in the math, and we need a goal. We can use reconstruction error.
+
+        $$\Sigma_n || x - \textrm{decode(encode(x))}||^2$$
+
+        We can think of the encode(x) as the summary step (in the movie example: what cluster does this movie belong to) and the decode as the conversion of the summary to our new version (best guess) of x based off just the summary. We can call this $\hat{x}$. The || || notation here represents the distance metric notation. This could really be anything: edit distance, Hamming distance, cosine similarity, etc. Remember that there are lots of types of metrics out there: gemoetry, density, stability, etc.<br><br>
+
+        Note: Remember that this is a general framework for the summarization task. We've set it up in a way that this also works for examples like say compressing an image (where we can encode by compressing, and decode by decompressing), as well as the clustering of the movies example. In the movie example, it may feel like overkill, but it still works out. The encoding is picking the genre. The decoding is trying to convert the genre back to the movie. Obviously, that is impossible, so we will incur some loss for sure, but the logic here is that even though we've lost some info in the process, categorizing a movie by the correct genre would reduce to a smaller error than if you categorized a movie a wrong genre.<br><br>
+
+        <li>How do we do it? There are a couple different ways, but today we're going to focus on nonprobabilistic clustering.</li>
+      </ol>
+
+      <h2 id="recap13_3">Nonprobabilistic Clustering: k-means</h2>
+
+      <h4>Scenario and Notation</h4>
+
+      Let us dive into the k-means clustering algorithm. First, to set up our scenario:
+
+      <ul>
+        <li>We have our data $x_1, x_2, ..., x_n$</li>
+        <li>We have a measure of similarity/distance, $d(x, x') = ||x - x'||$</li>
+        <li>Start off by supposing we are given k (as in we know that there are k classes)</li>
+        <li>Let $z_{nk}$ indicate group assignment. As in if $x_n$ is in cluster $k$, $z_{nk}$ is 1. And if $x_n$ is not in cluster $k$, $z_{nk}$ is 0.</li>
+        <li>For today, let's assume the distance metric is Euclidian.</li>
+        <li>$\mu_k is a "prototype" of the cluster. It's like a prototype that represents the cluster. The idea is it either represents or defines the middle point a gaven cluster (we will formalize this bellow). Note: it should also be a dimension d item, the same as the dimensions of x. It's true that it might not be possible that you might use the medioids instead of the average, for example, to select your "prototypes". For now, we're keeping things again, as general as possible.</li>
+      </ul>
+
+
+
+      <h4>The Objective</h4>
+
+      With the set up out of the way, we now shoud start with our objective function, which is what will get us going in the right direction. We had an objective from before:
+
+      $$\Sigma_n || x - \textrm{decode(encode(x))}||^2$$
+
+      We're going to rewrite this into our specific k-means situation.
+
+      $$min_{z, u} \Sigma_n \Sigma_k z_{nk} ||x_n - \mu_k||$$
+
+      Note on explaining how we reworte it: The $\Sigma_k z_{nk}$ part will make sure to pick out the correct cluster for each point (as in, the cluster that point x_n is assigned to). This is similar to the way we've used indicator variables in the past. The $||x_n - \mu_k||$ term represents the decode encode part. Because we are doing clustering, the summary or "encoding" is the prototype $\mu_k$ and the loss we get is described exactly by $||x_n - \mu_k||$ since $\mu_k$ is our best option of how to describe a given point, and represents the decoding part as we have to use $\mu_k$ as our best guess for all the points in this cluster k.<br><br>
+
+
+      It turns out this optimization is NP hard and very non convex, so it's going to be difficult to solve this objective. Luckily we can solve this using an algorithm to find a pretty good local optima.
+
+      Note: at this point in time, we note that we will square the objective, as it won't affect the minimiation at all but will make the math easier down the road. Details to come later. Now the objective is:
+
+      $$min_{z, u} \Sigma_n \Sigma_k z_{nk} ||x_n - \mu_k||^2$$
+
+      <h4>The Algorithm (k-means, Lloyd's algorithm)</h4>
+
+      In the above section, we just have the objective. Remember that there is also an algorithm necessary, and that these are two very different things. The k-means objective (what we wrote above) is ultimately is the loss we're trying to minimize. And now we'll look at the actual k-means algorithm, which is used to solve the above objective and different from the objective itself.
+
+      Note: this k-means algorithm is also known as Lloyd's algorithm, and is a variation of block coordinate ascent. Block coordinate ascent (aka. alternating minimization) is an important concept overall so definitely note it down.<br><br>
+
+      <u>Block Coordinate Ascent:</u> The core idea of block coordinate ascent is: given $\mu$, solving z is easy. And given z, easy to solve for $\mu$. Intuitively this makes sense in the k-means situation. Let's first look at when given $\mu$, solving for z: if you had the prototypes, you can just assign the points to clusters by picking the closest prototype, which will minimize the objective. Then if we are given z, and need to pick $\mu$, we can pick the means easily just by taking the average, which will also minimize the loss.<br><br>
+
+      <u>Back to Algorithm</u>
+
+      <ol>
+        <li>Randomly assign points to clusters (as in randomly assigning z_nk)</li>
+        <li>Loop until converged:
+          <ul>
+            <li>for k = 1, ... K:</li>
+            <li>$\mu_k = \textrm{mean}(x_n st z_nk = 1) = \frac{1}{n_k} \Sigma z_nk x_n$</li>
+            <li>where n_k is obtained by \Sigma_n z_nk</li>
+
+            <li>for n = 1, ... N:</li>
+            <li>Assign $x_n$ to $\textrm{argmin}_k ||x_n - \mu_k ||$</li>
+          </ul>
+        </li>
+        <li>Usually you will do several restarts and then pick the best because it is non convex)</li>
+      </ol>
+
+       <h4>Why this Algorithm Works</h4>
+
+       For calculating z: At every step in the loop across each data point n, the loss is getting smaller because we are assigning points to the the closest prototype, so by definition we are minimizing the loss, since we are shortening (or at not changing) the distance between points and their prototypes.
+
+       For calculating $\mu$: we will do a bit of math to show this. Let us go back to the objective function and take the derivative with just respect to $\mu_k$ to show that our step we took was minimizing the loss.
+
+       $$L = \Sigma_n z_nk (x_n - \mu_k)^T(x_n - \mu_k)$$
+
+       We can take this derivative with respect to just $\mu_k$.
+
+       $$\frac{\partial L}{\partial \mu k} = - 2 \Sigma z_{nk} (x_n - \mu_k) = 0$$
+
+       $$(\Sigma_n z_{nk})(\mu_k) = (Z_n z_{nk} x_n)$$
+
+       We can rearrange and also pull out the $\mu$ since it doesn't depend on the n.
+
+       $$\mu_k = (\Sigma_n z_{nk} x_n)/(\Sigma_n z_{nk})$$
+
+       As you can see, this is exactly what the algorithm was doing, so it indeed was minimizing. Because it's minimizing at both the z and $\mu$ steps and we can keep running this until convergence, we know that this will indeed work and get us to a local optima at least. Before we hand waved saying that taking the means made sense. Now, we're going through the math more formally to show why exactly this algorithm works.<br><br>
+
+       <u>Student Question: Do the starting values affect the result?</u> Yes, they do. Some algorithms address this. One quick example is the kmeans++ algorithm.<br>
+
+       <h4>Additional Considerations of k-means</h4>
+
+       <ol>
+         <li>How many clusters should we pick? Look for the kink in the curve, also known as the elbow method. You can <a href="https://medium.com/analytics-vidhya/how-to-determine-the-optimal-k-for-k-means-708505d204eb" target="_blank">read more about this method and also another method here</a>. Remember that this does need to be a careful choice because we can't try to minimize the loss: this is because if we set k to be really big, as big as n, then the loss is 0 as every point ends up in their own cluster. So you can't just look for the lowest loss. Instead, we plot the number of clusters vs the loss and look for a kink. That kink represents how at some point adding clusters has diminishing returns. But overall this is still tricky, no exact definition of the perfect number of clusters.</li>
+         <li>Remember that other distance metrics can be used instead of Euclidian Distance. Depending on the distance metric, the math could work out to be more difficult or more easy!</li>
+      </ol>
+
+      <h2 id="recap13_4">Nonprobabilistic Clustering: Hierarchical Agglomerative Clustering</h2>
+
+      This is nonparametric, and discovers clusters as you go. It is also deterministic. Essentially, what HAC is, is you start everything in its own group, join the closest groups, and keep joining closest groups until everything has joined together. Note: there really isn't an objective for this yet, it still being researched right now. Overall, this is an algorithm of what to do, but we don't know what we are optimzing at this moment.
+
+      <h4>Set Up</h4>
+
+      For the algorithm to work, we need the definition of distance between individual points (for examle, Euclidian), and distance metric between groups (we need this because we're combining groups), also known as the linkage criteria. The algorithm works as follows:
+
+      <ol>
+        <ul>Everyone starts in own clusters</ul>
+        <ul>While number of clusters greater 1, merge closest cluster</ul>
+      </ol>
+
+      <h4>Example Linkages</h4>
+
+      <ul>
+        <li>Minimum distance between two groups: given two groups, find the two closest pair of points across the two groups, and we will use that to represent the distance between two groups</li>
+        <li>Maximum distance between two groups: given two groups, find the two furthest pair of points across the two groups, and we will use that to represent the distance between two groups</li>
+      </ul>
+
+      It turns out that min distance will result in more stringy and snakey clusters, as merging will be biased towards points that are close together, so groups of points almost lined up together will start to form. Whereas on the other hand, max distance will result in more compact, rounded, complete, clusters, as groups will swallow in things from all around, as the max distance will consider a lot more other groups to be possibly close before picking how to merge right away.<br><br>
+
+      There are also compromises between the two above: you can also use these linkages: average pairwise distances, distances between centroids.<br><br>
+
+      You will need to pick a linkage dpeending on what you want your output to look like. We discuss these because its' imporant to be able to think about the difference linkages, in case you need specific types of outputs for specific situations in the real world.<br><br>
+
+      <h4>Dendrograms</h4>
+
+      You can represent the merges using a tree format called a dendrogram. Here's a great example illustrating how you would <a href="https://www.displayr.com/what-is-dendrogram/" taget="_blank">draw a dendrogram given some specific data</a>.
+    </div>
+</section>
