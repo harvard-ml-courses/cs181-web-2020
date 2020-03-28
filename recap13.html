@@ -7,7 +7,9 @@ weight: 0
 
 <section class="main-container text">
     <div class="main">
-      <h4>Date: March 23, 2020 (<a href="https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8f39ef0-fb88-4bd2-9740-ab87016e0a17" target="_blank">Lecture Video</a>, <a href="http://bit.ly/cs181cc13" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc13responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+
+
+      <h4>Date: March 23, 2020 (<a href="https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8f39ef0-fb88-4bd2-9740-ab87016e0a17" target="_blank">Lecture Video</a>, <a href="https://piazza.com/class_profile/get_resource/k5fnxwvfh7p7mi/k84pg54b33k4fg" target="_blank">Notepad Notes</a>, <a href="http://bit.ly/cs181cc13" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc13responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
       <h4>Relevant Textbook Sections: 6</h4>
       <h4>Cube: Unsupervised, Discrete, Nonprobabilistic</h4>
 
@@ -47,7 +49,7 @@ weight: 0
 
         We have a goal in mind: maybe we want to group a bunch of movies into different genres. But we need a formal way of writing this in the math, and we need a goal. We can use reconstruction error.
 
-        $$\Sigma_n || x - \textrm{decode(encode(x))}||^2$$
+        $$\sum_n || x - \textrm{decode(encode(x))}||^2$$
 
         We can think of the encode(x) as the summary step (in the movie example: what cluster does this movie belong to) and the decode as the conversion of the summary to our new version (best guess) of x based off just the summary. We can call this $\hat{x}$. The || || notation here represents the distance metric notation. This could really be anything: edit distance, Hamming distance, cosine similarity, etc. Remember that there are lots of types of metrics out there: gemoetry, density, stability, etc.<br><br>
 
@@ -68,7 +70,7 @@ weight: 0
         <li>Start off by supposing we are given k (as in we know that there are k classes)</li>
         <li>Let $z_{nk}$ indicate group assignment. As in if $x_n$ is in cluster $k$, $z_{nk}$ is 1. And if $x_n$ is not in cluster $k$, $z_{nk}$ is 0.</li>
         <li>For today, let's assume the distance metric is Euclidian.</li>
-        <li>$\mu_k is a "prototype" of the cluster. It's like a prototype that represents the cluster. The idea is it either represents or defines the middle point a gaven cluster (we will formalize this bellow). Note: it should also be a dimension d item, the same as the dimensions of x. It's true that it might not be possible that you might use the medioids instead of the average, for example, to select your "prototypes". For now, we're keeping things again, as general as possible.</li>
+        <li>$\mu_k$ is a "prototype" of the cluster. It's like a prototype that represents the cluster. The idea is it either represents or defines the middle point a gaven cluster (we will formalize this bellow). Note: it should also be a dimension d item, the same as the dimensions of x. It's true that it might not be possible that you might use the medioids instead of the average, for example, to select your "prototypes". For now, we're keeping things again, as general as possible.</li>
       </ul>
 
       <br><br>
@@ -77,20 +79,20 @@ weight: 0
 
       With the set up out of the way, we now shoud start with our objective function, which is what will get us going in the right direction. We had an objective from before:
 
-      $$\Sigma_n || x - \textrm{decode(encode(x))}||^2$$
+      $$\sum_n || x - \textrm{decode(encode(x))}||^2$$
 
       We're going to rewrite this into our specific K-Means situation.
 
-      $$min_{z, u} \Sigma_n \Sigma_k z_{nk} ||x_n - \mu_k||$$
+      $$min_{z, u} \sum_n \sum_k z_{nk} ||x_n - \mu_k||$$
 
-      Note on explaining how we reworte it: The $\Sigma_k z_{nk}$ part will make sure to pick out the correct cluster for each point (as in, the cluster that point $x_n$ is assigned to). This is similar to the way we've used indicator variables in the past. The $||x_n - \mu_k||$ term represents the decode encode part. Because we are doing clustering, the summary or "encoding" is the prototype $\mu_k$ and the loss we get is described exactly by $||x_n - \mu_k||$ since $\mu_k$ is our best option of how to describe a given point, and represents the decoding part as we have to use $\mu_k$ as our best guess for all the points in this cluster k.<br><br>
+      Note on explaining how we rewrote it: The $\sum_k z_{nk}$ part will make sure to pick out the correct cluster for each point (as in, the cluster that point $x_n$ is assigned to). This is similar to the way we've used indicator variables in the past. The $||x_n - \mu_k||$ term represents the decode encode part. Because we are doing clustering, the summary or "encoding" is the prototype $\mu_k$ and the loss we get is described exactly by $||x_n - \mu_k||$ since $\mu_k$ is our best option of how to describe a given point, and represents the decoding part as we have to use $\mu_k$ as our best guess for all the points in this cluster k.<br><br>
 
 
       It turns out this optimization is NP hard and very non convex, so it's going to be difficult to solve this objective. Luckily we can solve this using an algorithm to find a pretty good local optima.
 
-      Note: at this point in time, we note that we will square the objective, as it won't affect the minimiation at all but will make the math easier down the road. Details to come later. Now the objective is:
+      Note: at this point in time, we note that we will square the objective, as it won't affect the minimization ultimately, but will make the math more intuitive down the road. Details to come later. Now the objective is:
 
-      $$min_{z, u} \Sigma_n \Sigma_k z_{nk} ||x_n - \mu_k||^2$$<br>
+      $$min_{z, u} \sum_n \sum_k z_{nk} ||x_n - \mu_k||^2$$<br>
 
       <h4>The Algorithm (K-Means, Lloyd's algorithm)</h4>
 
@@ -103,12 +105,12 @@ weight: 0
       <u>Back to Algorithm</u>
 
       <ol>
-        <li>Randomly assign points to clusters (as in randomly assigning z_nk)</li>
+        <li>Randomly assign points to clusters (as in randomly assigning $z_{nk}$)</li>
         <li>Loop until converged:
           <ul>
             <li>for k = 1, ... K:</li>
-            <li>$\mu_k = \textrm{mean}(x_n\textrm{ such that }z_nk = 1) = \frac{1}{n_k} \Sigma z_nk x_n$</li>
-            <li>where $n_k$ is obtained by $\Sigma_n z_{nk}$</li>
+            <li>$\mu_k = \textrm{mean}(x_n\textrm{ such that }z_nk = 1) = \frac{1}{n_k} \sum z_nk x_n$</li>
+            <li>where $n_k$ is obtained by $\sum_n z_{nk}$</li>
 
             <li>for n = 1, ... N:</li>
             <li>Assign $x_n$ to $\textrm{argmin}_k ||x_n - \mu_k ||$</li>
@@ -130,17 +132,17 @@ weight: 0
 
        We will do a bit of math to show this. Let us go back to the objective function and take the derivative with just respect to $\mu_k$ to show that our step we took was minimizing the loss.
 
-       $$L = \Sigma_n z_nk (x_n - \mu_k)^T(x_n - \mu_k)$$
+       $$L = \sum_n z_nk (x_n - \mu_k)^T(x_n - \mu_k)$$
 
        We can take this derivative with respect to just $\mu_k$.
 
-       $$\frac{\partial L}{\partial \mu k} = - 2 \Sigma z_{nk} (x_n - \mu_k) = 0$$
+       $$\frac{\partial L}{\partial \mu k} = - 2 \sum z_{nk} (x_n - \mu_k) = 0$$
 
-       $$(\Sigma_n z_{nk})(\mu_k) = (\Sigma_n z_{nk} x_n)$$
+       $$(\sum_n z_{nk})(\mu_k) = (\sum_n z_{nk} x_n)$$
 
        We can rearrange and also pull out the $\mu$ since it doesn't depend on the n.
 
-       $$\mu_k = (\Sigma_n z_{nk} x_n)/(\Sigma_n z_{nk})$$
+       $$\mu_k = (\sum_n z_{nk} x_n)/(\sum_n z_{nk})$$
 
        As you can see, this is exactly what the algorithm was doing, so it indeed was minimizing.<br><br>
 

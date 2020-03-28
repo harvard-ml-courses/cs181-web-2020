@@ -278,7 +278,7 @@ lectures:
     readings: 6
     hw:
   - topic: #Mar 27
-    subtopic: Mixture Models
+    subtopic: <a href="/cs181-web/recap14">Mixture Models</a>
     section:
     readings: 9.1-9.5
     demos:
