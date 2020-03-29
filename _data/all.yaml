@@ -301,7 +301,7 @@ lectures:
     section:
     readings: 7
     demos:
-    hw: HW5 (Clustering, EM, PCA) released
+    hw: <a href="/cs181-web/homework#hw5">HW5 (Mixtures, EM, and Graphical Models) </a> released
   - topic: PGMs #Apr 3
     subtopic: Topic Models
     section:
@@ -336,7 +336,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: HW5 (Clustering, EM, PCA) due
+    hw: <a href="/cs181-web/homework#hw5">HW5 (Mixtures, EM, and Graphical Models) </a> due
     type: 'hw'
   - topic: # section 10
     subtopic:
