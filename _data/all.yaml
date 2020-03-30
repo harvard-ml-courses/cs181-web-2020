@@ -297,7 +297,7 @@ lectures:
     hw:
     type: 'sec'
   - topic:  # Apr 1
-    subtopic: PCA
+    subtopic: <a href="/cs181-web/recap15">Principal Component Analysis</a>
     section:
     readings: 7
     demos:

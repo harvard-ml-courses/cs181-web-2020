@@ -1,0 +1,164 @@
+---
+layout: page
+title: Lecture 15 Recap - Principal Component Analysis
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+
+      <h4>Date: March 30, 2020 (Lecture Video, <a href="https://piazza.com/class_profile/get_resource/k5fnxwvfh7p7mi/k8engaifedk52p" target="_blank">iPad Notes</a>, <a href="http://bit.ly/cs181cc15" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc15responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 7</h4>
+      <h4>Cube: Unsupervised, Continuous, Probabilistic</h4>
+
+      <br>
+
+      <h3>Lecture 15 Summary</h3>
+
+      <ul>
+        <li><a href="#recap15_1">Intro: Principal Component Analysis</a></li>
+        <li><a href="#recap15_2">First Cut: Let's Make This Linear</a></li>
+        <li><a href="#recap15_3">Putting that into the Minimizing Reconstruction Error Framework</a></li>
+        <li><a href="#recap15_4">Let's Make Things More Interpretable</a></li>
+        <li><a href="#recap15_5">Solving to Minimize Reconstruction Error</a></li>
+        <li><a href="#recap15_6">Alternative View: Preserving Variance</a></li>
+        <li><a href="#recap15_7">Final Notes</a></li>
+      </ul>
+
+      <h2 id="recap15_1">Intro: Principal Component Analysis</h2>
+
+      In the past two lectures, we've looked at models that have a discrete z. In those scenarios, we were hoping to cluster our data into different groups, whether in a probablistic sense (mixture models) or in a nonprobabilistic sense (clustering). Today, we begin to look at a situation where we have a continuous z. Instead of grouping things into k discrete clusters, what if we tried to summarize the data into k continuous dimensions? Imagine you're looking at a music file with tons and tons of data. This is perhaps too much data for your machine to process, so you might apply PCA first. What you can do with PCA, is pick k as the number of dimensions you want to reduce your data to. Then, perhaps in the remaining k dimensions you've chosen, you will be able to see trends regarding the types of music you have; perhaps you might find that you have a dimension that represent loudness, another dimension that represents certain types of instruments, etc. Overall, you can use PCA to pick out main properties of the music. Another use case of PCA is you for compression. You might have an image that is of a very large file size. You can apply PCA to reduce it to k dimensions, where the number of dimensions is still big enough to capture the major trends of the image and still look the same upon reconstruction (albeit, perhaps with a bit of resolution loss), but save a lot of storage space. This is something we will look into in the homework.
+
+      <h2 id="recap15_2">First Cut: Let's Make This Linear</h2>
+
+      Suppose we try to find a set of D-dimensional vectors {$u_k$} such that we can describe some x as:
+
+      $$x \approx z_1u_1 + z_2u_2 + z_3u_3 + ... + z_ku_k$$
+
+      Here, $z_1$, $z_2$, etc are scalar, and $u_1$, $u_2$, etc are vectors.
+
+      Note: $z_1 ... z_k$ is a K-dimensional vector that describes the position of x with respect to basis u.
+
+      Essentially we're saying, let's start our first iteration of this process by having reconstruction of x be a linear combination of the z's and the u's.
+
+      <h2 id="recap15_3">Putting that into the Minimizing Reconstruction Error Framework</h2>
+
+      Let's tie this back into the formal framework we introduced in the K-means lecture with regards to reconstruction error. Essentially, we have the following:
+
+      $$L({z, u}) = \frac{1}{N} \sum^N_n ||x_n - U z_n||^2_2$$
+
+      Where our $x_n$ is a D by 1 data point, our U is a D by K matrix (basis) and our $z_n$ is a K by 1 vector (embedding). Like before, we are trying to minimize the resonctruction error.<br><br>
+
+      <h4>Adding Some Constraints</h4>
+
+      One thing we quickly notice is that the solution in the above minimization is not unique. Specifically, $Uz$ can be broken down into $UQQ^{-1}z$ where $Q$ is a $K$ by $K$ invertible matrix. Then this means we could set our new $U$ to be $UQ$ and our new $z$ to be $Q^{-1}z$ and everything would still work. You can imagine this as essentially a scaling vector. To deal with this, we will add the constraint that U is orthonormal.<br><br>
+
+      We will have:<br><br>
+
+      &lt $u_k$, $u_k$ &gt = 1 (this sets the scale)<br>
+      &lt $u_k$, $u_{k'}$ &gt = 0 when $k \neq k'$ (makes the bases point in very different directions)<br><br>
+
+      We get some nice linear algebra properties from setting the above constraints. Specifically now, given x, we can easiy recover z:<br><br>
+
+      $$x \approx z_1U_1 + z_2U_2 + ... + z_kU_k$$
+
+      We wil multiply by $U_k^T$ on both sides:
+
+      $$xU_k^T = z_1U_1U_k^T + z_2U_2U_k^T + ... + z_kU_kU_k^T$$
+
+      Using the rules we learned from before, we know that when the k's are not equal the terms $U_1U_k^T$, $U_2U_k^T$, etc become 0. Leaving us with:
+
+      $$xU_k^T = z_kU_kU_k^T$$
+
+      $U_kU_k^T$ evaluates to 1, so we have our final as:
+
+      $$xU_k^T = z_k$$
+
+      $$xU^T = z$$
+
+      <h2 id="recap15_4">Let's Make Things More Interpretable</h2>
+
+      Let's improve upon our first attempt at the problem. Specifically, instead of just trying to reconstruct the whole thing, let's try to reconstruct the difference of the data from the mean. Below, we break down the data in exactly that way, where x is approximated by us starting with the mean \bar{x} and then a perturbation from the mean (indicated by the rest of the terms.)
+
+      $$x \approx \bar{x} + z_1U_1 + z_2U_2 + ... + z_kU_k$$
+
+      Now, our new optimization is as follows:
+
+      $$L({z, u}) = \frac{1}{N} \sum_n ||(x_n - \bar{x}) - Uz_n||^2_2$$
+
+      Where $(x_n - \bar{x})$ is the new variable we are trying to reconstruct. From linear algebra, we know that if K = D, {U_1 ... U_d}, we would have perfect reconstruction and incur no loss. Now we will use that fact to do rewrite x as the following:
+
+      $$x = z_1U_1 + ... + z_kU_k + ... z_DU_D + \bar{x}$$
+
+      Then, we can substitute in $\bar{x}$ above.
+
+      $$L({z, u}) = \frac{1}{N} \sum_n ||\sum^D_{d=1} z_{nd} U_d - \sum^K_{d=1} z_{nd} U_d||^2_2$$
+
+      This can be simplified into (because the summation is of the same terms so we can just edit the indices on the summation and combine the two terms):
+
+      $$L({z, u}) = \frac{1}{N} \sum_n ||\sum^D_{d=K+1} z_{nd} U_d||^2_2$$
+
+      This can be split into:
+
+      $$L({z, u}) = \frac{1}{N} \sum_n (\sum^D_{d=K+1} z_{nd} U_d) (\sum^D_{d=K+1} z_{nd} U^T_d)$$
+
+      And invoking orthonormality (as in $U_d^TU_{d'} = 0$ since $d \neq d'$) we can simplify into:
+
+      $$L({z, u}) = \frac{1}{N} \sum_n \sum^D_{d=K+1} z^2_{nd}$$
+
+      Now we substitute in $z_{nd} = U^T_d (x_n - \bar{x})$<br><br>
+
+      $$L({z, u}) = \frac{1}{N} \sum_n \sum^D_{d=K+1} U^T_d (x_n - \bar{x})(x_n - \bar{x})^TU_d$$
+
+      We can rearrange:
+
+      $$L({z, u}) =  \sum^D_{d=K+1} U^T_d \frac{1}{N} \sum_n (x_n - \bar{x})(x_n - \bar{x})^TU_d$$
+
+      We see that the middle term, $\frac{1}{N} \sum_n (x_n - \bar{x})(x_n - \bar{x})^T$, is the empirical covariance, $\Sigma$, which is quite interesting!
+
+      <h2 id="recap15_5">Solving to Minimize Reconstruction Error</h2>
+
+      How do we solve the above equation? Suppose we had k=1, then there's only one U to solve for.
+
+      $$\textrm{min}_U U^T\Sigma U \textrm{ such that } U^TU = 1$$
+
+      Next, we use the Lagrangian below:
+
+      $$\textrm{min}_U U^T\Sigma U + \lambda (1 - U^TU)$$
+
+      $$\frac{\partial \textrm{ obj}}{\partial U} \textrm{ leads to } \Sigma u = \lambda u$$
+
+      So it turns out that the solution will be an eigenvector of the sample covariance!
+
+      We can now go back to the main problem given this information.<br><br>
+
+      $$\textrm{min}_U \sum^D_{d=K+1} U^T_d \Sigma U_d = \sum^D_{d=K+1} U^T_d \lambda_d U_d = \sum^D_{d=K+1} \lambda_d$$
+
+      Remember that our ultiamte goal was to minimize the reconstruction error. It turns out, that we will be able to do this if we leave out the directions with the smallest eigenvalues. Or alternatively, we are able to minimize the error when we KEEP the top K eigenvectors of $\Sigma$. Luckily, the computation on this is actually very easy, we can do this using SVD (eigendecomposition)!
+
+      <h2 id="recap15_6">Alternative View: Preserving Variance</h2>
+
+      We can also take a variance view of the exact same problem. Whereas before, we were thinking in the sense of minimizing reconstruction error, where we wanted to limit distance to our newly chosen basis, we can alternatively think about it as variance preservation: as in, we want the vectors that capture the most variance in the data x; we want the vectors that maximize the variance captured.<br><br>
+
+      Suppose we wanted a single vector u that captured most of the variance in x.<br><br>
+
+      $$z = U^Tx$$
+
+      Where z is a scalar.
+
+      $$var(z) = U^Tvar(x)U = U^T \Sigma U$$
+
+      Constraint: $U^TU = 1$<br><br>
+
+      We want to maximize var(z):
+
+      $$max_U U^T \Sigma U \textrm{ such that } U^TU = 1$$
+
+      Apply the Lagrangian and we'll see that $\Sigma u = \lambda u$, where we pick the biggest $\lambda$.
+
+      <h2 id="recap15_7">Final Notes</h2>
+
+      Practical advice: when doing principal component analysis, always remember to subtract the mean! Forgetting to subtract the mean will affect your results. Another note is that kernalization can always done first, beforehand. Finally, to see how this relates to other models, it turns out that if we have z generate x, with z normally distributed and with $x = Uz + \epsilon$, this gives us probabilistic PCA, factor analysis, independent component analysis, and also autoenconders and varational autoenconders!
+    </div>
+</section>
