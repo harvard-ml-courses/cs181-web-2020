@@ -294,7 +294,7 @@ lectures:
     type: 'hw'
   - topic: # section 8
     subtopic:
-    section: 7. Mixture/EM
+    section: <a href="/cs181-web/sections#sec7">7. Mixture Models, EM, PCA</a>
     readings:
     hw:
     type: 'sec'
