@@ -305,7 +305,7 @@ lectures:
     demos:
     hw: <a href="/cs181-web/homework#hw5">HW5 (Mixtures, EM, and Graphical Models) </a> released
   - topic: PGMs #Apr 3
-    subtopic: Topic Models
+    subtopic: <a href="/cs181-web/recap16">Topic Models</a>
     section:
     readings: 9.6
     hw:

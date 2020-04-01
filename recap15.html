@@ -17,7 +17,7 @@ weight: 0
       <h3>Lecture 15 Summary</h3>
 
       <ul>
-        <li><a href="#recap15_1">Intro: Principal Component Analysis</a></li>
+        <li><a href="#recap15_1">Intro: Embeddings and PCA</a></li>
         <li><a href="#recap15_2">First Cut: Let's Make This Linear</a></li>
         <li><a href="#recap15_3">Putting that into the Minimizing Reconstruction Error Framework</a></li>
         <li><a href="#recap15_4">Let's Make Things More Interpretable</a></li>
@@ -26,9 +26,9 @@ weight: 0
         <li><a href="#recap15_7">Final Notes</a></li>
       </ul>
 
-      <h2 id="recap15_1">Intro: Principal Component Analysis</h2>
+      <h2 id="recap15_1">Intro: Embeddings (and an example: PCA)</h2>
 
-      In the past two lectures, we've looked at models that have a discrete z. In those scenarios, we were hoping to cluster our data into different groups, whether in a probablistic sense (mixture models) or in a nonprobabilistic sense (clustering). Today, we begin to look at a situation where we have a continuous z. Instead of grouping things into k discrete clusters, what if we tried to summarize the data into k continuous dimensions? Imagine you're looking at a music file with tons and tons of data. This is perhaps too much data for your machine to process, so you might apply PCA first. What you can do with PCA, is pick k as the number of dimensions you want to reduce your data to. Then, perhaps in the remaining k dimensions you've chosen, you will be able to see trends regarding the types of music you have; perhaps you might find that you have a dimension that represent loudness, another dimension that represents certain types of instruments, etc. Overall, you can use PCA to pick out main properties of the music. Another use case of PCA is you for compression. You might have an image that is of a very large file size. You can apply PCA to reduce it to k dimensions, where the number of dimensions is still big enough to capture the major trends of the image and still look the same upon reconstruction (albeit, perhaps with a bit of resolution loss), but save a lot of storage space. This is something we will look into in the homework.
+      In the past two lectures, we've looked at models that have a discrete z. In those scenarios, we were hoping to cluster our data into different groups, whether in a probablistic sense (mixture models) or in a nonprobabilistic sense (clustering). Today, we begin to look at a situation where we have a continuous z, which we call our embeddings (because its an embedding of all the info in the x's into a smaller dimensional z). Instead of grouping things into k discrete clusters, what if we tried to summarize the data into k continuous dimensions? One specific example of a nonprobablistic embeddings algorithm is Principal Component Analysis, which is what we'll be looking at for the rest of the lecture. Imagine you're looking at a music file with tons and tons of data. This is perhaps too much data for your machine to process, so you might apply PCA first. What you can do with PCA, is pick k as the number of dimensions you want to reduce your data to. Then, perhaps in the remaining k dimensions you've chosen, you will be able to see trends regarding the types of music you have; perhaps you might find that you have a dimension that represent loudness, another dimension that represents certain types of instruments, etc. Overall, you can use PCA to pick out main properties of the music. Another use case of PCA is you for compression. You might have an image that is of a very large file size. You can apply PCA to reduce it to k dimensions, where the number of dimensions is still big enough to capture the major trends of the image and still look the same upon reconstruction (albeit, perhaps with a bit of resolution loss), but save a lot of storage space. This is something we will look into in the homework.
 
       <h2 id="recap15_2">First Cut: Let's Make This Linear</h2>
 
