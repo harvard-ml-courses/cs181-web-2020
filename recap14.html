@@ -79,7 +79,8 @@ weight: 0
 
       How does this relate to the previous situation? Before, we had $p(x_n, z_n | w)$, so to get $p(x_n|w)$ we would just need to sum out the z's. We would end up with:
 
-      $$p(x_n|w) = \sum_k \pi_k p(x_n, z_n | w)$$
+      $$p(x_n|w) = \sum_k p(x_n, z_n | w)$$
+      $$p(x_n|w) = \sum_k \pi_k p(x_n | z_n, w)$$
       $$p(x_n|w) = \sum_k \pi_k N(x_n; \mu_k, \Sigma_k)$$
 
       To explain the intuition on this, we're essentially summing across all clusters, and for each cluster, we're incorporating the $\pi_k$, the probability of that cluster, by multiplying it with the $p(x_n, z_n | w)$ term. Then we can sub it into the full term we were looking for:
