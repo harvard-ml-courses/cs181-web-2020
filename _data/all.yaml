@@ -317,7 +317,7 @@ lectures:
     type:
   - topic: # section 9
     subtopic:
-    section: 8. Dim Reduction / Bayes Nets
+    section: <a href="/cs181-web/sections#sec8">8. Bayesian Networks</a>
     readings:
     hw:
     type: 'sec'
