@@ -114,11 +114,20 @@ weight: 0
           <ul>
             <li>Question A1: [1/3, 1/3, 1/3], [1/3, 1/3, 1/3], [1/3, 1/3, 1/3]</li>
 
-            Reasoning: If you saw [1/3, 1/3, 1/3] three times, you would guess that most of the distribution falls in exactly the middle of the triangle (this is a triangle because K=3). 
+            Reasoning: First, to recap, a draw from a K-dimesional Dirichlet distribution is a probability vector of length K. If we drew from a Dirichlet and three times we saw [1/3, 1/3, 1/3], that would mean that most of the distribution falls exactly in the middle if you were to visualize this in 3D. This corresponds to the three equally higher numbers in our alpha (think of the beta, which is the Dirichlet with K=2, when both parameters of the beta distribtuion are high and the same, we have the mass in the middle). So, our answer is [1/3, 1/3, 1/3], [1/3, 1/3, 1/3], [1/3, 1/3, 1/3], as it corresponds to the $\alpha_1$ of [10, 10, 10].
 
             <li>Question A2: [0, 1, 0], [1, 0, 0], [0, 0, 1]</li>
+
+            Reasoning: Since we've drawn three Dirichlet's with all the probability mass on one dimension, this means that distribution is very concentrated in the three corners. This corresponds to three equally lower numberes in our alpha (think of the beta, which is the Dirichlet with K=2, when both parameters of the beta distribtuion are low and the same, we have the mass at the edges). So, our answer is [0, 1, 0], [1, 0, 0], [0, 0, 1], as it corresponds to the $\alpha_2$ of [0.01, 0.01, 0.01].
+
             <li>Question B1: [13, 11, 10]</li>
+
+            Reasoning: To do this question, since we've seen three data points in the 0th dimension and 1 data point in the 1st dimension, we simply add 3 and 1 to our prior (in the corresponding indices). The prior here was [10, 10, 10], so we have [10+3, 10+1, 10+0]. This is analgous to the Beta story from lecture al ong time ago with the coin flips, where as we saw coin filps, we updated our prior parameters by adding the number of heads to one and the number of tails to the other.
+
             <li>Question B2: [3.01, 1.01, 0.01]</li>
+
+            Reasoning: To do this question, same logic as the previous question! The prior here was [0.01, 0.01, 0.01], so we have [0.01+3, 0.01+1, 0.01+0].
+
             <li>Question C: No</li>
           </ul>
         </li>
