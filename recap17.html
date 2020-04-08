@@ -17,192 +17,318 @@ weight: 0
       <h3>Lecture 16 Summary</h3>
 
       <ul>
-        <li><a href="#recap17_1">Intro: Graphical Model</a></li>
-        <li><a href="#recap17_2"></a></li>
-        <li><a href="#recap17_3"></a></li>
-        <li><a href="#recap17_4"></a></li>
-        <li><a href="#recap17_5"></a></li>
-        <li><a href="#recap17_6"></a></li>
+        <li><a href="#recap17_1">Motivation</a></li>
+        <li><a href="#recap17_2">Graphical Models</a></li>
+        <li><a href="#recap17_3">Bayesian Networks</a></li>
+        <li><a href="#recap17_4">Uniqueness and Parameters</a></li>
+        <li><a href="#recap17_5">Beyond Bayes Nets</a></li>
       </ul>
 
-      <h2 id="recap17_1">Intro: Graphical Models</h2>
+      <h2 id="recap17_1">Motivation</h2>
+      Today we're going to be moving beyond the cube.  Just as we moved into more flexible parametric relationships with neural networks, we can think of graphical models as a way of describing more complex relationships between variables than those we've seen so far in supervised learning (ie given $x$, predict $y$) and unsupervised learning.<br>
 
-      Intro here...
+      <h4>Example: Predicting drug interactions</h4>
+      One particularly relevant example of such a complex relationship is predicting drug interactions.  Say you have a collection of drugs. For some drugs, you may know what molecules they target, but for others, you do not.  These relationships are indicated by the lines from drugs to targets.  You may also have additional information about the relationship between the drugs' chemical forms, for example, that two drugs may be chemically similar.  These relationships are indicated by the lines between drugs.<br>
 
-      <h2 id="recap17_2">Variations of Probablistic Embeddings</h2>
+      \begin{center}
+      \includegraphics[width=0.6\textwidth]{img1.png}
+      \end{center}
 
-      First, let's look at the variations of probabilistic embeddings (embeddings means unsupervised with continuous z, there's a lot of alternate terminology that means the same thing, such as manifold learning, but we use the term probabilistic embeddings in this course). Later, in the next section, we will jump into a specific example (topic models) within probabilistic embeddings.<br><br>
 
-      TEST
+      Given these known relationships between drugs and targets, you wish to be able to predict whether other two drugs may hit the same target.  You also may be interested in whether a particular drug can be repurposed to hit a new target.  We cannot answer this problem using simple multiclass classification - instead we wish to model all of specific relationships between each drug and each target.<br>
 
-      First, remember our general set up of our z's generating the x's.<br>
+      <h4>Example: Information Retrieval</h4>
 
-      <h4>Factor Analysis</h4>
+      Another example is information retrieval.  A particularly famous example of using graphical models to represent relationships would be Google's Pagerank algorithm ( https://www.cs.princeton.edu/~chazelle/courses/BIB/pagerank.htm ) ; more generally, graphical models can model all relationships between elements in a knowledge graph.<br>
 
-      $$z \sim N(0, \mathbb{1})$$
-      $$x = Az + \epsilon$$
+      <h2 id="recap17_2">Graphical Models</h2>
 
-      In factor analysis, we had z drawn from some normal distribution, and x was given by some matrix A times z plus some noise. This is an example of a probabilistic model where we posited that there is some latent k dimensional z that somehow leads the data to become a D dimensional x. The analog in the Pompei example is if we theorized that perhaps a combination of purposes of a given room leads to certain items that are found in the room (which became our x data) in certain counts. Also something to note is specifically, in factor analysis, we are assuming that there's some linear relationship in the mixture of purposes of the room to the counts of items in the room.
+      The purpose of a graphical model is to create a visual and structured representation of the probabilistic relationships in a given problem formulation. Graphical models help us visualize models, communicate about models, and consolidate all relevant information about a model. To construct graphical models, we introduce a notational system to unambiguously convey a problem setup.<br>
 
-      <h4>Variational Autoenconder</h4>
+      We've already been informally drawing graphical models for a long time!  For example,<br>
 
-      $$z \sim N(0, \mathbb{1})$$
-      $$x = f(z) + \epsilon$$
+      \begin{center}
+      \includegraphics[width=0.9\textwidth]{img5.png}
+      \end{center}
+      Figure 1
 
-      Now, we have pretty much the same thing, but our f is nonlienar. So it could be the same story from before regarding Pompei, but this time we believe there's some more complex, nonlinear relationship in the mixture of purposes of the room to the counts of items in the room.
+      The first graph on the far left represents a generative process where labels $y$ are used to generate features $x$.<br>
 
-      <h2 id="recap17_3">Deep Dive into Topic Models Speciifcally</h2>
+      The second graph from the left represents a probabilistic process where labels $y$ are assigned a probability given features $x$.<br>
 
-      We're now going to take a deep dive into topic models specifically. While this is indeed a specific model, many of the concepts and patterns here will be generalizable to other similar models, so keep the big picture in mind when we're working on this topic.<br><br>
+      The third and fourth graphs from the left are used to represent simplified and expanded versions of LDA (https://harvard-ml-courses.github.io/cs181-web/recap16).<br>
 
-      Motivation for topic models: suppose we have high dimensional discrete data. For example, codes in a health record. In addition, we believe that these counts of discrete items come form a lower dimensional structure (say, a disease). For example, a disease can lead to many kinds of health codes. You can imagine that a single disease could create diagnoses codes, procedures codes, lab value codes, prescription codes (which are the x's that we see).<br><br>
+      <h4>Notation and Rules</h4>
 
-      <u>Student Question: Why is the above example continuous z? It sounds like z is discrete, referring to the different diseases?</u> That's a great question. So what's important is that we need to remember that we are looking at the patient level. As in here, a single data point is all the medical codes for a single patient. In this story, each patient will have their own z (just like how in clustering, eat data point will have their own z that represented a discrete cluster). But when we actually dig into what our z is in this story, we see that z is going to be continuous and have multidimensional because we are modeling in the fact that the patient could have multiple diseases, and of multiple degrees of severity. For example, for patient Bob, he might have a cardiac disease with 70 percent probability, and a cold with 30 percent probability. In that sense, our z must be continuous.<br><br>
+      Now, let's discuss the system of rules by which graphical models are created.  These 4 simple rules will enable you to easily interpret graphical models and create your own graphical models!<br>
 
-      Another way of thinking about this in another context is looking at the story of restaurants. A given resturant might have a general restaurant food type or perhaps a fuison of food types (z) that affects the menu items (the x data we see).<br><br>
+      <ol>
+        <li> Random variables are represented by an open circle.  If we observe a random variable of a given model, then we shade it in. Otherwise, it's left open.</li>
+        <li> Deterministic parameters are represented by a tight, small dot.</li>
+        <li> Arrows indicate the probabilistic dependence relationship between different random variables and parameters.  An arrow from $X$ to $Y$ means that $Y$ depends on $X$.</li>
+        <li> Plates, or boxes, indicate repeated sets of variables.  Often there will be a number in one of the corners indicating how many times that variable is repeated.  For example, if you have a training dataset of $N$ random variables $\{x_i, y_i\}_{i = 1}^{N}$ drawn from $X, Y$, you can draw a plate around $X$ and $Y$ in your model with an $N$ in the corner.</li>
+      </ol>
 
-      And to add one more way of thinking, you could think of the context of looking at documents. A given document might have a mixture of document types (the z's) that affect the specific words on the document (and also the counts of words on the document).<br><br>
+      <h4>Dependency and Factoring</h4>
+      Rule 3 suggests that we can examine a sequence of arrows in a graphical model as a chain of dependencies of the random variables they connect.  From examining the dependencies in graphical models, we can learn how to factor the joint probability distribution over all random variables in the graphical model.<br>
 
-      <h4>Let's Look at the Math</h4>
+      Refer back to the graphical models given above:<br>
 
-      To make our thinking more concrete, we also note here that our model is a mixture of multinomials.<br><br>
+\begin{center}
+\includegraphics[width=0.9\textwidth]{img5.png}
+\end{center}
 
-      <u>Part 1: Parameters for seeing the d items (given you're in mixture k)</u><br><br>
+      Let's first examine the first graphical model from the left.  For this model, the joint probability distribution over all variables is
 
-      $\theta_k \sim Dir(\beta)$ is a D dimensional vector that describes the probability of seeing item d if you are in mixture k.<br><br>
+      $$p(X, Y)$$
 
-      For example, perhaps we had k=0 represent heart disease and k=1 represent having a cold. $\theta_0$ would tell us the distribution of the codes (the actual x data we should see) given that the person has heart disease underneath the hood (our z), and our $Dir(\beta)$ is representing the distribution of the codes. Then, $\theta_1$ would be the distribution of the codes for if the person just had a cold (which would look quite different from the distribution for $\theta_1$, since having a cold and having a heart disease lead to different symptoms).
+      which, using the dependency structure given in the graphical model, we can factor into
 
-      The whole $\theta$ hence is a D by K matrix of probabilities of seeing item d in mixture k<br><br>
+      $$= p(Y) p(X | Y)$$
 
-      <u>Part 2: Parameters for your probabilities of being in a mixture k</u><br><br>
+      In contrast, for the graphical model that is second from the left, we can factor the joint distribution into
 
-      $\pi_n ～ Dir(\alpha)$ is K dimensional, and tells us the proportions of each $\theta_k$ in data n (as in this tells us the proportion of each topic, or the proportion of each disease to begin with)
+      $$p(X, Y) = p(X) p(Y | X)$$
 
-      <h4>The Procedure of How the $x_n$'s are Created</h4>
+      Similarly, for the simple LDA model (third from the left), we can write the joint distribution as
 
-      $x_n$ is a count vector of items per data point, which is what we observe. In the Pompei example, it would be like: 3 chairs, 2 chests, 0 spoons, etc. We are going to look into how the procedure of how these are created.<br><br>
+      $$p(\pi, x, \theta, \alpha) = p(\alpha) p(\theta) p(\pi | \alpha) p(x | \theta, \pi)$$
 
-      First, create the $\theta$'s. For each data point n, we're going to sample $\pi_n \sim Dir(\alpha)$, and then we're going to use our $\pi_n$ to create our data $x_n$. Namely, $x_n \sim Mult(\theta \pi_n, L)$ where L is the total# of codes, menu items, or words, whichever topic you're working on.<br><br>
+      This factorization follows intuitively from looking at the graph:  because there are arrows from $\theta$ and $\pi$ to $x$, then $x$'s distribution must be conditioned on (or dependent on) $\theta$ and $\pi$.<br>
 
-      Note: when you multiply out $\theta$ (which is D by K) and $\pi$ (K by 1), you will get your probabilities for the items in the x (which is patient specific, or document specific, etc, whichever domain you are in) which is D by 1. So we have all the final probabilities we need for that given patient, and then we enter this in as the parameters of the multinomial, with our $x_n$ generated in that distribution's manner.<br><br>
+      For the expanded LDA model (fourth from the left), we can write the joint distribution as
 
-      To tie this back into the general setting that we've discussed many times now in our unsupervised learning lectures, where $z_n$ produces the $x_n$ and the w (the global parameters) also affects the $x_n$, here $z_n$ corresponds to our $\pi_n$ and w corresponds to our $\theta$.
+      $$p(\alpha, \theta, \pi, z, w, x) = p(\theta) \p(\alpha) p(\pi | \alpha) p(z | \pi) p(w | z, \theta) p( x | w)$$
 
-      <h2 id="recap17_4">Quick Detour: Dirichlet Distributions</h2>
+      A key point is that while graphical models can tell us important information about the joint factorization of all of the random variables, graphical models do not give us the form of the distribution.  Graphical models communicate dependencies between random variables, but do not indicate the distributions of the random variables themselves.  For example, from observing the graphical model that is the first from the left, can we determine if $p(X, Y)$ is distributed normally?  What is its mean and variance?  Graphical models cannot capture this kind of information.<br>
 
-      We need a process to create $\pi$. Previously, and in the examples given earlier in lectures, we had z distribution as Gaussian. Now, we need specifically the following:
+      <h2 id="recap17_3">Bayesian Networks</h2>
 
-      $$\pi_{nk} \geq 0$$
-      $$\pi_{nk} \leq 1$$
-      $$\sum_k \pi_{nk} = 1$$
+      A Bayesian Network is a special kind of graphical model. Bayesian Networks (Bayes Nets) are DAGs (directed acyclic graphs) where nodes represent random variables, and directed arrows represent dependency relationships between random variables.<br>
 
-      We need this to follow these restraints above so that we have probability distribution beacuse then we can interpret it. For example, we want to be able to have the intuition of a restaurant as being mostly Asian cuisine but there's some Latin fusion in it. Or when looking at a patient, we might want to say this patient most likely is a cardiac patient but they also have some chance of diabetes. In the Pompei example, we want to be able to interpret that this room looks like it was used for cooking with this probability, but also rituals with this probability. So that's why we want to use the Dirichlet Distribution. It wouldn't make sense for example, to have a negative number (which is possible if we chose Gaussian) in the latent variable in this case. Dirichlets give us samples from the simplex.
+      For example, the joint distribution of random variables $(A, B, C, D, E)$ can be inferred from the dependency relationships specified by this Bayes Net:
 
-      $$Dir(\pi | \alpha) \propto \prod^K_{k=1} \pi_k^{\alpha_k - 1}$$
+      \begin{center}
+      \includegraphics[width=0.3\textwidth]{img6.png}
+      \end{center}
+      Figure 2
 
-      This is similar to the Beta distribution (if k=2, this is exactly the Beta distribution). For intuition on how the distribution look for certain parameters, see the diagrams on the <a href="https://en.wikipedia.org/wiki/Dirichlet_distribution" target="_blank">wikipedia page</a>.
+      $$p(A, B, C, D, E) = p(A) p(D | A) p(B | A) p(C | A, B) p(E | C)$$
 
-      <h2 id="recap17_5">Relationship with Discrete Mixtures</h2>
+      Notice that even without any knowledge of the dependency relationships between the variables, we could always factor the joint distribution as
 
-      Let's also recap our thinking on how topic models tie to mixture models and factor analysis.<br>
+      $$p(A, B, C, D, E) = p(A) p(B | A) p(C | B, A) p(D | C, B, A) p( E | D, C, B, A)$$
 
-      <h4>Mixture Models</h4>
-      $$z_n \sim Cat(\pi) \textrm{ where } \pi \textrm{ is a distribution over k mixture classes}$$
+      But additional knowledge from our Bayes Net of the dependencies between variables allows us to write a simpler expression where several terms are conditioned on fewer variables.  For example, our Bayes Net tells us that term $ p( E | D, C, B, A)$ can be simplified to $p(E | C)$.<br>
 
-      $$x_n = \mu_{z_n} + \epsilon$$
+      Why are Bayes Nets, and the additional structure they provide to reason about dependency relationships between variables, useful?<br>
 
-      <h4>Topic Models</h4>
+      <ol>
+        <li> For inference:  if our goal is to fit some of the variables, given others, then we can do block coordinate ascent or alternating optimization schemes. <br>
 
-      $$\pi_n \sim Dir(\alpha)$$
-      $$x_n = Mult(\theta \pi_n, L)$$
+            For example in Figure 2, given $C$, $E$ becomes independent of all other random variables in the network.<br>
 
-      <h4>Factor Analysis</h4>
+            Therefore a possible inference scheme is to first guess that $C = c$.  Given this guess of $C$, now we can update our guesses of $A, B, D$ and $E$.  Then, given these guesses for $A$, $B$, $D$, and $E$, we now can update our guess of $C$.  We can continue ``swapping'' between updating our guesses of these two groups of variables.<br>
+        </li>
+        <li> For learning:  Bayes Nets allow us to learn ``smaller'' distributions, or distributions with fewer parameters.<br>
 
-      $$z_n \sim N(0, I)$$
-      $$x_n = Az_n + \epsilon$$
+            For example, before the joint distribution for the network in Figure 2 is simplified, $p(E | D, C, B, A)$ is dependent on $\{A, B, C, D\}$.  If each of $\{A, B, C, D\}$ is binary, then there are 16 different ``settings'' of $p(E | D, C, B, A)$; for example $p(E | D = 0, C = 0, B= 0, A = 0)$, $P(E | D = 1, C = 0, B= 0, A = 0)$, etc.  As such, we require 16 different ``parameters'', or terms $p(E | D, C, B, A)$, to fully specify the distribution.<br>
 
-      <h4>Some Comparisons</h4>
+            However, once simplified this term to $p(E | C)$, we only need to learn $p(E | C = 0)$ and $p(E | C = 1)$ to fully specify the distribution $p(E | C)$.
+        </li>
+      </ol>
 
-      The idea is in the same way in the mixture models (and factor analysis) where once when we had our $z_n$ we could then determine our $x_n$ (after incorporating our global parameters), in topic models once we have the $\pi_n$ then we can create our $x_n$ (after incorporating our global parameter $\theta$).<br><br>
+      <h4>Intuition for D-separation</h4>
 
-      The difference between mixture models and topic models + factor analysis, is that in topic models and factor analysis, our $\pi$ and z's are continuous, whereas in mixture models, z is still discrete.<br><br>
+      First we'll informally explore how conditioning on random variables may affect dependency, using this Bayes Net as an example:
 
-      The difference between topic models and factor analysis is that we've decided in our topic models that we think the data itself (the x's) is discrete sets of counts, whereas in factor analysis our data is continuous.<br><br>
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img8.png}
+\end{center}
+Figure 3
 
-      <h2 id="recap17_6">Continuing with Topic Models: Moving to Inference</h2>
 
-      <h4>Using the Same Generative Model as Before</h4>
+      We will begin by defining the principle of local independence: every node is conditionally independent of its non-descendants, given only its parents.<br>
 
-      Let's now continue on with topic models and move to inference. We can start off by just using the generative model we have as is:
+      Example:  Given $G$ and $U$, $E \perp H, S, D$ (or $E$ is conditionally independent ($\perp$) of $H$, $S$, and $D$).<br>
 
-      $$p(x|\pi, \theta) = \prod_d (\sum_k \pi_k \theta_{kd})^{x_d}$$
+      Q: Given $S$, are $G$ and $U$ independent?<br>
 
-      Where inside, we have $\sum_k \pi_k \theta_{kd}$ which represents the probability of dimension d, $x_d$ represents the number of times element d was observed, $\sum_k \pi_k \theta_{kd})^{x_d}$ then represents the probability of seeing $x_d$, then finally we take the product over d to have our final probability of x overall. Next, let us take the log:
+      A: Yes: local independence says that $G$ and $U$, which are non-descendants, are independent given their parent $S$.<br>
 
-      $$\log p(x | \pi, \theta) = \sum_d x_d \log(\sum_k \pi_k \theta_{kd})$$
+      Q: Given $E$, are $G$ and $U$ independent?<br>
 
-      This is tricky! How can we make this easier to work with? Let's create an equivalent generative model.
+      A: No.  First notice here that we cannot apply the principle of local independence, because $E$ is not a parent of $G$ or $U$.<br>
 
-      <h4>Using a New Equivalent Generative Model</h4>
+      Intuitively, if you know that someone did really well on their exam, and you find out that they really understood the material,  then you may have less idea of whether or not they are a good test taker, because knowing that they really understood the material already ``explains'' their high performance on the exam.  Therefore conditioned on observing the student's exam score, understanding the material and being a good test taker are dependent variables.  This general phenomenon is called the explaining-away effect.<br>
 
-      <u>Globally:</u><br><br>
+      <h4>The D-separation Rules</h4>
 
-      Before, we had $\theta \sim Dir(\beta)$. For the rest of lecture, for simplicity, let's assume $\theta$ is a given parameter (instead of being distributed with prior).<br>
+      When discussing D-separation, we use the term ``information flow'' to describe dependencies between variables.  If there is information flowing from $A$ to $B$, then $A$ and $B$ are conditionally dependent given the observed random variables.  In contrast, if $A$ and $B$ are ``blocked'', then $A$ and $B$ are conditionally independent given the observed random variables.<br>
 
-      <br><u>Locally:</u><br><br>
+      <b>Two variables $A$ and $B$ are D-separated, or independent, if every undirected path from $A$ to $B$ is ``blocked''.</b><br>
 
-      for each n:<br>
-      ----$\pi_n \sim Dir(\alpha)$<br>
-      ----for each l in L_n:<br>
-      --------$z_{nl} \sim Categ(\pi_n)$<br>
-      --------$w_{nl} \sim Categ(\theta_{z_{nl}})$<br><br>
+      There are 3 base cases to determining if a path is ``blocked'':<br>
 
-      And then: $x_n$ keeps counts of w_{nl}.<br><br>
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{img9.png}
+      \end{center}
+      Figure 4
 
-      The new proposal is I want to geenrate data for a new patient. First I'm going to determine the mixture weights of the different diseases. Just for simplicity's sake, some oracle is going to tell us the patient has this $L_n$ (the number of codes we need to generate for a given patient). Once we know it, then for each given code, we can first ask, what disease are you (the $z_{nl} \sim Cat(\pi_n)$)? Once we pick the disease, then we can then pick the code given that we know what disease is (the $w_{nl} \sim Categ(\theta_{z_{nl}})$) now for this patient (this means we are assuming that these codes are independently drawn).<br><br>
+      Case 1:<br>
 
-      In story form, if we were doing the restaurant setting where we picked the words on the menu to be what we're counting, we might have something like:<br><br>
+      In Case 1, if we have observed $C$, then $A$, which is a descendant, will be independent of $B$ (by local independence).<br>
 
-      $w_{nl}$ = {of, pizza, of pasta}<br><br>
+      Case 2:<br>
 
-      We can convert this to an x_n by:<br><br>
+      In Case 2, $C$ is the parent of both $A$ and $B$.  Because $A$ and $B$ are non-descendents, $A$ and $B$'s conditional independence follows by local independence.<br>
 
-      $$pizza: 1$$
-      $$pasta: 1$$
-      $$of: 2$$
+      Another contextualized example is: say $C$ represents the bias of a coin.  $A$ and $B$ represent two independent flips of the coin.  When $C$ is unobserved, then $A$ and $B$ are dependent, as observing the result of flip $A$ may give information about the bias $C$ of the coin, which also gives information about $B$.  But once $C$, the bias of the coin, is observed, then $A$ is now independent of $B$.<br>
 
-      This is known as the bag of words representation. Also, for reference, below is the diagram for the new graphical model (on the right). On the left are our more simple representations from before, for reference.<br><br>
+      Case 3:<br>
 
-      <div class="text-center">
-        <img src="{{ site.baseurl }}/images/recap17_1.png" style="width:40%"  alt="New Graphical Model"></img>
-      </div>
+      In Case 3, not observing C blocks the path.  When C is observed, it induces a correlation, or dependency between $A$ and $B$.<br>
 
-      <br>
-      <br>
+      An example of this is $C$ being the XOR of $A$ and $B$.  When $C$ is unobserved, $A$ and $B$ are uncorrelated.  But once $C$ is observed, $B$ can be calculated from observing $A$ and $C$.<br>
 
-      <h4>Why did we use the this?</h4>
+      Section 8.2.5 of the textbook discusses each of these D-separation rules more in-depth, we strongly recommend that you read it as a supplement to this lecture!<br>
 
-      We did this because in the original set up, it was impossible to solve easily as running the EM algorithm wouldn't work. Even given the $\theta$, it would be hard to find $\pi$, and given $\pi$ it was still hard to find $\theta$. Here, we've introduced a new variable z that let's us do EM (more details on this below). This is apparent if we write out the new likelihood. We now have the following:
+      <h2 id="recap17_4">Uniqueness and Parameters</h2>
 
-      $$p(x|z, \pi, \theta) = \prod_l \prod_d \theta_{dk}^{\mathbb{1}(w_{nl} = d) \mathbb{1}(z_{nl}=k)}$$
 
-      Where $\prod_l$ represents product over all the words in the document, $\prod_d$ represents the product over all the possible word assignments, $\prod_k$ represents the product over all the topics/mixtures, and then we have the $\theta_{dk}$ (probability of a particular dimension occuring) with the indicators that check to make sure we're in the right topic $\mathbb{1}(z_{nl}=k)$ and did we actaully observe the right dimension/word $\mathbb{1}(w_{nl} = d)$.
+      <h4>Uniqueness</h4>
 
-      $$log p(x|z, \pi, \theta) = \sum_l \sum_d \sum_K \mathbb{1}(w_{nl} = d) \mathbb{1}(z_{nl}=k)$$
+      Mathematically, it is true that given any two random variables $(A, B)$, we can write the join distribution $p(A, B)$ two ways:
 
-      Next, let's get the rest of what we need to do the EM algorithm.
+      $$p(A, B) = p(A) p(B | A)$$
+      $$p(A, B) = p(B) p(A | B)$$
 
-      $$p(z | \pi) = \prod_k \pi_k^{\mathbb{1}(z = k)}$$
+      Each equation also has an associated ``ordering'':<br>
 
-      $$p(\pi) = \prod_k \pi^{\alpha_k - 1}$$
+      \begin{center}
+      \includegraphics[width=0.6\textwidth]{img10.png}
+      \end{center}
+      Figure 5
 
-      $$log(p(x, z, \pi | \theta)) \propto \sum_n [[ \sum_k (\alpha^k - 1 + \sum_l \mathbb{1}(z_{ln} = k)) \log \pi_k] + \sum_d \sum_k (\sum_l \mathbb{1}(w_{ln} = d) \mathbb{1}(z_{ln} = k)) \log \theta_{dk} ]$$
+      Q: When factoring our Bayes Nets (or, more broadly, when factoring joint distributions in this course), which way should we choose, given that both of the above equations are mathematically correct?<br>
 
-      That final term is found by combining the $\log p(\pi)$ term, $\log(p(z | \pi))$ term, and $log(x | z, \pi, \theta)$ term.<br><br>
+      A: If we are given some causal knowledge, for example, if we know that $A$ causes $B$, then we should factor the joint distribution using $p(A, B) = p(A) p(B | A)$.  We cannot ``flip the ordering'' under this causal assumption.  Therefore in this case, there is 1 unique factorization that is consistent with our causal knowledge.<br>
 
-      We note that $\mathbb{1}(w_{ln} = d)$ is known and fixed. This means, for inference: we can run an EM where we take expectations across with respect to z, which will turn those indicators above $\mathbb{1}(z_{ln} = k)$ into $q_{ln}$'s, and then we can maximize with respect to $\theta$, and $\pi$. By rewriting this, we were able to separate out the inference in a way that's nice to do, that let's us apply the EM algorithm!<br><br>
+      But otherwise, you can choose any factorization you'd like, given that the factorization is mathematically correct.  However, some choices of the ordering are easier to work with than others. <br>
 
-      Note: There are other ways to use this new genreative form to simplify inference: if you can sample z, then you can sample $\theta$, $\pi$ (this content is covered in CS281). You could sample z, and integrate out $\theta$ and $\pi$. The biggest clever part in the graphiacl model was we fixed the z, breaking up the rleationship betwen the $\theta$ and the $\pi$. Before it was interacting in a complicated way, but by having z fixed (since it was sampled), then we can do inference about $\pi$ and $\theta$ separately. This will be discussed and made more formal in the upcoming lecture on graphical models.
+      <h4>Example: Ordering affects the number of necessary parameters</h4>
+
+      Example: Recall our network from Figure 3, here written using simplified variable names:
+
+      \begin{center}
+      \includegraphics[width=0.6\textwidth]{img2.png}
+      \end{center}
+      Figure 6
+
+      Suppose all variables are binary.  How many parameters does this network need?  Or, otherwise stated, how many different values do we need to know to be able to calculate the joint distribution $p(S = s, D = d, G = g, U = u, E = e, H = h)$ for all possible values $s, d, g, u, e, h \in \{0, 1\}$?<br>
+
+      First, notice that $p(S)$ can be fully specified by $1$ parameter, as $p(S = 0) = 1- p(S = 1)$.<br>
+
+      Similarly, $p(G | S)$ can be fully specified by $2$ parameters $p(G = 1 | S = 0)$ and $p(G = 1 | S = 1)$, as $p(G = 0 | S = 0) = 1 - p(G = 1 | S = 0)$, etc.<br>
+
+      It is a good exercise to reason about the number of parameters required for each term in the joint distribution for our Bayes Net.  In Figure 6, we've written the number of necessary parameters for each variable's conditional distribution term next to the variable.  Therefore the network needs
+
+      $$1 + 2 + 4 + 1 + 4 + 2 = 14$$
+
+      total parameters.
+
+      <h4>Creating a re-ordered network</h4>
+
+      We can change the topology (ordering) of the net, while preserving the same dependency relationships between variables.  For example, this net has a re-ordered topology, preserving the relationships above:
+
+      \begin{center}
+      \includegraphics[width=0.4\textwidth]{img11.png}
+      \end{center}
+      Figure 7
+
+
+      This network was created by thinking of the original Bayes Net in Figure 6 instead as a generative process.  Say that we wish to place $E$ at the top of the network.  Now, we consider $H$.  Can $H$ be chosen independently of $E$ in the original network?  No, because their parent $U$ has not been observed, and so there is an unblocked path $(E, U, H)$ between them.  Therefore we need an arrow from $E$ to $H$.<br>
+
+      Now, we add $U$ to the new network.  $U$ is not independent of $E$ or $H$, so we need to draw arrows from $E$ and $H$ to $U$.<br>
+
+      Now, we add $S$ to the new network.  $S$ depends on $U$ and $E$ because we have not observed $G$ yet.  Because $U$ has been observed, blocking all paths from $S$ to $H$, we do not draw an arrow from $H$ to $S$.<br>
+
+      Now, we add $G$ to the network.  $G$ depends on $E$ and $S$, so we draw arrows from $E$ and $S$ to $G$.<br>
+
+      This new network in Figure 7 respects all the dependencies of the original network in Figure 6.  Note that the new network contains more dependencies (or arrows) than our original network.<br>
+
+      Our new network in Figure 7 has 19 required parameters.  It requires more parameters than our original network.<br>
+
+      We could always write out a network in any arbitrary order, where every variable is connected to every previously added variable, and create a fully-connected graph representation:
+
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{img7.png}
+      \end{center}
+      Figure 8
+
+
+      This network corresponds to factoring the joint distribution as
+
+      $$p(E, S, U, H, G, D) = p(E) p(S | E) p(U | E, S) ...$$
+
+      While such an ordering is correct, it is not parsimonious.  Our hope is to find a variable ordering which respects all necessary dependency relationships, while using as few ``arrows'' or having as few dependencies as possible.  Generally, adding another arrow or dependency to a Bayes Net will increase the number of parameters required to specify the full joint distribution.  As such, networks that have fewer arrows but still preserve the original dependency relationships will require fewer parameters to specify their joint distributions.<br>
+
+      This fully-connected graph requires $1 + 2 + 4 + 8 + 16 + 32 = 63$ parameters.<br>
+
+      Student question:  What does the direction of the arrows imply?  Do the arrows inform us of how the data is generated?  In the top image, for example, $G$ and $U$ points to $E$.  In the bottom image, $E$ points to $H$ and $U$.<br>
+
+      Answer:  You are correct in that it is possible to draw two Bayes Nets that preserve the dependency relationships between variables, but, because of their differing structure, tell a different ``story'' about each random variable in the network.  This relates to the ``Uniqueness and Parameters'' discussion above.  Typically, you wish to draw a graphical model that corresponds with your knowledge and your assumptions about a causal or data-generating process.<br>
+
+      To contextualize our examples, in Figure 6, $G$ and $U$ point to $E$.  The joint distribution of this Bayes Net can be factored as
+
+      $$p(S) p(D) p(G | S) p(U | S, D) p(E | G, D) p (H | U)$$
+
+      This would represent a causal setting where we assume that being a good test taker and understanding material causes one's exam score.<br>
+
+      In contrast, the Bayes Net in Figure 7 can be factored as
+
+      $$p(E) p(H | E) p(U | E, H) p(D | U, S) p(G | S, E) p (S | U, H)$$
+
+      This factorization may be helpful in a setting where a student's exam score is observed, and a researcher is trying to learn student profiles (their $H$ and $U$) from exam scores.<br>
+
+      <h2 id="recap17_5">Beyond Bayes Nets</h2>
+
+      In CS 181, we are only going to focus on Bayesian Networks.  But, there are more kinds of graphical models out there!  We'll briefly introduce two other kinds of graphical models.
+
+      <h4>Undirected Models</h4>
+
+      Undirected models are graphs where the edges between random variables are undirected.  For example, consider graph
+
+      \begin{center}
+      \includegraphics[width=0.4\textwidth]{img3.png}
+      \end{center}
+
+      The joint distribution of this graph can be factored as
+
+      $$P(A, B, C, D, E) = \frac{1}{z} \phi(C, A, B) \phi(B, D) \phi(B, E)$$
+
+      where $z$ is a normalizing constant and $\phi$ is a function.<br>
+
+      Undirected graphical models are very popular in settings such as image processing.  In practice, they're hard to work with as normalizing constant $z$ is hard to find to make $P(A, B, C, D, E)$ a valid probability distribution which sums to $1$.
+
+      <h4>Factor Graphs</h4>
+
+      In factor graphs, variables connect into factors, which are denoted by the shaded nodes:
+
+      \begin{center}
+      \includegraphics[width=0.4\textwidth]{img4.png}
+      \end{center}
+
+      The joint distribution of the factor graph can be written as
+
+      $$p(A, B, C, D, E) = \frac{1}{z} \phi(B, D) \phi(B, E) \phi(A, B, C) \phi(B, C)$$
+
+      where $z$ is a normalizing constant and $\phi$ is a function.<br>
+
+      Each of the $\phi()$ terms was created by examining each of the factor nodes, and including the variables which were connected to each factor.<br>
+
+      Factor graphs are more expressive than undirected graphs.  Notice here that we included a factor to add additional term $\phi(B, C)$.  Notice that we wouldn't have been able to specify the inclusion of this extra term in our undirected graphical model.
+
+
     </div>
 </section>
