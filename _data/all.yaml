@@ -322,7 +322,7 @@ lectures:
     hw:
     type: 'sec'
   - topic:  #Apr 8
-    subtopic: Graphical Models
+    subtopic: <a href="/cs181-web/recap17">Graphical Models</a>
     section:
     readings: 8
     hw:
