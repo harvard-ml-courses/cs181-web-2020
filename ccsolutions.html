@@ -134,9 +134,22 @@ weight: 0
         <li>
           Lecture 17 - Graphical Models (April 6, 2020)
           <ul>
-            <li>Question A: TBD</li>
-            <li>Question B: TBD</li>
-            <li>Question C: TBD</li>
+            <li>Question A:
+              <ul>
+                <li>Model 1 has 54 (see alternative answer below)</li>
+                <li>Model 2 has 5</li>
+                <li>Model 3 has 45</li>
+                <li>Explanation: <br><br>
+
+                  Currently, for Model 1, we calculate 54 in the following way. We know that they are all discrete variables that can take on 3 values each. Remember that we are not asking for A in the parameter count (although you should still mentally have A in mind). This means B, C, and E each have 9 parameters since each has one parent (so we do 3^2). D has 27 since it has two parents (3^3). In total we hae 54. However, we could techincally argue that with discrete variables that only take on 3 values each, we can really encode all 3 bits of info with just two parameters, since you can extract the third one just by doing 1 minus the sum of the oother two parameters. This is also a valid way to think of the problem. This would lead to B, C, E each having 4 parameters (2^2) and D having 8 parameters (2^3), leading to a total of 16.If this ever comes up on a test or homework, we will make clear what the assumptions are.<br><br>
+
+                  For Model 2, we have B, C, and E each having just 1 parameter, since there is one parent to multiply by (we have a linear relationship). D has 2 parameters, since there are two parents. Leads to a sum of 5. <br><br>
+
+                  For Model 3, we have B, C, and E each having 9 parameters since these all need a 3 by 3 matrix (since it's 3 dimensional now). Model D has 27 parameters (requires a 3 by 6 matrix). This leads to a sum of 45.<br><br>
+                </li>
+              </ul>
+            </li>
+            <li>Question B: Only includes linear functions</li>
           </ul>
         </li>
     </div>
