@@ -170,6 +170,17 @@ body {
     font-size: 1.5em;
 }
 
+#images{
+    text-align:center;
+    margin:50px auto;
+}
+#images a{
+    margin:0px 20px;
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+ }
+
 .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0em;
