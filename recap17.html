@@ -8,36 +8,37 @@ weight: 0
 <section class="main-container text">
     <div class="main">
 
-      <h4>Date: April 6, 2020 (<a href="" target="_blank">Lecture Video</a>, <a href="" target="_blank">iPad Notes</a>, <a href="http://bit.ly/cs181cc17" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc17responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
-      <h4>Relevant Textbook Sections: 9.6</h4>
-      <h4>Cube: Unsupervised, Continuous, Probabilistic</h4>
+      <h4>Date: April 6, 2020 (<a href="https://harvard.zoom.us/rec/play/tcd-dbup-Gk3G4KXsgSDBvN-W9S4Kv2s23MZ-ftbmk-2UiEBY1KvZOEWNHjsJJX1nGERIVuvHLfTZOQ" target="_blank">Lecture Video</a>, <a href="https://piazza.com/class_profile/get_resource/k5fnxwvfh7p7mi/k8onsarqn016ik" target="_blank">iPad Notes</a>, <a href="http://bit.ly/cs181cc17" target="_blank">Concept Check</a>, <a href="http://bit.ly/cs181cc17responses" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 8</h4>
 
       <br>
 
       <h3>Lecture 17 Summary</h3>
 
       <ul>
-        <li><a href="#recap17_1">Motivation</a></li>
+        <li><a href="#recap17_1">Intro: Motivation Behind Graphical Models</a></li>
         <li><a href="#recap17_2">Graphical Models</a></li>
         <li><a href="#recap17_3">Bayesian Networks</a></li>
         <li><a href="#recap17_4">Uniqueness and Parameters</a></li>
         <li><a href="#recap17_5">Beyond Bayes Nets</a></li>
       </ul>
 
-      <h2 id="recap17_1">Motivation</h2>
-      Today we're going to be moving beyond the cube.  Just as we moved into more flexible parametric relationships with neural networks, we can think of graphical models as a way of describing more complex relationships between variables than those we've seen so far in supervised learning (ie given $x$, predict $y$) and unsupervised learning.<br>
+      <h2 id="recap17_1">Intro: Motivation Behind Graphical Models</h2>
 
-      <h4>Example: Predicting drug interactions</h4>
+      Today we're going to be moving beyond the cube.  Just as we moved into more flexible parametric relationships with neural networks, we can think of graphical models as a way of describing more complex relationships between variables than those we've seen so far in supervised learning (ie given $x$, predict $y$) and unsupervised learning.<br><br>
+
+      <h4>Example: Predicting Drug Interactions</h4>
+
       One particularly relevant example of such a complex relationship is predicting drug interactions.  Say you have a collection of drugs. For some drugs, you may know what molecules they target, but for others, you do not.  These relationships are indicated by the lines from drugs to targets.  You may also have additional information about the relationship between the drugs' chemical forms, for example, that two drugs may be chemically similar.  These relationships are indicated by the lines between drugs.<br>
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_1.png" style="width:40%"  alt="drug interactions"></img>
+              <img src="{{ site.baseurl }}/images/recap17_1.png" style="width:80%"  alt="drug interactions"></img>
               <div class="caption">Drug interaction graphical model.</div>
           </a>
       </div>
 
-      Given these known relationships between drugs and targets, you wish to be able to predict whether other two drugs may hit the same target.  You also may be interested in whether a particular drug can be repurposed to hit a new target.  We cannot answer this problem using simple multiclass classification - instead we wish to model all of specific relationships between each drug and each target.<br>
+      Given these known relationships between drugs and targets, you wish to be able to predict whether other two drugs may hit the same target.  You also may be interested in whether a particular drug can be repurposed to hit a new target.  We cannot answer this problem using simple multiclass classification - instead we wish to model all of specific relationships between each drug and each target.<br><br>
 
       <h4>Example: Information Retrieval</h4>
 
@@ -51,45 +52,46 @@ weight: 0
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_5.png" style="width:40%"  alt="gms"></img>
+              <img src="{{ site.baseurl }}/images/recap17_5.png" style="width:70%"  alt="gms"></img>
               <div class="caption">Figure 1</div>
           </a>
       </div>
 
-      The first graph on the far left represents a generative process where labels $y$ are used to generate features $x$.<br>
+      The first graph on the far left represents a generative process where labels $y$ are used to generate features $x$.<br><br>
 
-      The second graph from the left represents a probabilistic process where labels $y$ are assigned a probability given features $x$.<br>
+      The second graph from the left represents a probabilistic process where labels $y$ are assigned a probability given features $x$.<br><br>
 
-      The third and fourth graphs from the left are used to represent simplified and expanded versions of <a href="https://harvard-ml-courses.github.io/cs181-web/recap16">LDA</a>.<br>
+      The third and fourth graphs from the left are used to represent simplified and expanded versions of <a href="https://harvard-ml-courses.github.io/cs181-web/recap16">LDA</a>.<br><br>
 
       <h4>Notation and Rules</h4>
 
-      Now, let's discuss the system of rules by which graphical models are created.  These 4 simple rules will enable you to easily interpret graphical models and create your own graphical models!<br>
+      Now, let's discuss the system of rules by which graphical models are created.  These 4 simple rules will enable you to easily interpret graphical models and create your own graphical models!<br><br>
 
       <ol>
         <li> Random variables are represented by an open circle.  If we observe a random variable of a given model, then we shade it in. Otherwise, it's left open.</li>
         <li> Deterministic parameters are represented by a tight, small dot.</li>
         <li> Arrows indicate the probabilistic dependence relationship between different random variables and parameters.  An arrow from $X$ to $Y$ means that $Y$ depends on $X$.</li>
         <li> Plates, or boxes, indicate repeated sets of variables.  Often there will be a number in one of the corners indicating how many times that variable is repeated.  For example, if you have a training dataset of $N$ random variables $\{x_i, y_i\}_{i = 1}^{N}$ drawn from $X, Y$, you can draw a plate around $X$ and $Y$ in your model with an $N$ in the corner.</li>
-      </ol>
+      </ol><br>
 
       <h4>Dependency and Factoring</h4>
+
       Rule 3 suggests that we can examine a sequence of arrows in a graphical model as a chain of dependencies of the random variables they connect.  From examining the dependencies in graphical models, we can learn how to factor the joint probability distribution over all random variables in the graphical model.<br>
 
-      Refer back to the graphical models given above:<br>
+      Let's bring back the picture of the graphical models from above:<br>
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_5.png" style="width:40%"  alt="gms"></img>
+              <img src="{{ site.baseurl }}/images/recap17_5.png" style="width:70%"  alt="gms"></img>
               <div class="caption">Figure 1</div>
           </a>
       </div>
 
-      Let's first examine the first graphical model from the left.  For this model, the joint probability distribution over all variables is
+      Let's first examine the first graphical model from the left.  For this model, the joint probability distribution over all variables is:
 
       $$p(X, Y)$$
 
-      which, using the dependency structure given in the graphical model, we can factor into
+      Which, using the dependency structure given in the graphical model, we can factor into
 
       $$= p(Y) p(X | Y)$$
 
@@ -101,11 +103,13 @@ weight: 0
 
       $$p(\pi, x, \theta, \alpha) = p(\alpha) p(\theta) p(\pi | \alpha) p(x | \theta, \pi)$$
 
-      This factorization follows intuitively from looking at the graph:  because there are arrows from $\theta$ and $\pi$ to $x$, then $x$'s distribution must be conditioned on (or dependent on) $\theta$ and $\pi$.<br>
+      This factorization follows intuitively from looking at the graph:  because there are arrows from $\theta$ and $\pi$ to $x$, then $x$'s distribution must be conditioned on (or dependent on) $\theta$ and $\pi$.<br><br>
 
       For the expanded LDA model (fourth from the left), we can write the joint distribution as
 
-      $$p(\alpha, \theta, \pi, z, w, x) = p(\theta) \p(\alpha) p(\pi | \alpha) p(z | \pi) p(w | z, \theta) p( x | w)$$
+      $$p(\alpha, \theta, \pi, z, w, x) = p(\theta) p(\alpha) p(\pi | \alpha) p(z | \pi) p(w | z, \theta) p( x | w)$$
+
+      <br>
 
       A key point is that while graphical models can tell us important information about the joint factorization of all of the random variables, graphical models do not give us the form of the distribution.  Graphical models communicate dependencies between random variables, but do not indicate the distributions of the random variables themselves.  For example, from observing the graphical model that is the first from the left, can we determine if $p(X, Y)$ is distributed normally?  What is its mean and variance?  Graphical models cannot capture this kind of information.<br>
 
@@ -117,7 +121,7 @@ weight: 0
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_6.png" style="width:40%"  alt="bayes1"></img>
+              <img src="{{ site.baseurl }}/images/recap17_6.png" style="width:70%"  alt="bayes1"></img>
               <div class="caption">Figure 2</div>
           </a>
       </div>
@@ -128,22 +132,22 @@ weight: 0
 
       $$p(A, B, C, D, E) = p(A) p(B | A) p(C | B, A) p(D | C, B, A) p( E | D, C, B, A)$$
 
-      But additional knowledge from our Bayes Net of the dependencies between variables allows us to write a simpler expression where several terms are conditioned on fewer variables.  For example, our Bayes Net tells us that term $ p( E | D, C, B, A)$ can be simplified to $p(E | C)$.<br>
+      But additional knowledge from our Bayes Net of the dependencies between variables allows us to write a simpler expression where several terms are conditioned on fewer variables.  For example, our Bayes Net tells us that term $ p( E | D, C, B, A)$ can be simplified to $p(E | C)$.<br><br>
 
-      Why are Bayes Nets, and the additional structure they provide to reason about dependency relationships between variables, useful?<br>
+      Why are Bayes Nets, and the additional structure they provide to reason about dependency relationships between variables, useful?<br><br>
 
       <ol>
-        <li> For inference:  if our goal is to fit some of the variables, given others, then we can do block coordinate ascent or alternating optimization schemes. <br>
+        <li> For inference:  if our goal is to fit some of the variables, given others, then we can do block coordinate ascent or alternating optimization schemes.<br><br>
 
-            For example in Figure 2, given $C$, $E$ becomes independent of all other random variables in the network.<br>
+            For example in Figure 2, given $C$, $E$ becomes independent of all other random variables in the network.<br><br>
 
-            Therefore a possible inference scheme is to first guess that $C = c$.  Given this guess of $C$, now we can update our guesses of $A, B, D$ and $E$.  Then, given these guesses for $A$, $B$, $D$, and $E$, we now can update our guess of $C$.  We can continue ``swapping'' between updating our guesses of these two groups of variables.<br>
+            Therefore a possible inference scheme is to first guess that $C = c$.  Given this guess of $C$, now we can update our guesses of $A, B, D$ and $E$.  Then, given these guesses for $A$, $B$, $D$, and $E$, we now can update our guess of $C$.  We can continue ``swapping'' between updating our guesses of these two groups of variables.<br><br>
         </li>
-        <li> For learning:  Bayes Nets allow us to learn ``smaller'' distributions, or distributions with fewer parameters.<br>
+        <li> For learning:  Bayes Nets allow us to learn ``smaller'' distributions, or distributions with fewer parameters.<br><br>
 
-            For example, before the joint distribution for the network in Figure 2 is simplified, $p(E | D, C, B, A)$ is dependent on $\{A, B, C, D\}$.  If each of $\{A, B, C, D\}$ is binary, then there are 16 different ``settings'' of $p(E | D, C, B, A)$; for example $p(E | D = 0, C = 0, B= 0, A = 0)$, $P(E | D = 1, C = 0, B= 0, A = 0)$, etc.  As such, we require 16 different ``parameters'', or terms $p(E | D, C, B, A)$, to fully specify the distribution.<br>
+            For example, before the joint distribution for the network in Figure 2 is simplified, $p(E | D, C, B, A)$ is dependent on $\{A, B, C, D\}$.  If each of $\{A, B, C, D\}$ is binary, then there are 16 different ``settings'' of $p(E | D, C, B, A)$; for example $p(E | D = 0, C = 0, B= 0, A = 0)$, $P(E | D = 1, C = 0, B= 0, A = 0)$, etc.  As such, we require 16 different ``parameters'', or terms $p(E | D, C, B, A)$, to fully specify the distribution.<br><br>
 
-            However, once simplified this term to $p(E | C)$, we only need to learn $p(E | C = 0)$ and $p(E | C = 1)$ to fully specify the distribution $p(E | C)$.
+            However, once simplified this term to $p(E | C)$, we only need to learn $p(E | C = 0)$ and $p(E | C = 1)$ to fully specify the distribution $p(E | C)$.<br><br>
         </li>
       </ol>
 
@@ -158,52 +162,51 @@ weight: 0
           </a>
       </div>
 
-      We will begin by defining the principle of local independence: every node is conditionally independent of its non-descendants, given only its parents.<br>
+      We will begin by defining the principle of local independence: every node is conditionally independent of its non-descendants, given only its parents.<br><br>
 
-      Example:  Given $G$ and $U$, $E \perp H, S, D$ (or $E$ is conditionally independent ($\perp$) of $H$, $S$, and $D$).<br>
+      Example:  Given $G$ and $U$, $E \perp H, S, D$ (or $E$ is conditionally independent ($\perp$) of $H$, $S$, and $D$).<br><br>
 
       Q: Given $S$, are $G$ and $U$ independent?<br>
-
-      A: Yes: local independence says that $G$ and $U$, which are non-descendants, are independent given their parent $S$.<br>
+      A: Yes: local independence says that $G$ and $U$, which are non-descendants, are independent given their parent $S$.<br><br>
 
       Q: Given $E$, are $G$ and $U$ independent?<br>
+      A: No.  First notice here that we cannot apply the principle of local independence, because $E$ is not a parent of $G$ or $U$.<br><br>
 
-      A: No.  First notice here that we cannot apply the principle of local independence, because $E$ is not a parent of $G$ or $U$.<br>
+      Intuitively, if you know that someone did really well on their exam, and you find out that they really understood the material,  then you may have less idea of whether or not they are a good test taker, because knowing that they really understood the material already ``explains'' their high performance on the exam.  Therefore conditioned on observing the student's exam score, understanding the material and being a good test taker are dependent variables.  This general phenomenon is called the explaining-away effect.<br><br>
 
-      Intuitively, if you know that someone did really well on their exam, and you find out that they really understood the material,  then you may have less idea of whether or not they are a good test taker, because knowing that they really understood the material already ``explains'' their high performance on the exam.  Therefore conditioned on observing the student's exam score, understanding the material and being a good test taker are dependent variables.  This general phenomenon is called the explaining-away effect.<br>
 
       <h4>The D-separation Rules</h4>
 
-      When discussing D-separation, we use the term ``information flow'' to describe dependencies between variables.  If there is information flowing from $A$ to $B$, then $A$ and $B$ are conditionally dependent given the observed random variables.  In contrast, if $A$ and $B$ are ``blocked'', then $A$ and $B$ are conditionally independent given the observed random variables.<br>
+      When discussing D-separation, we use the term ``information flow'' to describe dependencies between variables.  If there is information flowing from $A$ to $B$, then $A$ and $B$ are conditionally dependent given the observed random variables.  In contrast, if $A$ and $B$ are ``blocked'', then $A$ and $B$ are conditionally independent given the observed random variables.<br><br>
 
-      <b>Two variables $A$ and $B$ are D-separated, or independent, if every undirected path from $A$ to $B$ is ``blocked''.</b><br>
+      <b>Two variables $A$ and $B$ are D-separated, or independent, if every undirected path from $A$ to $B$ is ``blocked''.</b><br><br>
 
       There are 3 base cases to determining if a path is ``blocked'':<br>
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_9.png" style="width:40%"  alt="bayes3"></img>
+              <img src="{{ site.baseurl }}/images/recap17_9.png" style="width:80%"  alt="bayes3"></img>
               <div class="caption">Figure 4</div>
           </a>
       </div>
 
-      Case 1:<br>
+      <u>Case 1:</u><br><br>
 
-      In Case 1, if we have observed $C$, then $A$, which is a descendant, will be independent of $B$ (by local independence).<br>
+      In Case 1, if we have observed $C$, then $A$, which is a descendant, will be independent of $B$ (by local independence).<br><br>
 
-      Case 2:<br>
+      <u>Case 2:</u><br><br>
 
-      In Case 2, $C$ is the parent of both $A$ and $B$.  Because $A$ and $B$ are non-descendents, $A$ and $B$'s conditional independence follows by local independence.<br>
+      In Case 2, $C$ is the parent of both $A$ and $B$.  Because $A$ and $B$ are non-descendents, $A$ and $B$'s conditional independence follows by local independence.<br><br>
 
-      Another contextualized example is: say $C$ represents the bias of a coin.  $A$ and $B$ represent two independent flips of the coin.  When $C$ is unobserved, then $A$ and $B$ are dependent, as observing the result of flip $A$ may give information about the bias $C$ of the coin, which also gives information about $B$.  But once $C$, the bias of the coin, is observed, then $A$ is now independent of $B$.<br>
+      Another contextualized example is: say $C$ represents the bias of a coin.  $A$ and $B$ represent two independent flips of the coin.  When $C$ is unobserved, then $A$ and $B$ are dependent, as observing the result of flip $A$ may give information about the bias $C$ of the coin, which also gives information about $B$.  But once $C$, the bias of the coin, is observed, then $A$ is now independent of $B$.<br><br>
 
-      Case 3:<br>
+      <u>Case 3:</u><br><br>
 
       In Case 3, not observing C blocks the path.  When C is observed, it induces a correlation, or dependency between $A$ and $B$.<br>
 
-      An example of this is $C$ being the XOR of $A$ and $B$.  When $C$ is unobserved, $A$ and $B$ are uncorrelated.  But once $C$ is observed, $B$ can be calculated from observing $A$ and $C$.<br>
+      An example of this is $C$ being the XOR of $A$ and $B$.  When $C$ is unobserved, $A$ and $B$ are uncorrelated.  But once $C$ is observed, $B$ can be calculated from observing $A$ and $C$.<br><br>
 
-      Section 8.2.5 of the textbook discusses each of these D-separation rules more in-depth, we strongly recommend that you read it as a supplement to this lecture!<br>
+      Section 8.2.5 of the textbook discusses each of these D-separation rules more in-depth, we strongly recommend that you read it as a supplement to this lecture!<br><br>
 
       <h2 id="recap17_4">Uniqueness and Parameters</h2>
 
@@ -219,16 +222,16 @@ weight: 0
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_10.png" style="width:40%"  alt="bayes4></img>
+              <img src="{{ site.baseurl }}/images/recap17_10.png" style="width:80%"  alt="bayes4"></img>
               <div class="caption">Figure 5</div>
           </a>
       </div>
 
-      Q: When factoring our Bayes Nets (or, more broadly, when factoring joint distributions in this course), which way should we choose, given that both of the above equations are mathematically correct?<br>
+      Q: When factoring our Bayes Nets (or, more broadly, when factoring joint distributions in this course), which way should we choose, given that both of the above equations are mathematically correct?<br><br>
 
-      A: If we are given some causal knowledge, for example, if we know that $A$ causes $B$, then we should factor the joint distribution using $p(A, B) = p(A) p(B | A)$.  We cannot ``flip the ordering'' under this causal assumption.  Therefore in this case, there is 1 unique factorization that is consistent with our causal knowledge.<br>
+      A: If we are given some causal knowledge, for example, if we know that $A$ causes $B$, then we should factor the joint distribution using $p(A, B) = p(A) p(B | A)$.  We cannot ``flip the ordering'' under this causal assumption.  Therefore in this case, there is 1 unique factorization that is consistent with our causal knowledge.<br><br>
 
-      But otherwise, you can choose any factorization you'd like, given that the factorization is mathematically correct.  However, some choices of the ordering are easier to work with than others. <br>
+      But otherwise, you can choose any factorization you'd like, given that the factorization is mathematically correct.  However, some choices of the ordering are easier to work with than others.<br><br>
 
       <h4>Example: Ordering affects the number of necessary parameters</h4>
 
@@ -241,11 +244,11 @@ weight: 0
           </a>
       </div>
 
-      Suppose all variables are binary.  How many parameters does this network need?  Or, otherwise stated, how many different values do we need to know to be able to calculate the joint distribution $p(S = s, D = d, G = g, U = u, E = e, H = h)$ for all possible values $s, d, g, u, e, h \in \{0, 1\}$?<br>
+      Suppose all variables are binary.  How many parameters does this network need?  Or, otherwise stated, how many different values do we need to know to be able to calculate the joint distribution $p(S = s, D = d, G = g, U = u, E = e, H = h)$ for all possible values $s, d, g, u, e, h \in \{0, 1\}$?<br><br>
 
-      First, notice that $p(S)$ can be fully specified by $1$ parameter, as $p(S = 0) = 1- p(S = 1)$.<br>
+      First, notice that $p(S)$ can be fully specified by $1$ parameter, as $p(S = 0) = 1- p(S = 1)$.<br><br>
 
-      Similarly, $p(G | S)$ can be fully specified by $2$ parameters $p(G = 1 | S = 0)$ and $p(G = 1 | S = 1)$, as $p(G = 0 | S = 0) = 1 - p(G = 1 | S = 0)$, etc.<br>
+      Similarly, $p(G | S)$ can be fully specified by $2$ parameters $p(G = 1 | S = 0)$ and $p(G = 1 | S = 1)$, as $p(G = 0 | S = 0) = 1 - p(G = 1 | S = 0)$, etc.<br><br>
 
       It is a good exercise to reason about the number of parameters required for each term in the joint distribution for our Bayes Net.  In Figure 6, we've written the number of necessary parameters for each variable's conditional distribution term next to the variable.  Therefore the network needs
 
@@ -259,28 +262,28 @@ weight: 0
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_11.png" style="width:40%"  alt="bayes6></img>
+              <img src="{{ site.baseurl }}/images/recap17_11.png" style="width:70%"  alt="bayes6"></img>
               <div class="caption">Figure 7</div>
           </a>
       </div>
 
-      This network was created by thinking of the original Bayes Net in Figure 6 instead as a generative process.  Say that we wish to place $E$ at the top of the network.  Now, we consider $H$.  Can $H$ be chosen independently of $E$ in the original network?  No, because their parent $U$ has not been observed, and so there is an unblocked path $(E, U, H)$ between them.  Therefore we need an arrow from $E$ to $H$.<br>
+      This network was created by thinking of the original Bayes Net in Figure 6 instead as a generative process.  Say that we wish to place $E$ at the top of the network.  Now, we consider $H$.  Can $H$ be chosen independently of $E$ in the original network?  No, because their parent $U$ has not been observed, and so there is an unblocked path $(E, U, H)$ between them.  Therefore we need an arrow from $E$ to $H$.<br><br>
 
-      Now, we add $U$ to the new network.  $U$ is not independent of $E$ or $H$, so we need to draw arrows from $E$ and $H$ to $U$.<br>
+      Now, we add $U$ to the new network.  $U$ is not independent of $E$ or $H$, so we need to draw arrows from $E$ and $H$ to $U$.<br><br>
 
-      Now, we add $S$ to the new network.  $S$ depends on $U$ and $E$ because we have not observed $G$ yet.  Because $U$ has been observed, blocking all paths from $S$ to $H$, we do not draw an arrow from $H$ to $S$.<br>
+      Now, we add $S$ to the new network.  $S$ depends on $U$ and $E$ because we have not observed $G$ yet.  Because $U$ has been observed, blocking all paths from $S$ to $H$, we do not draw an arrow from $H$ to $S$.<br><br>
 
-      Now, we add $G$ to the network.  $G$ depends on $E$ and $S$, so we draw arrows from $E$ and $S$ to $G$.<br>
+      Now, we add $G$ to the network.  $G$ depends on $E$ and $S$, so we draw arrows from $E$ and $S$ to $G$.<br><br>
 
-      This new network in Figure 7 respects all the dependencies of the original network in Figure 6.  Note that the new network contains more dependencies (or arrows) than our original network.<br>
+      This new network in Figure 7 respects all the dependencies of the original network in Figure 6.  Note that the new network contains more dependencies (or arrows) than our original network.<br><br>
 
-      Our new network in Figure 7 has 19 required parameters.  It requires more parameters than our original network.<br>
+      Our new network in Figure 7 has 19 required parameters.  It requires more parameters than our original network.<br><br>
 
       We could always write out a network in any arbitrary order, where every variable is connected to every previously added variable, and create a fully-connected graph representation:
 
       <div id="images">
           <a>
-              <img src="{{ site.baseurl }}/images/recap17_7.png" style="width:40%"  alt="bayes7"></img>
+              <img src="{{ site.baseurl }}/images/recap17_7.png" style="width:70%"  alt="bayes7"></img>
               <div class="caption">Figure 8</div>
           </a>
       </div>
@@ -289,13 +292,13 @@ weight: 0
 
       $$p(E, S, U, H, G, D) = p(E) p(S | E) p(U | E, S) ...$$
 
-      While such an ordering is correct, it is not parsimonious.  Our hope is to find a variable ordering which respects all necessary dependency relationships, while using as few ``arrows'' or having as few dependencies as possible.  Generally, adding another arrow or dependency to a Bayes Net will increase the number of parameters required to specify the full joint distribution.  As such, networks that have fewer arrows but still preserve the original dependency relationships will require fewer parameters to specify their joint distributions.<br>
+      While such an ordering is correct, it is not parsimonious.  Our hope is to find a variable ordering which respects all necessary dependency relationships, while using as few ``arrows'' or having as few dependencies as possible.  Generally, adding another arrow or dependency to a Bayes Net will increase the number of parameters required to specify the full joint distribution.  As such, networks that have fewer arrows but still preserve the original dependency relationships will require fewer parameters to specify their joint distributions.<br><br>
 
-      This fully-connected graph requires $1 + 2 + 4 + 8 + 16 + 32 = 63$ parameters.<br>
+      This fully-connected graph requires $1 + 2 + 4 + 8 + 16 + 32 = 63$ parameters.<br><br>
 
-      Student question:  What does the direction of the arrows imply?  Do the arrows inform us of how the data is generated?  In the top image, for example, $G$ and $U$ points to $E$.  In the bottom image, $E$ points to $H$ and $U$.<br>
+      Student question:  What does the direction of the arrows imply?  Do the arrows inform us of how the data is generated?  In the top image, for example, $G$ and $U$ points to $E$.  In the bottom image, $E$ points to $H$ and $U$.<br><br>
 
-      Answer:  You are correct in that it is possible to draw two Bayes Nets that preserve the dependency relationships between variables, but, because of their differing structure, tell a different ``story'' about each random variable in the network.  This relates to the ``Uniqueness and Parameters'' discussion above.  Typically, you wish to draw a graphical model that corresponds with your knowledge and your assumptions about a causal or data-generating process.<br>
+      Answer:  You are correct in that it is possible to draw two Bayes Nets that preserve the dependency relationships between variables, but, because of their differing structure, tell a different ``story'' about each random variable in the network.  This relates to the ``Uniqueness and Parameters'' discussion above.  Typically, you wish to draw a graphical model that corresponds with your knowledge and your assumptions about a causal or data-generating process.<br><br>
 
       To contextualize our examples, in Figure 6, $G$ and $U$ point to $E$.  The joint distribution of this Bayes Net can be factored as
 
@@ -328,7 +331,7 @@ weight: 0
 
       $$P(A, B, C, D, E) = \frac{1}{z} \phi(C, A, B) \phi(B, D) \phi(B, E)$$
 
-      where $z$ is a normalizing constant and $\phi$ is a function.<br>
+      where $z$ is a normalizing constant and $\phi$ is a function.<br><br>
 
       Undirected graphical models are very popular in settings such as image processing.  In practice, they're hard to work with as normalizing constant $z$ is hard to find to make $P(A, B, C, D, E)$ a valid probability distribution which sums to $1$.
 
@@ -347,12 +350,10 @@ weight: 0
 
       $$p(A, B, C, D, E) = \frac{1}{z} \phi(B, D) \phi(B, E) \phi(A, B, C) \phi(B, C)$$
 
-      where $z$ is a normalizing constant and $\phi$ is a function.<br>
+      where $z$ is a normalizing constant and $\phi$ is a function.<br><br>
 
-      Each of the $\phi()$ terms was created by examining each of the factor nodes, and including the variables which were connected to each factor.<br>
+      Each of the $\phi()$ terms was created by examining each of the factor nodes, and including the variables which were connected to each factor.<br><br>
 
       Factor graphs are more expressive than undirected graphs.  Notice here that we included a factor to add additional term $\phi(B, C)$.  Notice that we wouldn't have been able to specify the inclusion of this extra term in our undirected graphical model.
-
-
     </div>
 </section>
