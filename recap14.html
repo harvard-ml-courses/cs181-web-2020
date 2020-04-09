@@ -117,11 +117,11 @@ weight: 0
 
       Then, we can expand out the expectation:
 
-      $$\sum_n \sum_k p(z_n = k | x_n, \pi, \mu, \Sigma) \log N(x_n; \mu_k, \Sigma_k) + p(z_n = k | x_n, \pi, \mu, \Sigma) \log \pi_k]$$
+      $$\sum_n \sum_k [p(z_n = k | x_n, \pi, \mu, \Sigma) \log N(x_n; \mu_k, \Sigma_k) + p(z_n = k | x_n, \pi, \mu, \Sigma) \log \pi_k]$$
 
       To keep things visually cleaner, we'll define $q_{nk} = p(z_n = k | x_n, \pi, \mu, \Sigma)$ so we can write it as:
 
-      $$\sum_n \sum_k q_{nk} \log N(x_n; \mu_k, \Sigma_k) + q_{nk} \log \pi_k]$$
+      $$\sum_n \sum_k [q_{nk} \log N(x_n; \mu_k, \Sigma_k) + q_{nk} \log \pi_k]$$
 
       We notice here that given $q_{nk}$, we will be able to find our parameters.
 
