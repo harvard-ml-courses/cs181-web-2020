@@ -328,7 +328,7 @@ lectures:
     hw:
     type:
   - topic: #Apr 10
-    subtopic: Inference for BNs
+    subtopic: <a href="/cs181-web/recap18">Inference for BNs</a>
     section:
     readings:
     demos:
