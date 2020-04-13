@@ -342,7 +342,7 @@ lectures:
     type: 'hw'
   - topic: # section 10
     subtopic:
-    section: 9. Inference, HMMs, Kalman filters
+    section: <a href="/cs181-web/sections#sec9">9. Variable Elimination, HMMs, and Kalman Filters</a>
     readings:
     hw:
     type: 'sec'
@@ -350,7 +350,7 @@ lectures:
     subtopic: Linear BNs (HMMs)
     section:
     readings: 10
-    hw: HW6 (Graphical Models and RL) released
+    hw: <a href="/cs181-web/homework#hw6">HW6 (Inference in Graphical Models, MDPs)</a> released
   - topic: # Apr 17
     subtopic: MDP, value/policy Iteration
     section:
@@ -385,7 +385,7 @@ lectures:
     section:
     readings:
     demos:
-    hw: HW6 (Graphical Models and RL) due
+    hw: <a href="/cs181-web/homework#hw6">HW6 (Inference in Graphical Models, MDPs)</a> due
     type: 'hw'
   - topic: # section 12
     subtopic:
