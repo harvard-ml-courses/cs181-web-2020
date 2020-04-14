@@ -237,7 +237,7 @@ lectures:
     readings:
     hw:
   - topic: #Mar 13
-    subtopic: Midterm 1
+    subtopic: <strike>Midterm 1</strike>
     section:
     readings:
     demos:
@@ -389,7 +389,7 @@ lectures:
     type: 'hw'
   - topic: # section 12
     subtopic:
-    section: Midterm 2 Review
+    section: Final Review
     readings:
     hw:
     type: 'sec'
@@ -400,7 +400,7 @@ lectures:
     demos:
     hw:
   - topic: # May 1
-    subtopic: Midterm 2
+    subtopic: Final Assignment
     section:
     readings:
     demos:
