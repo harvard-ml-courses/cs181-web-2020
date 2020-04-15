@@ -347,7 +347,7 @@ lectures:
     hw:
     type: 'sec'
   - topic:
-    subtopic: Linear BNs (HMMs)
+    subtopic: <a href="/cs181-web/recap19">Hidden Markov Models</a>
     section:
     readings: 10
     hw: HW6 (Graphical Models and RL) released
