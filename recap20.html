@@ -183,7 +183,7 @@ weight: 0
 
       Define $\hat{V}^{\pi(s)}_k$ as:<br>
 
-      $$\hat{V}^{\pi(s)}_k$ = $R(s, \pi(s)) + \gamma \sum_s' T(s' | s, \pi(s))V^{\pi(s')}_{k-1}$$
+      $$\hat{V}^{\pi(s)}_k = R(s, \pi(s)) + \gamma \sum_s' T(s' | s, \pi(s))V^{\pi(s')}_{k-1}$$
 
       The $V^{\pi(s')}_{k-1}$ represent our old estimate of $V^{\pi(s')}$ at iteration $(k - 1)$ of the algorithm.  We can use this old estimate at iteration $(k - 1)$ to compute a new estimate at iteration $k$. The intuition is that with every iteration, we will push our our old estimate into the discounted future.
 
