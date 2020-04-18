@@ -179,30 +179,34 @@ weight: 0
 
       <h5>Method 2: Solving for V</h5>
 
-      We can also solve for $V$ iteratively, updating our estimates for $V^\pi$ until they converge. This method is used more in practice, as this method tends to be more stable. Then we have.  First, initialize $\hat{V}^{\pi(s)}_{k=0}$ to be whatever constant you'd like.
+      We can also solve for $V$ iteratively, updating our estimates for $V^\pi$ until they converge. This method is used more in practice, as this method tends to be more stable.  First, initialize $\hat{V}^{\pi(s)}_{k=0}$ to be whatever constant you'd like.<br>
+
+      Define $\hat{V}^{\pi(s)}_k$ as:<br>
 
       $$\hat{V}^{\pi(s)}_k$ = $R(s, \pi(s)) + \gamma \sum_s' T(s' | s, \pi(s))V^{\pi(s')}_{k-1}$$
 
-      The $V^{\pi(s')}_{k-1}$ are the old values. With the old values, we can produce the new values. The intuition is that with every iteration, we will push our initialized values (which were just made up) into the discounted future.
+      The $V^{\pi(s')}_{k-1}$ represent our old estimate of $V^{\pi(s')}$ at iteration $(k - 1)$ of the algorithm.  We can use this old estimate at iteration $(k - 1)$ to compute a new estimate at iteration $k$. The intuition is that with every iteration, we will push our our old estimate into the discounted future.
 
       $$\hat{V}^{\pi(s)}_k = R(s, \pi(s)) + \gamma \sum_s' T(s' | s, \pi(s)) [R(s', \pi(s')) + \gamma \sum_s'' T(s'' | s', \pi(s'))V^{\pi(s'')}_{k-2}]$$
 
-      YOu can imagine us plugging in the V back again, and we can see how our original term gets pushed down into the future. If we expand the math out, we end up with a $\gamma^2 \hat{V}^\pi_{k=2}(s'')$, where we notice for each iteration, we add another $\gamma$. Essentially, we have $\gamma^\textrm{iters} V_0^\pi$.<br><br>
+       Therefore the originally initialized $\hat{V}^{\pi(s)}_{k=0}$ is ``pushed out'' into the future.  If we expand the math out, we end up with term $\gamma^2 \hat{V}^\pi_{k=2}(s'')$, where we notice for each iteration, we multiply this term by another $\gamma$. Essentially, we have $\gamma^\textrm{iters} V_0^\pi$.<br><br>
 
-      This is a contraction because $\gamma$ is less than 1 (by definition for us), and  eventually this pushes our wrongly initalized value so far into the future that it doesn't matter anymore.
+      This is a contraction because $\gamma$ is less than 1 (by definition for us), and  eventually this pushes our wrongly initalized value matrix $\hat{V}^{\pi(s)}_{k=0}$ so far into the future that it doesn't matter anymore.
 
       <h4>Tying Back to Policy Iteration</h4>
 
-      So now, we have two ways to solve for $V^\pi(s)$, our policy evaluation preparation is done. Now, let's look at our policy iteration algorithm, our method of finding the best policy, which was what we wanted in the very first place. As you can see, in it, we use policy evaluation. The algorithm is given below:
+      Now we have two ways to perform policy evaluation, or solve for $V^\pi(s)$. Now, let's return to our goal of policy iteration. As you can see, in it, we use policy evaluation. The algorithm is given below:
 
       <div class="text-center">
         <img src="{{ site.baseurl }}/images/recap20_4.png" style="width:80%"  alt="Policy Iteration"></img>
       </div>
 
-      The idea is, we will start with some policy, and then use our Q to try some excursion, and if it an action (excursion) is great, we'll actually replace the policy with the better move. While the proof of this is out of the scope of the course, it turns out that the policy improvement theorem proves that this loop will converge to $\pi$*, the optimal policy. Overall, at a high level, you can think of like this: we started with a policy, we tried some excursions, evaluated them, then improved our policy. We then repeated this, iterating until our policy was optimal.<br><br>
+      The idea is, we will start with some policy $\pi$, and then use our $Q$ to try some excursion. If an action (excursion) $a$ is great, we'll actually replace the learned policy $\pi$ with the better move (policy update). While the proof of this is out of the scope of the course, it turns out that the policy improvement theorem proves that this loop will converge to $\pi^*$, the optimal policy. <br>
+
+      Overall, at a high level, you can think of like this: we started with a policy, we tried some excursions, evaluated them, then improved our policy. We then repeated this, iterating until our policy was optimal.<br><br>
 
       <h2 id="recap20_4">Recap and Looking Forward</h2>
 
-      Where we are so far? So far, we've found one way of getting the optimal policy. We will cover two more methods in the next lecture. In addition, soon we will be covering reinforcement learning (RL). RL is basically when we don't have access to T, and R. What if we had to just interact with the world directly? Much more to come!
+      Where we are so far? So far, we've found one way of getting the optimal policy. We will cover two more methods in the next lecture. In addition, soon we will be covering reinforcement learning (RL). RL is learning when we don't have access to $T$, and $R$. What if we had to just interact with the world directly? Much more to come!
     </div>
 </section>
