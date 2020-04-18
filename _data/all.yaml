@@ -352,7 +352,7 @@ lectures:
     readings: 10
     hw: <a href="/cs181-web/homework#hw6">HW6 (Inference in Graphical Models, MDPs)</a> released
   - topic: # Apr 17
-    subtopic: MDP, value/policy Iteration
+    subtopic: <a href="/cs181-web/recap20">Markov Decision Processes</a>
     section:
     readings:
     hw:
