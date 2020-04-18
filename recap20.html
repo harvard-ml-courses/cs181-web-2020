@@ -66,7 +66,9 @@ weight: 0
 
       Let's say instead of a person that this was a car instead, however, and that the car's velocity matters. If the car was coming in at 100 miles per hour from the left, moving "Down" would require a huge turn, versus if the car was driving in slowly from above, at 10 miles per hour, the action "Down" would cause the car to move differently in each scenario. This means that only knowing the car's location is not enough to define the car's state. We would want to incoporate in the velocity, the acceleration, and essentialy everything we need to be able to predict what happens next.  State is all information needed to be able to ignore the past. If all of this information is available to us, then we say the system is Markov in state.<br><br>
 
-      Note: this is the official definition of state. Some papers in the literature will sometimes use approximations of states. Say, for example, you might choose to use the frame of a video game as a state, which gives you purely location of all the objects. But to really predict how the objects move, you actually need the velocity of the objects to predict what happens next and to be able to truly call it Markov. It's possible that the paper will just say, we will choose to use just the frame as our approxmiation of state. It's just important to note that that is exactly what it is, an approximation of a state. However, the formal definition of state is still everything you need to know to be able to predict what's next. We will use this definition for state for the next 3 lectures.<br><br>
+      Note: this is the official definition of state. Some papers in the literature will sometimes use approximations of states.
+
+      Say, for example, you might choose to use a single frame (a still snapshot) of a video game (such as Super Mario Bros) as a state.  Therefore from the still frame, you can see where each object (such as Mario, bricks, and evil mushrooms) is located on the screen.  But to really predict how the objects move, you actually need the velocity of the objects (is Mario running? in what direction are the mushrooms walking?) to predict what happens next and to be able to call the system Markov. It's possible that the paper will just say, "We will choose to use just the frame as our approxmiation of state". It's just important to note that that is exactly what it is: an approximation of a state. However, the formal definition of state is still everything you need to know to be able to predict what's next. We will use this definition for state for the next 3 lectures.<br><br>
 
       <h4>Tying Back and Fully Defining our Markov Decision Process</h4>
 
@@ -74,56 +76,62 @@ weight: 0
         <img src="{{ site.baseurl }}/images/recap20_3.png" style="width:50%"  alt="MDP Setup"></img>
       </div>
 
-      Let's come back to the diagram with agent in the world. Now, we're going to assume the world is nice, and that when our agent does some action a, the world will send back the state. You can imagine that the obsevations we had from the situation before get converted via some method into the state (in the real world, this is what would have to happen). Here we're just going to assume we are given the nice state for now. And since the state gives us all the information we need to predict what happen next, this is what makes it a Markov Decision Process (MDP).<br><br>
+      Let's come back to the diagram of an agent in the world. Now, we're going to assume the world is nice, and that when our agent does some action $a$ from starting state $s$, the world will send back the resultant state $s'$. You can imagine that the obsevations we had from the situation before get converted via some method into the state (in the real world, this is what would have to happen). Because the world gives us a resultant state $s'$ which gives us all information we need to predict what will happen to the agent next, this system is a Markov Decision Process.<br><br>
 
       Now let's fully define everything:<br><br>
 
-      We have a tuple of information:
+      This system can be described using this tuple of information:
 
       $$\{S, A, R(s, a, s'), T(s' | s, a), \gamma, p_0\}$$
 
-      $S$ are the states<br>
-      $A$ are the actions<br>
-      $R(s, a, s')$ is the reward for doing $a$ in $s$ and landing in $s'$<br>
-      $T(s' | s, a)$ is our transition probabilities, as in where we will likely end up given we start at s and do a (similar idea to the last time when we were doing T(s'|s) in hidden markov models, the only difference is the transition depends on the action, now we incorpoate in the action which determiens the probialities of where we might end up)<br>
-      $\gamma$ is the discount factor
-      $p_0$ is some start state<br><br>
+      $S$ are all possible states<br>
+      $A$ are all possible actions<br>
+      $R(s, a, s')$ is the reward for doing action $a$ in starting state $s$ and landing in state $s'$<br>
+      $T(s' | s, a)$ is a matrix of transition probabilities, which describe $p(s' | s, a)$, the probability of landing in state $s'$ from taking action $a$ from starting state $s$.  Notice this is a similar idea to the last time when we were defined T(s'|s) for Hidden Markov Models. The only difference is that here, transition probabilities depend on the action.<br>
+      $\gamma$ is the discount factor.
+      $p_0$ is some starting state.<br><br>
 
-      Goal: find the best policy. We define a policy to be $\pi$. This could be $\pi(s, a) = P(a|s)$ if this is stochastic, or $\pi(s)=a$ if deterministic. These are both commonly used notations. If stochastic, we have a probability distribution across actions for a given state (what probability to play each action with). If deterministic we simply have one predetermiend action in the policy to play for each given state.<br><br>
+      Goal: Find the best policy. We use $\pi$ to denote a policy. Policies can be stochastic, or describe a distribution over actions ($\pi(s, a) = P(a|s)$), or determinstic and be equal to 1 action ($\pi(s)=a$). Stoachastic policies have a probability distribution across actions for a given state (what probability to play each action with). Deterministic policies we simply have one predetermiend action in the policy to play for each given state. These both are commonly used notations. <br><br>
 
       The best policy is as follows:
 
       $$max_\pi E_{T, p_0} [\sum_t \gamma^t r_t]$$
 
-      Here, $T$ and $p_0$ represent the world, and we're taking the expectation over the world since its random we have no control over it. We do have control over our action however, so we are trying to take the right actions that maximize our returns that we get in the world (by picking the best policy $\pi$).
+      Here, $T$ and $p_0$ represent transition probabilities and the initial starting state of the world.  The agent does not have control over the world.  The agent does control its own actions. We are trying to determine the best actions for the agent to take: the actions that maximize the agent's returns that it gets in the world.
 
       <h2 id="recap20_3">How to Solve using Policy Iteration (Method 1)</h2>
 
-      Over the this lecture and next, we will cover three methods of sovling an MDP. Each will have their pros and cons. There's a lot of literature on this topic that includes more complex methods of solving, but overall the three we cover are intuitive and scale relatively well. In addition, the complex methods build off these simpler methods here too, so this is laying down important groundwork.<br><br>
+      Over the this lecture and next, we will cover three methods of sovling an MDP. Each will have their pros and cons. There's a lot of literature on this topic that includes more complex methods, but overall the three we cover are intuitive and scale relatively well. Additionally, the complex methods build off these simpler methods here, so this is laying down important groundwork.<br><br>
 
-      Now let's begin to break down policy iteration. At a high level, we will propose a policy, and iterate on it to make it better.
+      First, let's explore policy iteration.  At a high level, policy iteration iteratively evaluates a proposed policy, and then performs policy improvement.
 
       <h4>Policy Evaluation</h4>
 
-      In order to show this though, we first need to cover a simpler problem, policy evaluation. As in, if given a policy, how do we tell how well it'll do in terms of rewards. Formally in the math, given a $\pi$, what is $E[\sum \gamma^t r_t]$? Let's start with some definitions...<br><br>
+      To understand policy iteration, we first much understand policy evaluation.  Policy evaluation is used to estimate the expected reward at each state given a particular policy $\pi$ to follow at each state.
+
+      More formally, given a $\pi$, policy evaluation calculates $E[\sum \gamma^t r_t]$. Let's start with some definitions...<br><br>
 
       Define $V^\pi(s) = E_{\pi, T}[\sum \gamma^t r_t]$<br><br>
 
-      Above, we are defining the value of a policy just by definition. It's the expected sum of discounted rewards we will recieve. Note: the $\pi$ is in the expecation just in case it's a stochastic policy. If it were deterministic, we wouldn't need to do this.<br><br>
+      Here, the notation $V^\pi(s)$ represents the ``value'' of policy $\pi$.  We define the value as the expected sum of discounted rewards the agent will receive.  Note: the $\pi$ is in the expecation just in case it's a stochastic policy. If $\pi$ was deterministic, we wouldn't need to do this.<br><br>
 
       Define $Q^\pi(s, a) = E_{\pi, T} [\sum \gamma^t r_t | s_0=s, a_0=a]$<br><br>
 
-      Here, we define this Q as a slight altercation of the above V. You can think of this as experimenting with a policy. We're essentially saying, just for one instance of time, lets just we did action a instead of following the policy, which lands us in some s'. Then, that's it, thats the extent our experiment! We promise to follow the policy $\pi$ the rest of the way. This is the definition of $Q^\pi(s, a)$, which will be used later.<br><br>
+      Here, we define this Q as a slight altercation of the above V. You can think of $Q^\pi(s, a)$ as experimenting with a policy. We're essentially saying: For one instance of time, take action $a$ which lands us in some $s'$ instead of following policy $\pi$.  Then for each following time step, the agent will follow the policy $\pi$ the rest of the way. This is the definition of $Q^\pi(s, a)$, which will be used later.<br><br>
 
-      From this point onwards, let's have our rewards R be deterministic. Remember that our randomness comes from the transition probabilties, which make the rewards different. Note: this is a very reasonable restriciton, because we can always redefine $R(s, a) = E_R[R(s, a)]$. Since this whole R term will be taken over expectation anyways, if we just redefined R to be deterministic, we would be fine.<br><br>
+      From this point onwards, let's have our rewards $R(s, a)$ be deterministic. Remember that the randomness in $R$ comes from the transition probabilties, which can make the rewards different. Note: this is a very reasonable restriciton, because we can always redefine $R(s, a) = E_R[R(s, a)]$. Since this whole R term will be taken over expectation anyways, if we just redefined R to be deterministic, we would be fine.<br><br>
 
-      From this point onwards, let's also have our $\pi$ be a deterministic pi(s). This is a reasonable restriction, because for MDPs, while the proof is out of the scope of the class, it turns out there will always be a determistic optimal policy for a MDP. The general idea is that there is always going to be a determistinic strategy that will exploit the highest possible discounted reward. Note: this won't work in a multiplayer situation though (imagine rock paper scissors; with two players, the optimal $\pi$ has to have some randomesnss, because if you always played scissors the opponent could always play rock and beat you consistently). But because in a MDP there alwys exists a detemristinc strategy $\pi(s)$, so we're going to take advantage of this when we're solving.<br><br>
+      From this point onwards, let's also have our $\pi$ be a deterministic pi(s). This is a reasonable restriction, because for MDPs, it turns out there will always be a determistic optimal policy for a MDP.  The proof for this claim is outside the scope of this class, but the general idea is that there is always going to be a determistinic strategy that will exploit the highest possible discounted reward.<br>
+
+      Note: this assumption does not hold in a multiplayer game.  Imagine rock paper scissors: with two players, the optimal $\pi$ has to have some randomesnss, because if you always played scissors the opponent could always play rock and beat you consistently.<br><br>
 
       <u>Bellman Equation:</u>
 
       $$V^\pi(s) = R(s, \pi(s))  + \gamma \sum_s' T(s'|s, \pi(s)) V^\pi(s')$$
 
-      Here we introduce the Bellman Equation, which is a recursive equation that gives us what we need in order to solve policy evaluation. Note that there, our policy is deterministic as it is $\pi$ of just s and not of both s and a. Before we go any further, let's first jsutify it mathematically and conceptually.<br><br>
+      Here we introduce the Bellman Equation.  In our below derivation, we will show that the Bellman Equation is recursive with respect to each time step $t$.  Notice that because we assumed policy $\pi$ is deterministic, $\pi$ is a function of only $s$ instead of both $s$ and $a$. <br><br>
+
+      How did we derive this Bellman equation?  Let's start from our definition of $V^\pi(s)$:
 
       $$V^\pi(s) = E[\sum_{t=0} \gamma^t r_t | s_0 = s]$$
 
@@ -141,37 +149,37 @@ weight: 0
 
       $$V^\pi(s) = R(s_t, \pi(s_0)) + \gamma E_{s_1 | s_0} [ E [ \sum \gamma^t r_t]]$$
 
-      Since this is dicrete we can use summations to do the expectation. Of course, you can also do this in a continuous domain.
+      Since the state space is discrete, we can use summations to rewrite the expectation.
 
       $$V^\pi(s) = R(s_0, \pi(s_0)) + \gamma \sum_{s_1} T(s_1 | s, a) E_{T, \pi}[\sum \gamma^t r_t | s_0' = s_1]$$
 
-      The right part of this equation is now a redefinition of $V^pi(s')$ so we have completed our recursion.
+      The right part of this equation is now a redefinition of $V^\pi(s')$ so we have completed our recursion for 1 time step.
 
       $$V^\pi(s) = R(s, \pi(s)) + \gamma \sum T(s' | s, a) V^\pi(s')$$
 
-      The idea here is that the value of being in a particular state is equal to the current reward that I get plus a discounted expectation of what the future value is at the next time step.<br><br>
+      The idea here is that the value of being in a particular state is equal to the immediate reward that the agent gets from following policy, plus a discounted expectation of what the future value is at the next time step.<br><br>
 
       <u>So how do we actually solve this to complete Policy Evaluation?</u><br><br>
 
-      Remember, so far we've just written out a recursive equation, and justified why it's correct mathematically and conceptually. But we still haven't solved for V yet.<br><br>
+      So far we've just written out a Bellman equation, and justified why it's correct mathematically and conceptually. But we still haven't solved for $V^\pi(s)$ yet.<br><br>
 
-      The good news is, if the state spaces and actions spaces are discrete, it is easy to solve for V. First, we note that the Bellman equation is a linear equation. Across a set of |S| states, we have s unknowns and s equations, with one bellman equation for each state. This means we can simply solve the system of equations.
+      The good news is, if the state spaces and actions spaces are discrete, it is easy to solve for $V^\pi$! First, we note that the Bellman equation is a linear equation. Across a set of $|S|$ states, we have $s$ unknowns and $s$ equations, with one Bellman Equation for each state. This means we can simply solve the system of equations.
 
       <h5>Method 1: Solving for V</h5>
 
-      We can write it out in vector form.
+      Write down our system of equations in vector form:
 
       $$V^\pi = R^\pi + \gamma T^\pi V^\pi$$
 
-      $V^\pi$ is a vector. $R^\pi$ is a vector, where each element is $E_\pi[R(s_t, \pi(s_t))]$ if R is random, and just $R(s_0, \pi(s_0))$ if R is deterministic. $T^\pi(s'|s)$ is $T(s'|s, \pi(s))$.<br><br>
+      $V^\pi$ is a vector. $R^\pi$ is a vector, where each element is $E_\pi[R(s_t, \pi(s_t))]$ if R is random, or $R(s_0, \pi(s_0))$ if R is deterministic. $T^\pi(s'|s)$ is $T(s'|s, \pi(s))$.<br><br>
 
-      This gets us to a closed form solution from our linear system of equations:
+      When we solve the system of equations, we get closed-form solution:
 
       $$V^\pi = (I - \pi T^n)^{-1} R^\pi$$
 
       <h5>Method 2: Solving for V</h5>
 
-      Another way to solve is by first setting $\hat{V}^{\pi(s)}_{k=0} to be anything. This is used more in practice, as this method tends to be more stable. Then we have:
+      We can also solve for $V$ iteratively, updating our estimates for $V^\pi$ until they converge. This method is used more in practice, as this method tends to be more stable. Then we have.  First, initialize $\hat{V}^{\pi(s)}_{k=0}$ to be whatever constant you'd like.
 
       $$\hat{V}^{\pi(s)}_k$ = $R(s, \pi(s)) + \gamma \sum_s' T(s' | s, \pi(s))V^{\pi(s')}_{k-1}$$
 
