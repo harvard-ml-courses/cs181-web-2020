@@ -364,7 +364,7 @@ lectures:
     hw:
   - topic: # section 11
     subtopic:
-    section: 10. MDPs, RL
+    section: <a href="/cs181-web/sections#sec10">10. Markov Decision Processes and Reinforcement Learning</a>
     readings:
     hw:
     type: 'sec'
