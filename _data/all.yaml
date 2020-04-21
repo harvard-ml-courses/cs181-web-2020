@@ -389,7 +389,7 @@ lectures:
     type: 'hw'
   - topic: # section 12
     subtopic:
-    section: Final Review
+    section: 
     readings:
     hw:
     type: 'sec'
