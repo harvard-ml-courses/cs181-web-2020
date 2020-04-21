@@ -354,7 +354,7 @@ lectures:
   - topic: # Apr 17
     subtopic: <a href="/cs181-web/recap20">Markov Decision Processes</a>
     section:
-    readings:
+    readings: SB 3.1-3.6, SB 4.1-4.4 *
     hw:
   - topic: # Apr 19
     subtopic:
@@ -365,7 +365,7 @@ lectures:
   - topic: # section 11
     subtopic:
     section: <a href="/cs181-web/sections#sec10">10. Markov Decision Processes and Reinforcement Learning</a>
-    readings: SB 3.1-3.6, SB 4.1-4.4 *
+    readings: 
     hw:
     type: 'sec'
   - topic: Reinforcement Learning # Apr 22
