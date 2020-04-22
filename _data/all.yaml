@@ -365,11 +365,11 @@ lectures:
   - topic: # section 11
     subtopic:
     section: <a href="/cs181-web/sections#sec10">10. Markov Decision Processes and Reinforcement Learning</a>
-    readings: 
+    readings:
     hw:
     type: 'sec'
   - topic: Reinforcement Learning # Apr 22
-    subtopic: RL
+    subtopic: <a href="/cs181-web/recap21">Reinforcement Learning</a>
     section:
     readings: SB 1.1-1.4, SB 6.1-6.5 *
     hw:
@@ -389,7 +389,7 @@ lectures:
     type: 'hw'
   - topic: # section 12
     subtopic:
-    section: 
+    section:
     readings:
     hw:
     type: 'sec'
