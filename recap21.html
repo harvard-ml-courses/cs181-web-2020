@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lecture 21 Recap - Reinforcement Learning
+title: Lecture 21 Recap - Reinforcement Learning 1
 mathjax: true
 weight: 0
 ---
@@ -8,7 +8,7 @@ weight: 0
 <section class="main-container text">
     <div class="main">
 
-      <h4>Date: April 22, 2020 (<a href="https://canvas.harvard.edu/courses/65269/external_tools/62565" target="_blank">Lecture Video</a>, <a href="https://piazza.com/class_profile/get_resource/k5fnxwvfh7p7mi/k98t50dsvh223g" target="_blank">iPad Notes</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9h4TvwXib-u_k4ACxXoWdE-g5w9_wW550lFQxi9lsRLFj1g/viewform" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9h4TvwXib-u_k4ACxXoWdE-g5w9_wW550lFQxi9lsRLFj1g/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Date: April 20, 2020 (<a href="https://canvas.harvard.edu/courses/65269/external_tools/62565" target="_blank">Lecture Video</a>, <a href="https://piazza.com/class_profile/get_resource/k5fnxwvfh7p7mi/k98t50dsvh223g" target="_blank">iPad Notes</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9h4TvwXib-u_k4ACxXoWdE-g5w9_wW550lFQxi9lsRLFj1g/viewform" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9h4TvwXib-u_k4ACxXoWdE-g5w9_wW550lFQxi9lsRLFj1g/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
 
       <br>
 
@@ -147,7 +147,7 @@ weight: 0
 
       <h2 id="recap21_7">RL Class #1: Value-Based Algorithms</h2>
 
-      Value-based algorithms lie under the model-free branch of reinforcement learning. They work in the following way, with these two parts:
+      Value-based algorithms lie under the model-free branch of reinforcement learning. For discrete settings, they work in the following way, with these two parts:
 
       <ol>
         <li>Update Q-table (the S by A set of Q values)</li>
@@ -164,11 +164,11 @@ weight: 0
 
       $Q(s,a)$ updated to $Q(s, a) + \alpha_t(R(s, a) + \gamma Q(s', a') - Q(s, a))$<br><br>
 
-      In the SARSA method, we start with old value, $Q(s, a)$. We see that we've involved a $R(s, a) + \gamma Q(s', a')$ term, which represents our new estimate of $Q(s, a)$ given the data. Specifically, $R(s, a)$ represents the current reward, and then we add in a $\gamma$ (to account for a time step) multipled with a $Q(s', a')$ where $Q(s', a')$ represents a single sample from our $T(s' | s, a)$. While this will be noisy in the sense that it's just a single sample, this is our way of approximating the expectation from before. Essentially, we can think of the whole $R(s, a) + \gamma Q(s', a')$ term as a new estimate of our $Q(s, a)$. Now that we've broken down that down, we can take a step out and look at the bigger picture. Essentially, we start with old $Q(s, a)$, and then our updating it (with a learning rate of $\alpha_t$) by our new estimate of $Q(s, a)$ minus our old $Q(s, a)$. The whole difference term, $R(s, a) + \gamma Q(s', a') - Q(s, a)$, is called the temporal difference (TD) error.<br><br>
+      In the SARSA method, we start with old value, $Q(s, a)$. We see that we've involved a $R(s, a) + \gamma Q(s', a')$ term, which represents our new estimate of $Q(s, a)$ given the data. Specifically, $R(s, a)$ represents the current reward, and then we add in a $\gamma$ (to account for a time step) multipled with a $Q(s', a')$ where $Q(s', a')$ represents a single sample from our $T(s' | s, a)$. While this will be noisy in the sense that it's just a single sample, this is our way of approximating the expectation (from when we were doing planning). Essentially, we can think of the whole $R(s, a) + \gamma Q(s', a')$ term as a new estimate of our $Q(s, a)$. Now that we've broken down that down, we can take a step out and look at the bigger picture. Essentially, we start with old $Q(s, a)$, and then our updating it (with a learning rate of $\alpha_t$) by our new estimate of $Q(s, a)$ minus our old $Q(s, a)$. The whole difference term, $R(s, a) + \gamma Q(s', a') - Q(s, a)$, is called the temporal difference (TD) error.<br><br>
 
       You can see this as a stochastic asynchronous update on this $Q(s, a)$, where essentially, we're taking the old term, and updating it based on the direction of the error. It looks a bit funny, but the idea should still be intuitive. We had some old values sitting around, we looked the error betwen the old value and our new estimate, we incorporated our learning rate, and then we're going to update. The stochastiscity comes from the fact that we are making estimates based off a single simaple at time. With this all in mind, this means that as long as we tune the learning rate properly, since we know how stochastic gardients will converge, this method will work.<br><br>
 
-      Note: this is called on-policy because when we get our new estimate through the term $R(s, a) + \gamma Q(s', a')$, we choose to evaluate the next Q using a', the action that we actually took, sticking "onto" our policy. This method is generally more stable and better behaved, especially in more complicated situations. In addition, this is easier to analyze in the theoretical sense. However there are also drawbacks to this, as we will see through some of the pros of the Q learning method (choice #2 below) and through the concept check.<br><br>
+      Note: this is called on-policy because when we get our new estimate through the term $R(s, a) + \gamma Q(s', a')$, we choose to evaluate the next Q using a', the action that we actually took in the history, sticking "onto" our policy. To make this even more explicit, the reason it's called SARSA learning in the first place is because we use the tuple of information: state, action, reward, state, action, to make our updates in the Q Table. Imagine we follow some policy, and our history s, a, r, s, a, r, s, a, r, s, a, r. We can slide across the data and everytime we see the SARSA combo, we will use those 5 values to do the Q update, where we are updating the value at Q(s, a) [these are the first s and a respectively] using info from all of s, a, r, and s' and a' [r is the reward doing a at s, s' is the state ended up in after first action, and a' is the next action we took afterwards from s' when we followed our policy]. Again, this is why it's on-policy. This method is generally more stable and better behaved, especially in more complicated situations. In addition, this is easier to analyze in the theoretical sense. However there are also drawbacks to this, as we will see through some of the pros of the Q learning method (choice #2 below) and through the concept check.<br><br>
 
       <u>Choice #2: Q Learning (off-policy)</u><br><br>
 

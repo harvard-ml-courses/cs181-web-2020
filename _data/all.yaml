@@ -369,12 +369,12 @@ lectures:
     hw:
     type: 'sec'
   - topic: Reinforcement Learning # Apr 22
-    subtopic: <a href="/cs181-web/recap21">Reinforcement Learning</a>
+    subtopic: <a href="/cs181-web/recap21">Reinforcement Learning 1</a>
     section:
     readings: SB 1.1-1.4, SB 6.1-6.5 *
     hw:
   - topic: # Apr 24
-    subtopic: Deep RL
+    subtopic: <a href="/cs181-web/recap22">Reinforcement Learning 2</a>
     section:
     readings:
     demos:
