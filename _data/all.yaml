@@ -400,9 +400,9 @@ lectures:
     demos:
     hw:
   - topic: # May 1
-    subtopic: Final Assignment
+    subtopic: 
     section:
     readings:
     demos:
-    hw:
+    hw: <a href="/cs181-web/homework#ia">Independent Assignment</a>
     type: 'exam'
