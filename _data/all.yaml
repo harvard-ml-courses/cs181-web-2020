@@ -394,7 +394,7 @@ lectures:
     hw:
     type: 'sec'
   - topic: # Apr 29
-    subtopic: Interpretability or Learning Theory
+    subtopic: Final Lecture - Interpretability
     section:
     readings:
     demos:
