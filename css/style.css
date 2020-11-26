@@ -126,6 +126,13 @@ table.note-table th, .note-table td {
     color: #E53935;
 }
 
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
 ul.lists {
     padding: 0;
     overflow: hidden; }
